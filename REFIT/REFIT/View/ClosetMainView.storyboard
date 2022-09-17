@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,8 +16,105 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAb-kM-Zgd">
+                                <rect key="frame" x="0.0" y="92" width="414" height="44"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2V-SJ-EJm">
+                                        <rect key="frame" x="0.0" y="0.0" width="552" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svM-22-pro">
+                                                <rect key="frame" x="20" y="4" width="56" height="36"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="전체">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sL-20-HMK">
+                                                <rect key="frame" x="96" y="4" width="56" height="36"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="전체">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tED-w4-u2v">
+                                                <rect key="frame" x="172" y="4" width="56" height="36"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="전체">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r97-4U-HLz">
+                                                <rect key="frame" x="248" y="4" width="56" height="36"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="전체">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lG5-4U-XyO">
+                                                <rect key="frame" x="324" y="4" width="56" height="36"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="전체">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oec-Bo-Jn1">
+                                                <rect key="frame" x="400" y="4" width="56" height="36"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="전체">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPu-Jh-wmZ">
+                                                <rect key="frame" x="476" y="4" width="56" height="36"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="전체">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="tED-w4-u2v" firstAttribute="centerY" secondItem="H2V-SJ-EJm" secondAttribute="centerY" id="70c-02-3ui"/>
+                                            <constraint firstItem="lG5-4U-XyO" firstAttribute="leading" secondItem="r97-4U-HLz" secondAttribute="trailing" constant="20" id="7ny-3o-Agm"/>
+                                            <constraint firstItem="svM-22-pro" firstAttribute="leading" secondItem="H2V-SJ-EJm" secondAttribute="leading" constant="20" id="BhF-F3-hRC"/>
+                                            <constraint firstItem="oec-Bo-Jn1" firstAttribute="leading" secondItem="lG5-4U-XyO" secondAttribute="trailing" constant="20" id="Cgc-V6-Pqp"/>
+                                            <constraint firstItem="oec-Bo-Jn1" firstAttribute="centerY" secondItem="H2V-SJ-EJm" secondAttribute="centerY" id="I8r-qB-dxj"/>
+                                            <constraint firstItem="lG5-4U-XyO" firstAttribute="centerY" secondItem="H2V-SJ-EJm" secondAttribute="centerY" id="KAh-W8-eQQ"/>
+                                            <constraint firstItem="1sL-20-HMK" firstAttribute="leading" secondItem="svM-22-pro" secondAttribute="trailing" constant="20" id="MTz-pN-48V"/>
+                                            <constraint firstItem="1sL-20-HMK" firstAttribute="centerY" secondItem="H2V-SJ-EJm" secondAttribute="centerY" id="RDo-Yo-bzJ"/>
+                                            <constraint firstItem="tED-w4-u2v" firstAttribute="leading" secondItem="1sL-20-HMK" secondAttribute="trailing" constant="20" id="SVQ-gj-MTP"/>
+                                            <constraint firstItem="SPu-Jh-wmZ" firstAttribute="centerY" secondItem="H2V-SJ-EJm" secondAttribute="centerY" id="hX5-NV-Whu"/>
+                                            <constraint firstItem="r97-4U-HLz" firstAttribute="centerY" secondItem="H2V-SJ-EJm" secondAttribute="centerY" id="jdI-TT-m9L"/>
+                                            <constraint firstAttribute="trailing" secondItem="SPu-Jh-wmZ" secondAttribute="trailing" constant="20" id="lSX-L2-fyF"/>
+                                            <constraint firstItem="r97-4U-HLz" firstAttribute="leading" secondItem="tED-w4-u2v" secondAttribute="trailing" constant="20" id="wUf-1C-GrU"/>
+                                            <constraint firstItem="SPu-Jh-wmZ" firstAttribute="leading" secondItem="oec-Bo-Jn1" secondAttribute="trailing" constant="20" id="xsp-sD-N20"/>
+                                            <constraint firstItem="svM-22-pro" firstAttribute="centerY" secondItem="H2V-SJ-EJm" secondAttribute="centerY" id="yQC-oo-pwb"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="H2V-SJ-EJm" firstAttribute="top" secondItem="4UK-L2-xwU" secondAttribute="top" id="4Nh-RF-0G5"/>
+                                    <constraint firstItem="H2V-SJ-EJm" firstAttribute="leading" secondItem="4UK-L2-xwU" secondAttribute="leading" id="5cF-L6-pCf"/>
+                                    <constraint firstItem="H2V-SJ-EJm" firstAttribute="trailing" secondItem="4UK-L2-xwU" secondAttribute="trailing" id="kOa-MZ-wT3"/>
+                                    <constraint firstItem="H2V-SJ-EJm" firstAttribute="bottom" secondItem="4UK-L2-xwU" secondAttribute="bottom" id="odf-PH-8y5"/>
+                                    <constraint firstItem="H2V-SJ-EJm" firstAttribute="height" secondItem="SgH-bd-yYk" secondAttribute="height" id="tgb-wZ-1VP"/>
+                                    <constraint firstAttribute="height" constant="44" id="zSM-BN-0kn"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="4UK-L2-xwU"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="SgH-bd-yYk"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DAb-kM-Zgd" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="2Cj-oM-fUh"/>
+                            <constraint firstItem="DAb-kM-Zgd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="EFT-gO-gol"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="DAb-kM-Zgd" secondAttribute="bottom" constant="677" id="LZ1-kC-UdE"/>
+                            <constraint firstItem="DAb-kM-Zgd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="44" id="V10-L3-Rw3"/>
+                            <constraint firstItem="DAb-kM-Zgd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fgg-NU-Ahd"/>
+                            <constraint firstItem="DAb-kM-Zgd" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ots-UC-lzr"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="closetIcon" id="92j-e0-iut"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -27,5 +126,8 @@
     </scenes>
     <resources>
         <image name="closetIcon" width="26" height="26"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
