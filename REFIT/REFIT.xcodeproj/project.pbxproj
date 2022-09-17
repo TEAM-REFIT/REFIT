@@ -53,6 +53,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		83AF5E2B28D64BA900608C1F /* Design */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
 		83BEC86228CF7A56005BB854 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +87,7 @@
 				83D6243A28D2FB37008DD677 /* Model */,
 				83D6243B28D2FB5F008DD677 /* ViewController */,
 				83D6243928D2FB2D008DD677 /* View */,
+				83AF5E2B28D64BA900608C1F /* Design */,
 			);
 			path = REFIT;
 			sourceTree = "<group>";
