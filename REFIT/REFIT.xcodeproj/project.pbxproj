@@ -14,11 +14,11 @@
 		83BEC87628CF7A56005BB854 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83BEC87428CF7A56005BB854 /* Main.storyboard */; };
 		83BEC87828CF7A57005BB854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83BEC87728CF7A57005BB854 /* Assets.xcassets */; };
 		83BEC87B28CF7A57005BB854 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83BEC87928CF7A57005BB854 /* LaunchScreen.storyboard */; };
+		83C2793528D63D510071F392 /* ClosetMainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83C2793428D63D510071F392 /* ClosetMainView.storyboard */; };
 		83D6243628D2EE68008DD677 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 83D6243528D2EE68008DD677 /* FirebaseAnalytics */; };
 		83D6243828D2EE68008DD677 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 83D6243728D2EE68008DD677 /* FirebaseFirestore */; };
 		83D6243D28D2FBAB008DD677 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D6243C28D2FBAB008DD677 /* Model.swift */; };
 		83D6244328D3FCC8008DD677 /* ClosetMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D6244228D3FCC8008DD677 /* ClosetMainViewController.swift */; };
-		83D6244528D402D3008DD677 /* ClosetMainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83D6244428D402D3008DD677 /* ClosetMainView.storyboard */; };
 		83D6244728D40332008DD677 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D6244628D40332008DD677 /* SettingViewController.swift */; };
 		83D6244928D40371008DD677 /* SettingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83D6244828D40371008DD677 /* SettingView.storyboard */; };
 /* End PBXBuildFile section */
@@ -33,9 +33,9 @@
 		83BEC87728CF7A57005BB854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83BEC87A28CF7A57005BB854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83BEC87C28CF7A57005BB854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83C2793428D63D510071F392 /* ClosetMainView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ClosetMainView.storyboard; sourceTree = "<group>"; };
 		83D6243C28D2FBAB008DD677 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		83D6244228D3FCC8008DD677 /* ClosetMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetMainViewController.swift; sourceTree = "<group>"; };
-		83D6244428D402D3008DD677 /* ClosetMainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClosetMainView.storyboard; sourceTree = "<group>"; };
 		83D6244628D40332008DD677 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		83D6244828D40371008DD677 /* SettingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingView.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,8 +89,8 @@
 			children = (
 				83BEC87928CF7A57005BB854 /* LaunchScreen.storyboard */,
 				83BEC87428CF7A56005BB854 /* Main.storyboard */,
-				83D6244428D402D3008DD677 /* ClosetMainView.storyboard */,
 				83D6244828D40371008DD677 /* SettingView.storyboard */,
+				83C2793428D63D510071F392 /* ClosetMainView.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -182,7 +182,7 @@
 				83BEC87B28CF7A57005BB854 /* LaunchScreen.storyboard in Resources */,
 				83BEC87828CF7A57005BB854 /* Assets.xcassets in Resources */,
 				83BEC87628CF7A56005BB854 /* Main.storyboard in Resources */,
-				83D6244528D402D3008DD677 /* ClosetMainView.storyboard in Resources */,
+				83C2793528D63D510071F392 /* ClosetMainView.storyboard in Resources */,
 				83A0D28128D43BEE001FE88A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
