@@ -7,7 +7,17 @@ class ClosetMainViewController:UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // MARK: categoryBar style setting
+        initCategoryBar()
+    }
+    
+    @IBAction func serchBtnTapped(_ sender: Any) {
+        print("아직 안 되지롱")
+        label.text = "아직 안 되지롱😝"
+    }
+    
+    
+    /// init to cartegoryBar
+    func initCategoryBar() {
         // text size setting
         self.categoryBar.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)], for: .normal)
         
@@ -21,11 +31,6 @@ class ClosetMainViewController:UIViewController {
         
         // Divider clear
         self.categoryBar.setDividerImage(UIImage(), forLeftSegmentState: .selected, rightSegmentState: .normal, barMetrics: .default)
-    }
-    
-    @IBAction func serchBtnTapped(_ sender: Any) {
-        print("아직 안 되지롱")
-        label.text = "아직 안 되지롱😝"
     }
     
 }
