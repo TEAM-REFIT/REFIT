@@ -129,13 +129,13 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="allClosetView" destination="Aae-Bl-iIm" id="cPM-aB-3nS"/>
+                        <outlet property="allClosetView" destination="TsR-3Q-fqC" id="7lI-IP-H4n"/>
                         <outlet property="categoryBar" destination="xRl-O9-nka" id="Uut-Nr-MfB"/>
-                        <outlet property="etcClosetView" destination="mnv-Ih-9Vx" id="Wcc-wf-0t4"/>
-                        <outlet property="outerwearClosetView" destination="mDk-ed-ziS" id="m6S-W9-aTZ"/>
-                        <outlet property="pantsClosetView" destination="TsR-3Q-fqC" id="C3D-Lc-tCT"/>
-                        <outlet property="shoesClosetView" destination="n9E-Dt-dHh" id="QOs-Lb-osg"/>
-                        <outlet property="topClosetView" destination="Cm9-OE-wbp" id="Bcy-Xw-w3L"/>
+                        <outlet property="etcClosetView" destination="Aae-Bl-iIm" id="BKM-SF-w1R"/>
+                        <outlet property="outerwearClosetView" destination="mnv-Ih-9Vx" id="WSO-2i-IE9"/>
+                        <outlet property="pantsClosetView" destination="n9E-Dt-dHh" id="Ppy-Gi-OCF"/>
+                        <outlet property="shoesClosetView" destination="Cm9-OE-wbp" id="TDh-2D-8V3"/>
+                        <outlet property="topClosetView" destination="mDk-ed-ziS" id="N8j-SI-6Er"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -174,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Es6-fT-lOP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2629" y="975"/>
+            <point key="canvasLocation" x="1320" y="971"/>
         </scene>
         <!--All Closet View Controller-->
         <scene sceneID="Gvb-Cf-7qf">
@@ -217,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8uX-hP-he8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-667" y="975"/>
+            <point key="canvasLocation" x="2623" y="971"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="R0i-4t-ypW">
@@ -232,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Pz-NY-pcE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1310" y="975"/>
+            <point key="canvasLocation" x="1" y="971"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Tp0-pW-4ae">
@@ -247,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mmh-Zh-cUD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1971" y="975"/>
+            <point key="canvasLocation" x="662" y="971"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="PIc-pb-9UB">
@@ -262,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qe0-ZD-XaS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="652" y="975"/>
+            <point key="canvasLocation" x="-661" y="971"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="OOg-0i-CtI">
@@ -277,7 +277,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MKj-wK-s0O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12" y="975"/>
+            <point key="canvasLocation" x="1972" y="971"/>
         </scene>
     </scenes>
     <resources>
