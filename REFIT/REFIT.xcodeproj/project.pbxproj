@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		83A0D28128D43BEE001FE88A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83A0D28028D43BEE001FE88A /* GoogleService-Info.plist */; };
+		83AF5E2F28D8107D00608C1F /* AllClosetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AF5E2E28D8107D00608C1F /* AllClosetViewController.swift */; };
 		83BEC86F28CF7A56005BB854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BEC86E28CF7A56005BB854 /* AppDelegate.swift */; };
 		83BEC87128CF7A56005BB854 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BEC87028CF7A56005BB854 /* SceneDelegate.swift */; };
 		83BEC87328CF7A56005BB854 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BEC87228CF7A56005BB854 /* MainViewController.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		83A0D28028D43BEE001FE88A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		83AF5E2E28D8107D00608C1F /* AllClosetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllClosetViewController.swift; sourceTree = "<group>"; };
 		83BEC86B28CF7A56005BB854 /* REFIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = REFIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83BEC86E28CF7A56005BB854 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83BEC87028CF7A56005BB854 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		83AF5E2C28D8102200608C1F /* ClosetView */ = {
+			isa = PBXGroup;
+			children = (
+				83C2793428D63D510071F392 /* ClosetMainView.storyboard */,
+			);
+			path = ClosetView;
+			sourceTree = "<group>";
+		};
+		83AF5E2D28D8104300608C1F /* ClosetViewController */ = {
+			isa = PBXGroup;
+			children = (
+				83D6244228D3FCC8008DD677 /* ClosetMainViewController.swift */,
+				83AF5E2E28D8107D00608C1F /* AllClosetViewController.swift */,
+			);
+			path = ClosetViewController;
+			sourceTree = "<group>";
+		};
 		83BEC86228CF7A56005BB854 = {
 			isa = PBXGroup;
 			children = (
@@ -90,7 +109,7 @@
 				83BEC87928CF7A57005BB854 /* LaunchScreen.storyboard */,
 				83BEC87428CF7A56005BB854 /* Main.storyboard */,
 				83D6244828D40371008DD677 /* SettingView.storyboard */,
-				83C2793428D63D510071F392 /* ClosetMainView.storyboard */,
+				83AF5E2C28D8102200608C1F /* ClosetView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -107,8 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				83BEC87228CF7A56005BB854 /* MainViewController.swift */,
-				83D6244228D3FCC8008DD677 /* ClosetMainViewController.swift */,
 				83D6244628D40332008DD677 /* SettingViewController.swift */,
+				83AF5E2D28D8104300608C1F /* ClosetViewController */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -198,6 +217,7 @@
 				83BEC86F28CF7A56005BB854 /* AppDelegate.swift in Sources */,
 				83BEC87128CF7A56005BB854 /* SceneDelegate.swift in Sources */,
 				83D6244328D3FCC8008DD677 /* ClosetMainViewController.swift in Sources */,
+				83AF5E2F28D8107D00608C1F /* AllClosetViewController.swift in Sources */,
 				83D6243D28D2FBAB008DD677 /* Model.swift in Sources */,
 				83D6244728D40332008DD677 /* SettingViewController.swift in Sources */,
 			);
