@@ -1,6 +1,6 @@
 import UIKit
 
-class ClosetMainViewController:UIViewController {
+class MainClosetViewController:UIViewController {
     
     @IBOutlet weak var categoryBar: UISegmentedControl!
     
@@ -31,6 +31,11 @@ class ClosetMainViewController:UIViewController {
         } else if sender.selectedSegmentIndex == 5 {
             showEtcClosetView()
         }
+    }
+    
+    @IBAction func addClothesBtnTapped(_ sender: Any) {
+        let addClosetViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddClosetView") as! AddClosetViewController
+        self.navigationController?.pushViewController(addClosetViewController, animated: true)
     }
     
     func showAllClosetView() {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83353C6F28D9A66B00EB80A7 /* AddClosetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83353C6E28D9A66B00EB80A7 /* AddClosetViewController.swift */; };
 		83A0D28128D43BEE001FE88A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83A0D28028D43BEE001FE88A /* GoogleService-Info.plist */; };
 		83AF5E2F28D8107D00608C1F /* AllClosetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AF5E2E28D8107D00608C1F /* AllClosetViewController.swift */; };
 		83BEC86F28CF7A56005BB854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BEC86E28CF7A56005BB854 /* AppDelegate.swift */; };
@@ -15,16 +16,17 @@
 		83BEC87628CF7A56005BB854 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83BEC87428CF7A56005BB854 /* Main.storyboard */; };
 		83BEC87828CF7A57005BB854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83BEC87728CF7A57005BB854 /* Assets.xcassets */; };
 		83BEC87B28CF7A57005BB854 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83BEC87928CF7A57005BB854 /* LaunchScreen.storyboard */; };
-		83C2793528D63D510071F392 /* ClosetMainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83C2793428D63D510071F392 /* ClosetMainView.storyboard */; };
+		83C2793528D63D510071F392 /* MainClosetView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83C2793428D63D510071F392 /* MainClosetView.storyboard */; };
 		83D6243628D2EE68008DD677 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 83D6243528D2EE68008DD677 /* FirebaseAnalytics */; };
 		83D6243828D2EE68008DD677 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 83D6243728D2EE68008DD677 /* FirebaseFirestore */; };
 		83D6243D28D2FBAB008DD677 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D6243C28D2FBAB008DD677 /* Model.swift */; };
-		83D6244328D3FCC8008DD677 /* ClosetMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D6244228D3FCC8008DD677 /* ClosetMainViewController.swift */; };
+		83D6244328D3FCC8008DD677 /* MainClosetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D6244228D3FCC8008DD677 /* MainClosetViewController.swift */; };
 		83D6244728D40332008DD677 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D6244628D40332008DD677 /* SettingViewController.swift */; };
 		83D6244928D40371008DD677 /* SettingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83D6244828D40371008DD677 /* SettingView.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		83353C6E28D9A66B00EB80A7 /* AddClosetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClosetViewController.swift; sourceTree = "<group>"; };
 		83A0D28028D43BEE001FE88A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		83AF5E2E28D8107D00608C1F /* AllClosetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllClosetViewController.swift; sourceTree = "<group>"; };
 		83BEC86B28CF7A56005BB854 /* REFIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = REFIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,9 +37,9 @@
 		83BEC87728CF7A57005BB854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83BEC87A28CF7A57005BB854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83BEC87C28CF7A57005BB854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		83C2793428D63D510071F392 /* ClosetMainView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ClosetMainView.storyboard; sourceTree = "<group>"; };
+		83C2793428D63D510071F392 /* MainClosetView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainClosetView.storyboard; sourceTree = "<group>"; };
 		83D6243C28D2FBAB008DD677 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		83D6244228D3FCC8008DD677 /* ClosetMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetMainViewController.swift; sourceTree = "<group>"; };
+		83D6244228D3FCC8008DD677 /* MainClosetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainClosetViewController.swift; sourceTree = "<group>"; };
 		83D6244628D40332008DD677 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		83D6244828D40371008DD677 /* SettingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingView.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -55,10 +57,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		83353C6D28D9A63800EB80A7 /* AddClosetViewController */ = {
+			isa = PBXGroup;
+			children = (
+				83353C6E28D9A66B00EB80A7 /* AddClosetViewController.swift */,
+			);
+			path = AddClosetViewController;
+			sourceTree = "<group>";
+		};
 		83AF5E2C28D8102200608C1F /* ClosetView */ = {
 			isa = PBXGroup;
 			children = (
-				83C2793428D63D510071F392 /* ClosetMainView.storyboard */,
+				83C2793428D63D510071F392 /* MainClosetView.storyboard */,
+				83AF5E3228D9A2AE00608C1F /* AddClosetView */,
 			);
 			path = ClosetView;
 			sourceTree = "<group>";
@@ -66,10 +77,18 @@
 		83AF5E2D28D8104300608C1F /* ClosetViewController */ = {
 			isa = PBXGroup;
 			children = (
-				83D6244228D3FCC8008DD677 /* ClosetMainViewController.swift */,
+				83D6244228D3FCC8008DD677 /* MainClosetViewController.swift */,
 				83AF5E2E28D8107D00608C1F /* AllClosetViewController.swift */,
+				83353C6D28D9A63800EB80A7 /* AddClosetViewController */,
 			);
 			path = ClosetViewController;
+			sourceTree = "<group>";
+		};
+		83AF5E3228D9A2AE00608C1F /* AddClosetView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddClosetView;
 			sourceTree = "<group>";
 		};
 		83BEC86228CF7A56005BB854 = {
@@ -201,7 +220,7 @@
 				83BEC87B28CF7A57005BB854 /* LaunchScreen.storyboard in Resources */,
 				83BEC87828CF7A57005BB854 /* Assets.xcassets in Resources */,
 				83BEC87628CF7A56005BB854 /* Main.storyboard in Resources */,
-				83C2793528D63D510071F392 /* ClosetMainView.storyboard in Resources */,
+				83C2793528D63D510071F392 /* MainClosetView.storyboard in Resources */,
 				83A0D28128D43BEE001FE88A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,8 +234,9 @@
 			files = (
 				83BEC87328CF7A56005BB854 /* MainViewController.swift in Sources */,
 				83BEC86F28CF7A56005BB854 /* AppDelegate.swift in Sources */,
+				83353C6F28D9A66B00EB80A7 /* AddClosetViewController.swift in Sources */,
 				83BEC87128CF7A56005BB854 /* SceneDelegate.swift in Sources */,
-				83D6244328D3FCC8008DD677 /* ClosetMainViewController.swift in Sources */,
+				83D6244328D3FCC8008DD677 /* MainClosetViewController.swift in Sources */,
 				83AF5E2F28D8107D00608C1F /* AllClosetViewController.swift in Sources */,
 				83D6243D28D2FBAB008DD677 /* Model.swift in Sources */,
 				83D6244728D40332008DD677 /* SettingViewController.swift in Sources */,

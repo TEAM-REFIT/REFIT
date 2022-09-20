@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ClosetMainViewNavigationController-->
+        <!--MainClosetViewNavigationController-->
         <scene sceneID="lAB-TN-IOV">
             <objects>
-                <viewControllerPlaceholder storyboardName="ClosetMainView" referencedIdentifier="ClosetMainViewNavigationController" id="a6C-7p-8Hk" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="MainClosetView" referencedIdentifier="MainClosetViewNavigationController" id="a6C-7p-8Hk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="QBx-5s-MkM"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HjC-Vf-8Ld" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
