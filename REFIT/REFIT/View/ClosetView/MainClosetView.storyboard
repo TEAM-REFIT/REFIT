@@ -175,21 +175,6 @@
             </objects>
             <point key="canvasLocation" x="981.15942028985512" y="67.633928571428569"/>
         </scene>
-        <!--Add Closet View Controller-->
-        <scene sceneID="4Zg-yJ-Fvh">
-            <objects>
-                <viewController storyboardIdentifier="AddClosetView" id="SXX-Xf-TdM" customClass="AddClosetViewController" customModule="REFIT" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wvL-KM-lIE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="APp-eT-Y9k"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ija-T5-2Es" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1743" y="68"/>
-        </scene>
         <!--All Closet View Controller-->
         <scene sceneID="PIc-pb-9UB">
             <objects>
@@ -345,6 +330,7 @@
             <point key="canvasLocation" x="1972" y="971"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="Frame 29" width="122" height="130"/>
         <image name="addClothesIcon" width="60" height="60"/>

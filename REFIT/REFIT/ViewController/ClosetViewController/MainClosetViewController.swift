@@ -13,8 +13,11 @@ class MainClosetViewController:UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         initCategoryBar()
         initContainerView()
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.pretendard(size: 18, family: .SemiBold)]
     }
     
     @IBAction func CategoryBarTapped(_ sender: UISegmentedControl) {
@@ -34,7 +37,8 @@ class MainClosetViewController:UIViewController {
     }
     
     @IBAction func addClothesBtnTapped(_ sender: Any) {
-        let addClosetViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddClosetView") as! AddClosetViewController
+        let storyBoardName = UIStoryboard(name: "AddClosetView", bundle: nil)
+        let addClosetViewController = storyBoardName.instantiateViewController(withIdentifier: "AddClosetView") as! AddClosetViewController
         self.navigationController?.pushViewController(addClosetViewController, animated: true)
     }
     
@@ -97,10 +101,10 @@ class MainClosetViewController:UIViewController {
     /// init to cartegoryBar
     func initCategoryBar() {
         // text size setting
-        self.categoryBar.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)], for: .normal)
+        self.categoryBar.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.pretendard(size: 17, family: .Medium)], for: .normal)
         
         // selected text setting
-        self.categoryBar.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black, .font: UIFont.systemFont(ofSize: 18, weight: .heavy)], for: .selected)
+        self.categoryBar.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black, .font: UIFont.pretendard(size: 18, family: .Bold)], for: .selected)
         
         // Background color clear
         self.categoryBar.setBackgroundImage(UIImage(), for: .normal, barMetrics: .default)
