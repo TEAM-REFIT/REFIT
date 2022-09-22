@@ -13,11 +13,11 @@ class MainClosetViewController:UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //navigation bar title font setting
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.pretendard(size: 18, family: .SemiBold)]
         
         initCategoryBar()
         initContainerView()
-        
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.pretendard(size: 18, family: .SemiBold)]
     }
     
     @IBAction func CategoryBarTapped(_ sender: UISegmentedControl) {
