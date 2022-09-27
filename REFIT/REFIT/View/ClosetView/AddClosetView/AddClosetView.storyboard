@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -12,21 +12,21 @@
         <!--Add Closet View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="AddClosetView" id="Y6W-OH-hqX" customClass="AddClosetViewController" customModule="REFIT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddClosetView" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" customClass="AddClosetViewController" customModule="REFIT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Gq-zP-aex">
-                                <rect key="frame" x="0.0" y="47" width="390" height="375"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Gq-zP-aex">
+                                <rect key="frame" x="0.0" y="48" width="414" height="414"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="375" id="gnA-Vz-Hbc"/>
+                                    <constraint firstAttribute="width" secondItem="1Gq-zP-aex" secondAttribute="height" multiplier="1:1" id="3WV-2w-LrG"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLN-sQ-7Q3">
-                                <rect key="frame" x="0.0" y="47" width="390" height="375"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="414"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="375" id="s9u-wC-4e6"/>
+                                    <constraint firstAttribute="width" secondItem="XLN-sQ-7Q3" secondAttribute="height" multiplier="1:1" id="ZPn-yp-Otl"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
@@ -38,12 +38,12 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="XLN-sQ-7Q3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="3C8-UN-FaY"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1Gq-zP-aex" secondAttribute="trailing" id="G63-mb-ipF"/>
-                            <constraint firstItem="XLN-sQ-7Q3" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="YyR-cc-WJa"/>
-                            <constraint firstItem="XLN-sQ-7Q3" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="iIm-bL-fSf"/>
-                            <constraint firstItem="1Gq-zP-aex" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="js1-fO-mKl"/>
-                            <constraint firstItem="1Gq-zP-aex" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="sYU-Ii-SdK"/>
+                            <constraint firstItem="1Gq-zP-aex" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="C4d-9M-kiJ"/>
+                            <constraint firstItem="1Gq-zP-aex" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Vif-Yi-5ix"/>
+                            <constraint firstItem="XLN-sQ-7Q3" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="aS8-2M-0hW"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="XLN-sQ-7Q3" secondAttribute="trailing" id="e8K-iy-xPd"/>
+                            <constraint firstItem="XLN-sQ-7Q3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="jMq-5X-VTh"/>
+                            <constraint firstItem="1Gq-zP-aex" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pbr-lK-2In"/>
                         </constraints>
                     </view>
                     <connections>
@@ -52,7 +52,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="81.538461538461533" y="-2.1327014218009479"/>
+            <point key="canvasLocation" x="81.159420289855078" y="-2.6785714285714284"/>
         </scene>
     </scenes>
     <resources>
