@@ -32,9 +32,7 @@ class AddClosetViewController: UIViewController {
     }
     
     func initNavigationBar() {
-        //remove navigation bar item title
-        self.navigationController?.navigationBar.topItem?.title = ""
-//        self.navigationItem.title = "옷 등록"
+        self.navigationItem.title = "옷 등록"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.pretendard(size: 18, family: .SemiBold)]
     }
 }

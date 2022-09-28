@@ -29,7 +29,7 @@
             </objects>
             <point key="canvasLocation" x="71.014492753623188" y="67.633928571428569"/>
         </scene>
-        <!--내 옷장-->
+        <!--Main Closet View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="MainClosetView" id="Y6W-OH-hqX" customClass="MainClosetViewController" customModule="REFIT" customModuleProvider="target" sceneMemberID="viewController">
@@ -155,7 +155,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="UOE-dN-kUb" secondAttribute="trailing" constant="20" id="yfK-Cl-8iN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="내 옷장" id="SUL-BN-Rnd">
+                    <navigationItem key="navigationItem" id="SUL-BN-Rnd">
                         <barButtonItem key="rightBarButtonItem" image="searchIcon" id="mBs-ym-80H">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>

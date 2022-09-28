@@ -14,10 +14,16 @@ class MainClosetViewController:UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //navigation bar title font setting
+        self.navigationItem.title = "내 옷장"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.pretendard(size: 18, family: .SemiBold)]
         
         initCategoryBar()
         initContainerView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("viewWillAppear")
     }
     
     @IBAction func CategoryBarTapped(_ sender: UISegmentedControl) {
