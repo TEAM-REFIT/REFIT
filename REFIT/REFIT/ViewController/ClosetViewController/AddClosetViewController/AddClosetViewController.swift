@@ -2,14 +2,35 @@ import UIKit
 
 class AddClosetViewController: UIViewController {
     
+    // imageView
     @IBOutlet weak var clothesImageView: UIImageView!
+    
+    // title
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    // slider
+    @IBOutlet weak var sliderLabel: UILabel!
+    
+    // category
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var categoryTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        initTextFont()
+        
         initNavigationBar()
+        
+        createPickerView()
+        
+//        categoryTextField.layer.cornerRadius = 22
+//        categoryTextField.layer.borderWidth = 1
+//        categoryTextField.layer.borderColor = UIColor.black.cgColor
         
     }
     
+    // 이미지 넣기
     @IBAction func chageImgBtntapped(_ sender: Any) {
         
         let picker = UIImagePickerController()
@@ -35,6 +56,57 @@ class AddClosetViewController: UIViewController {
         self.navigationItem.title = "옷 등록"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.pretendard(size: 18, family: .SemiBold)]
     }
+    
+    // text font
+    func initTextFont() {
+        // title
+        titleLabel.text = "제목*"
+        titleLabel.font = UIFont.pretendard(size: 18, family: .Bold)
+        
+        // slider
+        sliderLabel.text = "옷과의 친밀도"
+        sliderLabel.font = UIFont.pretendard(size: 18, family: .Bold)
+        
+        //category
+        categoryLabel.text = "카테고리*"
+        categoryLabel.font = UIFont.pretendard(size: 18, family: .Bold)
+    }
+    
+    // PickerView
+    let categoryArr: [String] = ["상의", "하의", "아우터", "신발", "기타"]
+    
+    func createPickerView() {
+        let pickerView = UIPickerView()
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        categoryTextField.tintColor = .clear
+        
+        // 툴바 세팅
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        
+        let btnDone = UIBarButtonItem(title: "확인", style: .done, target: self, action: #selector(onPickDone))
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let btnCancel = UIBarButtonItem(title: "취소", style: .done, target: self, action: #selector(onPickCancel))
+        toolBar.setItems([btnCancel , space , btnDone], animated: true)
+        toolBar.isUserInteractionEnabled = true
+        
+        categoryTextField.inputView = pickerView
+        categoryTextField.inputAccessoryView = toolBar
+    }
+    
+    // 피커뷰 > 확인 클릭
+    @objc func onPickDone() {
+        categoryTextField.resignFirstResponder() /// 피커뷰 내림
+    }
+         
+    // 피커뷰 > 취소 클릭
+    @objc func onPickCancel() {
+        categoryTextField.text = nil
+        categoryTextField.resignFirstResponder() /// 피커뷰 내림
+    }
+    
+    
 }
 
 extension AddClosetViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -53,4 +125,23 @@ extension AddClosetViewController: UIImagePickerControllerDelegate, UINavigation
         }
         clothesImageView.image = image
     }
+}
+
+extension AddClosetViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return categoryArr.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return categoryArr[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        categoryTextField.text = categoryArr[row]
+    }
+
 }
