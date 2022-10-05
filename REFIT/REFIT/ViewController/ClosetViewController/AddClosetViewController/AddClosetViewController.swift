@@ -1,36 +1,35 @@
 import UIKit
 
 class AddClosetViewController: UIViewController {
+    // hide keyboard
     
     // imageView
     @IBOutlet weak var clothesImageView: UIImageView!
     
     // title
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleTextFieldBorderView: UIView!
+    @IBOutlet weak var titleTextField: UITextField!
     
     // slider
     @IBOutlet weak var sliderLabel: UILabel!
     
     // category
     @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var categoryTextFieldBorderView: UIView!
     @IBOutlet weak var categoryTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         initTextFont()
-        
         initNavigationBar()
+        initTextField()
+        initKeyboard()
         
         createPickerView()
-        
-//        categoryTextField.layer.cornerRadius = 22
-//        categoryTextField.layer.borderWidth = 1
-//        categoryTextField.layer.borderColor = UIColor.black.cgColor
-        
     }
     
-    // 이미지 넣기
+    // add img
     @IBAction func chageImgBtntapped(_ sender: Any) {
         
         let picker = UIImagePickerController()
@@ -52,24 +51,9 @@ class AddClosetViewController: UIViewController {
         self.present(actionSheet, animated: true)
     }
     
-    func initNavigationBar() {
-        self.navigationItem.title = "옷 등록"
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.pretendard(size: 18, family: .SemiBold)]
-    }
-    
-    // text font
-    func initTextFont() {
-        // title
-        titleLabel.text = "제목*"
-        titleLabel.font = UIFont.pretendard(size: 18, family: .Bold)
-        
-        // slider
-        sliderLabel.text = "옷과의 친밀도"
-        sliderLabel.font = UIFont.pretendard(size: 18, family: .Bold)
-        
-        //category
-        categoryLabel.text = "카테고리*"
-        categoryLabel.font = UIFont.pretendard(size: 18, family: .Bold)
+    // keyboard open, find text field
+    func initKeyboard() {
+        titleTextField.delegate = self
     }
     
     // PickerView
@@ -106,6 +90,46 @@ class AddClosetViewController: UIViewController {
         categoryTextField.resignFirstResponder() /// 피커뷰 내림
     }
     
+    //MARK: - init
+    /// init Navigation bar
+    func initNavigationBar() {
+        self.navigationItem.title = "옷 등록"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.pretendard(size: 18, family: .SemiBold)]
+    }
+    
+    /// init text font
+    func initTextFont() {
+        // title
+        titleLabel.text = "제목*"
+        titleLabel.font = UIFont.pretendard(size: 18, family: .Bold)
+        
+        // slider
+        sliderLabel.text = "옷과의 친밀도"
+        sliderLabel.font = UIFont.pretendard(size: 18, family: .Bold)
+        
+        //category
+        categoryLabel.text = "카테고리*"
+        categoryLabel.font = UIFont.pretendard(size: 18, family: .Bold)
+    }
+    
+    /// initTextField
+    func initTextField() {
+        // title text field
+        titleTextFieldBorderView.layer.cornerRadius = 22
+        titleTextFieldBorderView.layer.borderWidth = 1
+        titleTextFieldBorderView.layer.borderColor = UIColor.lightGray.cgColor
+        
+        titleTextField.font = UIFont.pretendard(size: 16, family: .Regular)
+        titleTextField.placeholder = "ex)"
+        
+        // category text field
+        categoryTextFieldBorderView.layer.cornerRadius = 22
+        categoryTextFieldBorderView.layer.borderWidth = 1
+        categoryTextFieldBorderView.layer.borderColor = UIColor.lightGray.cgColor
+        
+        categoryTextField.font = UIFont.pretendard(size: 16, family: .Regular)
+        categoryTextField.placeholder = "카테고리를 선택해주세요!"
+    }
     
 }
 
@@ -144,4 +168,16 @@ extension AddClosetViewController: UIPickerViewDelegate, UIPickerViewDataSource 
         categoryTextField.text = categoryArr[row]
     }
 
+}
+
+// keyboard
+extension AddClosetViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+      if textField == titleTextField {
+        categoryTextField.becomeFirstResponder()
+      } else {
+        categoryTextField.resignFirstResponder()
+      }
+      return true
+  }
 }
