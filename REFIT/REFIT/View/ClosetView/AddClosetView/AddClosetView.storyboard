@@ -76,28 +76,8 @@
                                                     <constraint firstAttribute="trailing" secondItem="0jQ-Mn-8U5" secondAttribute="trailing" id="x3o-wa-A5C"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BdB-Ta-32Q">
-                                                <rect key="frame" x="30" y="530.5" width="354" height="59.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRE-qP-xCt">
-                                                        <rect key="frame" x="0.0" y="0.0" width="44" height="21.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="674-bA-i92">
-                                                        <rect key="frame" x="-2" y="29.5" width="358" height="31"/>
-                                                        <color key="minimumTrackTintColor" red="0.2627450980392157" green="0.95686274509803915" blue="0.027450980392156862" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </slider>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="674-bA-i92" secondAttribute="bottom" id="5iC-eZ-oPY"/>
-                                                    <constraint firstAttribute="trailing" secondItem="674-bA-i92" secondAttribute="trailing" id="Ymh-1v-wBB"/>
-                                                    <constraint firstItem="674-bA-i92" firstAttribute="leading" secondItem="BdB-Ta-32Q" secondAttribute="leading" id="r7E-wy-pv4"/>
-                                                </constraints>
-                                            </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1Ig-mn-PDa">
-                                                <rect key="frame" x="30" y="615" width="354" height="71.5"/>
+                                                <rect key="frame" x="30" y="530.5" width="354" height="71.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aH-04-6of">
                                                         <rect key="frame" x="0.0" y="0.0" width="44" height="21.5"/>
@@ -125,32 +105,54 @@
                                                     </view>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="O7m-mD-41N" firstAttribute="leading" secondItem="1Ig-mn-PDa" secondAttribute="leading" id="9rg-Zt-vWb"/>
-                                                    <constraint firstItem="9aH-04-6of" firstAttribute="leading" secondItem="1Ig-mn-PDa" secondAttribute="leading" id="NH0-aE-NLp"/>
-                                                    <constraint firstItem="9aH-04-6of" firstAttribute="top" secondItem="1Ig-mn-PDa" secondAttribute="top" id="Q7Z-IE-GXc"/>
-                                                    <constraint firstAttribute="bottom" secondItem="O7m-mD-41N" secondAttribute="bottom" id="WsL-96-tsr"/>
-                                                    <constraint firstAttribute="trailing" secondItem="O7m-mD-41N" secondAttribute="trailing" id="e8e-Wb-M6M"/>
+                                                    <constraint firstAttribute="trailing" secondItem="O7m-mD-41N" secondAttribute="trailing" id="PRx-8I-sK4"/>
+                                                    <constraint firstItem="9aH-04-6of" firstAttribute="leading" secondItem="1Ig-mn-PDa" secondAttribute="leading" id="YJV-Il-2He"/>
+                                                    <constraint firstItem="O7m-mD-41N" firstAttribute="leading" secondItem="1Ig-mn-PDa" secondAttribute="leading" id="YLF-Vp-ZJb"/>
+                                                    <constraint firstItem="9aH-04-6of" firstAttribute="top" secondItem="1Ig-mn-PDa" secondAttribute="top" id="gM4-UC-TRs"/>
+                                                    <constraint firstAttribute="bottom" secondItem="O7m-mD-41N" secondAttribute="bottom" id="hcj-ps-fda"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BdB-Ta-32Q">
+                                                <rect key="frame" x="30" y="622" width="354" height="59.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRE-qP-xCt">
+                                                        <rect key="frame" x="0.0" y="0.0" width="44" height="21.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="674-bA-i92">
+                                                        <rect key="frame" x="-2" y="29.5" width="358" height="31"/>
+                                                        <color key="minimumTrackTintColor" red="0.2627450980392157" green="0.95686274509803915" blue="0.027450980392156862" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </slider>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="eRE-qP-xCt" firstAttribute="top" secondItem="BdB-Ta-32Q" secondAttribute="top" id="4yx-mV-MuJ"/>
+                                                    <constraint firstItem="674-bA-i92" firstAttribute="leading" secondItem="BdB-Ta-32Q" secondAttribute="leading" id="Efd-G1-1pt"/>
+                                                    <constraint firstAttribute="bottom" secondItem="674-bA-i92" secondAttribute="bottom" id="WQM-64-yib"/>
+                                                    <constraint firstItem="eRE-qP-xCt" firstAttribute="leading" secondItem="BdB-Ta-32Q" secondAttribute="leading" id="ZiH-mK-Eei"/>
+                                                    <constraint firstAttribute="trailing" secondItem="674-bA-i92" secondAttribute="trailing" id="t52-z0-x3D"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="BdB-Ta-32Q" firstAttribute="leading" secondItem="n1Y-6c-yc5" secondAttribute="leading" constant="30" id="3lj-NF-vfY"/>
-                                            <constraint firstAttribute="bottom" secondItem="1Ig-mn-PDa" secondAttribute="bottom" constant="800" id="6mD-c5-2e2"/>
+                                            <constraint firstItem="1Ig-mn-PDa" firstAttribute="leading" secondItem="n1Y-6c-yc5" secondAttribute="leading" constant="30" id="6F1-In-XVK"/>
+                                            <constraint firstAttribute="trailing" secondItem="BdB-Ta-32Q" secondAttribute="trailing" constant="30" id="7Mr-gQ-VKp"/>
+                                            <constraint firstAttribute="trailing" secondItem="1Ig-mn-PDa" secondAttribute="trailing" constant="30" id="7bl-td-PAE"/>
                                             <constraint firstAttribute="trailing" secondItem="l5f-fq-j7A" secondAttribute="trailing" id="AYo-B5-ZnK"/>
                                             <constraint firstItem="hhE-5K-kAs" firstAttribute="leading" secondItem="n1Y-6c-yc5" secondAttribute="leading" constant="30" id="Bgp-d7-qT8"/>
+                                            <constraint firstItem="BdB-Ta-32Q" firstAttribute="top" secondItem="1Ig-mn-PDa" secondAttribute="bottom" constant="20" id="Ink-8K-jeo"/>
                                             <constraint firstItem="lKw-ZN-Uon" firstAttribute="top" secondItem="n1Y-6c-yc5" secondAttribute="top" id="JVl-ya-acW"/>
-                                            <constraint firstAttribute="trailing" secondItem="BdB-Ta-32Q" secondAttribute="trailing" constant="30" id="MdV-IJ-Joj"/>
-                                            <constraint firstItem="1Ig-mn-PDa" firstAttribute="top" secondItem="BdB-Ta-32Q" secondAttribute="bottom" constant="25" id="O7c-4M-Jh7"/>
-                                            <constraint firstItem="BdB-Ta-32Q" firstAttribute="top" secondItem="hhE-5K-kAs" secondAttribute="bottom" constant="20" id="Qbz-aB-umZ"/>
                                             <constraint firstItem="lKw-ZN-Uon" firstAttribute="leading" secondItem="n1Y-6c-yc5" secondAttribute="leading" id="ZGz-Vf-zVe"/>
                                             <constraint firstItem="l5f-fq-j7A" firstAttribute="leading" secondItem="n1Y-6c-yc5" secondAttribute="leading" id="gHm-Vm-4eV"/>
-                                            <constraint firstItem="1Ig-mn-PDa" firstAttribute="leading" secondItem="n1Y-6c-yc5" secondAttribute="leading" constant="30" id="iL9-gl-FIA"/>
+                                            <constraint firstItem="BdB-Ta-32Q" firstAttribute="leading" secondItem="n1Y-6c-yc5" secondAttribute="leading" constant="30" id="igd-yt-ZbI"/>
+                                            <constraint firstAttribute="bottom" secondItem="BdB-Ta-32Q" secondAttribute="bottom" constant="805" id="lEt-OP-bC9"/>
                                             <constraint firstItem="hhE-5K-kAs" firstAttribute="top" secondItem="lKw-ZN-Uon" secondAttribute="bottom" constant="25" id="mHF-D5-hsg"/>
                                             <constraint firstItem="l5f-fq-j7A" firstAttribute="top" secondItem="n1Y-6c-yc5" secondAttribute="top" id="o3C-5h-abU"/>
+                                            <constraint firstItem="1Ig-mn-PDa" firstAttribute="top" secondItem="hhE-5K-kAs" secondAttribute="bottom" constant="20" id="omW-mQ-pF4"/>
                                             <constraint firstAttribute="trailing" secondItem="lKw-ZN-Uon" secondAttribute="trailing" id="tVt-vM-EYU"/>
                                             <constraint firstAttribute="trailing" secondItem="hhE-5K-kAs" secondAttribute="trailing" constant="30" id="wbF-v1-DNz"/>
-                                            <constraint firstAttribute="trailing" secondItem="1Ig-mn-PDa" secondAttribute="trailing" constant="30" id="wy0-Js-B6i"/>
                                         </constraints>
                                     </view>
                                 </subviews>
