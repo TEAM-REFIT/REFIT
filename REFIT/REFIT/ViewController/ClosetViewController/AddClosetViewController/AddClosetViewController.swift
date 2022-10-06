@@ -51,11 +51,6 @@ class AddClosetViewController: UIViewController {
         self.present(actionSheet, animated: true)
     }
     
-    // keyboard open, find text field
-    func initKeyboard() {
-        titleTextField.delegate = self
-    }
-    
     // PickerView
     let categoryArr: [String] = ["상의", "하의", "아우터", "신발", "기타"]
     
@@ -131,6 +126,12 @@ class AddClosetViewController: UIViewController {
         categoryTextField.placeholder = "카테고리를 선택해주세요!"
     }
     
+    /// init keyboard
+    func initKeyboard() {
+        titleTextField.delegate = self
+        categoryTextField.delegate = self
+    }
+    
 }
 
 extension AddClosetViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -172,12 +173,39 @@ extension AddClosetViewController: UIPickerViewDelegate, UIPickerViewDataSource 
 
 // keyboard
 extension AddClosetViewController: UITextFieldDelegate {
-  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-      if textField == titleTextField {
-        categoryTextField.becomeFirstResponder()
-      } else {
-        categoryTextField.resignFirstResponder()
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+          if textField == titleTextField {
+            categoryTextField.becomeFirstResponder()
+          } else {
+            categoryTextField.resignFirstResponder()
+          }
+          return true
       }
-      return true
-  }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == titleTextField {
+            titleTextFieldBorderView.layer.cornerRadius = 22
+            titleTextFieldBorderView.layer.borderWidth = 1
+            titleTextFieldBorderView.layer.borderColor = UIColor.green.cgColor
+        } else if textField == categoryTextField {
+            categoryTextFieldBorderView.layer.cornerRadius = 22
+            categoryTextFieldBorderView.layer.borderWidth = 1
+            categoryTextFieldBorderView.layer.borderColor = UIColor.green.cgColor
+        } else {
+            return
+        }
+        }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == titleTextField {
+            titleTextFieldBorderView.layer.cornerRadius = 22
+            titleTextFieldBorderView.layer.borderWidth = 1
+            titleTextFieldBorderView.layer.borderColor = UIColor.lightGray.cgColor
+        } else if textField == categoryTextField {
+            categoryTextFieldBorderView.layer.cornerRadius = 22
+            categoryTextFieldBorderView.layer.borderWidth = 1
+            categoryTextFieldBorderView.layer.borderColor = UIColor.lightGray.cgColor
+        } else {
+            return
+        }
+        }
 }
