@@ -38,8 +38,6 @@ class AddClosetViewController: UIViewController {
         picker.allowsEditing = true
         picker.delegate = self
         
-        print("hi")
-        
         let actionSheet = UIAlertController(title: "의류 추가 방법", message: "의류 추가 방법을 선택해주세요.", preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "사진 촬영하여 추가하기", style: .default, handler: { _ in
                 self.present(picker, animated: true)
@@ -52,6 +50,7 @@ class AddClosetViewController: UIViewController {
         self.present(actionSheet, animated: true)
     }
     
+    // MARK: - UI setting
     // PickerView
     let categoryArr: [String] = ["상의", "하의", "아우터", "신발", "기타"]
     
@@ -83,12 +82,10 @@ class AddClosetViewController: UIViewController {
          
     // 피커뷰 > 취소 클릭
     @objc func onPickCancel() {
-        // transition PickerView
+        // Hide PickerView
         categoryTextField.text = nil
         categoryTextField.resignFirstResponder()
     }
-    
-    // keyboard
     
     //MARK: - init
     /// init Navigation bar
@@ -137,9 +134,6 @@ class AddClosetViewController: UIViewController {
         categoryTextField.delegate = self
         }
 }
-    
-
-
 
 //MARK: - Extension
 // image view
@@ -184,48 +178,44 @@ extension AddClosetViewController: UIPickerViewDelegate, UIPickerViewDataSource 
 extension AddClosetViewController: UITextFieldDelegate {
     // text field
     func textFieldDidBeginEditing(_ textField: UITextField) {
-            if textField == titleTextField {
-                titleTextFieldBorderView.layer.cornerRadius = 22
-                titleTextFieldBorderView.layer.borderWidth = 1
-                titleTextFieldBorderView.layer.borderColor = UIColor.green.cgColor
-                self.view.frame.origin.y = 0
-                self.view.frame.origin.y -= 15
-            } else if textField == categoryTextField {
-                categoryTextFieldBorderView.layer.cornerRadius = 22
-                categoryTextFieldBorderView.layer.borderWidth = 1
-                categoryTextFieldBorderView.layer.borderColor = UIColor.green.cgColor
-                self.view.frame.origin.y = 0
-                self.view.frame.origin.y -= 65
-            } else {
-                return
-            }
+        let SelectTextField = textField
+        switch SelectTextField {
+        case titleTextField:
+            titleTextFieldBorderView.layer.cornerRadius = 22
+            titleTextFieldBorderView.layer.borderWidth = 1
+            titleTextFieldBorderView.layer.borderColor = UIColor.green.cgColor
+            
+        case categoryTextField:
+            categoryTextFieldBorderView.layer.cornerRadius = 22
+            categoryTextFieldBorderView.layer.borderWidth = 1
+            categoryTextFieldBorderView.layer.borderColor = UIColor.green.cgColor
+        default:
+            return
         }
+    }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
-            if textField == titleTextField {
-                titleTextFieldBorderView.layer.cornerRadius = 22
-                titleTextFieldBorderView.layer.borderWidth = 1
-                titleTextFieldBorderView.layer.borderColor = UIColor.lightGray.cgColor
-                self.view.frame.origin.y = 0
-                textField.resignFirstResponder()
-            } else if textField == categoryTextField {
-                categoryTextFieldBorderView.layer.cornerRadius = 22
-                categoryTextFieldBorderView.layer.borderWidth = 1
-                categoryTextFieldBorderView.layer.borderColor = UIColor.lightGray.cgColor
-                self.view.frame.origin.y = 0
-                textField.resignFirstResponder()
-            } else {
-                return
-            }
+        let SelectTextField = textField
+        switch SelectTextField {
+        case titleTextField:
+            titleTextFieldBorderView.layer.cornerRadius = 22
+            titleTextFieldBorderView.layer.borderWidth = 1
+            titleTextFieldBorderView.layer.borderColor = UIColor.lightGray.cgColor
+        
+        case categoryTextField:
+            categoryTextFieldBorderView.layer.cornerRadius = 22
+            categoryTextFieldBorderView.layer.borderWidth = 1
+            categoryTextFieldBorderView.layer.borderColor = UIColor.lightGray.cgColor
+        default:
+            return
         }
+    }
     
     // keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
           if textField == titleTextField {
             textField.resignFirstResponder()
             categoryTextField.becomeFirstResponder()
-          } else {
-            categoryTextField.resignFirstResponder()
           }
           return true
       }
