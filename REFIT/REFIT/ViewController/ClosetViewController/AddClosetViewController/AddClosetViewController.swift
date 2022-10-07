@@ -28,7 +28,7 @@ class AddClosetViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initTextFont()
+        initTitleLabel()
         initNavigationBar()
         initTextField()
         initKeyboard()
@@ -62,45 +62,49 @@ class AddClosetViewController: UIViewController {
     // season
     @IBAction func seasonBtnTapped(_ sender: UIButton) {
         if sender == springBtn {
+            
             if springBtn.isSelected == false {
-                springBtn.backgroundColor = UIColor.darkGray
-                springBtn.setTitleColor(.white, for: .selected)
-                springBtn.isSelected = true
+                selectedButtonDesign(button: sender)
             } else {
-                springBtn.backgroundColor = UIColor.white
-                springBtn.setTitleColor(.gray, for: .normal)
-                springBtn.isSelected = false
+                notSelectedButtonDesign(button: sender)
             }
+            
         } else if sender == summerBtn {
+            
             if summerBtn.isSelected == false {
-                summerBtn.backgroundColor = UIColor.darkGray
-                summerBtn.setTitleColor(.white, for: .selected)
-                summerBtn.isSelected = true
+                selectedButtonDesign(button: sender)
             } else {
-                summerBtn.backgroundColor = UIColor.white
-                summerBtn.setTitleColor(.gray, for: .normal)
-                summerBtn.isSelected = false
+                notSelectedButtonDesign(button: sender)
             }
+            
         } else if sender == fallBtn {
+            
             if fallBtn.isSelected == false {
-                fallBtn.backgroundColor = UIColor.darkGray
-                fallBtn.setTitleColor(.white, for: .selected)
-                fallBtn.isSelected = true
+                selectedButtonDesign(button: sender)
             } else {
-                fallBtn.backgroundColor = UIColor.white
-                fallBtn.setTitleColor(.gray, for: .normal)
-                fallBtn.isSelected = false
+                notSelectedButtonDesign(button: sender)
             }
+            
         } else {
+            
             if winterBtn.isSelected == false {
-                winterBtn.backgroundColor = UIColor.darkGray
-                winterBtn.setTitleColor(.white, for: .selected)
-                winterBtn.isSelected = true
+                selectedButtonDesign(button: sender)
             } else {
-                winterBtn.backgroundColor = UIColor.white
-                winterBtn.setTitleColor(.gray, for: .normal)
-                winterBtn.isSelected = false
+                notSelectedButtonDesign(button: sender)
             }
+            
+        }
+        
+        func selectedButtonDesign(button: UIButton) {
+            button.backgroundColor = UIColor.darkGray
+            button.setTitleColor(.white, for: .selected)
+            button.isSelected = true
+        }
+        
+        func notSelectedButtonDesign(button: UIButton) {
+            button.backgroundColor = UIColor.white
+            button.setTitleColor(.gray, for: .normal)
+            button.isSelected = false
         }
     }
     // MARK: - UI setting
@@ -148,41 +152,41 @@ class AddClosetViewController: UIViewController {
     }
     
     /// init text font
-    func initTextFont() {
+    func initTitleLabel() {
         // title label
-        titleLabel.text = "제목*"
-        titleLabel.font = UIFont.pretendard(size: 18, family: .Bold)
+        titleLabelDesign(label: titleLabel, text: "제목*")
         
         //category label
-        categoryLabel.text = "카테고리*"
-        categoryLabel.font = UIFont.pretendard(size: 18, family: .Bold)
+        titleLabelDesign(label: categoryLabel, text: "카테고리*")
         
         // slider label
-        sliderLabel.text = "옷과의 친밀도"
-        sliderLabel.font = UIFont.pretendard(size: 18, family: .Bold)
+        titleLabelDesign(label: sliderLabel, text: "옷과의 친밀도")
         
         // season label
-        seasonLabel.text = "계절"
-        seasonLabel.font = UIFont.pretendard(size: 18, family: .Bold)
+        titleLabelDesign(label: seasonLabel, text: "계절")
+        
+        func titleLabelDesign(label: UILabel, text: String) {
+            label.text = text
+            label.font = UIFont.pretendard(size: 18, family: .Bold)
+        }
     }
     
     /// initTextField
     func initTextField() {
         // title text field
-        titleTextFieldBorderView.layer.cornerRadius = 22
-        titleTextFieldBorderView.layer.borderWidth = 1
-        titleTextFieldBorderView.layer.borderColor = UIColor.lightGray.cgColor
-        
-        titleTextField.font = UIFont.pretendard(size: 16, family: .Regular)
-        titleTextField.placeholder = "ex)"
+        textFieldDesign(textfieldBorderView: titleTextFieldBorderView, textField: titleTextField, placeholder: "제목을 입력해주세요!")
         
         // category text field
-        categoryTextFieldBorderView.layer.cornerRadius = 22
-        categoryTextFieldBorderView.layer.borderWidth = 1
-        categoryTextFieldBorderView.layer.borderColor = UIColor.lightGray.cgColor
+        textFieldDesign(textfieldBorderView: categoryTextFieldBorderView, textField: categoryTextField, placeholder: "카테고리를 선택해주세요!")
         
-        categoryTextField.font = UIFont.pretendard(size: 16, family: .Regular)
-        categoryTextField.placeholder = "카테고리를 선택해주세요!"
+        func textFieldDesign(textfieldBorderView: UIView, textField: UITextField, placeholder: String) {
+            textfieldBorderView.layer.cornerRadius = 22
+            textfieldBorderView.layer.borderWidth = 1
+            textfieldBorderView.layer.borderColor = UIColor.lightGray.cgColor
+            
+            textField.font = UIFont.pretendard(size: 16, family: .Regular)
+            textField.placeholder = placeholder
+        }
     }
     
     /// init keyboard
@@ -253,16 +257,11 @@ extension AddClosetViewController: UIPickerViewDelegate, UIPickerViewDataSource 
 extension AddClosetViewController: UITextFieldDelegate {
     // text field
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        let SelectTextField = textField
-        switch SelectTextField {
+        let SelectedTextField = textField
+        switch SelectedTextField {
         case titleTextField:
-            titleTextFieldBorderView.layer.cornerRadius = 22
-            titleTextFieldBorderView.layer.borderWidth = 1
             titleTextFieldBorderView.layer.borderColor = UIColor.green.cgColor
-            
         case categoryTextField:
-            categoryTextFieldBorderView.layer.cornerRadius = 22
-            categoryTextFieldBorderView.layer.borderWidth = 1
             categoryTextFieldBorderView.layer.borderColor = UIColor.green.cgColor
         default:
             return
@@ -270,16 +269,12 @@ extension AddClosetViewController: UITextFieldDelegate {
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
-        let SelectTextField = textField
-        switch SelectTextField {
+        let SelectedTextField = textField
+        switch SelectedTextField {
         case titleTextField:
-            titleTextFieldBorderView.layer.cornerRadius = 22
-            titleTextFieldBorderView.layer.borderWidth = 1
             titleTextFieldBorderView.layer.borderColor = UIColor.lightGray.cgColor
         
         case categoryTextField:
-            categoryTextFieldBorderView.layer.cornerRadius = 22
-            categoryTextFieldBorderView.layer.borderWidth = 1
             categoryTextFieldBorderView.layer.borderColor = UIColor.lightGray.cgColor
         default:
             return
