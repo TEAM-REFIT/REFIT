@@ -2,7 +2,7 @@ import UIKit
 
 class AddClosetViewController: UIViewController {
     // MARK: - Outlet
-    // imageView
+    // image view
     @IBOutlet weak var clothesImageView: UIImageView!
     
     // title
@@ -10,13 +10,21 @@ class AddClosetViewController: UIViewController {
     @IBOutlet weak var titleTextFieldBorderView: UIView!
     @IBOutlet weak var titleTextField: UITextField!
     
-    // slider
-    @IBOutlet weak var sliderLabel: UILabel!
-    
     // category
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var categoryTextFieldBorderView: UIView!
     @IBOutlet weak var categoryTextField: UITextField!
+    
+    // slider
+    @IBOutlet weak var sliderLabel: UILabel!
+    
+    // season button
+    @IBOutlet weak var seasonLabel: UILabel!
+    
+    @IBOutlet weak var springBtn: UIButton!
+    @IBOutlet weak var summerBtn: UIButton!
+    @IBOutlet weak var fallBtn: UIButton!
+    @IBOutlet weak var winterBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +32,7 @@ class AddClosetViewController: UIViewController {
         initNavigationBar()
         initTextField()
         initKeyboard()
+        initseasonBtn()
         
         createPickerView()
     }
@@ -50,6 +59,50 @@ class AddClosetViewController: UIViewController {
         self.present(actionSheet, animated: true)
     }
     
+    // season
+    @IBAction func seasonBtnTapped(_ sender: UIButton) {
+        if sender == springBtn {
+            if springBtn.isSelected == false {
+                springBtn.backgroundColor = UIColor.darkGray
+                springBtn.setTitleColor(.white, for: .selected)
+                springBtn.isSelected = true
+            } else {
+                springBtn.backgroundColor = UIColor.white
+                springBtn.setTitleColor(.gray, for: .normal)
+                springBtn.isSelected = false
+            }
+        } else if sender == summerBtn {
+            if summerBtn.isSelected == false {
+                summerBtn.backgroundColor = UIColor.darkGray
+                summerBtn.setTitleColor(.white, for: .selected)
+                summerBtn.isSelected = true
+            } else {
+                summerBtn.backgroundColor = UIColor.white
+                summerBtn.setTitleColor(.gray, for: .normal)
+                summerBtn.isSelected = false
+            }
+        } else if sender == fallBtn {
+            if fallBtn.isSelected == false {
+                fallBtn.backgroundColor = UIColor.darkGray
+                fallBtn.setTitleColor(.white, for: .selected)
+                fallBtn.isSelected = true
+            } else {
+                fallBtn.backgroundColor = UIColor.white
+                fallBtn.setTitleColor(.gray, for: .normal)
+                fallBtn.isSelected = false
+            }
+        } else {
+            if winterBtn.isSelected == false {
+                winterBtn.backgroundColor = UIColor.darkGray
+                winterBtn.setTitleColor(.white, for: .selected)
+                winterBtn.isSelected = true
+            } else {
+                winterBtn.backgroundColor = UIColor.white
+                winterBtn.setTitleColor(.gray, for: .normal)
+                winterBtn.isSelected = false
+            }
+        }
+    }
     // MARK: - UI setting
     // PickerView
     let categoryArr: [String] = ["상의", "하의", "아우터", "신발", "기타"]
@@ -96,17 +149,21 @@ class AddClosetViewController: UIViewController {
     
     /// init text font
     func initTextFont() {
-        // title
+        // title label
         titleLabel.text = "제목*"
         titleLabel.font = UIFont.pretendard(size: 18, family: .Bold)
         
-        // slider
+        //category label
+        categoryLabel.text = "카테고리*"
+        categoryLabel.font = UIFont.pretendard(size: 18, family: .Bold)
+        
+        // slider label
         sliderLabel.text = "옷과의 친밀도"
         sliderLabel.font = UIFont.pretendard(size: 18, family: .Bold)
         
-        //category
-        categoryLabel.text = "카테고리*"
-        categoryLabel.font = UIFont.pretendard(size: 18, family: .Bold)
+        // season label
+        seasonLabel.text = "계절"
+        seasonLabel.font = UIFont.pretendard(size: 18, family: .Bold)
     }
     
     /// initTextField
@@ -133,6 +190,24 @@ class AddClosetViewController: UIViewController {
         titleTextField.delegate = self
         categoryTextField.delegate = self
         }
+    
+    /// init  season button
+    func initseasonBtn() {
+        initBtn(button: springBtn, title: "봄")
+        initBtn(button: summerBtn, title: "여름")
+        initBtn(button: fallBtn, title: "가을")
+        initBtn(button: winterBtn, title: "겨울")
+        
+        func initBtn(button: UIButton, title: String) {
+            button.setTitle(title, for: .normal)
+            button.setTitleColor(.gray, for: .normal)
+            button.tintColor = UIColor.clear
+            button.titleLabel?.font = UIFont.pretendard(size: 16, family: .Regular)
+            button.layer.cornerRadius = 25
+            button.layer.borderWidth = 1
+            button.layer.borderColor = UIColor.lightGray.cgColor
+        }
+    }
 }
 
 //MARK: - Extension

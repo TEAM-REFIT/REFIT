@@ -134,6 +134,61 @@
                                                     <constraint firstAttribute="trailing" secondItem="674-bA-i92" secondAttribute="trailing" id="t52-z0-x3D"/>
                                                 </constraints>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Efj-1p-s3k">
+                                                <rect key="frame" x="30" y="701.5" width="354" height="112"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cde-DP-anA">
+                                                        <rect key="frame" x="0.0" y="0.0" width="44" height="21.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GDz-aH-o2L">
+                                                        <rect key="frame" x="0.0" y="41.5" width="354" height="70.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLf-7X-TEz">
+                                                                <rect key="frame" x="0.0" y="0.0" width="82.5" height="70.5"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Button" buttonSize="large"/>
+                                                                <connections>
+                                                                    <action selector="seasonBtnTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="wuK-QS-mmr"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0B-OD-CIk">
+                                                                <rect key="frame" x="90.5" y="0.0" width="82.5" height="70.5"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Button" buttonSize="large"/>
+                                                                <connections>
+                                                                    <action selector="seasonBtnTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="p1U-OG-cGT"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R73-JQ-2Jb">
+                                                                <rect key="frame" x="181" y="0.0" width="82.5" height="70.5"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Button" buttonSize="large"/>
+                                                                <connections>
+                                                                    <action selector="seasonBtnTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="5jf-TN-Mme"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yF-g6-GTB">
+                                                                <rect key="frame" x="271.5" y="0.0" width="82.5" height="70.5"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Button" buttonSize="large"/>
+                                                                <connections>
+                                                                    <action selector="seasonBtnTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="RtA-Pk-vwH"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="GDz-aH-o2L" firstAttribute="leading" secondItem="Efj-1p-s3k" secondAttribute="leading" id="GV1-1p-KFp"/>
+                                                    <constraint firstItem="Cde-DP-anA" firstAttribute="leading" secondItem="Efj-1p-s3k" secondAttribute="leading" id="ZEu-TD-WG2"/>
+                                                    <constraint firstAttribute="bottom" secondItem="GDz-aH-o2L" secondAttribute="bottom" id="fXp-e9-68Y"/>
+                                                    <constraint firstAttribute="trailing" secondItem="GDz-aH-o2L" secondAttribute="trailing" id="vcm-xv-5I1"/>
+                                                    <constraint firstItem="Cde-DP-anA" firstAttribute="top" secondItem="Efj-1p-s3k" secondAttribute="top" id="xl8-hh-GBJ"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -144,13 +199,16 @@
                                             <constraint firstItem="hhE-5K-kAs" firstAttribute="leading" secondItem="n1Y-6c-yc5" secondAttribute="leading" constant="30" id="Bgp-d7-qT8"/>
                                             <constraint firstItem="BdB-Ta-32Q" firstAttribute="top" secondItem="1Ig-mn-PDa" secondAttribute="bottom" constant="20" id="Ink-8K-jeo"/>
                                             <constraint firstItem="lKw-ZN-Uon" firstAttribute="top" secondItem="n1Y-6c-yc5" secondAttribute="top" id="JVl-ya-acW"/>
+                                            <constraint firstItem="Efj-1p-s3k" firstAttribute="top" secondItem="BdB-Ta-32Q" secondAttribute="bottom" constant="20" id="NRd-2G-NaQ"/>
                                             <constraint firstItem="lKw-ZN-Uon" firstAttribute="leading" secondItem="n1Y-6c-yc5" secondAttribute="leading" id="ZGz-Vf-zVe"/>
+                                            <constraint firstItem="Efj-1p-s3k" firstAttribute="leading" secondItem="n1Y-6c-yc5" secondAttribute="leading" constant="30" id="cc3-5O-kqq"/>
                                             <constraint firstItem="l5f-fq-j7A" firstAttribute="leading" secondItem="n1Y-6c-yc5" secondAttribute="leading" id="gHm-Vm-4eV"/>
                                             <constraint firstItem="BdB-Ta-32Q" firstAttribute="leading" secondItem="n1Y-6c-yc5" secondAttribute="leading" constant="30" id="igd-yt-ZbI"/>
                                             <constraint firstAttribute="bottom" secondItem="BdB-Ta-32Q" secondAttribute="bottom" constant="805" id="lEt-OP-bC9"/>
                                             <constraint firstItem="hhE-5K-kAs" firstAttribute="top" secondItem="lKw-ZN-Uon" secondAttribute="bottom" constant="25" id="mHF-D5-hsg"/>
                                             <constraint firstItem="l5f-fq-j7A" firstAttribute="top" secondItem="n1Y-6c-yc5" secondAttribute="top" id="o3C-5h-abU"/>
                                             <constraint firstItem="1Ig-mn-PDa" firstAttribute="top" secondItem="hhE-5K-kAs" secondAttribute="bottom" constant="20" id="omW-mQ-pF4"/>
+                                            <constraint firstAttribute="trailing" secondItem="Efj-1p-s3k" secondAttribute="trailing" constant="30" id="t22-KM-0ye"/>
                                             <constraint firstAttribute="trailing" secondItem="lKw-ZN-Uon" secondAttribute="trailing" id="tVt-vM-EYU"/>
                                             <constraint firstAttribute="trailing" secondItem="hhE-5K-kAs" secondAttribute="trailing" constant="30" id="wbF-v1-DNz"/>
                                         </constraints>
@@ -182,10 +240,15 @@
                         <outlet property="categoryTextField" destination="74z-tG-HUk" id="yGd-4r-BPm"/>
                         <outlet property="categoryTextFieldBorderView" destination="O7m-mD-41N" id="kO7-5N-WDi"/>
                         <outlet property="clothesImageView" destination="lKw-ZN-Uon" id="H6A-Mr-IYZ"/>
+                        <outlet property="fallBtn" destination="R73-JQ-2Jb" id="Bja-YT-3vg"/>
+                        <outlet property="seasonLabel" destination="Cde-DP-anA" id="4gX-8K-Gxe"/>
                         <outlet property="sliderLabel" destination="eRE-qP-xCt" id="uog-ww-WAH"/>
+                        <outlet property="springBtn" destination="bLf-7X-TEz" id="6Q0-FB-DBq"/>
+                        <outlet property="summerBtn" destination="w0B-OD-CIk" id="Io1-gw-87I"/>
                         <outlet property="titleLabel" destination="yZK-kO-2Fu" id="JEN-fu-HcW"/>
                         <outlet property="titleTextField" destination="aMl-bO-iWT" id="xas-d6-MGV"/>
                         <outlet property="titleTextFieldBorderView" destination="0jQ-Mn-8U5" id="zRx-Io-u2v"/>
+                        <outlet property="winterBtn" destination="4yF-g6-GTB" id="53u-8V-71c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
