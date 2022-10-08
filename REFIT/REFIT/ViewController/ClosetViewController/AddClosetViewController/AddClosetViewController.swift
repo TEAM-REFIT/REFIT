@@ -34,7 +34,7 @@ class AddClosetViewController: UIViewController {
         initKeyboard()
         initseasonBtn()
         
-        createPickerView()
+        initPickerView()
     }
     
     // MARK: - Action
@@ -63,19 +63,35 @@ class AddClosetViewController: UIViewController {
     @IBAction func seasonBtnTapped(_ sender: UIButton) {
         if sender == springBtn {
             
-            springBtn.isSelected == false ? selectedButtonDesign(button: sender) : notSelectedButtonDesign(button: sender)
+            if springBtn.isSelected == false {
+                selectedButtonDesign(button: sender)
+            } else {
+                notSelectedButtonDesign(button: sender)
+            }
             
         } else if sender == summerBtn {
             
-            summerBtn.isSelected == false ? selectedButtonDesign(button: sender) : notSelectedButtonDesign(button: sender)
+            if summerBtn.isSelected == false {
+                selectedButtonDesign(button: sender)
+            } else {
+                notSelectedButtonDesign(button: sender)
+            }
             
         } else if sender == fallBtn {
             
-            fallBtn.isSelected == false ? selectedButtonDesign(button: sender) : notSelectedButtonDesign(button: sender)
+            if fallBtn.isSelected == false {
+                selectedButtonDesign(button: sender)
+            } else {
+                notSelectedButtonDesign(button: sender)
+            }
             
         } else {
             
-            winterBtn.isSelected == false ? selectedButtonDesign(button: sender) : notSelectedButtonDesign(button: sender)
+            if winterBtn.isSelected == false {
+                selectedButtonDesign(button: sender)
+            } else {
+                notSelectedButtonDesign(button: sender)
+            }
             
         }
         
@@ -95,7 +111,7 @@ class AddClosetViewController: UIViewController {
     // PickerView
     let categoryArr: [String] = ["상의", "하의", "아우터", "신발", "기타"]
     
-    func createPickerView() {
+    func initPickerView() {
         let pickerView = UIPickerView()
         pickerView.delegate = self
         pickerView.dataSource = self
