@@ -63,35 +63,19 @@ class AddClosetViewController: UIViewController {
     @IBAction func seasonBtnTapped(_ sender: UIButton) {
         if sender == springBtn {
             
-            if springBtn.isSelected == false {
-                selectedButtonDesign(button: sender)
-            } else {
-                notSelectedButtonDesign(button: sender)
-            }
+            springBtn.isSelected == false ? selectedButtonDesign(button: sender) : notSelectedButtonDesign(button: sender)
             
         } else if sender == summerBtn {
             
-            if summerBtn.isSelected == false {
-                selectedButtonDesign(button: sender)
-            } else {
-                notSelectedButtonDesign(button: sender)
-            }
+            summerBtn.isSelected == false ? selectedButtonDesign(button: sender) : notSelectedButtonDesign(button: sender)
             
         } else if sender == fallBtn {
             
-            if fallBtn.isSelected == false {
-                selectedButtonDesign(button: sender)
-            } else {
-                notSelectedButtonDesign(button: sender)
-            }
+            fallBtn.isSelected == false ? selectedButtonDesign(button: sender) : notSelectedButtonDesign(button: sender)
             
         } else {
             
-            if winterBtn.isSelected == false {
-                selectedButtonDesign(button: sender)
-            } else {
-                notSelectedButtonDesign(button: sender)
-            }
+            winterBtn.isSelected == false ? selectedButtonDesign(button: sender) : notSelectedButtonDesign(button: sender)
             
         }
         
