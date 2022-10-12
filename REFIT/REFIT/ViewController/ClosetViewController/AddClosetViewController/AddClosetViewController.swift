@@ -18,13 +18,20 @@ class AddClosetViewController: UIViewController {
     // slider
     @IBOutlet weak var sliderLabel: UILabel!
     
-    // season button
+    // season
     @IBOutlet weak var seasonLabel: UILabel!
     
     @IBOutlet weak var springBtn: UIButton!
     @IBOutlet weak var summerBtn: UIButton!
     @IBOutlet weak var fallBtn: UIButton!
     @IBOutlet weak var winterBtn: UIButton!
+    
+    // color
+    @IBOutlet weak var colorLabel: UILabel!
+    @IBOutlet var colorBtn: [UIButton]!
+    
+    // registration
+    @IBOutlet weak var registrationBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +40,9 @@ class AddClosetViewController: UIViewController {
         initTextField()
         initKeyboard()
         initseasonBtn()
+        initColorBtn()
+        
+        initRegistrationBtn()
         
         initPickerView()
     }
@@ -107,6 +117,26 @@ class AddClosetViewController: UIViewController {
             button.isSelected = false
         }
     }
+    
+    // color
+    @IBAction func colorBtnTapped(_ sender: UIButton) {
+        if sender.isSelected == false {
+            selectedButtonDesign(button: sender)
+        } else {
+            notSelectedButtonDesign(button: sender)
+        }
+        
+        func selectedButtonDesign(button: UIButton) {
+            button.setImage(UIImage(named: "blackCheckIcon"), for: .selected)
+            button.isSelected = true
+        }
+        
+        func notSelectedButtonDesign(button: UIButton) {
+            button.setImage(UIImage(), for: .normal)
+            button.isSelected = false
+        }
+    }
+    
     // MARK: - UI setting
     // PickerView
     let categoryArr: [String] = ["상의", "하의", "아우터", "신발", "기타"]
@@ -165,6 +195,8 @@ class AddClosetViewController: UIViewController {
         // season label
         titleLabelDesign(label: seasonLabel, text: "계절")
         
+        // color label
+        titleLabelDesign(label: colorLabel, text: "색상")
         func titleLabelDesign(label: UILabel, text: String) {
             label.text = text
             label.font = UIFont.pretendard(size: 18, family: .Bold)
@@ -205,12 +237,28 @@ class AddClosetViewController: UIViewController {
         func initBtn(button: UIButton, title: String) {
             button.setTitle(title, for: .normal)
             button.setTitleColor(.gray, for: .normal)
-            button.tintColor = UIColor.clear
             button.titleLabel?.font = UIFont.pretendard(size: 16, family: .Regular)
+            button.tintColor = UIColor.clear
             button.layer.cornerRadius = 25
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.lightGray.cgColor
         }
+    }
+    
+    /// color button
+    func initColorBtn() {
+          for i in colorBtn {
+              i.layer.cornerRadius = 0.5 * i.bounds.size.width
+              i.tintColor = UIColor.clear
+          }
+        }
+    
+    /// registration button
+    func initRegistrationBtn() {
+        registrationBtn.titleLabel?.text = "옷 등록하기"
+        registrationBtn.titleLabel?.font = UIFont.pretendard(size: 20, family: .Bold)
+        registrationBtn.setTitleColor(.white, for: .normal)
+        registrationBtn.backgroundColor = UIColor.black
     }
 }
 
