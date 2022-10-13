@@ -30,6 +30,19 @@ class AddClosetViewController: UIViewController {
     @IBOutlet weak var colorLabel: UILabel!
     @IBOutlet var colorBtn: [UIButton]!
     
+    // TPO
+    @IBOutlet weak var tpoLabel: UILabel!
+    @IBOutlet var tpoBtn: [UIButton]!
+    
+    // size
+    @IBOutlet weak var sizeLabel: UILabel!
+    @IBOutlet weak var sizeTextFieldBorderView: UIView!
+    @IBOutlet weak var sizeTextField: UITextField!
+    
+    // material
+    @IBOutlet weak var materialLabel: UILabel!
+    @IBOutlet var materialBtn: [UIButton]!
+    
     // registration
     @IBOutlet weak var registrationBtn: UIButton!
     
@@ -41,7 +54,8 @@ class AddClosetViewController: UIViewController {
         initKeyboard()
         initseasonBtn()
         initColorBtn()
-        
+        initTpoBtn()
+        initMaterialBtn()
         initRegistrationBtn()
         
         initPickerView()
@@ -127,8 +141,13 @@ class AddClosetViewController: UIViewController {
         }
         
         func selectedButtonDesign(button: UIButton) {
-            button.setImage(UIImage(named: "blackCheckIcon"), for: .selected)
-            button.isSelected = true
+            if button.backgroundColor == UIColor.black {
+                button.setImage(UIImage(named: "whiteCheckIcon"), for: .selected)
+                button.isSelected = true
+            } else {
+                button.setImage(UIImage(named: "blackCheckIcon"), for: .selected)
+                button.isSelected = true
+            }
         }
         
         func notSelectedButtonDesign(button: UIButton) {
@@ -136,6 +155,49 @@ class AddClosetViewController: UIViewController {
             button.isSelected = false
         }
     }
+    
+    // TPO
+    @IBAction func tpoBtnTapped(_ sender: UIButton) {
+        if sender.isSelected == false {
+            selectedButtonDesign(button: sender)
+        } else {
+            notSelectedButtonDesign(button: sender)
+        }
+        
+        func selectedButtonDesign(button: UIButton) {
+            button.backgroundColor = UIColor.darkGray
+            button.setTitleColor(.white, for: .selected)
+            button.isSelected = true
+        }
+        
+        func notSelectedButtonDesign(button: UIButton) {
+            button.backgroundColor = UIColor.white
+            button.setTitleColor(.gray, for: .normal)
+            button.isSelected = false
+        }
+    }
+    
+    // material
+    @IBAction func materialBtnTapped(_ sender: UIButton) {
+        if sender.isSelected == false {
+            selectedButtonDesign(button: sender)
+        } else {
+            notSelectedButtonDesign(button: sender)
+        }
+        
+        func selectedButtonDesign(button: UIButton) {
+            button.backgroundColor = UIColor.darkGray
+            button.setTitleColor(.white, for: .selected)
+            button.isSelected = true
+        }
+        
+        func notSelectedButtonDesign(button: UIButton) {
+            button.backgroundColor = UIColor.white
+            button.setTitleColor(.gray, for: .normal)
+            button.isSelected = false
+        }
+    }
+    
     
     // MARK: - UI setting
     // PickerView
@@ -197,6 +259,15 @@ class AddClosetViewController: UIViewController {
         
         // color label
         titleLabelDesign(label: colorLabel, text: "색상")
+        
+        // TPO Label
+        titleLabelDesign(label: tpoLabel, text: "TPO")
+        
+        // size Label
+        titleLabelDesign(label: sizeLabel, text: "사이즈")
+        
+        // material Label
+        titleLabelDesign(label: materialLabel, text: "소재")
         func titleLabelDesign(label: UILabel, text: String) {
             label.text = text
             label.font = UIFont.pretendard(size: 18, family: .Bold)
@@ -211,8 +282,10 @@ class AddClosetViewController: UIViewController {
         // category text field
         textFieldDesign(textfieldBorderView: categoryTextFieldBorderView, textField: categoryTextField, placeholder: "카테고리를 선택해주세요!")
         
+        // size text field
+        textFieldDesign(textfieldBorderView: sizeTextFieldBorderView, textField: sizeTextField, placeholder: "ex) S, M, L")
         func textFieldDesign(textfieldBorderView: UIView, textField: UITextField, placeholder: String) {
-            textfieldBorderView.layer.cornerRadius = 22
+            textfieldBorderView.layer.cornerRadius = 25
             textfieldBorderView.layer.borderWidth = 1
             textfieldBorderView.layer.borderColor = UIColor.lightGray.cgColor
             
@@ -225,6 +298,7 @@ class AddClosetViewController: UIViewController {
     func initKeyboard() {
         titleTextField.delegate = self
         categoryTextField.delegate = self
+        sizeTextField.delegate = self
         }
     
     /// init  season button
@@ -249,14 +323,47 @@ class AddClosetViewController: UIViewController {
     func initColorBtn() {
           for i in colorBtn {
               i.layer.cornerRadius = 0.5 * i.bounds.size.width
+              i.layer.borderWidth = 1
+              i.layer.borderColor = UIColor.gray.cgColor
               i.tintColor = UIColor.clear
           }
         }
     
+    /// TPO button
+    func initTpoBtn() {
+        let tpoBtnTitleText = ["데이트", "비즈니스", "여행", "운동", "유니폼", "데일리", "경조사", "기타"]
+        var tpoBtnIndex = 0
+          for i in tpoBtn {
+              i.setTitle(tpoBtnTitleText[tpoBtnIndex], for: .normal)
+              i.setTitleColor(.gray, for: .normal)
+              i.titleLabel?.font = UIFont.pretendard(size: 16, family: .Regular)
+              i.tintColor = UIColor.clear
+              i.layer.cornerRadius = 25
+              i.layer.borderWidth = 1
+              i.layer.borderColor = UIColor.lightGray.cgColor
+              tpoBtnIndex += 1
+          }
+        }
+    
+    
+    /// material button
+    func initMaterialBtn() {
+        let materialBtnTitleText = ["면", "린넨", "폴리에스테르", "나일론", "벨벳", "가죽", "퍼", "실크", "데님", "트위드", "쉬폰", "코듀로이", "스웨이드", "니트 / 울", "메탈릭", "레이스", "기타"]
+        var materialBtnIndex = 0
+          for i in materialBtn {
+              i.setTitle(materialBtnTitleText[materialBtnIndex], for: .normal)
+              i.setTitleColor(.gray, for: .normal)
+              i.titleLabel?.font = UIFont.pretendard(size: 16, family: .Regular)
+              i.tintColor = UIColor.clear
+              i.layer.cornerRadius = 25
+              i.layer.borderWidth = 1
+              i.layer.borderColor = UIColor.lightGray.cgColor
+              materialBtnIndex += 1
+          }
+    }
+    
     /// registration button
     func initRegistrationBtn() {
-        registrationBtn.titleLabel?.text = "옷 등록하기"
-        registrationBtn.titleLabel?.font = UIFont.pretendard(size: 20, family: .Bold)
         registrationBtn.setTitleColor(.white, for: .normal)
         registrationBtn.backgroundColor = UIColor.black
     }
@@ -309,8 +416,13 @@ extension AddClosetViewController: UITextFieldDelegate {
         switch SelectedTextField {
         case titleTextField:
             titleTextFieldBorderView.layer.borderColor = UIColor.green.cgColor
+            
         case categoryTextField:
             categoryTextFieldBorderView.layer.borderColor = UIColor.green.cgColor
+            
+        case sizeTextField:
+            sizeTextFieldBorderView.layer.borderColor = UIColor.green.cgColor
+            
         default:
             return
         }
@@ -324,6 +436,10 @@ extension AddClosetViewController: UITextFieldDelegate {
         
         case categoryTextField:
             categoryTextFieldBorderView.layer.borderColor = UIColor.lightGray.cgColor
+            
+        case sizeTextField:
+            sizeTextFieldBorderView.layer.borderColor = UIColor.lightGray.cgColor
+            
         default:
             return
         }
