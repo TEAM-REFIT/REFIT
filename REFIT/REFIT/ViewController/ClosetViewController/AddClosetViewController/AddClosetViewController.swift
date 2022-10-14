@@ -1,4 +1,6 @@
 import UIKit
+import FirebaseCore
+import FirebaseFirestore
 
 class AddClosetViewController: UIViewController {
     // MARK: - Outlet
@@ -21,10 +23,7 @@ class AddClosetViewController: UIViewController {
     // season
     @IBOutlet weak var seasonLabel: UILabel!
     
-    @IBOutlet weak var springBtn: UIButton!
-    @IBOutlet weak var summerBtn: UIButton!
-    @IBOutlet weak var fallBtn: UIButton!
-    @IBOutlet weak var winterBtn: UIButton!
+    @IBOutlet var seasonBtn: [UIButton]!
     
     // color
     @IBOutlet weak var colorLabel: UILabel!
@@ -58,7 +57,7 @@ class AddClosetViewController: UIViewController {
         initMaterialBtn()
         initRegistrationBtn()
         
-        initPickerView()
+        initCategoryPickerView()
     }
     
     // MARK: - Action
@@ -85,38 +84,10 @@ class AddClosetViewController: UIViewController {
     
     // season
     @IBAction func seasonBtnTapped(_ sender: UIButton) {
-        if sender == springBtn {
-            
-            if springBtn.isSelected == false {
-                selectedButtonDesign(button: sender)
-            } else {
-                notSelectedButtonDesign(button: sender)
-            }
-            
-        } else if sender == summerBtn {
-            
-            if summerBtn.isSelected == false {
-                selectedButtonDesign(button: sender)
-            } else {
-                notSelectedButtonDesign(button: sender)
-            }
-            
-        } else if sender == fallBtn {
-            
-            if fallBtn.isSelected == false {
-                selectedButtonDesign(button: sender)
-            } else {
-                notSelectedButtonDesign(button: sender)
-            }
-            
+        if sender.isSelected == false {
+            selectedButtonDesign(button: sender)
         } else {
-            
-            if winterBtn.isSelected == false {
-                selectedButtonDesign(button: sender)
-            } else {
-                notSelectedButtonDesign(button: sender)
-            }
-            
+            notSelectedButtonDesign(button: sender)
         }
         
         func selectedButtonDesign(button: UIButton) {
@@ -198,12 +169,88 @@ class AddClosetViewController: UIViewController {
         }
     }
     
+    // registration
+    @IBAction func registrationBtnTapped(_ sender: UIButton) {
+        let clothes: [String : Any] = ["title" : titleTextField.text ?? "무제",
+                                       "category" : categoryTextField.text ?? "선택 없음",
+                                       "slider" : "",
+                                       "season" : BtnValue(button: seasonBtn),
+                                       "color" : colorBtnValue(button: colorBtn),
+                                       "tpo" : BtnValue(button: tpoBtn),
+                                       "size" : sizeTextField.text ?? "선택 없음",
+                                       "material" : BtnValue(button: materialBtn)]
+        
+        Firestore.firestore().collection("user-id").document("closet").setData(clothes) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
+        
+        func BtnValue(button: [UIButton]) -> [String] {
+            var arr = [""]
+            arr = []
+            for i in button {
+                if i.isSelected {
+                    arr.append(i.titleLabel?.text ?? "cannot find title label")
+                }
+            }
+            return arr
+        }
+        
+        func colorBtnValue(button: [UIButton]) -> [String] {
+            let colorArr = ["white", "yellow", "orange", "red", "pink", "purple", "blue", "green", "beige", "brown", "black", "gray"]
+            var arr = [""]
+            arr = []
+            for i in 0...11 {
+                if button[i].isSelected {
+                    arr.append(colorArr[i])
+                }
+            }
+            return arr
+        }
+    }
     
     // MARK: - UI setting
-    // PickerView
+    // category PickerView
     let categoryArr: [String] = ["상의", "하의", "아우터", "신발", "기타"]
     
-    func initPickerView() {
+    func initCategoryPickerView() {
+        let pickerView = UIPickerView()
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        categoryTextField.tintColor = .clear
+        
+        // tool bar setting
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        
+        let btnDone = UIBarButtonItem(title: "확인", style: .done, target: self, action: #selector(CategoryOnPickDone))
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let btnCancel = UIBarButtonItem(title: "취소", style: .done, target: self, action: #selector(CategoryOnPickCancel))
+        toolBar.setItems([btnCancel , space , btnDone], animated: true)
+        toolBar.isUserInteractionEnabled = true
+        
+        categoryTextField.inputView = pickerView
+        categoryTextField.inputAccessoryView = toolBar
+    }
+    
+    @objc func CategoryOnPickDone() {
+        // Hide PickerView
+        categoryTextField.resignFirstResponder()
+    }
+         
+    @objc func CategoryOnPickCancel() {
+        // Hide PickerView
+        categoryTextField.text = nil
+        categoryTextField.resignFirstResponder()
+    }
+    
+    // category PickerView
+    let sizeArr: [String] = ["상의", "하의", "아우터", "신발", "기타"]
+    
+    func initsizePickerView() {
         let pickerView = UIPickerView()
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -284,6 +331,7 @@ class AddClosetViewController: UIViewController {
         
         // size text field
         textFieldDesign(textfieldBorderView: sizeTextFieldBorderView, textField: sizeTextField, placeholder: "ex) S, M, L")
+        
         func textFieldDesign(textfieldBorderView: UIView, textField: UITextField, placeholder: String) {
             textfieldBorderView.layer.cornerRadius = 25
             textfieldBorderView.layer.borderWidth = 1
@@ -303,20 +351,18 @@ class AddClosetViewController: UIViewController {
     
     /// init  season button
     func initseasonBtn() {
-        initBtn(button: springBtn, title: "봄")
-        initBtn(button: summerBtn, title: "여름")
-        initBtn(button: fallBtn, title: "가을")
-        initBtn(button: winterBtn, title: "겨울")
-        
-        func initBtn(button: UIButton, title: String) {
-            button.setTitle(title, for: .normal)
-            button.setTitleColor(.gray, for: .normal)
-            button.titleLabel?.font = UIFont.pretendard(size: 16, family: .Regular)
-            button.tintColor = UIColor.clear
-            button.layer.cornerRadius = 25
-            button.layer.borderWidth = 1
-            button.layer.borderColor = UIColor.lightGray.cgColor
-        }
+        let seasonBtnTitleText = ["봄", "여름", "가을", "겨울"]
+        var seasonBtnIndex = 0
+          for i in seasonBtn {
+              i.setTitle(seasonBtnTitleText[seasonBtnIndex], for: .normal)
+              i.setTitleColor(.gray, for: .normal)
+              i.titleLabel?.font = UIFont.pretendard(size: 16, family: .Regular)
+              i.tintColor = UIColor.clear
+              i.layer.cornerRadius = 25
+              i.layer.borderWidth = 1
+              i.layer.borderColor = UIColor.lightGray.cgColor
+              seasonBtnIndex += 1
+          }
     }
     
     /// color button
@@ -409,7 +455,6 @@ extension AddClosetViewController: UIPickerViewDelegate, UIPickerViewDataSource 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         categoryTextField.text = categoryArr[row]
     }
-
 }
 
 // text field, keyboard
@@ -431,13 +476,13 @@ extension AddClosetViewController: UITextFieldDelegate {
             return
         }
     }
-
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         let SelectedTextField = textField
         switch SelectedTextField {
         case titleTextField:
             titleTextFieldBorderView.layer.borderColor = UIColor.lightGray.cgColor
-        
+            
         case categoryTextField:
             categoryTextFieldBorderView.layer.borderColor = UIColor.lightGray.cgColor
             
@@ -451,10 +496,12 @@ extension AddClosetViewController: UITextFieldDelegate {
     
     // keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-          if textField == titleTextField {
+        if textField == titleTextField {
             textField.resignFirstResponder()
             categoryTextField.becomeFirstResponder()
-          }
-          return true
-      }
+        } else if textField == sizeTextField {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
 }
