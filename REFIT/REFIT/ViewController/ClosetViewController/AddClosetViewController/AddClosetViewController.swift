@@ -322,7 +322,11 @@ class AddClosetViewController: UIViewController {
     /// color button
     func initColorBtn() {
           for i in colorBtn {
-              i.layer.cornerRadius = 0.5 * i.bounds.size.width
+              if clothesImageView.bounds.size.width > 413 {
+                  i.layer.cornerRadius = 0.5 * i.bounds.size.width
+              } else {
+                  i.layer.cornerRadius = 0.45 * i.bounds.size.width
+              }
               i.layer.borderWidth = 1
               i.layer.borderColor = UIColor.gray.cgColor
               i.tintColor = UIColor.clear
