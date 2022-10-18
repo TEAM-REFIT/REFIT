@@ -13,10 +13,10 @@ import FirebaseFirestore
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+        // Firebase 초기화
         FirebaseApp.configure()
-//        let db = Firestore.firestore()
         
+        // tap bar 선 긋기
         let tapBarAppearance = UITabBarAppearance()
                 tapBarAppearance.configureWithOpaqueBackground()
                 UITabBar.appearance().standardAppearance = tapBarAppearance
@@ -38,3 +38,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 }
+
+

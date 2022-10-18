@@ -19,7 +19,6 @@
 		8355A90B28DAE4A900F9534A /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8355A90228DAE48300F9534A /* Pretendard-ExtraLight.otf */; };
 		8355A90C28DAE4AB00F9534A /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8355A90328DAE48300F9534A /* Pretendard-Thin.otf */; };
 		8355A90F28DAE4C200F9534A /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8355A90E28DAE4C200F9534A /* Font.swift */; };
-		83A0D28128D43BEE001FE88A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83A0D28028D43BEE001FE88A /* GoogleService-Info.plist */; };
 		83AF5E2F28D8107D00608C1F /* AllClosetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AF5E2E28D8107D00608C1F /* AllClosetViewController.swift */; };
 		83BEC86F28CF7A56005BB854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BEC86E28CF7A56005BB854 /* AppDelegate.swift */; };
 		83BEC87128CF7A56005BB854 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BEC87028CF7A56005BB854 /* SceneDelegate.swift */; };
@@ -28,15 +27,19 @@
 		83BEC87828CF7A57005BB854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83BEC87728CF7A57005BB854 /* Assets.xcassets */; };
 		83BEC87B28CF7A57005BB854 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83BEC87928CF7A57005BB854 /* LaunchScreen.storyboard */; };
 		83C2793528D63D510071F392 /* MainClosetView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83C2793428D63D510071F392 /* MainClosetView.storyboard */; };
-		83D6243628D2EE68008DD677 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 83D6243528D2EE68008DD677 /* FirebaseAnalytics */; };
-		83D6243828D2EE68008DD677 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 83D6243728D2EE68008DD677 /* FirebaseFirestore */; };
 		83D6243D28D2FBAB008DD677 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D6243C28D2FBAB008DD677 /* Model.swift */; };
 		83D6244328D3FCC8008DD677 /* MainClosetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D6244228D3FCC8008DD677 /* MainClosetViewController.swift */; };
 		83D6244728D40332008DD677 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D6244628D40332008DD677 /* SettingViewController.swift */; };
 		83D6244928D40371008DD677 /* SettingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83D6244828D40371008DD677 /* SettingView.storyboard */; };
+		83DD967928FCD65E001E58B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83DD967828FCD65E001E58B3 /* GoogleService-Info.plist */; };
+		83DD967C28FE6F46001E58B3 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 83DD967B28FE6F46001E58B3 /* FirebaseAnalytics */; };
+		83DD967E28FE6F46001E58B3 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 83DD967D28FE6F46001E58B3 /* FirebaseFirestore */; };
+		9A775B7D582084E61584CBED /* Pods_REFIT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5285BB655FC4605470A4810 /* Pods_REFIT.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		382C475A84A9BD4E8ECC70EC /* Pods-REFIT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-REFIT.debug.xcconfig"; path = "Target Support Files/Pods-REFIT/Pods-REFIT.debug.xcconfig"; sourceTree = "<group>"; };
+		6100C3AD15E7EC0CC6049A7E /* Pods-REFIT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-REFIT.release.xcconfig"; path = "Target Support Files/Pods-REFIT/Pods-REFIT.release.xcconfig"; sourceTree = "<group>"; };
 		83353C6E28D9A66B00EB80A7 /* AddClosetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClosetViewController.swift; sourceTree = "<group>"; };
 		8355A8E428DAA82F00F9534A /* AddClosetView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddClosetView.storyboard; sourceTree = "<group>"; };
 		8355A8FB28DAE48200F9534A /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
@@ -49,7 +52,6 @@
 		8355A90228DAE48300F9534A /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
 		8355A90328DAE48300F9534A /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 		8355A90E28DAE4C200F9534A /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
-		83A0D28028D43BEE001FE88A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		83AF5E2E28D8107D00608C1F /* AllClosetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllClosetViewController.swift; sourceTree = "<group>"; };
 		83BEC86B28CF7A56005BB854 /* REFIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = REFIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83BEC86E28CF7A56005BB854 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,8 @@
 		83D6244228D3FCC8008DD677 /* MainClosetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainClosetViewController.swift; sourceTree = "<group>"; };
 		83D6244628D40332008DD677 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		83D6244828D40371008DD677 /* SettingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingView.storyboard; sourceTree = "<group>"; };
+		83DD967828FCD65E001E58B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D5285BB655FC4605470A4810 /* Pods_REFIT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_REFIT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +75,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83D6243628D2EE68008DD677 /* FirebaseAnalytics in Frameworks */,
-				83D6243828D2EE68008DD677 /* FirebaseFirestore in Frameworks */,
+				83DD967C28FE6F46001E58B3 /* FirebaseAnalytics in Frameworks */,
+				83DD967E28FE6F46001E58B3 /* FirebaseFirestore in Frameworks */,
+				9A775B7D582084E61584CBED /* Pods_REFIT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +149,8 @@
 			children = (
 				83BEC86D28CF7A56005BB854 /* REFIT */,
 				83BEC86C28CF7A56005BB854 /* Products */,
+				E3BA784931D9A6061AD14F69 /* Pods */,
+				CD300BC189B5626A5570631B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -161,7 +168,7 @@
 				83BEC86E28CF7A56005BB854 /* AppDelegate.swift */,
 				83BEC87028CF7A56005BB854 /* SceneDelegate.swift */,
 				83BEC87C28CF7A57005BB854 /* Info.plist */,
-				83A0D28028D43BEE001FE88A /* GoogleService-Info.plist */,
+				83DD967828FCD65E001E58B3 /* GoogleService-Info.plist */,
 				83BEC87728CF7A57005BB854 /* Assets.xcassets */,
 				83D6243A28D2FB37008DD677 /* Model */,
 				83D6243B28D2FB5F008DD677 /* ViewController */,
@@ -200,6 +207,23 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		CD300BC189B5626A5570631B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5285BB655FC4605470A4810 /* Pods_REFIT.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3BA784931D9A6061AD14F69 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				382C475A84A9BD4E8ECC70EC /* Pods-REFIT.debug.xcconfig */,
+				6100C3AD15E7EC0CC6049A7E /* Pods-REFIT.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -207,9 +231,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83BEC87F28CF7A57005BB854 /* Build configuration list for PBXNativeTarget "REFIT" */;
 			buildPhases = (
+				AD4F0FBEDC6BF63CF3F02FDA /* [CP] Check Pods Manifest.lock */,
 				83BEC86728CF7A56005BB854 /* Sources */,
 				83BEC86828CF7A56005BB854 /* Frameworks */,
 				83BEC86928CF7A56005BB854 /* Resources */,
+				EF208830E5CB427E71486AB8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -217,8 +243,8 @@
 			);
 			name = REFIT;
 			packageProductDependencies = (
-				83D6243528D2EE68008DD677 /* FirebaseAnalytics */,
-				83D6243728D2EE68008DD677 /* FirebaseFirestore */,
+				83DD967B28FE6F46001E58B3 /* FirebaseAnalytics */,
+				83DD967D28FE6F46001E58B3 /* FirebaseFirestore */,
 			);
 			productName = REFIT;
 			productReference = 83BEC86B28CF7A56005BB854 /* REFIT.app */;
@@ -249,7 +275,7 @@
 			);
 			mainGroup = 83BEC86228CF7A56005BB854;
 			packageReferences = (
-				83D6243428D2EE68008DD677 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				83DD967A28FE6F46001E58B3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 83BEC86C28CF7A56005BB854 /* Products */;
 			projectDirPath = "";
@@ -274,17 +300,59 @@
 				83D6244928D40371008DD677 /* SettingView.storyboard in Resources */,
 				83BEC87B28CF7A57005BB854 /* LaunchScreen.storyboard in Resources */,
 				83BEC87828CF7A57005BB854 /* Assets.xcassets in Resources */,
+				83DD967928FCD65E001E58B3 /* GoogleService-Info.plist in Resources */,
 				83BEC87628CF7A56005BB854 /* Main.storyboard in Resources */,
 				83C2793528D63D510071F392 /* MainClosetView.storyboard in Resources */,
 				8355A90828DAE4A200F9534A /* Pretendard-Medium.otf in Resources */,
 				8355A90C28DAE4AB00F9534A /* Pretendard-Thin.otf in Resources */,
-				83A0D28128D43BEE001FE88A /* GoogleService-Info.plist in Resources */,
 				8355A90B28DAE4A900F9534A /* Pretendard-ExtraLight.otf in Resources */,
 				8355A90928DAE4A400F9534A /* Pretendard-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AD4F0FBEDC6BF63CF3F02FDA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-REFIT-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF208830E5CB427E71486AB8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-REFIT/Pods-REFIT-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-REFIT/Pods-REFIT-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-REFIT/Pods-REFIT-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		83BEC86728CF7A56005BB854 /* Sources */ = {
@@ -441,6 +509,7 @@
 		};
 		83BEC88028CF7A57005BB854 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 382C475A84A9BD4E8ECC70EC /* Pods-REFIT.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -449,11 +518,13 @@
 				DEVELOPMENT_TEAM = A4Q2FJP2XU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = REFIT/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "사진을 선택하라!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -469,6 +540,7 @@
 		};
 		83BEC88128CF7A57005BB854 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6100C3AD15E7EC0CC6049A7E /* Pods-REFIT.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -477,11 +549,13 @@
 				DEVELOPMENT_TEAM = A4Q2FJP2XU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = REFIT/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "사진을 선택하라!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -519,7 +593,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		83D6243428D2EE68008DD677 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		83DD967A28FE6F46001E58B3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
@@ -530,14 +604,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		83D6243528D2EE68008DD677 /* FirebaseAnalytics */ = {
+		83DD967B28FE6F46001E58B3 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 83D6243428D2EE68008DD677 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 83DD967A28FE6F46001E58B3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
 		};
-		83D6243728D2EE68008DD677 /* FirebaseFirestore */ = {
+		83DD967D28FE6F46001E58B3 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 83D6243428D2EE68008DD677 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 83DD967A28FE6F46001E58B3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */

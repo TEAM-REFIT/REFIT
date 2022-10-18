@@ -180,7 +180,7 @@ class AddClosetViewController: UIViewController {
                                        "size" : sizeTextField.text ?? "선택 없음",
                                        "material" : BtnValue(button: materialBtn)]
         
-        Firestore.firestore().collection("user-id").document("closet").setData(clothes) { err in
+        Firestore.firestore().collection("user-id2").document("closet2").setData(clothes) { err in
             if let err = err {
                 print("Error writing document: \(err)")
             } else {
