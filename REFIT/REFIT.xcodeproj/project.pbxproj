@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		832A02B92900DA3500D571E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 832A02B82900DA3500D571E1 /* GoogleService-Info.plist */; };
+		832A02BC2900E34900D571E1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832A02BB2900E34900D571E1 /* LoginViewModel.swift */; };
 		83353C6F28D9A66B00EB80A7 /* AddClosetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83353C6E28D9A66B00EB80A7 /* AddClosetViewController.swift */; };
 		8355A8E528DAA82F00F9534A /* AddClosetViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8355A8E428DAA82F00F9534A /* AddClosetViewController.storyboard */; };
 		8355A90428DAE49700F9534A /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8355A8FF28DAE48300F9534A /* Pretendard-Black.otf */; };
@@ -36,14 +38,14 @@
 		83BEC87828CF7A57005BB854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83BEC87728CF7A57005BB854 /* Assets.xcassets */; };
 		83BEC87B28CF7A57005BB854 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83BEC87928CF7A57005BB854 /* LaunchScreen.storyboard */; };
 		83C2793528D63D510071F392 /* MainClosetViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83C2793428D63D510071F392 /* MainClosetViewController.storyboard */; };
-		83D6243D28D2FBAB008DD677 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D6243C28D2FBAB008DD677 /* Model.swift */; };
 		83D6244328D3FCC8008DD677 /* MainClosetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D6244228D3FCC8008DD677 /* MainClosetViewController.swift */; };
 		83D6244728D40332008DD677 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D6244628D40332008DD677 /* SettingViewController.swift */; };
 		83D6244928D40371008DD677 /* SettingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83D6244828D40371008DD677 /* SettingViewController.storyboard */; };
-		83DD967928FCD65E001E58B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83DD967828FCD65E001E58B3 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		832A02B82900DA3500D571E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		832A02BB2900E34900D571E1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		83353C6E28D9A66B00EB80A7 /* AddClosetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClosetViewController.swift; sourceTree = "<group>"; };
 		8355A8E428DAA82F00F9534A /* AddClosetViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddClosetViewController.storyboard; sourceTree = "<group>"; };
 		8355A8FB28DAE48200F9534A /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
@@ -70,11 +72,9 @@
 		83BEC87A28CF7A57005BB854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83BEC87C28CF7A57005BB854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83C2793428D63D510071F392 /* MainClosetViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainClosetViewController.storyboard; sourceTree = "<group>"; };
-		83D6243C28D2FBAB008DD677 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		83D6244228D3FCC8008DD677 /* MainClosetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainClosetViewController.swift; sourceTree = "<group>"; };
 		83D6244628D40332008DD677 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		83D6244828D40371008DD677 /* SettingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingViewController.storyboard; sourceTree = "<group>"; };
-		83DD967828FCD65E001E58B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,13 +195,13 @@
 			children = (
 				83BEC86E28CF7A56005BB854 /* AppDelegate.swift */,
 				83BEC87028CF7A56005BB854 /* SceneDelegate.swift */,
-				83D6243A28D2FB37008DD677 /* Model */,
+				83D6243A28D2FB37008DD677 /* ViewModel */,
 				83D6243928D2FB2D008DD677 /* View */,
 				83B7E5E828FFB99200B1B674 /* Extension */,
 				8355A8E628DAA99C00F9534A /* Font */,
 				83BEC87728CF7A57005BB854 /* Assets.xcassets */,
 				83BEC87C28CF7A57005BB854 /* Info.plist */,
-				83DD967828FCD65E001E58B3 /* GoogleService-Info.plist */,
+				832A02B82900DA3500D571E1 /* GoogleService-Info.plist */,
 			);
 			path = REFIT;
 			sourceTree = "<group>";
@@ -218,12 +218,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		83D6243A28D2FB37008DD677 /* Model */ = {
+		83D6243A28D2FB37008DD677 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				83D6243C28D2FBAB008DD677 /* Model.swift */,
+				832A02BB2900E34900D571E1 /* LoginViewModel.swift */,
 			);
-			path = Model;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,9 +305,9 @@
 				837A67DE28FFB45D00046632 /* LoginViewController.storyboard in Resources */,
 				83BEC87B28CF7A57005BB854 /* LaunchScreen.storyboard in Resources */,
 				83BEC87828CF7A57005BB854 /* Assets.xcassets in Resources */,
-				83DD967928FCD65E001E58B3 /* GoogleService-Info.plist in Resources */,
 				83BEC87628CF7A56005BB854 /* Main.storyboard in Resources */,
 				83C2793528D63D510071F392 /* MainClosetViewController.storyboard in Resources */,
+				832A02B92900DA3500D571E1 /* GoogleService-Info.plist in Resources */,
 				8355A90828DAE4A200F9534A /* Pretendard-Medium.otf in Resources */,
 				8355A90C28DAE4AB00F9534A /* Pretendard-Thin.otf in Resources */,
 				8355A90B28DAE4A900F9534A /* Pretendard-ExtraLight.otf in Resources */,
@@ -329,8 +329,8 @@
 				83D6244328D3FCC8008DD677 /* MainClosetViewController.swift in Sources */,
 				837A67E228FFB51400046632 /* StartViewController.swift in Sources */,
 				83AF5E2F28D8107D00608C1F /* AllClosetViewController.swift in Sources */,
-				83D6243D28D2FBAB008DD677 /* Model.swift in Sources */,
 				83B7E5EA28FFB9B700B1B674 /* UIViewControllerExtension.swift in Sources */,
+				832A02BC2900E34900D571E1 /* LoginViewModel.swift in Sources */,
 				8355A90F28DAE4C200F9534A /* Font.swift in Sources */,
 				837A67E028FFB47600046632 /* LoginViewController.swift in Sources */,
 				83D6244728D40332008DD677 /* SettingViewController.swift in Sources */,

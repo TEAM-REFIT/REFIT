@@ -1,4 +1,6 @@
 import UIKit
+import FirebaseAuth
+//import GoogleSignIn
 
 class MainClosetViewController:UIViewController {
     
@@ -43,10 +45,20 @@ class MainClosetViewController:UIViewController {
     }
     
     @IBAction func addClothesBtnTapped(_ sender: Any) {
-        let storyBoardName = UIStoryboard(name: "AddClosetView", bundle: nil)
-        let addClosetViewController = storyBoardName.instantiateViewController(withIdentifier: "AddClosetView") as! AddClosetViewController
+        let storyBoardName = UIStoryboard(name: "AddClosetViewController", bundle: nil)
+        let addClosetViewController = storyBoardName.instantiateViewController(withIdentifier: "AddClosetViewController") as! AddClosetViewController
         self.navigationController?.pushViewController(addClosetViewController, animated: true)
     }
+    
+    @IBAction func searchBtnTapped(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+    do {
+      try firebaseAuth.signOut()
+    } catch let signOutError as NSError {
+      print("Error signing out: %@", signOutError)
+    }
+    }
+    
     
     func showAllClosetView() {
         allClosetView.alpha = 1.0

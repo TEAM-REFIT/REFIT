@@ -6,8 +6,10 @@
 //
 
 import UIKit
-import FirebaseCore
-import FirebaseFirestore
+import CoreData
+import Firebase
+import FirebaseAuth
+import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 UITabBar.appearance().standardAppearance = tapBarAppearance
                 UITabBar.appearance().scrollEdgeAppearance = tapBarAppearance
         return true
+    }
+    
+    func application(
+        _ application: UIApplication,
+        open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]
+    ) -> Bool {
+        // 구글의 인증 프로세스가 끝날 때 앱이 수신하는 url 처리
+        return GIDSignIn.sharedInstance.handle(url)
     }
 
     // MARK: UISceneSession Lifecycle
