@@ -13,7 +13,7 @@
         <!--Navigation Controller-->
         <scene sceneID="7HI-xT-mpc">
             <objects>
-                <navigationController storyboardIdentifier="MainClosetViewViewControllerNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="aBS-sb-IgT" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainClosetViewControllerNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="aBS-sb-IgT" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="closetIcon" id="92j-e0-iut"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MmC-A5-fDY">

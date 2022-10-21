@@ -16,16 +16,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUc-Wk-VUd">
-                                <rect key="frame" x="158" y="404.66666666666669" width="74" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="button"/>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="DBf-qc-vGf">
+                                <rect key="frame" x="50" y="574" width="290" height="186"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUc-Wk-VUd">
+                                        <rect key="frame" x="0.0" y="0.0" width="290" height="52"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="uCK-jE-SDX"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Google 로 로그인">
+                                            <fontDescription key="titleFontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="18"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="googleLoginBtnTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hBC-s5-1bj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xl5-rd-dTc">
+                                        <rect key="frame" x="0.0" y="67" width="290" height="52"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="0uL-fX-Rnp"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="카카오톡으로 로그인">
+                                            <fontDescription key="titleFontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="18"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoj-u4-7To">
+                                        <rect key="frame" x="0.0" y="134" width="290" height="52"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="duM-p9-1rd"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="apple ID 로 로그인">
+                                            <fontDescription key="titleFontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="18"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.0" green="0.85098039215686272" blue="0.43529411764705883" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="DBf-qc-vGf" secondAttribute="bottom" constant="50" id="2Ny-we-NQ6"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="DBf-qc-vGf" secondAttribute="trailing" constant="50" id="3wr-iN-JpE"/>
+                            <constraint firstItem="DBf-qc-vGf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="yVU-Wf-5SI"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outletCollection property="LoginBtn" destination="uUc-Wk-VUd" collectionClass="NSMutableArray" id="vQg-Ul-840"/>
+                        <outletCollection property="LoginBtn" destination="xl5-rd-dTc" collectionClass="NSMutableArray" id="8Zn-QY-mTO"/>
+                        <outletCollection property="LoginBtn" destination="yoj-u4-7To" collectionClass="NSMutableArray" id="7qq-3n-0AF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

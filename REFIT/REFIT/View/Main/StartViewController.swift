@@ -18,7 +18,7 @@ class StartViewController: UIViewController {
             present(loginVC, animated: true)
         } else {
             // 로그인 상태면
-            let mainNC = UIStoryboard(name: "MainClosetViewController", bundle: nil).instantiateViewController(withIdentifier: "MainClosetViewViewControllerNavigationController")
+            let mainNC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTapBarController")
             mainNC.modalPresentationStyle = .fullScreen
             mainNC.modalTransitionStyle = .crossDissolve
             present(mainNC, animated: true)
