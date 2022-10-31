@@ -6,10 +6,15 @@
 //
 
 import UIKit
-import CoreData
 import Firebase
 import FirebaseAuth
+import CoreData
 import GoogleSignIn
+
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseStorage
+import FirebaseAuth
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Firebase 초기화
         FirebaseApp.configure()
+        
+        // Cloud Storage
+        let storage = Storage.storage()
         
         // tap bar 선 긋기
         let tapBarAppearance = UITabBarAppearance()

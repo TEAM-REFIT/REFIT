@@ -43,6 +43,7 @@ final class LoginViewModel {
             
             Auth.auth().signIn(with: credential) { _, _ in
                 completion()
+                
             }
         }
     }
