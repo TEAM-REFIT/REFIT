@@ -171,6 +171,7 @@ class AddClosetViewController: UIViewController {
     
     // registration
     @IBAction func registrationBtnTapped(_ sender: UIButton) {
+        // String 값 보내기
         let clothes: [String : Any] = ["title" : titleTextField.text ?? "무제",
                                        "category" : categoryTextField.text ?? "선택 없음",
                                        "slider" : "",
