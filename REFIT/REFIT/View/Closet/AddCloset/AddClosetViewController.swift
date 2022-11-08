@@ -211,6 +211,8 @@ class AddClosetViewController: UIViewController {
             }
             return arr
         }
+        
+        FirebaseStorageManager.uploadImage(image: clothesImageView.image!)
     }
     
     // MARK: - UI setting
@@ -440,6 +442,7 @@ extension AddClosetViewController: UIImagePickerControllerDelegate, UINavigation
     }
 }
 
+// pickerView
 extension AddClosetViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
