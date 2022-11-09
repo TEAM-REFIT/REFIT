@@ -129,6 +129,9 @@
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="674-bA-i92">
                                                         <rect key="frame" x="-2" y="34.5" width="358" height="31"/>
                                                         <color key="minimumTrackTintColor" red="0.2627450980392157" green="0.95686274509803915" blue="0.027450980392156862" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="sliderScroll:" destination="Y6W-OH-hqX" eventType="valueChanged" id="j2R-wU-LE1"/>
+                                                        </connections>
                                                     </slider>
                                                 </subviews>
                                                 <constraints>
@@ -834,7 +837,6 @@
                         <outlet property="sizeLabel" destination="Tbv-nK-FjN" id="7Sf-N3-Dhj"/>
                         <outlet property="sizeTextField" destination="LDX-0J-8Nd" id="HVG-i5-wYl"/>
                         <outlet property="sizeTextFieldBorderView" destination="68G-KU-ZpN" id="kFK-Tc-nkW"/>
-                        <outlet property="slider" destination="674-bA-i92" id="5KQ-4A-NJ0"/>
                         <outlet property="sliderLabel" destination="eRE-qP-xCt" id="uog-ww-WAH"/>
                         <outlet property="titleLabel" destination="yZK-kO-2Fu" id="JEN-fu-HcW"/>
                         <outlet property="titleTextField" destination="aMl-bO-iWT" id="xas-d6-MGV"/>

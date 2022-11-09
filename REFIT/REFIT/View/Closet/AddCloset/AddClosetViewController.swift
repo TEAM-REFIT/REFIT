@@ -19,7 +19,6 @@ class AddClosetViewController: UIViewController {
     
     // slider
     @IBOutlet weak var sliderLabel: UILabel!
-    @IBOutlet weak var slider: UISlider!
     
     // season
     @IBOutlet weak var seasonLabel: UILabel!
@@ -105,6 +104,13 @@ class AddClosetViewController: UIViewController {
         }
     }
     
+    //slider
+    var sliderValue = 5
+    @IBAction func sliderScroll(_ sender: UISlider) {
+        sliderValue = Int(sender.value)
+    }
+    
+    
     // color
     @IBAction func colorBtnTapped(_ sender: UIButton) {
         if sender.isSelected == false {
@@ -176,7 +182,7 @@ class AddClosetViewController: UIViewController {
         // String 값 보내기
         let clothes: [String : Any] = ["title" : titleTextField.text ?? "무제",
                                        "category" : categoryTextField.text ?? "선택 없음",
-                                       "slider" : Int(slider.value),
+                                       "slider" : sliderValue,
                                        "season" : BtnValue(button: seasonBtn),
                                        "color" : colorBtnValue(button: colorBtn),
                                        "tpo" : BtnValue(button: tpoBtn),
