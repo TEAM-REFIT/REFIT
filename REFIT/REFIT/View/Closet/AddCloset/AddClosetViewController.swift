@@ -83,6 +83,13 @@ class AddClosetViewController: UIViewController {
         self.present(actionSheet, animated: true)
     }
     
+    // slider
+    // slider 를 움직일 때마다 value 값 업데이트
+    var sliderValue = 5
+    @IBAction func sliderScroll(_ sender: UISlider) {
+        sliderValue = Int(sender.value)
+    }
+    
     // season
     @IBAction func seasonBtnTapped(_ sender: UIButton) {
         if sender.isSelected == false {
@@ -175,7 +182,7 @@ class AddClosetViewController: UIViewController {
         // String 값 보내기
         let clothes: [String : Any] = ["title" : titleTextField.text ?? "무제",
                                        "category" : categoryTextField.text ?? "선택 없음",
-                                       "slider" : "",
+                                       "slider" : sliderValue,
                                        "season" : BtnValue(button: seasonBtn),
                                        "color" : colorBtnValue(button: colorBtn),
                                        "tpo" : BtnValue(button: tpoBtn),
@@ -189,7 +196,8 @@ class AddClosetViewController: UIViewController {
                 print("Document successfully written!")
             }
         }
-        
+                
+        // seasonBtn, tpoBtn
         func BtnValue(button: [UIButton]) -> [String] {
             var arr = [""]
             arr = []
@@ -201,6 +209,7 @@ class AddClosetViewController: UIViewController {
             return arr
         }
         
+        // colorBtn
         func colorBtnValue(button: [UIButton]) -> [String] {
             let colorArr = ["white", "yellow", "orange", "red", "pink", "purple", "blue", "green", "beige", "brown", "black", "gray"]
             var arr = [""]
