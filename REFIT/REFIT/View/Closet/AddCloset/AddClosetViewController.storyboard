@@ -126,9 +126,12 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="674-bA-i92">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="674-bA-i92">
                                                         <rect key="frame" x="-2" y="34.5" width="358" height="31"/>
                                                         <color key="minimumTrackTintColor" red="0.2627450980392157" green="0.95686274509803915" blue="0.027450980392156862" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="sliderScroll:" destination="Y6W-OH-hqX" eventType="valueChanged" id="j2R-wU-LE1"/>
+                                                        </connections>
                                                     </slider>
                                                 </subviews>
                                                 <constraints>

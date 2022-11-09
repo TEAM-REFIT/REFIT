@@ -23,24 +23,23 @@ class MainClosetViewController:UIViewController {
         initContainerView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("viewWillAppear")
-    }
-    
     @IBAction func CategoryBarTapped(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0 {
+        let selectedSegmentIndex = sender.selectedSegmentIndex
+        switch selectedSegmentIndex {
+        case 0:
             showAllClosetView()
-        } else if sender.selectedSegmentIndex == 1 {
+        case 1:
             showTopClosetView()
-        } else if sender.selectedSegmentIndex == 2 {
+        case 2:
             showPantsClosetView()
-        } else if sender.selectedSegmentIndex == 3 {
+        case 3:
             showOuterwearClosetView()
-        } else if sender.selectedSegmentIndex == 4 {
+        case 4:
             showShoesClosetView()
-        } else if sender.selectedSegmentIndex == 5 {
+        case 5:
             showEtcClosetView()
+        default:
+            showAllClosetView()
         }
     }
     

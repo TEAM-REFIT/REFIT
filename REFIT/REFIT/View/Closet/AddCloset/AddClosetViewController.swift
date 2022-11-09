@@ -66,16 +66,17 @@ class AddClosetViewController: UIViewController {
     @IBAction func chageImgBtntapped(_ sender: Any) {
         
         let picker = UIImagePickerController()
-        picker.sourceType = .camera
         picker.allowsEditing = true
         picker.delegate = self
         
         let actionSheet = UIAlertController(title: "의류 추가 방법", message: "의류 추가 방법을 선택해주세요.", preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "사진 촬영하여 추가하기", style: .default, handler: { _ in
-                self.present(picker, animated: true)
+            picker.sourceType = .camera
+            self.present(picker, animated: true)
         }))
         actionSheet.addAction(UIAlertAction(title: "앨범에서 추가하기", style: .default, handler: { _ in
-            print("앨법에서 추가하기")
+            picker.sourceType = .photoLibrary
+            self.present(picker, animated: true)
         }))
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
@@ -102,6 +103,13 @@ class AddClosetViewController: UIViewController {
             button.isSelected = false
         }
     }
+    
+    //slider
+    var sliderValue = 5
+    @IBAction func sliderScroll(_ sender: UISlider) {
+        sliderValue = Int(sender.value)
+    }
+    
     
     // color
     @IBAction func colorBtnTapped(_ sender: UIButton) {
@@ -174,7 +182,7 @@ class AddClosetViewController: UIViewController {
         // String 값 보내기
         let clothes: [String : Any] = ["title" : titleTextField.text ?? "무제",
                                        "category" : categoryTextField.text ?? "선택 없음",
-                                       "slider" : "",
+                                       "slider" : sliderValue,
                                        "season" : BtnValue(button: seasonBtn),
                                        "color" : colorBtnValue(button: colorBtn),
                                        "tpo" : BtnValue(button: tpoBtn),
@@ -188,7 +196,8 @@ class AddClosetViewController: UIViewController {
                 print("Document successfully written!")
             }
         }
-        
+                
+        // seasonBtn, tpoBtn
         func BtnValue(button: [UIButton]) -> [String] {
             var arr = [""]
             arr = []
@@ -200,6 +209,7 @@ class AddClosetViewController: UIViewController {
             return arr
         }
         
+        // colorBtn
         func colorBtnValue(button: [UIButton]) -> [String] {
             let colorArr = ["white", "yellow", "orange", "red", "pink", "purple", "blue", "green", "beige", "brown", "black", "gray"]
             var arr = [""]
@@ -350,7 +360,7 @@ class AddClosetViewController: UIViewController {
         titleTextField.delegate = self
         categoryTextField.delegate = self
         sizeTextField.delegate = self
-        }
+    }
     
     /// init  season button
     func initseasonBtn() {
@@ -442,7 +452,7 @@ extension AddClosetViewController: UIImagePickerControllerDelegate, UINavigation
     }
 }
 
-// pickerView
+// size pickerView
 extension AddClosetViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
