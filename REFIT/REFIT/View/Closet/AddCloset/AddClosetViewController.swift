@@ -196,15 +196,20 @@ class AddClosetViewController: UIViewController {
             // Firesbase Storeage
             FirebaseStorageManager.uploadImage(image: clothesImageView.image!)
             // Firestore
-            Firestore.firestore().collection("1").document("2").collection("3").document("4").setData(clothes) { err in
+            Firestore.firestore().collection("Closet").document("").setData(clothes) { err in
                 if let err = err {
                     print("Error writing document: \(err)")
                 } else {
                     print("Document successfully written!")
+                    // 화면 전환
+                    self.navigationController?.popViewController(animated: true)
                 }
             }
         } else {
-            print("사진을 선택하지 않았어요")
+            let alert = UIAlertController(title: "사진을 선택하지 않았어요!", message: "사진을 선택해주세요!", preferredStyle: UIAlertController.Style.alert)
+            let action = UIAlertAction(title: "네", style: .default, handler: nil)
+            alert.addAction(action)
+            present(alert, animated: false, completion: nil)
         }
         
         // seasonBtn, tpoBtn
