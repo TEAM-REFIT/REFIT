@@ -24,7 +24,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1Y-6c-yc5">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1549"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addImageViewImg" translatesAutoresizingMaskIntoConstraints="NO" id="lKw-ZN-Uon">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lKw-ZN-Uon">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="lKw-ZN-Uon" secondAttribute="height" multiplier="1:1" id="FYr-Nw-ADq"/>
@@ -891,7 +891,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="addImageViewImg" width="414" height="414"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
