@@ -49,6 +49,8 @@ class AddClosetViewController: UIViewController {
         super.viewDidLoad()
         initTitleLabel()
         initNavigationBar()
+        
+        initClothesImageView()
         initTextField()
         initKeyboard()
         initseasonBtn()
@@ -179,7 +181,7 @@ class AddClosetViewController: UIViewController {
     
     // registration
     @IBAction func registrationBtnTapped(_ sender: UIButton) {
-        // String 값 보내기
+        // Firestore 데이터 구성
         let clothes: [String : Any] = ["title" : titleTextField.text ?? "무제",
                                        "category" : categoryTextField.text ?? "선택 없음",
                                        "slider" : sliderValue,
@@ -189,14 +191,22 @@ class AddClosetViewController: UIViewController {
                                        "size" : sizeTextField.text ?? "선택 없음",
                                        "material" : BtnValue(button: materialBtn)]
         
-        Firestore.firestore().collection("1").document("2").collection("3").document("4").setData(clothes) { err in
-            if let err = err {
-                print("Error writing document: \(err)")
-            } else {
-                print("Document successfully written!")
+        //FirebaseStorage
+        if clothesImageView.image != UIImage(imageLiteralResourceName: "addImageViewImg") {
+            // Firesbase Storeage
+            FirebaseStorageManager.uploadImage(image: clothesImageView.image!)
+            // Firestore
+            Firestore.firestore().collection("1").document("2").collection("3").document("4").setData(clothes) { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                } else {
+                    print("Document successfully written!")
+                }
             }
+        } else {
+            print("사진을 선택하지 않았어요")
         }
-                
+        
         // seasonBtn, tpoBtn
         func BtnValue(button: [UIButton]) -> [String] {
             var arr = [""]
@@ -221,8 +231,6 @@ class AddClosetViewController: UIViewController {
             }
             return arr
         }
-        
-        FirebaseStorageManager.uploadImage(image: clothesImageView.image!)
     }
     
     // MARK: - UI setting
@@ -332,6 +340,11 @@ class AddClosetViewController: UIViewController {
             label.text = text
             label.font = UIFont.pretendard(size: 18, family: .Bold)
         }
+    }
+    
+    /// imgView
+    func initClothesImageView() {
+        clothesImageView.image = UIImage(named: "addImageViewImg")
     }
     
     /// initTextField
