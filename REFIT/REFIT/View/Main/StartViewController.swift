@@ -3,7 +3,7 @@ import Firebase
 import FirebaseAuth
 
 class StartViewController: UIViewController {
-    
+
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,5 +24,6 @@ class StartViewController: UIViewController {
             present(mainNC, animated: true)
         }
     }
+    
 }
 

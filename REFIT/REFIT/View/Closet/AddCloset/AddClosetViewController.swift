@@ -1,8 +1,11 @@
 import UIKit
 import FirebaseCore
 import FirebaseFirestore
+import FirebaseAuth
 
 class AddClosetViewController: UIViewController {
+    let db = Firestore.firestore()
+    
     // MARK: - Outlet
     // image view
     @IBOutlet weak var clothesImageView: UIImageView!
@@ -181,6 +184,7 @@ class AddClosetViewController: UIViewController {
     
     // registration
     @IBAction func registrationBtnTapped(_ sender: UIButton) {
+        guard let userID = Auth.auth().currentUser?.uid else { return }
         // Firestore 데이터 구성
         let clothes: [String : Any] = ["title" : titleTextField.text ?? "무제",
                                        "category" : categoryTextField.text ?? "선택 없음",
@@ -190,13 +194,12 @@ class AddClosetViewController: UIViewController {
                                        "tpo" : BtnValue(button: tpoBtn),
                                        "size" : sizeTextField.text ?? "선택 없음",
                                        "material" : BtnValue(button: materialBtn)]
-        
         //FirebaseStorage
         if clothesImageView.image != UIImage(imageLiteralResourceName: "addImageViewImg") {
             // Firesbase Storeage
             FirebaseStorageManager.uploadImage(image: clothesImageView.image!)
             // Firestore
-            Firestore.firestore().collection("Closet").document("").setData(clothes) { err in
+            db.collection("Closet-\(userID)").document(clothes["title"]! as! String + "-" + UUID().uuidString).setData(clothes) { err in
                 if let err = err {
                     print("Error writing document: \(err)")
                 } else {
@@ -207,7 +210,7 @@ class AddClosetViewController: UIViewController {
             }
         } else {
             let alert = UIAlertController(title: "사진을 선택하지 않았어요!", message: "사진을 선택해주세요!", preferredStyle: UIAlertController.Style.alert)
-            let action = UIAlertAction(title: "네", style: .default, handler: nil)
+            let action = UIAlertAction(title: "확인", style: .default, handler: nil)
             alert.addAction(action)
             present(alert, animated: false, completion: nil)
         }

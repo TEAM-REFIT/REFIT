@@ -23,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Firebase 초기화
         FirebaseApp.configure()
         
+        // Firestore
+        let db = Firestore.firestore()
+        
         // Cloud Storage
         let storage = Storage.storage()
         
@@ -34,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func application(
+    func application (
         _ application: UIApplication,
         open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]
     ) -> Bool {
