@@ -1,12 +1,23 @@
 //
-//  FirebaseStorageManager.swift
+//  FirebaseManager.swift
 //  REFIT
 //
-//  Created by 김동윤 on 2022/11/08.
+//  Created by 김동윤 on 2022/11/11.
 //
-import UIKit
-import FirebaseStorage
+
+import Foundation
 import Firebase
+import FirebaseAuth
+import FirebaseFirestore
+import FirebaseStorage
+
+class FirebaseAuthManager {
+    static let userID = Auth.auth().currentUser!.uid
+}
+
+class FirebaseFirestoreManger {
+    static let db = Firestore.firestore()
+}
 
 class FirebaseStorageManager {
     static func uploadImage(image: UIImage) {
