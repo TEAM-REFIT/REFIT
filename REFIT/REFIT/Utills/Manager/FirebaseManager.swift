@@ -11,21 +11,24 @@ import FirebaseAuth
 import FirebaseFirestore
 import FirebaseStorage
 
+// Auth
 class FirebaseAuthManager {
     static let userID = Auth.auth().currentUser!.uid
 }
 
+// Data base
 class FirebaseFirestoreManger {
     static let db = Firestore.firestore()
 }
 
+// image storage
 class FirebaseStorageManager {
     static func uploadImage(image: UIImage) {
         guard let imageData = image.jpegData(compressionQuality: 0.4) else { return }
         let metaData = StorageMetadata()
         metaData.contentType = "image/jpeg"
         
-        let imageName = UUID().uuidString + String(Date().timeIntervalSince1970)
+        let imageName = FirebaseAuthManager.userID + UUID().uuidString
         
         let firebaseReference = Storage.storage().reference().child("\(imageName)")
         firebaseReference.putData(imageData, metadata: metaData)

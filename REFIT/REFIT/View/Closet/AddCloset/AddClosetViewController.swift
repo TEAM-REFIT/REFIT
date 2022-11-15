@@ -193,18 +193,28 @@ class AddClosetViewController: UIViewController {
                                        "material" : BtnValue(button: materialBtn)]
         //FirebaseStorage
         if clothesImageView.image != UIImage(imageLiteralResourceName: "addImageViewImg") {
-            // Firesbase Storeage
-            FirebaseStorageManager.uploadImage(image: clothesImageView.image!)
-            // Firestore
-            FirebaseFirestoreManger.db.collection("Closet-\(FirebaseAuthManager.userID)").document(clothes["title"] as! String).setData(clothes) { err in
-                if let err = err {
-                    print("Error writing document: \(err)")
-                } else {
-                    print("Document successfully written!")
-                    // 화면 전환
-                    self.navigationController?.popViewController(animated: true)
+            
+            if titleTextField.text?.isEmpty == false {
+                // Firesbase Storeage
+                FirebaseStorageManager.uploadImage(image: clothesImageView.image!)
+                // Firestore
+                FirebaseFirestoreManger.db.collection("Closet-\(FirebaseAuthManager.userID)").document(clothes["title"] as! String).setData(clothes) { err in
+                    if let err = err {
+                        print("Error writing document: \(err)")
+                    } else {
+                        print("Document successfully written!")
+                        // 화면 전환
+                        self.navigationController?.popViewController(animated: true)
+                    }
                 }
+                
+            } else {
+                let alert = UIAlertController(title: "타이틀을 선택하지 않았어요!", message: "타이틀을 선택해주세요!", preferredStyle: UIAlertController.Style.alert)
+                let action = UIAlertAction(title: "확인", style: .default, handler: nil)
+                alert.addAction(action)
+                present(alert, animated: false, completion: nil)
             }
+            
         } else {
             let alert = UIAlertController(title: "사진을 선택하지 않았어요!", message: "사진을 선택해주세요!", preferredStyle: UIAlertController.Style.alert)
             let action = UIAlertAction(title: "확인", style: .default, handler: nil)
