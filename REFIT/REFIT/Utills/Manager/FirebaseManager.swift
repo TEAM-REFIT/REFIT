@@ -23,14 +23,12 @@ class FirebaseFirestoreManger {
 
 // image storage
 class FirebaseStorageManager {
-    static func uploadImage(image: UIImage) {
+    static func uploadImage(name: String,image: UIImage) {
         guard let imageData = image.jpegData(compressionQuality: 0.4) else { return }
         let metaData = StorageMetadata()
         metaData.contentType = "image/jpeg"
         
-        let imageName = FirebaseAuthManager.userID + UUID().uuidString
-        
-        let firebaseReference = Storage.storage().reference().child("\(imageName)")
+        let firebaseReference = Storage.storage().reference().child("\(name)")
         firebaseReference.putData(imageData, metadata: metaData)
     }
     
