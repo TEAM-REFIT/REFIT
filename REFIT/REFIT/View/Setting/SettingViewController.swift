@@ -6,9 +6,8 @@ class SettingViewController: UIViewController {
         
     }
     @IBAction func logoutBtn(_ sender: Any) {
-        let firebaseAuth = Auth.auth()
         do {
-          try firebaseAuth.signOut()
+            try FirebaseAuthManager.auth.signOut()
         } catch let signOutError as NSError {
           print("Error signing out: %@", signOutError)
         }

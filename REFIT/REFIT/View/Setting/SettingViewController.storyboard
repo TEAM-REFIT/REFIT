@@ -15,15 +15,29 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JdM-ND-CAk">
+                                <rect key="frame" x="175.5" y="430.5" width="63" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="logut"/>
+                                <connections>
+                                    <action selector="logoutBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="pVr-9v-S7T"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JdM-ND-CAk" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Ivb-6r-ivc"/>
+                            <constraint firstItem="JdM-ND-CAk" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="XBM-tC-L30"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="personIcon" id="eNc-Su-US6"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="72" y="68"/>
+            <point key="canvasLocation" x="71.014492753623188" y="67.633928571428569"/>
         </scene>
     </scenes>
     <resources>

@@ -13,6 +13,7 @@ import FirebaseStorage
 
 // Auth
 class FirebaseAuthManager {
+    static let auth = Auth.auth()
     static let userID = Auth.auth().currentUser!.uid
 }
 
