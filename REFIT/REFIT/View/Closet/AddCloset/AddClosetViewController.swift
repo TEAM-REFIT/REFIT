@@ -183,15 +183,16 @@ class AddClosetViewController: UIViewController {
     // registration
     @IBAction func registrationBtnTapped(_ sender: UIButton) {
         // Firestore 데이터 구성
-        let clothes: [String : Any] = ["title" : titleTextField.text ?? "무제",
+        let clothes: [String : Any] = ["userID": FirebaseAuthManager.userID,
+                                       "imageName" : titleTextField.text! + "_" + FirebaseAuthManager.userID + "_" + UUID().uuidString,
+                                       "title" : titleTextField.text ?? "무제",
                                        "category" : categoryTextField.text ?? "선택 없음",
                                        "slider" : sliderValue,
                                        "season" : BtnValue(button: seasonBtn),
                                        "color" : colorBtnValue(button: colorBtn),
                                        "tpo" : BtnValue(button: tpoBtn),
                                        "size" : sizeTextField.text ?? "선택 없음",
-                                       "material" : BtnValue(button: materialBtn),
-                                       "imageName" : titleTextField.text! + "-" + FirebaseAuthManager.userID + UUID().uuidString]
+                                       "material" : BtnValue(button: materialBtn)]
         
         let imageName = clothes["imageName"] as! String
         
@@ -202,7 +203,7 @@ class AddClosetViewController: UIViewController {
                 // Firesbase Storeage
                 FirebaseStorageManager.uploadImage(name: imageName, image: clothesImageView.image!)
                 // Firestore
-                FirebaseFirestoreManger.db.collection("Closet-\(FirebaseAuthManager.userID)").document(clothes["title"] as! String).setData(clothes) { err in
+                FirebaseFirestoreManger.db.collection("Closet").document(imageName).setData(clothes) { err in
                     if let err = err {
                         print("Error writing document: \(err)")
                     } else {

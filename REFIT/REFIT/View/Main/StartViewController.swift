@@ -24,6 +24,5 @@ class StartViewController: UIViewController {
             present(mainNC, animated: true)
         }
     }
-    
 }
 
