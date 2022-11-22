@@ -1,31 +1,40 @@
 import UIKit
 
-class SettingViewController: UIViewController {
+class SettingViewController: UIViewController, UITableViewDelegate {
+    
+    
+    @IBOutlet var settingTableView: UITableView!
+    
+    var settingTableViewLabelItems = ["로그아웃"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        settingTableView.dataSource = self
+        settingTableView.delegate = self
     }
-    @IBAction func logoutBtn(_ sender: Any) {
+}
+
+extension SettingViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return settingTableViewLabelItems.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = settingTableView.dequeueReusableCell(withIdentifier: "ResuableCell", for: indexPath)
+        cell.textLabel?.text = settingTableViewLabelItems[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //클릭한 셀의 이벤트 처리
         do {
             try FirebaseAuthManager.auth.signOut()
         } catch let signOutError as NSError {
           print("Error signing out: %@", signOutError)
         }
-        
+
         let loginVC = getVC("LoginViewController")
         loginVC.modalPresentationStyle = .fullScreen
         loginVC.modalTransitionStyle = .crossDissolve
         present(loginVC, animated: true)
-    }
-    @IBAction func btn(_ sender: Any) {
-        FirebaseFirestoreManger.db.collection("Closet-\(FirebaseAuthManager.userID)").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
-                }
-            }
-        }
     }
 }
