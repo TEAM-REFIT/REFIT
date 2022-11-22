@@ -4,6 +4,7 @@ import UIKit
 class LoginViewController: UIViewController {
 
     // MARK: - IBOutlets
+    @IBOutlet var indicatorView: UIActivityIndicatorView!
     @IBOutlet var LoginBtn: [UIButton]!
     
     // MARK: - Variables
@@ -11,6 +12,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        indicatorView.isHidden = true
         initLoginBtn()
     }
 
@@ -21,7 +23,10 @@ class LoginViewController: UIViewController {
             self.showMainViewController()
         }
     }
-
+    @IBAction func kakaoLoginBtnTapped(_ sender: Any) {
+        print("hi")
+    }
+    
     // MARK: - Functions
     /// show main closet view
     func showMainViewController() {
@@ -34,11 +39,9 @@ class LoginViewController: UIViewController {
     //MARK: - init
     /// init LoginBtn
     func initLoginBtn() {
-//        let loginBtntitleArr = ["Google 로 로그인", "카카오 로 로그인", "apple ID 로 로그인"]
         for i in LoginBtn {
             // title setting
             i.layer.cornerRadius = 25
-            // font setting
         }
     }
 }
