@@ -8,6 +8,10 @@ class SettingViewController: UIViewController, UITableViewDelegate {
     var settingTableViewLabelItems = ["로그아웃"]
     override func viewDidLoad() {
         super.viewDidLoad()
+        // navigation bar setting
+        self.navigationItem.title = "MY"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.pretendard(size: 18, family: .SemiBold)]
+        
         settingTableView.dataSource = self
         settingTableView.delegate = self
     }

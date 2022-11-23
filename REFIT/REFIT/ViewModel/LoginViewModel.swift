@@ -28,6 +28,7 @@ final class LoginViewModel {
             
             if let error = error {
                 print("ERROR Google Sign In \(error.localizedDescription)")
+                self.hideIndicator(viewController)
                 return
             }
             

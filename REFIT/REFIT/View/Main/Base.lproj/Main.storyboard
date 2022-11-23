@@ -19,10 +19,10 @@
             </objects>
             <point key="canvasLocation" x="2231" y="543"/>
         </scene>
-        <!--SettingViewController-->
+        <!--SettingViewControllerNavigationController-->
         <scene sceneID="4oI-M8-EYE">
             <objects>
-                <viewControllerPlaceholder storyboardName="SettingViewController" referencedIdentifier="SettingViewController" id="apC-Ux-kwp" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="SettingViewController" referencedIdentifier="SettingViewControllerNavigationController" id="apC-Ux-kwp" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="mqS-88-5xf"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bzW-Xg-oMg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

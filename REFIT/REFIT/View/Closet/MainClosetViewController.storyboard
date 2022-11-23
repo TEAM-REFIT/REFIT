@@ -193,11 +193,21 @@
                                     <action selector="btn:" destination="DmQ-uv-R7H" eventType="touchUpInside" id="AsD-RZ-MOj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0H8-LM-mZn">
+                                <rect key="frame" x="169.5" y="436" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="btn2:" destination="DmQ-uv-R7H" eventType="touchUpInside" id="XYu-VS-z4W"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="35x-y4-T7F"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="0H8-LM-mZn" firstAttribute="top" secondItem="d3U-aj-75H" secondAttribute="bottom" constant="80" id="E4n-Sk-vUh"/>
                             <constraint firstItem="d3U-aj-75H" firstAttribute="centerY" secondItem="RHO-Yl-Zhi" secondAttribute="centerY" id="M9K-0w-0wx"/>
+                            <constraint firstItem="0H8-LM-mZn" firstAttribute="centerX" secondItem="RHO-Yl-Zhi" secondAttribute="centerX" id="kfq-LA-uC6"/>
                             <constraint firstItem="d3U-aj-75H" firstAttribute="centerX" secondItem="RHO-Yl-Zhi" secondAttribute="centerX" id="qh3-cw-6Xk"/>
                         </constraints>
                     </view>

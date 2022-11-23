@@ -107,4 +107,8 @@ xcuserdata
 Info.plist
 GoogleService-Info.plist
 
+##Hosting
+firebase.json
+public
+
 # End of https://www.toptal.com/developers/gitignore/api/swift,xcode,swiftpackagemanager
