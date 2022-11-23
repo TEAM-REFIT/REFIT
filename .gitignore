@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/swift,xcode,swiftpackagemanager
-# Edit at https://www.toptal.com/developers/gitignore?templates=swift,xcode,swiftpackagemanager
+# Created by https://www.toptal.com/developers/gitignore/api/xcode,swift
+# Edit at https://www.toptal.com/developers/gitignore?templates=xcode,swift
 
 ### Swift ###
 # Xcode
@@ -85,12 +85,6 @@ fastlane/test_output
 
 iOSInjectionProject/
 
-### SwiftPackageManager ###
-Packages
-xcuserdata
-*.xcodeproj
-
-
 ### Xcode ###
 
 ## Xcode 8 and earlier
@@ -104,11 +98,14 @@ xcuserdata
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
+# End of https://www.toptal.com/developers/gitignore/api/xcode,swift
+
+##custom
 Info.plist
 GoogleService-Info.plist
 
 ##Hosting
 firebase.json
 public
-
-# End of https://www.toptal.com/developers/gitignore/api/swift,xcode,swiftpackagemanager
+.firebase
+.firebaserc
