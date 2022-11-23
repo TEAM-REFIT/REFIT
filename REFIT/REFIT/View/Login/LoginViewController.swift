@@ -86,15 +86,58 @@ class LoginViewController: UIViewController {
     }
 }
 
-// MARK: - ASAuthorizationControllerDelegate
-extension LoginViewController: ASAuthorizationControllerDelegate {
-    
-}
-
 // MARK: - ASAuthorizationControllerPresentationContextProviding
 extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return self.view.window!
+    }
+}
+
+// MARK: - ASAuthorizationControllerDelegate
+@available(iOS 13.0, *)
+extension LoginViewController: ASAuthorizationControllerDelegate {
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+            // 몇 가지 표준 키 검사를 수행
+            // 1️⃣ 현재 nonce가 설정되어 있는지 확인
+            guard let nonce = currentNonce else {
+                fatalError("Invalid state: A login callback was received, but no login request was sent.")
+            }
+            
+            // 2️⃣ ID 토큰을 검색하여
+            guard let appleIDtoken = appleIDCredential.identityToken else {
+                print("Unable to fetch identity token")
+                return
+            }
+            
+            // 3️⃣ 문자열로 변환
+            guard let idTokenString = String(data: appleIDtoken, encoding: .utf8) else {
+                print("Unable to serialize token string from data: \(appleIDtoken.debugDescription)")
+                return
+            }
+            
+            // 4️⃣
+            let credential = OAuthProvider.credential(withProviderID: "apple.com",
+                                                      idToken: idTokenString,
+                                                      rawNonce: nonce)
+            
+            // 5️⃣
+            FirebaseAuthManager.auth.signIn(with: credential) { (authDataResult, error) in
+                // 인증 결과에서 Firebase 사용자를 검색하고 사용자 정보를 표시할 수 있다.
+                if let user = authDataResult?.user {
+                    print("애플 로그인 성공", user.uid, user.email ?? "-")
+                }
+                
+                if error != nil {
+                    print(error?.localizedDescription ?? "error" as Any)
+                    return
+                }
+            }
+        }
+    }
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+            // Handle error.
+            print("Sign in with Apple errored: \(error)")
     }
 }
 
