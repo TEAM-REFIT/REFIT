@@ -45,6 +45,9 @@
                                         <buttonConfiguration key="configuration" style="plain" image="appleLogoIcon" title="Apple로 계속하기" imagePadding="20">
                                             <fontDescription key="titleFontDescription" name="Roboto-Medium" family="Roboto" pointSize="19"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="appleLoginBtnTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zf2-d7-OnO"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

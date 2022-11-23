@@ -1,10 +1,13 @@
 import UIKit
+import CryptoKit
 import Firebase
 import FirebaseAuth
+import FirebaseFirestore
 import GoogleSignIn
+import AuthenticationServices
 
 final class LoginViewModel {
-    var currentNonce: String?
+//    var currentNonce: String?
     
     /// Indicator 보여주기
     func showIndicator(_ viewController: LoginViewController) {
@@ -44,5 +47,4 @@ final class LoginViewModel {
             }
         }
     }
-
 }

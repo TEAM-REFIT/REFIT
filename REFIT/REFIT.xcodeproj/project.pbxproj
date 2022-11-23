@@ -81,6 +81,7 @@
 		837E080D292CA638004DCCB4 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		837E080E292CA638004DCCB4 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		837E080F292CC16E004DCCB4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		837E0811292DB693004DCCB4 /* REFIT.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = REFIT.entitlements; sourceTree = "<group>"; };
 		83AF5E2E28D8107D00608C1F /* AllClosetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllClosetViewController.swift; sourceTree = "<group>"; };
 		83B7E5E928FFB9B700B1B674 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		83BEC86B28CF7A56005BB854 /* REFIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = REFIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -270,6 +271,7 @@
 		83BEC86D28CF7A56005BB854 /* REFIT */ = {
 			isa = PBXGroup;
 			children = (
+				837E0811292DB693004DCCB4 /* REFIT.entitlements */,
 				83BEC86E28CF7A56005BB854 /* AppDelegate.swift */,
 				83BEC87028CF7A56005BB854 /* SceneDelegate.swift */,
 				83D6243A28D2FB37008DD677 /* ViewModel */,
@@ -560,6 +562,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = REFIT/REFIT.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BJ89YM9GA5;
@@ -591,6 +594,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = REFIT/REFIT.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BJ89YM9GA5;
