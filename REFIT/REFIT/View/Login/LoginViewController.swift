@@ -32,13 +32,14 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func appleLoginBtnTapped(_ sender: Any) {
-        print("appleLoginBtnTapped")
         let request = createAppleIDRequest()
         let authorizationController = ASAuthorizationController(authorizationRequests: [request])
         
         authorizationController.delegate = self
         authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
+        
+        viewModel.showIndicator(self)
     }
     
     
@@ -122,7 +123,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                                                       rawNonce: nonce)
             
             // 5️⃣
-            FirebaseAuthManager.auth.signIn(with: credential) { (authDataResult, error) in
+            FirebaseAuthManager.auth.signIn(with: credential) { [self] (authDataResult, error) in
                 // 인증 결과에서 Firebase 사용자를 검색하고 사용자 정보를 표시할 수 있다.
                 if let user = authDataResult?.user {
                     print("애플 로그인 성공", user.uid, user.email ?? "-")
@@ -138,6 +139,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
     }
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
             // Handle error.
+            viewModel.hideIndicator(self)
             print("Sign in with Apple errored: \(error)")
     }
 }

@@ -7,8 +7,7 @@ import GoogleSignIn
 import AuthenticationServices
 
 final class LoginViewModel {
-//    var currentNonce: String?
-    
+
     /// Indicator 보여주기
     func showIndicator(_ viewController: LoginViewController) {
         viewController.indicatorView.isHidden = false
@@ -48,3 +47,4 @@ final class LoginViewModel {
         }
     }
 }
+

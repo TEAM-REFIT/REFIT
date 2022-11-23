@@ -61,7 +61,12 @@ class AddClosetViewController: UIViewController {
         initRegistrationBtn()
         
         initCategoryPickerView()
+        
+        indicatorView.isHidden = true
     }
+    
+    // Indicator
+    @IBOutlet var indicatorView: UIActivityIndicatorView!
     
     // MARK: - Action
     // Image view
@@ -182,6 +187,7 @@ class AddClosetViewController: UIViewController {
     
     // registration
     @IBAction func registrationBtnTapped(_ sender: UIButton) {
+        showIndicator(self)
         // Firestore 데이터 구성
         let clothes: [String : Any] = ["userID": FirebaseAuthManager.userID,
                                        "imageName" : titleTextField.text! + "_" + FirebaseAuthManager.userID + "_" + UUID().uuidString,
@@ -203,17 +209,20 @@ class AddClosetViewController: UIViewController {
                 // Firesbase Storeage
                 FirebaseStorageManager.uploadImage(name: imageName, image: clothesImageView.image!)
                 // Firestore
-                FirebaseFirestoreManger.db.collection("Closet").document(imageName).setData(clothes) { err in
+                FirebaseFirestoreManger.db.collection("Closet").document(imageName).setData(clothes) { [self] err in
                     if let err = err {
+                        hideIndicator(self)
                         print("Error writing document: \(err)")
                     } else {
                         print("Document successfully written!")
                         // 화면 전환
                         self.navigationController?.popViewController(animated: true)
+//                        hideIndicator(self)
                     }
                 }
                 
             } else {
+                hideIndicator(self)
                 // 타이틀이 선택되지 않았을 때 alert
                 let alert = UIAlertController(title: "타이틀을 선택하지 않았어요!", message: "타이틀을 선택해주세요!", preferredStyle: UIAlertController.Style.alert)
                 let action = UIAlertAction(title: "확인", style: .default, handler: nil)
@@ -222,6 +231,7 @@ class AddClosetViewController: UIViewController {
             }
             
         } else {
+            hideIndicator(self)
             // 이미지가 선택되지 않았을 때 alert
             let alert = UIAlertController(title: "사진을 선택하지 않았어요!", message: "사진을 선택해주세요!", preferredStyle: UIAlertController.Style.alert)
             let action = UIAlertAction(title: "확인", style: .default, handler: nil)
@@ -552,5 +562,19 @@ extension AddClosetViewController: UITextFieldDelegate {
             textField.resignFirstResponder()
         }
         return true
+    }
+}
+
+extension AddClosetViewController {
+    /// Indicator 보여주기
+    func showIndicator(_ viewController: AddClosetViewController) {
+        viewController.indicatorView.isHidden = false
+        viewController.indicatorView.startAnimating()
+    }
+
+    /// Indicator 숨기기
+    func hideIndicator(_ viewController: AddClosetViewController) {
+        viewController.indicatorView.isHidden = true
+        viewController.indicatorView.stopAnimating()
     }
 }

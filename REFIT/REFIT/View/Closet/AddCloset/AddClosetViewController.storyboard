@@ -811,6 +811,9 @@
                                     <action selector="registrationBtnTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="aEe-ZQ-xwk"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="y0V-F5-hX5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1670"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -818,10 +821,14 @@
                             <constraint firstItem="9te-KU-KMc" firstAttribute="top" secondItem="fWV-3O-MNw" secondAttribute="bottom" id="5Hr-wP-jce"/>
                             <constraint firstItem="fWV-3O-MNw" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="5IK-yP-7Es"/>
                             <constraint firstAttribute="bottom" secondItem="9te-KU-KMc" secondAttribute="bottom" id="5o1-tk-hn1"/>
+                            <constraint firstItem="y0V-F5-hX5" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="8Gd-m0-nBN"/>
                             <constraint firstItem="9te-KU-KMc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="FQM-Ug-gO6"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fWV-3O-MNw" secondAttribute="trailing" id="IPy-dx-r4b"/>
+                            <constraint firstItem="y0V-F5-hX5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Tlq-rE-CfG"/>
+                            <constraint firstAttribute="bottom" secondItem="y0V-F5-hX5" secondAttribute="bottom" id="nof-ji-z9L"/>
                             <constraint firstItem="fWV-3O-MNw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="qBs-5Y-Rel"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="9te-KU-KMc" secondAttribute="trailing" id="rum-Pm-PFm"/>
+                            <constraint firstItem="y0V-F5-hX5" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="sC8-GL-DhO"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="414" height="1670"/>
@@ -831,6 +838,7 @@
                         <outlet property="categoryTextFieldBorderView" destination="O7m-mD-41N" id="kO7-5N-WDi"/>
                         <outlet property="clothesImageView" destination="lKw-ZN-Uon" id="H6A-Mr-IYZ"/>
                         <outlet property="colorLabel" destination="p1H-es-02w" id="Ci3-Qb-fkz"/>
+                        <outlet property="indicatorView" destination="y0V-F5-hX5" id="Kfv-zO-P1x"/>
                         <outlet property="materialLabel" destination="Oxt-pC-AGk" id="HWw-AF-mqe"/>
                         <outlet property="registrationBtn" destination="9te-KU-KMc" id="FEN-T6-aQy"/>
                         <outlet property="seasonLabel" destination="Cde-DP-anA" id="4gX-8K-Gxe"/>
