@@ -23,9 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Firebase 초기화
         FirebaseApp.configure()
         
-        // Firestor
-        
-        // Cloud Storage
+        getAllClosetData()
         
         // tap bar 선 긋기
         let tapBarAppearance = UITabBarAppearance()

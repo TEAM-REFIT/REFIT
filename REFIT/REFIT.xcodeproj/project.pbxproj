@@ -21,7 +21,6 @@
 		8355A90B28DAE4A900F9534A /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8355A90228DAE48300F9534A /* Pretendard-ExtraLight.otf */; };
 		8355A90C28DAE4AB00F9534A /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8355A90328DAE48300F9534A /* Pretendard-Thin.otf */; };
 		8355A90F28DAE4C200F9534A /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8355A90E28DAE4C200F9534A /* Font.swift */; };
-		8378CDFC292601DE0093FC60 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8378CDFB292601DE0093FC60 /* CollectionViewCell.swift */; };
 		8378CDFE292B52A60093FC60 /* ClosetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8378CDFD292B52A60093FC60 /* ClosetData.swift */; };
 		837A67B628FEE3D900046632 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 837A67B528FEE3D900046632 /* GoogleSignIn */; };
 		837A67B828FEE3D900046632 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 837A67B728FEE3D900046632 /* GoogleSignInSwift */; };
@@ -63,7 +62,6 @@
 		8355A90228DAE48300F9534A /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
 		8355A90328DAE48300F9534A /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 		8355A90E28DAE4C200F9534A /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
-		8378CDFB292601DE0093FC60 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		8378CDFD292B52A60093FC60 /* ClosetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetData.swift; sourceTree = "<group>"; };
 		837A67DD28FFB45D00046632 /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
 		837A67DF28FFB47600046632 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -160,14 +158,6 @@
 			path = Pretendard;
 			sourceTree = "<group>";
 		};
-		8378CDFA292601A10093FC60 /* CollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				8378CDFB292601DE0093FC60 /* CollectionViewCell.swift */,
-			);
-			path = CollectionView;
-			sourceTree = "<group>";
-		};
 		8378CDFF292B52E00093FC60 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,7 +219,6 @@
 				83C2793428D63D510071F392 /* MainClosetViewController.storyboard */,
 				83D6244228D3FCC8008DD677 /* MainClosetViewController.swift */,
 				83AF5E2E28D8107D00608C1F /* AllClosetViewController.swift */,
-				8378CDFA292601A10093FC60 /* CollectionView */,
 				83AF5E3228D9A2AE00608C1F /* AddCloset */,
 			);
 			path = Closet;
@@ -414,7 +403,6 @@
 				83AF5E2F28D8107D00608C1F /* AllClosetViewController.swift in Sources */,
 				83B7E5EA28FFB9B700B1B674 /* UIViewControllerExtension.swift in Sources */,
 				832A02BC2900E34900D571E1 /* LoginViewModel.swift in Sources */,
-				8378CDFC292601DE0093FC60 /* CollectionViewCell.swift in Sources */,
 				8355A90F28DAE4C200F9534A /* Font.swift in Sources */,
 				837A67E028FFB47600046632 /* LoginViewController.swift in Sources */,
 				83D6244728D40332008DD677 /* SettingViewController.swift in Sources */,

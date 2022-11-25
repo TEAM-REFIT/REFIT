@@ -7,6 +7,8 @@ class StartViewController: UIViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("StartViewController")
+        print("s-\(ClosetData.shared.allClosetTitleData)")
     }
     
     override func viewDidAppear(_ animated: Bool) {

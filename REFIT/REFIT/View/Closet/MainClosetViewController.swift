@@ -15,6 +15,7 @@ class MainClosetViewController:UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("MainClosetViewController-\(ClosetData.shared.allClosetTitleData)")
         //navigation bar title font setting
         self.navigationItem.title = "내 옷장"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.pretendard(size: 18, family: .SemiBold)]
@@ -50,7 +51,8 @@ class MainClosetViewController:UIViewController {
     }
     
     @IBAction func searchBtnTapped(_ sender: Any) {
-
+        print(ClosetData.shared.allClosetData)
+        print(ClosetData.shared.allClosetTitleData)
     }
     
     

@@ -24,8 +24,9 @@ func getAllClosetData() {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    ClosetData.shared.allClosetData.append(document.data())
                     ClosetData.shared.allClosetTitleData.append(document.data()["title"] as! String)
+                    ClosetData.shared.allClosetData.append(document.data())
+//                    print(ClosetData.shared.allClosetTitleData)
                 }
             }
     }
