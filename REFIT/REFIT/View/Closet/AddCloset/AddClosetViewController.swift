@@ -217,7 +217,6 @@ class AddClosetViewController: UIViewController {
                         print("Document successfully written!")
                         // 화면 전환
                         self.navigationController?.popViewController(animated: true)
-//                        hideIndicator(self)
                     }
                 }
                 
@@ -452,7 +451,6 @@ class AddClosetViewController: UIViewController {
               tpoBtnIndex += 1
           }
         }
-    
     
     /// material button
     func initMaterialBtn() {

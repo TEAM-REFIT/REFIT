@@ -18,7 +18,7 @@ class ClosetData {
     private init() {}
 }
 
-func getAllClosetData() {
+func getAllClosetData(completion: @escaping () -> Void) {
     FirebaseFirestoreManger.db.collection("Closet").whereField("userID", isEqualTo: FirebaseAuthManager.userID).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -26,8 +26,8 @@ func getAllClosetData() {
                 for document in querySnapshot!.documents {
                     ClosetData.shared.allClosetTitleData.append(document.data()["title"] as! String)
                     ClosetData.shared.allClosetData.append(document.data())
-//                    print(ClosetData.shared.allClosetTitleData)
                 }
             }
+        completion()
     }
 }

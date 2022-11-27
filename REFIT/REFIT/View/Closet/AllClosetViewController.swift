@@ -2,6 +2,7 @@ import UIKit
 
 class AllClosetViewController: UIViewController {
     
+    
     @IBOutlet var allClosetCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -10,15 +11,12 @@ class AllClosetViewController: UIViewController {
         
         self.allClosetCollectionView.delegate = self
         self.allClosetCollectionView.dataSource = self
-        
-        allClosetCollectionView.reloadData()
     }
 
 }
 
 // cell data
 extension AllClosetViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("collectionView-\(ClosetData.shared.allClosetTitleData)")
         return ClosetData.shared.allClosetTitleData.count
