@@ -216,7 +216,10 @@ class AddClosetViewController: UIViewController {
                     } else {
                         print("Document successfully written!")
                         // 화면 전환
-                        self.navigationController?.popViewController(animated: true)
+                        getAllClosetData {
+                            self.navigationController?.popViewController(animated: true)
+                            
+                        }
                     }
                 }
                 
@@ -450,7 +453,7 @@ class AddClosetViewController: UIViewController {
               i.layer.borderColor = UIColor.lightGray.cgColor
               tpoBtnIndex += 1
           }
-        }
+    }
     
     /// material button
     func initMaterialBtn() {

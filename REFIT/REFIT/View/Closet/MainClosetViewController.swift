@@ -50,6 +50,7 @@ class MainClosetViewController:UIViewController {
     }
     
     @IBAction func searchBtnTapped(_ sender: Any) {
+
     }
     
     

@@ -33,6 +33,8 @@
 		839F934D291041FC009DF036 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 839F934C291041FC009DF036 /* FirebaseFirestore */; };
 		839F934F291041FC009DF036 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 839F934E291041FC009DF036 /* FirebaseFirestoreSwift */; };
 		839F9351291041FC009DF036 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 839F9350291041FC009DF036 /* FirebaseStorage */; };
+		83AD3331293441AB000C0F9D /* ClothesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AD3330293441AB000C0F9D /* ClothesCell.swift */; };
+		83AD333729344435000C0F9D /* ClothesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83AD333629344435000C0F9D /* ClothesCell.xib */; };
 		83AF5E2F28D8107D00608C1F /* AllClosetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AF5E2E28D8107D00608C1F /* AllClosetViewController.swift */; };
 		83B7E5EA28FFB9B700B1B674 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B7E5E928FFB9B700B1B674 /* UIViewControllerExtension.swift */; };
 		83BEC86F28CF7A56005BB854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BEC86E28CF7A56005BB854 /* AppDelegate.swift */; };
@@ -80,6 +82,8 @@
 		837E080E292CA638004DCCB4 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		837E080F292CC16E004DCCB4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		837E0811292DB693004DCCB4 /* REFIT.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = REFIT.entitlements; sourceTree = "<group>"; };
+		83AD3330293441AB000C0F9D /* ClothesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesCell.swift; sourceTree = "<group>"; };
+		83AD333629344435000C0F9D /* ClothesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClothesCell.xib; sourceTree = "<group>"; };
 		83AF5E2E28D8107D00608C1F /* AllClosetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllClosetViewController.swift; sourceTree = "<group>"; };
 		83B7E5E928FFB9B700B1B674 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		83BEC86B28CF7A56005BB854 /* REFIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = REFIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,12 +217,22 @@
 			path = Roboto;
 			sourceTree = "<group>";
 		};
+		83AD332F2934415D000C0F9D /* ClothesCell */ = {
+			isa = PBXGroup;
+			children = (
+				83AD333629344435000C0F9D /* ClothesCell.xib */,
+				83AD3330293441AB000C0F9D /* ClothesCell.swift */,
+			);
+			path = ClothesCell;
+			sourceTree = "<group>";
+		};
 		83AF5E2C28D8102200608C1F /* Closet */ = {
 			isa = PBXGroup;
 			children = (
 				83C2793428D63D510071F392 /* MainClosetViewController.storyboard */,
 				83D6244228D3FCC8008DD677 /* MainClosetViewController.swift */,
 				83AF5E2E28D8107D00608C1F /* AllClosetViewController.swift */,
+				83AD332F2934415D000C0F9D /* ClothesCell */,
 				83AF5E3228D9A2AE00608C1F /* AddCloset */,
 			);
 			path = Closet;
@@ -371,6 +385,7 @@
 				8355A90A28DAE4A700F9534A /* Pretendard-Light.otf in Resources */,
 				8355A90528DAE49A00F9534A /* Pretendard-ExtraBold.otf in Resources */,
 				8355A90728DAE49F00F9534A /* Pretendard-SemiBold.otf in Resources */,
+				83AD333729344435000C0F9D /* ClothesCell.xib in Resources */,
 				83D6244928D40371008DD677 /* SettingViewController.storyboard in Resources */,
 				837A67DE28FFB45D00046632 /* LoginViewController.storyboard in Resources */,
 				83BEC87B28CF7A57005BB854 /* LaunchScreen.storyboard in Resources */,
@@ -399,6 +414,7 @@
 				83BEC87128CF7A56005BB854 /* SceneDelegate.swift in Sources */,
 				83D6244328D3FCC8008DD677 /* MainClosetViewController.swift in Sources */,
 				837A67E228FFB51400046632 /* StartViewController.swift in Sources */,
+				83AD3331293441AB000C0F9D /* ClothesCell.swift in Sources */,
 				8378CDFE292B52A60093FC60 /* ClosetData.swift in Sources */,
 				83AF5E2F28D8107D00608C1F /* AllClosetViewController.swift in Sources */,
 				83B7E5EA28FFB9B700B1B674 /* UIViewControllerExtension.swift in Sources */,

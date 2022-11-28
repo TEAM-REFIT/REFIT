@@ -202,22 +202,7 @@
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6B2-h9-NVs">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNT-4j-DH1">
-                                                    <rect key="frame" x="43" y="8" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="QNT-4j-DH1" firstAttribute="top" secondItem="6B2-h9-NVs" secondAttribute="top" constant="8" id="6EL-ug-kzY"/>
-                                                <constraint firstItem="QNT-4j-DH1" firstAttribute="centerX" secondItem="6B2-h9-NVs" secondAttribute="centerX" id="tZK-ce-pQi"/>
-                                            </constraints>
                                         </collectionViewCellContentView>
-                                        <connections>
-                                            <outlet property="titleLabel" destination="QNT-4j-DH1" id="chS-JK-Xqq"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -304,7 +289,7 @@
             <objects>
                 <viewController id="OyW-Uf-kqL" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mXt-nC-a41">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="676"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="676.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="did-iu-3Zt"/>
                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
