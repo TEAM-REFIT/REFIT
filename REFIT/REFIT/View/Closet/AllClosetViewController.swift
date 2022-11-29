@@ -6,8 +6,7 @@ class AllClosetViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("AllClosetViewController")
-        
+
         allClosetCollectionView.delegate = self
         allClosetCollectionView.dataSource = self
         allClosetCollectionView.register(UINib(nibName: "ClothesCell", bundle: .main), forCellWithReuseIdentifier: "ClothesCell")
@@ -15,13 +14,14 @@ class AllClosetViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // addClosetView 에서 나올 때 콜렉션뷰 리로드
         allClosetCollectionView.reloadData()
     }
 }
 
 extension AllClosetViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ClosetData.shared.allClosetTitleData.count
+        return ClosetData.shared.allClosetData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -29,9 +29,7 @@ extension AllClosetViewController: UICollectionViewDelegate, UICollectionViewDat
             return UICollectionViewCell()
         }
         
-        cell.clothesTitle.text = ClosetData.shared.allClosetTitleData[indexPath.row]
+        cell.clothesTitle.text = ClosetData.shared.allClosetData[indexPath.row]["title"] as? String
         return cell
     }
-    
-    
 }
