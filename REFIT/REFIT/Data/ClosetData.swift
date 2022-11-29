@@ -13,7 +13,6 @@ class ClosetData {
     
     //allCloset
     var allClosetData = [[String: Any]]()
-    var allClosetTitleData = [String]()
     
     private init() {}
 }
@@ -24,7 +23,6 @@ func getAllClosetData(completion: @escaping () -> Void) {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    ClosetData.shared.allClosetTitleData.append(document.data()["title"] as! String)
                     ClosetData.shared.allClosetData.append(document.data())
                 }
             }
