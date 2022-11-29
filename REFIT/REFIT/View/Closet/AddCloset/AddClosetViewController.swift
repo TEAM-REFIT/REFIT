@@ -188,41 +188,38 @@ class AddClosetViewController: UIViewController {
     // registration
     @IBAction func registrationBtnTapped(_ sender: UIButton) {
         showIndicator(self)
-        // Firestore 데이터 구성
-        let clothes: [String : Any] = ["userID": FirebaseAuthManager.userID,
-                                       "imageName" : titleTextField.text! + "_" + FirebaseAuthManager.userID + "_" + UUID().uuidString,
-                                       "title" : titleTextField.text ?? "무제",
-                                       "category" : categoryTextField.text ?? "선택 없음",
-                                       "slider" : sliderValue,
-                                       "season" : BtnValue(button: seasonBtn),
-                                       "color" : colorBtnValue(button: colorBtn),
-                                       "tpo" : BtnValue(button: tpoBtn),
-                                       "size" : sizeTextField.text ?? "선택 없음",
-                                       "material" : BtnValue(button: materialBtn)]
-        
-        let imageName = clothes["imageName"] as! String
-        
         // 이미지가 선택되었을 때만 다음 단계로 이동
         if clothesImageView.image != UIImage(imageLiteralResourceName: "addImageViewImg") {
             // 타이틀이 선택되었을 때만 다음 단계로 이동
             if titleTextField.text?.isEmpty == false {
-                // Firesbase Storeage
-                FirebaseStorageManager.uploadImage(name: imageName, image: clothesImageView.image!)
-                // Firestore
-                FirebaseFirestoreManger.db.collection("Closet").document(imageName).setData(clothes) { [self] err in
-                    if let err = err {
-                        hideIndicator(self)
-                        print("Error writing document: \(err)")
-                    } else {
-                        print("Document successfully written!")
-                        // 화면 전환
-                        getAllClosetData {
-                            self.navigationController?.popViewController(animated: true)
-                            
-                        }
-                    }
-                }
                 
+                let clothes: [String : Any] = ["userID": FirebaseAuthManager.userID,
+                                               "imageName" : titleTextField.text! + "_" + FirebaseAuthManager.userID + "_" + UUID().uuidString,
+                                               "title" : titleTextField.text ?? "무제",
+                                               "category" : categoryTextField.text ?? "선택 없음",
+                                               "slider" : sliderValue,
+                                               "season" : BtnValue(button: seasonBtn),
+                                               "color" : colorBtnValue(button: colorBtn),
+                                               "tpo" : BtnValue(button: tpoBtn),
+                                               "size" : sizeTextField.text ?? "선택 없음",
+                                               "material" : BtnValue(button: materialBtn)]
+                
+                // Firesbase Storeage
+                FirebaseStorageManager.uploadImage(name: titleTextField.text! + "_" + FirebaseAuthManager.userID + "_" + UUID().uuidString, image: clothesImageView.image!)
+                // Firestore
+                addClothesData(userID: FirebaseAuthManager.userID,
+                               imageName: titleTextField.text! + "_" + FirebaseAuthManager.userID + "_" + UUID().uuidString,
+                               title: titleTextField.text!,
+                               category: categoryTextField.text!,
+                               slider: sliderValue,
+                               season: BtnValue(button: seasonBtn),
+                               color: colorBtnValue(button: colorBtn),
+                               tpo: BtnValue(button: tpoBtn),
+                               size: sizeTextField.text!,
+                               material: BtnValue(button: materialBtn)) {
+                    ClosetData.shared.allClosetData.append(clothes)
+                    self.navigationController?.popViewController(animated: true)
+                }
             } else {
                 hideIndicator(self)
                 // 타이틀이 선택되지 않았을 때 alert
@@ -295,7 +292,7 @@ class AddClosetViewController: UIViewController {
         // Hide PickerView
         categoryTextField.resignFirstResponder()
     }
-         
+    
     @objc func CategoryOnPickCancel() {
         // Hide PickerView
         categoryTextField.text = nil
@@ -330,7 +327,7 @@ class AddClosetViewController: UIViewController {
         // Hide PickerView
         categoryTextField.resignFirstResponder()
     }
-         
+    
     // 피커뷰 > 취소 클릭
     @objc func onPickCancel() {
         // Hide PickerView
@@ -413,62 +410,62 @@ class AddClosetViewController: UIViewController {
     func initseasonBtn() {
         let seasonBtnTitleText = ["봄", "여름", "가을", "겨울"]
         var seasonBtnIndex = 0
-          for i in seasonBtn {
-              i.setTitle(seasonBtnTitleText[seasonBtnIndex], for: .normal)
-              i.setTitleColor(.gray, for: .normal)
-              i.titleLabel?.font = UIFont.pretendard(size: 16, family: .Regular)
-              i.tintColor = UIColor.clear
-              i.layer.cornerRadius = 25
-              i.layer.borderWidth = 1
-              i.layer.borderColor = UIColor.lightGray.cgColor
-              seasonBtnIndex += 1
-          }
+        for i in seasonBtn {
+            i.setTitle(seasonBtnTitleText[seasonBtnIndex], for: .normal)
+            i.setTitleColor(.gray, for: .normal)
+            i.titleLabel?.font = UIFont.pretendard(size: 16, family: .Regular)
+            i.tintColor = UIColor.clear
+            i.layer.cornerRadius = 25
+            i.layer.borderWidth = 1
+            i.layer.borderColor = UIColor.lightGray.cgColor
+            seasonBtnIndex += 1
+        }
     }
     
     /// color button
     func initColorBtn() {
-          for i in colorBtn {
-              if clothesImageView.bounds.size.width > 413 {
-                  i.layer.cornerRadius = 0.5 * i.bounds.size.width
-              } else {
-                  i.layer.cornerRadius = 0.45 * i.bounds.size.width
-              }
-              i.layer.borderWidth = 1
-              i.layer.borderColor = UIColor.gray.cgColor
-              i.tintColor = UIColor.clear
-          }
+        for i in colorBtn {
+            if clothesImageView.bounds.size.width > 413 {
+                i.layer.cornerRadius = 0.5 * i.bounds.size.width
+            } else {
+                i.layer.cornerRadius = 0.45 * i.bounds.size.width
+            }
+            i.layer.borderWidth = 1
+            i.layer.borderColor = UIColor.gray.cgColor
+            i.tintColor = UIColor.clear
         }
+    }
     
     /// TPO button
     func initTpoBtn() {
         let tpoBtnTitleText = ["데이트", "비즈니스", "여행", "운동", "유니폼", "데일리", "경조사", "기타"]
         var tpoBtnIndex = 0
-          for i in tpoBtn {
-              i.setTitle(tpoBtnTitleText[tpoBtnIndex], for: .normal)
-              i.setTitleColor(.gray, for: .normal)
-              i.titleLabel?.font = UIFont.pretendard(size: 16, family: .Regular)
-              i.tintColor = UIColor.clear
-              i.layer.cornerRadius = 25
-              i.layer.borderWidth = 1
-              i.layer.borderColor = UIColor.lightGray.cgColor
-              tpoBtnIndex += 1
-          }
+        for i in tpoBtn {
+            i.setTitle(tpoBtnTitleText[tpoBtnIndex], for: .normal)
+            i.setTitleColor(.gray, for: .normal)
+            i.titleLabel?.font = UIFont.pretendard(size: 16, family: .Regular)
+            i.tintColor = UIColor.clear
+            i.layer.cornerRadius = 25
+            i.layer.borderWidth = 1
+            i.layer.borderColor = UIColor.lightGray.cgColor
+            tpoBtnIndex += 1
+        }
     }
     
     /// material button
     func initMaterialBtn() {
         let materialBtnTitleText = ["면", "린넨", "폴리에스테르", "나일론", "벨벳", "가죽", "퍼", "실크", "데님", "트위드", "쉬폰", "코듀로이", "스웨이드", "니트 / 울", "메탈릭", "레이스", "기타"]
         var materialBtnIndex = 0
-          for i in materialBtn {
-              i.setTitle(materialBtnTitleText[materialBtnIndex], for: .normal)
-              i.setTitleColor(.gray, for: .normal)
-              i.titleLabel?.font = UIFont.pretendard(size: 16, family: .Regular)
-              i.tintColor = UIColor.clear
-              i.layer.cornerRadius = 25
-              i.layer.borderWidth = 1
-              i.layer.borderColor = UIColor.lightGray.cgColor
-              materialBtnIndex += 1
-          }
+        for i in materialBtn {
+            i.setTitle(materialBtnTitleText[materialBtnIndex], for: .normal)
+            i.setTitleColor(.gray, for: .normal)
+            i.titleLabel?.font = UIFont.pretendard(size: 16, family: .Regular)
+            i.tintColor = UIColor.clear
+            i.layer.cornerRadius = 25
+            i.layer.borderWidth = 1
+            i.layer.borderColor = UIColor.lightGray.cgColor
+            materialBtnIndex += 1
+        }
     }
     
     /// registration button
@@ -572,7 +569,7 @@ extension AddClosetViewController {
         viewController.indicatorView.isHidden = false
         viewController.indicatorView.startAnimating()
     }
-
+    
     /// Indicator 숨기기
     func hideIndicator(_ viewController: AddClosetViewController) {
         viewController.indicatorView.isHidden = true
