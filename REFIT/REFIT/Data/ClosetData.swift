@@ -32,31 +32,40 @@ public struct Clothes: Codable {
     let tpo: [String]
     let size: String
     let material: [String]
+    let timeStamp: Timestamp
 
     enum CodingKeys: String, CodingKey {
-        case userID = "userID"
-        case imageName = "imageName"
+        case userID
+        case imageName
         
-        case title = "title"
-        case category = "category"
-        case slider = "slider"
-        case season = "season"
-        case color = "color"
-        case tpo = "tpo"
-        case size = "size"
-        case material = "material"
+        case title
+        case category
+        case slider
+        case season
+        case color
+        case tpo
+        case size
+        case material
+        case timeStamp
     }
 }
 
 func getAllClosetData(completion: @escaping () -> Void) {
-    FirebaseFirestoreManger.db.collection("Closet").whereField("userID", isEqualTo: FirebaseAuthManager.userID).getDocuments() { (querySnapshot, err) in
+    FirebaseFirestoreManger.db
+        .collection("Closet")
+        .whereField("userID", isEqualTo: FirebaseAuthManager.userID)
+        .getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
                     ClosetData.shared.allClosetData.append(document.data())
+                    print(document.data()["timeStamp"]!)
                 }
             }
+//            ClosetData.shared.allClosetData.sort{
+//                ($0["timeStamp"] as? Timestamp)! < ($1["timeStamp"] as? Timestamp)!
+//            }
         completion()
     }
 }
@@ -72,7 +81,8 @@ func addClothesData(userID: String, imageName: String, title: String, category: 
                           color: color,
                           tpo: tpo,
                           size: size,
-                          material: material)
+                          material: material,
+                          timeStamp: Timestamp(date: Date()))
     
     do {
         try FirebaseFirestoreManger.db.collection("Closet").document(imageName).setData(from: clothes)

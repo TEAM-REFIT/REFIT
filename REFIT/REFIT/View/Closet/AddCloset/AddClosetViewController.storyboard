@@ -38,7 +38,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
-                                                    <action selector="chageImgBtntapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="9WK-0s-KEc"/>
+                                                    <action selector="changeImgBtntapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6r6-fi-gSV"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="hhE-5K-kAs">

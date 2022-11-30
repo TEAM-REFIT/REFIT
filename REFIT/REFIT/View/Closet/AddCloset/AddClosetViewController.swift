@@ -71,7 +71,7 @@ class AddClosetViewController: UIViewController {
     // MARK: - Action
     // Image view
     // add img
-    @IBAction func chageImgBtntapped(_ sender: Any) {
+    @IBAction func changeImgBtntapped(_ sender: UIButton) {
         
         let picker = UIImagePickerController()
         picker.allowsEditing = true
@@ -117,7 +117,6 @@ class AddClosetViewController: UIViewController {
     @IBAction func sliderScroll(_ sender: UISlider) {
         sliderValue = Int(sender.value)
     }
-    
     
     // color
     @IBAction func colorBtnTapped(_ sender: UIButton) {
