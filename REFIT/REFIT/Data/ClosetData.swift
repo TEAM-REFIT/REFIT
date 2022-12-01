@@ -63,9 +63,6 @@ func getAllClosetData(completion: @escaping () -> Void) {
                     print(document.data()["timeStamp"]!)
                 }
             }
-//            ClosetData.shared.allClosetData.sort{
-//                ($0["timeStamp"] as? Timestamp)! < ($1["timeStamp"] as? Timestamp)!
-//            }
         completion()
     }
 }

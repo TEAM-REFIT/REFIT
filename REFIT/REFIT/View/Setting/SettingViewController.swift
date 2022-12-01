@@ -32,13 +32,13 @@ extension SettingViewController: UITableViewDataSource {
         //클릭한 셀의 이벤트 처리
         do {
             try FirebaseAuthManager.auth.signOut()
+            let loginVC = getVC("LoginViewController")
+            loginVC.modalPresentationStyle = .fullScreen
+            loginVC.modalTransitionStyle = .crossDissolve
+            ClosetData.shared.allClosetData = []
+            present(loginVC, animated: true)
         } catch let signOutError as NSError {
           print("Error signing out: %@", signOutError)
         }
-
-        let loginVC = getVC("LoginViewController")
-        loginVC.modalPresentationStyle = .fullScreen
-        loginVC.modalTransitionStyle = .crossDissolve
-        present(loginVC, animated: true)
     }
 }

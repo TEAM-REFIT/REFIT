@@ -27,7 +27,9 @@ class LoginViewController: UIViewController {
     /// google log in
     @IBAction func googleLoginBtnTapped(_ sender: Any) {
         viewModel.googleLogin(self) {
-            self.showMainViewController()
+            getAllClosetData {
+                self.showMainViewController()
+            }
         }
     }
     
