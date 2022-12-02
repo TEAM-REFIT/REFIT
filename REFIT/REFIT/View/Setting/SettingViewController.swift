@@ -35,7 +35,7 @@ extension SettingViewController: UITableViewDataSource {
             let loginVC = getVC("LoginViewController")
             loginVC.modalPresentationStyle = .fullScreen
             loginVC.modalTransitionStyle = .crossDissolve
-            ClosetData.shared.allClosetData = []
+            ClosetData.shared.allClosetData.removeAll()
             present(loginVC, animated: true)
         } catch let signOutError as NSError {
           print("Error signing out: %@", signOutError)

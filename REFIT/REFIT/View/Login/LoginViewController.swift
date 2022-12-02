@@ -129,7 +129,9 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                 // 인증 결과에서 Firebase 사용자를 검색하고 사용자 정보를 표시할 수 있다.
                 if let user = authDataResult?.user {
                     print("애플 로그인 성공", user.uid, user.email ?? "-")
-                    self.showMainViewController()
+                    getAllClosetData {
+                        self.showMainViewController()
+                    }
                 }
                 
                 if error != nil {
