@@ -121,6 +121,7 @@
 		83131E922921C77A00FC6413 /* Utills */ = {
 			isa = PBXGroup;
 			children = (
+				83FD293A293C57A90082319A /* image */,
 				83131E932921C7A800FC6413 /* Manager */,
 				83B7E5E828FFB99200B1B674 /* Extension */,
 				8355A8E628DAA99C00F9534A /* Font */,
@@ -281,9 +282,8 @@
 				8378CDFF292B52E00093FC60 /* Data */,
 				83D6243928D2FB2D008DD677 /* View */,
 				83131E922921C77A00FC6413 /* Utills */,
-				83BEC87728CF7A57005BB854 /* Assets.xcassets */,
-				837E080F292CC16E004DCCB4 /* GoogleService-Info.plist */,
 				83BEC87C28CF7A57005BB854 /* Info.plist */,
+				837E080F292CC16E004DCCB4 /* GoogleService-Info.plist */,
 			);
 			path = REFIT;
 			sourceTree = "<group>";
@@ -306,6 +306,14 @@
 				832A02BB2900E34900D571E1 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		83FD293A293C57A90082319A /* image */ = {
+			isa = PBXGroup;
+			children = (
+				83BEC87728CF7A57005BB854 /* Assets.xcassets */,
+			);
+			path = image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
