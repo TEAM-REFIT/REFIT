@@ -15,6 +15,11 @@ class ClosetData {
     
     //allCloset
     var allClosetData = [[String: Any]]()
+    var topClosetData = [[String: Any]]()
+    var pantsClosetData = [[String: Any]]()
+    var outerClosetData = [[String: Any]]()
+    var shoesClosetData = [[String: Any]]()
+    var etcClosetData = [[String: Any]]()
     
     private init() {}
 }
@@ -51,6 +56,7 @@ public struct Clothes: Codable {
 }
 
 func getAllClosetData(completion: @escaping () -> Void) {
+    
     FirebaseFirestoreManger.db
         .collection("Closet")
         .whereField("userID", isEqualTo: FirebaseAuthManager.userID)
@@ -59,15 +65,32 @@ func getAllClosetData(completion: @escaping () -> Void) {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
+                    let category = document.data()["category"] as! String
+                    switch category {
+                    case "상의":
+                        ClosetData.shared.topClosetData.append(document.data())
+                    case "하의":
+                        ClosetData.shared.pantsClosetData.append(document.data())
+                        
+                    case "아우터":
+                        ClosetData.shared.outerClosetData.append(document.data())
+                        
+                    case "신발":
+                        ClosetData.shared.shoesClosetData.append(document.data())
+                        
+                    case "기타":
+                        ClosetData.shared.etcClosetData.append(document.data())
+                    default:
+                        break
+                    }
                     ClosetData.shared.allClosetData.append(document.data())
-                    print(document.data()["timeStamp"]!)
                 }
             }
         completion()
     }
 }
 
-func addClothesData(userID: String, imageName: String, title: String, category: String, slider: Int, season: [String], color: [String], tpo: [String], size: String, material: [String], completion: @escaping () -> Void) {
+func addClothesData(userID: String, imageName: String, title: String, category: String, slider: Int, season: [String], color: [String], tpo: [String], size: String, material: [String]) {
     // Firestore 데이터 구성
     let clothes = Clothes(userID: userID,
                           imageName: imageName,
@@ -86,5 +109,4 @@ func addClothesData(userID: String, imageName: String, title: String, category: 
     } catch let error {
         print("Error writing city to Firestore: \(error)")
     }
-    completion()
 }
