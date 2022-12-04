@@ -5,13 +5,7 @@ import FirebaseAuth
 class MainClosetViewController:UIViewController {
     
     @IBOutlet weak var categoryBar: UISegmentedControl!
-    
-    @IBOutlet weak var allClosetView: UIView!
-    @IBOutlet weak var topClosetView: UIView!
-    @IBOutlet weak var pantsClosetView: UIView!
-    @IBOutlet weak var outerwearClosetView: UIView!
-    @IBOutlet weak var shoesClosetView: UIView!
-    @IBOutlet weak var etcClosetView: UIView!
+    @IBOutlet var allClosetCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,26 +14,35 @@ class MainClosetViewController:UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.pretendard(size: 18, family: .SemiBold)]
         
         initCategoryBar()
-        initContainerView()
+        
+        // CollectionView setting
+        allClosetCollectionView.dataSource = self
+        allClosetCollectionView.delegate = self
+        
+        let ClothesCellNib = UINib(nibName: String(describing: ClothesCell.self), bundle: nil)
+        
+        self.allClosetCollectionView.register(ClothesCellNib, forCellWithReuseIdentifier: String(describing: ClothesCell.self))
+        
+        self.allClosetCollectionView.collectionViewLayout = createCompostionalLayout()
     }
     
     @IBAction func CategoryBarTapped(_ sender: UISegmentedControl) {
         let selectedSegmentIndex = sender.selectedSegmentIndex
         switch selectedSegmentIndex {
         case 0:
-            showAllClosetView()
+            print("showAllClosetView()")
         case 1:
-            showTopClosetView()
+            print("showTopClosetView()")
         case 2:
-            showPantsClosetView()
+            print("showPantsClosetView()")
         case 3:
-            showOuterwearClosetView()
+            print("showOuterwearClosetView()")
         case 4:
-            showShoesClosetView()
+            print("showShoesClosetView()")
         case 5:
-            showEtcClosetView()
+            print("showEtcClosetView()")
         default:
-            showAllClosetView()
+            print("showAllClosetView()")
         }
     }
     
@@ -53,65 +56,10 @@ class MainClosetViewController:UIViewController {
 
     }
     
-    
-    func showAllClosetView() {
-        allClosetView.alpha = 1.0
-        topClosetView.alpha = 0.0
-        pantsClosetView.alpha = 0.0
-        outerwearClosetView.alpha = 0.0
-        shoesClosetView.alpha = 0.0
-        etcClosetView.alpha = 0.0
-    }
-    
-    func showTopClosetView() {
-        allClosetView.alpha = 0.0
-        topClosetView.alpha = 1.0
-        pantsClosetView.alpha = 0.0
-        outerwearClosetView.alpha = 0.0
-        shoesClosetView.alpha = 0.0
-        etcClosetView.alpha = 0.0
-    }
-    
-    func showPantsClosetView() {
-        allClosetView.alpha = 0.0
-        topClosetView.alpha = 0.0
-        pantsClosetView.alpha = 1.0
-        outerwearClosetView.alpha = 0.0
-        shoesClosetView.alpha = 0.0
-        etcClosetView.alpha = 0.0
-    }
-    
-    func showOuterwearClosetView() {
-        allClosetView.alpha = 0.0
-        topClosetView.alpha = 0.0
-        pantsClosetView.alpha = 0.0
-        outerwearClosetView.alpha = 1.0
-        shoesClosetView.alpha = 0.0
-        etcClosetView.alpha = 0.0
-    }
-    
-    func showShoesClosetView() {
-        allClosetView.alpha = 0.0
-        topClosetView.alpha = 0.0
-        pantsClosetView.alpha = 0.0
-        outerwearClosetView.alpha = 0.0
-        shoesClosetView.alpha = 1.0
-        etcClosetView.alpha = 0.0
-    }
-    
-    func showEtcClosetView() {
-        allClosetView.alpha = 0.0
-        topClosetView.alpha = 0.0
-        pantsClosetView.alpha = 0.0
-        outerwearClosetView.alpha = 0.0
-        shoesClosetView.alpha = 0.0
-        etcClosetView.alpha = 1.0
-    }
-    
     //MARK: init
     
     /// init to cartegoryBar
-    func initCategoryBar() {
+    private func initCategoryBar() {
         // text size setting
         self.categoryBar.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.pretendard(size: 17, family: .Medium)], for: .normal)
         
@@ -126,15 +74,59 @@ class MainClosetViewController:UIViewController {
         // Divider clear
         self.categoryBar.setDividerImage(UIImage(), forLeftSegmentState: .selected, rightSegmentState: .normal, barMetrics: .default)
     }
-    
-    /// init to containerView
-    func initContainerView() {
-        allClosetView.alpha = 1.0
-        topClosetView.alpha = 0.0
-        pantsClosetView.alpha = 0.0
-        outerwearClosetView.alpha = 0.0
-        shoesClosetView.alpha = 0.0
-        etcClosetView.alpha = 0.0
-    }
+}
+
+extension MainClosetViewController: UICollectionViewDelegate {
     
 }
+
+extension MainClosetViewController: UICollectionViewDataSource {
+    // cell 갯수
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return ClosetData.shared.allClosetData.count
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ClothesCell.self), for: indexPath) as! ClothesCell
+        
+        cell.settingClothesCell = (ClosetData.shared.allClosetData[indexPath.row]["title"] as? String)!
+        
+        return cell
+    }
+}
+
+// colletion view cell layout
+extension MainClosetViewController {
+    fileprivate func createCompostionalLayout() -> UICollectionViewLayout {
+        let layout = UICollectionViewCompositionalLayout {
+            // 만들게 되면 튜플 (키: 값, 키: 값) 의 묶음으로 들어옴 반환 하는 것은 NSCollectionLayoutSection 콜렉션 레이아웃 섹션을 반환해야함
+            (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
+            
+            // 아이템에 대한 사이즈 - absolute 는 고정값, estimated 는 추측, fraction 퍼센트
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+            
+            // 위에서 만든 아이템 사이즈로 아이템 만들기
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            
+            // 아이템 간의 간격 설정
+            item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+            
+            // 그룹사이즈
+            let grouSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(182))
+            
+            // 변경할 부분
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: grouSize, subitem: item, count: 3)
+            
+            // 그룹으로 섹션 만들기
+            let section = NSCollectionLayoutSection(group: group)
+            
+            // 섹션에 대한 간격 설정
+            section.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10)
+            return section
+        }
+        return layout
+    }
+}
+
