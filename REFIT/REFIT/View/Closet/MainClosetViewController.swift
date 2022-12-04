@@ -7,6 +7,8 @@ class MainClosetViewController:UIViewController {
     @IBOutlet weak var categoryBar: UISegmentedControl!
     @IBOutlet var allClosetCollectionView: UICollectionView!
     
+    var collectionViewCellData = ClosetData.shared.allClosetData
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //navigation bar title font setting
@@ -26,29 +28,38 @@ class MainClosetViewController:UIViewController {
         self.allClosetCollectionView.collectionViewLayout = createCompostionalLayout()
     }
     
-    @IBAction func CategoryBarTapped(_ sender: UISegmentedControl) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        categoryBar.selectedSegmentIndex = 0
+        collectionViewCellData = ClosetData.shared.allClosetData
+        allClosetCollectionView.reloadData()
+    }
+    
+    @IBAction func categoryBarTapped(_ sender: UISegmentedControl) {
         let selectedSegmentIndex = sender.selectedSegmentIndex
         switch selectedSegmentIndex {
         case 0:
-            print("showAllClosetView()")
+            collectionViewCellData = ClosetData.shared.allClosetData
         case 1:
-            print("showTopClosetView()")
+            collectionViewCellData = ClosetData.shared.topClosetData
         case 2:
-            print("showPantsClosetView()")
+            collectionViewCellData = ClosetData.shared.pantsClosetData
         case 3:
-            print("showOuterwearClosetView()")
+            collectionViewCellData = ClosetData.shared.outerClosetData
         case 4:
-            print("showShoesClosetView()")
+            collectionViewCellData = ClosetData.shared.shoesClosetData
         case 5:
-            print("showEtcClosetView()")
+            collectionViewCellData = ClosetData.shared.etcClosetData
         default:
             print("showAllClosetView()")
         }
+        allClosetCollectionView.reloadData()
     }
     
     @IBAction func addClothesBtnTapped(_ sender: Any) {
         let storyBoardName = UIStoryboard(name: "AddClosetViewController", bundle: nil)
         let addClosetViewController = storyBoardName.instantiateViewController(withIdentifier: "AddClosetViewController") as! AddClosetViewController
+        
         self.navigationController?.pushViewController(addClosetViewController, animated: true)
     }
     
@@ -83,15 +94,14 @@ extension MainClosetViewController: UICollectionViewDelegate {
 extension MainClosetViewController: UICollectionViewDataSource {
     // cell 갯수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ClosetData.shared.allClosetData.count
+        return collectionViewCellData.count
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ClothesCell.self), for: indexPath) as! ClothesCell
         
-        cell.settingClothesCell = (ClosetData.shared.allClosetData[indexPath.row]["title"] as? String)!
+        cell.settingClothesCell = (collectionViewCellData[indexPath.row]["title"] as? String)!
         
         return cell
     }
@@ -129,4 +139,3 @@ extension MainClosetViewController {
         return layout
     }
 }
-

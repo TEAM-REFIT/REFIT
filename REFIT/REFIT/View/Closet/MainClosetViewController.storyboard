@@ -54,7 +54,7 @@
                                             <segment title="기타"/>
                                         </segments>
                                         <connections>
-                                            <action selector="CategoryBarTapped:" destination="Y6W-OH-hqX" eventType="valueChanged" id="kyF-9c-M4E"/>
+                                            <action selector="categoryBarTapped:" destination="Y6W-OH-hqX" eventType="valueChanged" id="agD-z6-Sg4"/>
                                         </connections>
                                     </segmentedControl>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Nt-WZ-93w">
