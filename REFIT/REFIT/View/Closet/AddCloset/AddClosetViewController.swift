@@ -191,18 +191,6 @@ class AddClosetViewController: UIViewController {
         if clothesImageView.image != UIImage(imageLiteralResourceName: "addImageViewImg") {
             // 타이틀이 선택되었을 때만 다음 단계로 이동
             if titleTextField.text?.isEmpty == false {
-                
-                let clothes: [String : Any] = ["userID": FirebaseAuthManager.userID,
-                                               "imageName" : titleTextField.text! + "_" + FirebaseAuthManager.userID + "_" + UUID().uuidString,
-                                               "title" : titleTextField.text ?? "무제",
-                                               "category" : categoryTextField.text ?? "선택 없음",
-                                               "slider" : sliderValue,
-                                               "season" : BtnValue(button: seasonBtn),
-                                               "color" : colorBtnValue(button: colorBtn),
-                                               "tpo" : BtnValue(button: tpoBtn),
-                                               "size" : sizeTextField.text ?? "선택 없음",
-                                               "material" : BtnValue(button: materialBtn)]
-                
                 // Firesbase Storeage
                 FirebaseStorageManager.uploadImage(name: titleTextField.text! + "_" + FirebaseAuthManager.userID + "_" + UUID().uuidString, image: clothesImageView.image!)
                 // Firestore
@@ -215,8 +203,8 @@ class AddClosetViewController: UIViewController {
                                color: colorBtnValue(button: colorBtn),
                                tpo: BtnValue(button: tpoBtn),
                                size: sizeTextField.text!,
-                               material: BtnValue(button: materialBtn)) {
-                    ClosetData.shared.allClosetData.append(clothes)
+                               material: BtnValue(button: materialBtn))
+                addLocalData {
                     self.navigationController?.popViewController(animated: true)
                 }
             } else {
@@ -260,6 +248,42 @@ class AddClosetViewController: UIViewController {
                 }
             }
             return arr
+        }
+        
+        func addLocalData(completion: @escaping () -> Void) {
+            let clothes: [String : Any] = ["userID": FirebaseAuthManager.userID,
+                                           "imageName" : titleTextField.text! + "_" + FirebaseAuthManager.userID + "_" + UUID().uuidString,
+                                           "title" : titleTextField.text ?? "무제",
+                                           "category" : categoryTextField.text ?? "선택 없음",
+                                           "slider" : sliderValue,
+                                           "season" : BtnValue(button: seasonBtn),
+                                           "color" : colorBtnValue(button: colorBtn),
+                                           "tpo" : BtnValue(button: tpoBtn),
+                                           "size" : sizeTextField.text ?? "선택 없음",
+                                           "material" : BtnValue(button: materialBtn)]
+            
+            let category = clothes["category"] as! String
+            switch category {
+            case "상의":
+                print("ClosetData.shared.topClosetData.append(clothes)")
+                ClosetData.shared.topClosetData.append(clothes)
+            case "하의":
+                print("ClosetData.shared.pantsClosetData.append(clothes)")
+                ClosetData.shared.pantsClosetData.append(clothes)
+            case "아우터":
+                print("ClosetData.shared.outerClosetData.append(clothes)")
+                ClosetData.shared.outerClosetData.append(clothes)
+            case "신발":
+                print("ClosetData.shared.shoesClosetData.append(clothes)")
+                ClosetData.shared.shoesClosetData.append(clothes)
+            case "기타":
+                print("ClosetData.shared.etcClosetData.append(clothes)")
+                ClosetData.shared.etcClosetData.append(clothes)
+            default:
+                break
+            }
+            ClosetData.shared.allClosetData.append(clothes)
+            completion()
         }
     }
     
