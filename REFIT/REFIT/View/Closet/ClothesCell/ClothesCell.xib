@@ -11,45 +11,57 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ClothesCell" id="Kgq-PZ-I37" customClass="ClothesCell" customModule="REFIT" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="121" height="182"/>
+            <rect key="frame" x="0.0" y="0.0" width="121.33333333333333" height="182"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fxp-er-XwF">
-                <rect key="frame" x="0.0" y="0.0" width="121" height="182"/>
+                <rect key="frame" x="0.0" y="0.0" width="121.33333333333333" height="182"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addImageViewImg" translatesAutoresizingMaskIntoConstraints="NO" id="04K-dY-rbU">
-                        <rect key="frame" x="0.0" y="0.0" width="121" height="130"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummyClothesImg" translatesAutoresizingMaskIntoConstraints="NO" id="KpY-X7-zvx">
+                        <rect key="frame" x="0.0" y="0.0" width="121.33333333333333" height="130"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="121" id="P4h-42-ZhB"/>
-                            <constraint firstAttribute="height" constant="130" id="Vjh-YZ-PzS"/>
+                            <constraint firstAttribute="height" constant="130" id="AVZ-EQ-dfJ"/>
+                            <constraint firstAttribute="width" constant="121.33" id="h0m-ho-5uW"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66O-El-yoi">
-                        <rect key="frame" x="0.0" y="138" width="121" height="36"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="HlS-oP-6tB">
+                        <rect key="frame" x="5" y="135" width="43.666666666666664" height="42"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="50" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKn-nZ-9sU">
+                                <rect key="frame" x="0.0" y="0.0" width="35.333333333333336" height="20.333333333333332"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLl-QU-TWt">
+                                <rect key="frame" x="0.0" y="20.333333333333343" width="43.666666666666664" height="21.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="04K-dY-rbU" firstAttribute="top" secondItem="fxp-er-XwF" secondAttribute="top" id="5h6-Ss-EBf"/>
-                    <constraint firstAttribute="bottom" secondItem="66O-El-yoi" secondAttribute="bottom" constant="8" id="9Xk-SV-xWx"/>
-                    <constraint firstItem="04K-dY-rbU" firstAttribute="leading" secondItem="fxp-er-XwF" secondAttribute="leading" id="AOM-Vq-A2F"/>
-                    <constraint firstAttribute="trailing" secondItem="04K-dY-rbU" secondAttribute="trailing" id="OkM-KT-tpP"/>
-                    <constraint firstItem="66O-El-yoi" firstAttribute="leading" secondItem="fxp-er-XwF" secondAttribute="leading" id="P2w-SN-kjW"/>
-                    <constraint firstAttribute="trailing" secondItem="66O-El-yoi" secondAttribute="trailing" id="sri-0m-NR0"/>
-                    <constraint firstItem="66O-El-yoi" firstAttribute="top" secondItem="04K-dY-rbU" secondAttribute="bottom" constant="8" id="suj-d3-YQE"/>
+                    <constraint firstItem="KpY-X7-zvx" firstAttribute="top" secondItem="fxp-er-XwF" secondAttribute="top" id="CVx-32-JgB"/>
+                    <constraint firstItem="KpY-X7-zvx" firstAttribute="leading" secondItem="fxp-er-XwF" secondAttribute="leading" id="EHk-sy-ETz"/>
+                    <constraint firstAttribute="trailing" secondItem="KpY-X7-zvx" secondAttribute="trailing" id="KJR-rp-o2e"/>
+                    <constraint firstItem="HlS-oP-6tB" firstAttribute="centerX" secondItem="fxp-er-XwF" secondAttribute="centerX" id="LRw-2i-tw8"/>
+                    <constraint firstItem="HlS-oP-6tB" firstAttribute="top" secondItem="KpY-X7-zvx" secondAttribute="bottom" constant="5" id="Qid-fp-uJf"/>
+                    <constraint firstItem="HlS-oP-6tB" firstAttribute="leading" secondItem="fxp-er-XwF" secondAttribute="leading" constant="5" id="fqN-I0-Lc9"/>
+                    <constraint firstAttribute="bottom" secondItem="HlS-oP-6tB" secondAttribute="bottom" constant="5" id="yXD-OW-3xQ"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="120" height="198"/>
             <connections>
-                <outlet property="clothesImg" destination="04K-dY-rbU" id="v8W-SD-OQY"/>
-                <outlet property="clothesTitle" destination="66O-El-yoi" id="0Tx-9P-jtR"/>
+                <outlet property="clothesBrandLabel" destination="JKn-nZ-9sU" id="LP9-ES-by4"/>
+                <outlet property="clothesImg" destination="KpY-X7-zvx" id="J5u-HL-o3k"/>
+                <outlet property="clothesTitleLabel" destination="lLl-QU-TWt" id="WVw-Tn-iGh"/>
             </connections>
-            <point key="canvasLocation" x="53.076923076923073" y="112.32227488151658"/>
+            <point key="canvasLocation" x="-70" y="69"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="addImageViewImg" width="414" height="414"/>
+        <image name="dummyClothesImg" width="122" height="130"/>
     </resources>
 </document>

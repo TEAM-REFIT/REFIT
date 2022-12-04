@@ -187,7 +187,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZOa-fO-WUb">
-                                <rect key="frame" x="0.0" y="48" width="414" height="628.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="676.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="C5z-6Q-x5B">
                                     <size key="itemSize" width="128" height="128"/>
@@ -196,7 +196,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cell" reuseIdentifier="cell" id="2B2-0L-pwm" customClass="allClosetCollectionViewCell" customModule="REFIT" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cell" reuseIdentifier="" id="2B2-0L-pwm">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6B2-h9-NVs">
@@ -211,7 +211,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="35x-y4-T7F" firstAttribute="bottom" secondItem="ZOa-fO-WUb" secondAttribute="bottom" id="QUg-GY-9SV"/>
-                            <constraint firstItem="ZOa-fO-WUb" firstAttribute="top" secondItem="35x-y4-T7F" secondAttribute="top" id="SlE-n1-2IC"/>
+                            <constraint firstItem="ZOa-fO-WUb" firstAttribute="top" secondItem="RHO-Yl-Zhi" secondAttribute="top" id="SlE-n1-2IC"/>
                             <constraint firstItem="35x-y4-T7F" firstAttribute="trailing" secondItem="ZOa-fO-WUb" secondAttribute="trailing" id="aTQ-Yz-uqz"/>
                             <constraint firstItem="ZOa-fO-WUb" firstAttribute="leading" secondItem="35x-y4-T7F" secondAttribute="leading" id="ePw-Vj-t5x"/>
                         </constraints>

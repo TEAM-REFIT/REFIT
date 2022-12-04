@@ -8,11 +8,15 @@
 import UIKit
 
 class ClothesCell: UICollectionViewCell {
-    
     @IBOutlet var clothesImg: UIImageView!
-    @IBOutlet var clothesTitle: UILabel!
+    @IBOutlet var clothesBrandLabel: UILabel!
+    @IBOutlet var clothesTitleLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    var settingClothesCell: String = "" {
+        didSet {
+//            self.clothesImg.image = UIImage(systemName: settingClothesCell)
+            self.clothesBrandLabel.text = "나이키"
+            self.clothesTitleLabel.text = settingClothesCell
+        }
     }
 }
