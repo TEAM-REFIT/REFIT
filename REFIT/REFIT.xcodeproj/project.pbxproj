@@ -10,6 +10,7 @@
 		8308E47D291DE83A00C7C950 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8308E47C291DE83A00C7C950 /* FirebaseManager.swift */; };
 		832A02BC2900E34900D571E1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832A02BB2900E34900D571E1 /* LoginViewModel.swift */; };
 		83353C6F28D9A66B00EB80A7 /* AddClosetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83353C6E28D9A66B00EB80A7 /* AddClosetViewController.swift */; };
+		8352D4B3293EDE5400CC4803 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8352D4B2293EDE5400CC4803 /* UIImageViewExtension.swift */; };
 		8355A8E528DAA82F00F9534A /* AddClosetViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8355A8E428DAA82F00F9534A /* AddClosetViewController.storyboard */; };
 		8355A90428DAE49700F9534A /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8355A8FF28DAE48300F9534A /* Pretendard-Black.otf */; };
 		8355A90528DAE49A00F9534A /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8355A90128DAE48300F9534A /* Pretendard-ExtraBold.otf */; };
@@ -52,6 +53,7 @@
 		8308E47C291DE83A00C7C950 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		832A02BB2900E34900D571E1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		83353C6E28D9A66B00EB80A7 /* AddClosetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClosetViewController.swift; sourceTree = "<group>"; };
+		8352D4B2293EDE5400CC4803 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		8355A8E428DAA82F00F9534A /* AddClosetViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddClosetViewController.storyboard; sourceTree = "<group>"; };
 		8355A8FB28DAE48200F9534A /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		8355A8FC28DAE48200F9534A /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				83B7E5E928FFB9B700B1B674 /* UIViewControllerExtension.swift */,
+				8352D4B2293EDE5400CC4803 /* UIImageViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				8308E47D291DE83A00C7C950 /* FirebaseManager.swift in Sources */,
 				83353C6F28D9A66B00EB80A7 /* AddClosetViewController.swift in Sources */,
 				83BEC87128CF7A56005BB854 /* SceneDelegate.swift in Sources */,
+				8352D4B3293EDE5400CC4803 /* UIImageViewExtension.swift in Sources */,
 				83D6244328D3FCC8008DD677 /* MainClosetViewController.swift in Sources */,
 				837A67E228FFB51400046632 /* StartViewController.swift in Sources */,
 				83AD3331293441AB000C0F9D /* ClothesCell.swift in Sources */,
@@ -584,6 +588,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -616,6 +621,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -12,8 +12,7 @@ class MainClosetViewController:UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //navigation bar title font setting
-        self.navigationItem.title = "내 옷장"
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.pretendard(size: 18, family: .SemiBold)]
+        initNavigationBar(title: "내 옷장")
         
         initCategoryBar()
         
@@ -64,7 +63,16 @@ class MainClosetViewController:UIViewController {
     }
     
     @IBAction func searchBtnTapped(_ sender: Any) {
-
+        do {
+            try FirebaseAuthManager.auth.signOut()
+            let loginVC = getVC("LoginViewController")
+            loginVC.modalPresentationStyle = .fullScreen
+            loginVC.modalTransitionStyle = .crossDissolve
+            ClosetData.shared.allClosetData.removeAll()
+            present(loginVC, animated: true)
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
     }
     
     //MARK: init
@@ -97,7 +105,7 @@ extension MainClosetViewController: UICollectionViewDataSource {
         return collectionViewCellData.count
     }
     
-    
+    // cell data
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ClothesCell.self), for: indexPath) as! ClothesCell
         
@@ -124,7 +132,7 @@ extension MainClosetViewController {
             item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
             
             // 그룹사이즈
-            let grouSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(182))
+            let grouSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(187))
             
             // 변경할 부분
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: grouSize, subitem: item, count: 3)
