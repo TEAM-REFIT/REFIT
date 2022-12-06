@@ -10,11 +10,14 @@ import Firebase
 import FirebaseAuth
 import FirebaseFirestore
 import FirebaseStorage
+import UIKit
 
 // Auth
 class FirebaseAuthManager {
     static let auth = Auth.auth()
     static let userID = Auth.auth().currentUser!.uid
+    static let userName = Auth.auth().currentUser!.displayName
+    static let userProfileImg = Auth.auth().currentUser!.photoURL
 }
 
 // Data base
