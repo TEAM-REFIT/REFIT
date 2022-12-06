@@ -17,6 +17,9 @@ class ClothesCell: UICollectionViewCell {
 //            self.clothesImg.image = UIImage(systemName: settingClothesCell)
             self.clothesBrandLabel.text = "나이키"
             self.clothesTitleLabel.text = settingClothesCell
+            
+            self.clothesBrandLabel.font = UIFont.pretendard(size: 14, family: .Regular)
+            self.clothesTitleLabel.font = UIFont.pretendard(size: 18, family: .Bold)
         }
     }
 }

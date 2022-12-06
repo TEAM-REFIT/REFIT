@@ -11,10 +11,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ClothesCell" id="Kgq-PZ-I37" customClass="ClothesCell" customModule="REFIT" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="121.33333333333333" height="182"/>
+            <rect key="frame" x="0.0" y="0.0" width="121" height="183"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fxp-er-XwF">
-                <rect key="frame" x="0.0" y="0.0" width="121.33333333333333" height="182"/>
+                <rect key="frame" x="0.0" y="0.0" width="121" height="183"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummyClothesImg" translatesAutoresizingMaskIntoConstraints="NO" id="KpY-X7-zvx">
@@ -24,17 +24,17 @@
                             <constraint firstAttribute="width" constant="121.33" id="h0m-ho-5uW"/>
                         </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="HlS-oP-6tB">
-                        <rect key="frame" x="5" y="135" width="43.666666666666664" height="42"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="HlS-oP-6tB">
+                        <rect key="frame" x="5" y="135" width="43.666666666666664" height="43"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="50" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKn-nZ-9sU">
-                                <rect key="frame" x="0.0" y="0.0" width="35.333333333333336" height="20.333333333333332"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="50" horizontalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKn-nZ-9sU">
+                                <rect key="frame" x="0.0" y="0.0" width="35.333333333333336" height="17.333333333333332"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLl-QU-TWt">
-                                <rect key="frame" x="0.0" y="20.333333333333343" width="43.666666666666664" height="21.666666666666671"/>
+                                <rect key="frame" x="0.0" y="21.333333333333343" width="43.666666666666664" height="21.666666666666671"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -52,13 +52,13 @@
                     <constraint firstAttribute="bottom" secondItem="HlS-oP-6tB" secondAttribute="bottom" constant="5" id="yXD-OW-3xQ"/>
                 </constraints>
             </collectionViewCellContentView>
-            <size key="customSize" width="120" height="198"/>
+            <size key="customSize" width="119.66666666666667" height="208"/>
             <connections>
                 <outlet property="clothesBrandLabel" destination="JKn-nZ-9sU" id="LP9-ES-by4"/>
                 <outlet property="clothesImg" destination="KpY-X7-zvx" id="J5u-HL-o3k"/>
                 <outlet property="clothesTitleLabel" destination="lLl-QU-TWt" id="WVw-Tn-iGh"/>
             </connections>
-            <point key="canvasLocation" x="-70" y="69"/>
+            <point key="canvasLocation" x="-71.282051282051299" y="72.511848341232223"/>
         </collectionViewCell>
     </objects>
     <resources>
