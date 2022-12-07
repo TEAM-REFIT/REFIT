@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 tapBarAppearance.configureWithOpaqueBackground()
                 UITabBar.appearance().standardAppearance = tapBarAppearance
                 UITabBar.appearance().scrollEdgeAppearance = tapBarAppearance
+        
         return true
     }
     

@@ -10,7 +10,7 @@ extension UIViewController {
     
     func initNavigationBar(title: String) {
         // navigation bar setting
-        self.navigationItem.title = "MY"
+        self.navigationItem.title = title
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.pretendard(size: 18, family: .SemiBold)]
     }
 }

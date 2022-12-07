@@ -357,8 +357,10 @@ class AddClosetViewController: UIViewController {
         categoryTextField.text = nil
         categoryTextField.resignFirstResponder()
     }
-    
-    //MARK: - init
+}
+
+//MARK: - init
+extension AddClosetViewController {
     /// init Navigation bar
     func initNavigationBar() {
         self.navigationItem.title = "옷 등록"
@@ -498,7 +500,6 @@ class AddClosetViewController: UIViewController {
     }
 }
 
-//MARK: - Extension
 // image view
 extension AddClosetViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
