@@ -39,6 +39,11 @@ class AddClosetViewController: UIViewController {
     @IBOutlet weak var sizeTextFieldBorderView: UIView!
     @IBOutlet weak var sizeTextField: UITextField!
     
+    // brand
+    @IBOutlet var brandLabel: UILabel!
+    @IBOutlet var brandTextFieldBorderView: UIView!
+    @IBOutlet var brandTextField: UITextField!
+    
     // material
     @IBOutlet weak var materialLabel: UILabel!
     @IBOutlet var materialBtn: [UIButton]!
@@ -203,6 +208,7 @@ class AddClosetViewController: UIViewController {
                                color: colorBtnValue(button: colorBtn),
                                tpo: BtnValue(button: tpoBtn),
                                size: sizeTextField.text!,
+                               brand: brandTextField.text!,
                                material: BtnValue(button: materialBtn))
                 addLocalData {
                     self.navigationController?.popViewController(animated: true)
@@ -260,6 +266,7 @@ class AddClosetViewController: UIViewController {
                                            "color" : colorBtnValue(button: colorBtn),
                                            "tpo" : BtnValue(button: tpoBtn),
                                            "size" : sizeTextField.text ?? "선택 없음",
+                                           "brand" : brandTextField.text ?? "선택없음",
                                            "material" : BtnValue(button: materialBtn)]
             
             let category = clothes["category"] as! String
@@ -390,8 +397,12 @@ extension AddClosetViewController {
         // size Label
         titleLabelDesign(label: sizeLabel, text: "사이즈")
         
+        // brand Label
+        titleLabelDesign(label: brandLabel, text: "브랜드")
+        
         // material Label
         titleLabelDesign(label: materialLabel, text: "소재")
+        
         func titleLabelDesign(label: UILabel, text: String) {
             label.text = text
             label.font = UIFont.pretendard(size: 18, family: .Bold)
@@ -414,6 +425,9 @@ extension AddClosetViewController {
         // size text field
         textFieldDesign(textfieldBorderView: sizeTextFieldBorderView, textField: sizeTextField, placeholder: "ex) S, M, L")
         
+        // brand text field
+        textFieldDesign(textfieldBorderView: brandTextFieldBorderView, textField: brandTextField, placeholder: "ex) 나아키")
+        
         func textFieldDesign(textfieldBorderView: UIView, textField: UITextField, placeholder: String) {
             textfieldBorderView.layer.cornerRadius = 25
             textfieldBorderView.layer.borderWidth = 1
@@ -429,6 +443,7 @@ extension AddClosetViewController {
         titleTextField.delegate = self
         categoryTextField.delegate = self
         sizeTextField.delegate = self
+        brandTextField.delegate = self
     }
     
     /// init  season button
@@ -553,6 +568,9 @@ extension AddClosetViewController: UITextFieldDelegate {
         case sizeTextField:
             sizeTextFieldBorderView.layer.borderColor = UIColor.green.cgColor
             
+        case brandTextField:
+            brandTextFieldBorderView.layer.borderColor = UIColor.green.cgColor
+            
         default:
             return
         }
@@ -570,6 +588,9 @@ extension AddClosetViewController: UITextFieldDelegate {
         case sizeTextField:
             sizeTextFieldBorderView.layer.borderColor = UIColor.lightGray.cgColor
             
+        case brandTextField:
+            brandTextFieldBorderView.layer.borderColor = UIColor.lightGray.cgColor
+            
         default:
             return
         }
@@ -581,6 +602,9 @@ extension AddClosetViewController: UITextFieldDelegate {
             textField.resignFirstResponder()
             categoryTextField.becomeFirstResponder()
         } else if textField == sizeTextField {
+            textField.resignFirstResponder()
+            brandTextField.becomeFirstResponder()
+        } else if textField == brandTextField {
             textField.resignFirstResponder()
         }
         return true

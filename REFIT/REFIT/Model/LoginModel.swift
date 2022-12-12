@@ -6,7 +6,7 @@ import FirebaseFirestore
 import GoogleSignIn
 import AuthenticationServices
 
-final class LoginViewModel {
+final class LoginModel {
 
     /// Indicator 보여주기
     func showIndicator(_ viewController: LoginViewController) {

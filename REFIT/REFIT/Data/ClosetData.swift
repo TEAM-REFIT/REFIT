@@ -36,6 +36,7 @@ public struct Clothes: Codable {
     let color: [String]
     let tpo: [String]
     let size: String
+    let brand: String
     let material: [String]
     let timeStamp: Timestamp
 
@@ -50,6 +51,7 @@ public struct Clothes: Codable {
         case color
         case tpo
         case size
+        case brand
         case material
         case timeStamp
     }
@@ -90,7 +92,7 @@ func getAllClosetData(completion: @escaping () -> Void) {
     }
 }
 
-func addClothesData(userID: String, imageName: String, title: String, category: String, slider: Int, season: [String], color: [String], tpo: [String], size: String, material: [String]) {
+func addClothesData(userID: String, imageName: String, title: String, category: String, slider: Int, season: [String], color: [String], tpo: [String], size: String, brand: String, material: [String]) {
     // Firestore 데이터 구성
     let clothes = Clothes(userID: userID,
                           imageName: imageName,
@@ -101,6 +103,7 @@ func addClothesData(userID: String, imageName: String, title: String, category: 
                           color: color,
                           tpo: tpo,
                           size: size,
+                          brand: brand,
                           material: material,
                           timeStamp: Timestamp(date: Date()))
     

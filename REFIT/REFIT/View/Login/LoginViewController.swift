@@ -8,7 +8,7 @@ import FirebaseFirestore
 
 class LoginViewController: UIViewController {
     // MARK: - Variables
-    let viewModel = LoginViewModel()
+    let viewModel = LoginModel()
     
     // MARK: - Properties
     fileprivate var currentNonce: String?

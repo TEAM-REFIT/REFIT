@@ -12,13 +12,20 @@ class ClothesCell: UICollectionViewCell {
     @IBOutlet var clothesBrandLabel: UILabel!
     @IBOutlet var clothesTitleLabel: UILabel!
     
-    var settingClothesCell: String = "" {
+    var settingClothesCellBrand: String = "" {
         didSet {
-//            self.clothesImg.image = UIImage(systemName: settingClothesCell)
-            self.clothesBrandLabel.text = "나이키"
-            self.clothesTitleLabel.text = settingClothesCell
+            // self.clothesImg.image = UIImage(systemName: settingClothesCell)
+            self.clothesBrandLabel.text = settingClothesCellBrand
             
             self.clothesBrandLabel.font = UIFont.pretendard(size: 14, family: .Regular)
+        }
+    }
+    
+    var settingClothesCellTitle: String = "" {
+        didSet {
+            // self.clothesImg.image = UIImage(systemName: settingClothesCell)
+            self.clothesTitleLabel.text = settingClothesCellTitle
+            
             self.clothesTitleLabel.font = UIFont.pretendard(size: 18, family: .Bold)
         }
     }
