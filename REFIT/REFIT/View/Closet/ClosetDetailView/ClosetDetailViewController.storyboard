@@ -1,30 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17150" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Closet Detail View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ClosetDetailViewController" id="Y6W-OH-hqX" customClass="ClosetDetailViewController" customModule="REFIT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcN-uH-c62">
+                                <rect key="frame" x="0.0" y="47" width="390" height="1453"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3aT-tb-4tC">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="952"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vAr-1p-3Z4">
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="390"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="vAr-1p-3Z4" secondAttribute="height" multiplier="1:1" id="nkO-oG-OUM"/>
+                                                </constraints>
+                                            </imageView>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YJZ-XY-n3p">
+                                                <rect key="frame" x="0.0" y="390" width="390" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="59" id="zS9-zL-pJo"/>
+                                                </constraints>
+                                                <segments>
+                                                    <segment title="First"/>
+                                                    <segment title="Second"/>
+                                                </segments>
+                                            </segmentedControl>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ta-zU-6gt">
+                                                <rect key="frame" x="0.0" y="449" width="195" height="3"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="3" id="EHP-xX-XVa"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUB-4Q-Vjb">
+                                                <rect key="frame" x="195" y="449" width="195" height="3"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                <color key="tintColor" red="0.0" green="0.85098039219999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="3" id="kgl-44-AD9"/>
+                                                </constraints>
+                                            </view>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vAw-AL-60E">
+                                                <rect key="frame" x="0.0" y="452" width="390" height="500"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="500" id="BCz-tF-eEX"/>
+                                                </constraints>
+                                            </tableView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="fUB-4Q-Vjb" secondAttribute="trailing" id="3cv-V0-W5t"/>
+                                            <constraint firstItem="1ta-zU-6gt" firstAttribute="leading" secondItem="3aT-tb-4tC" secondAttribute="leading" id="7Nc-sr-ZNz"/>
+                                            <constraint firstAttribute="bottom" secondItem="vAw-AL-60E" secondAttribute="bottom" id="Jz7-SK-f8K"/>
+                                            <constraint firstAttribute="trailing" secondItem="vAw-AL-60E" secondAttribute="trailing" id="UU1-9D-liI"/>
+                                            <constraint firstItem="fUB-4Q-Vjb" firstAttribute="top" secondItem="YJZ-XY-n3p" secondAttribute="bottom" id="Xll-fo-FWE"/>
+                                            <constraint firstItem="YJZ-XY-n3p" firstAttribute="top" secondItem="vAr-1p-3Z4" secondAttribute="bottom" id="b7M-d4-DKy"/>
+                                            <constraint firstItem="vAw-AL-60E" firstAttribute="top" secondItem="1ta-zU-6gt" secondAttribute="bottom" id="c0Y-B5-wlq"/>
+                                            <constraint firstItem="fUB-4Q-Vjb" firstAttribute="width" secondItem="1ta-zU-6gt" secondAttribute="width" id="cGK-Hx-dSH"/>
+                                            <constraint firstItem="YJZ-XY-n3p" firstAttribute="leading" secondItem="3aT-tb-4tC" secondAttribute="leading" id="cgG-QC-Ylz"/>
+                                            <constraint firstItem="1ta-zU-6gt" firstAttribute="width" secondItem="3aT-tb-4tC" secondAttribute="width" multiplier="0.5" id="hEb-LC-1wg"/>
+                                            <constraint firstItem="vAr-1p-3Z4" firstAttribute="top" secondItem="3aT-tb-4tC" secondAttribute="top" id="iZs-dL-mpk"/>
+                                            <constraint firstAttribute="trailing" secondItem="YJZ-XY-n3p" secondAttribute="trailing" id="k0h-DA-6jS"/>
+                                            <constraint firstAttribute="trailing" secondItem="vAr-1p-3Z4" secondAttribute="trailing" id="k6X-MG-K6m"/>
+                                            <constraint firstItem="1ta-zU-6gt" firstAttribute="top" secondItem="YJZ-XY-n3p" secondAttribute="bottom" id="o1x-6s-EZh"/>
+                                            <constraint firstItem="vAw-AL-60E" firstAttribute="leading" secondItem="3aT-tb-4tC" secondAttribute="leading" id="w2g-ir-dBy"/>
+                                            <constraint firstItem="vAr-1p-3Z4" firstAttribute="leading" secondItem="3aT-tb-4tC" secondAttribute="leading" id="xPC-Yw-Ztk"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="3aT-tb-4tC" firstAttribute="trailing" secondItem="RB1-c5-DpH" secondAttribute="trailing" id="GWc-2r-lLZ"/>
+                                    <constraint firstItem="3aT-tb-4tC" firstAttribute="width" secondItem="hKs-pR-bvS" secondAttribute="width" id="JkN-gS-Esq"/>
+                                    <constraint firstItem="3aT-tb-4tC" firstAttribute="leading" secondItem="RB1-c5-DpH" secondAttribute="leading" id="NPs-lb-dpu"/>
+                                    <constraint firstItem="3aT-tb-4tC" firstAttribute="bottom" secondItem="RB1-c5-DpH" secondAttribute="bottom" id="kfN-M7-iKL"/>
+                                    <constraint firstItem="3aT-tb-4tC" firstAttribute="top" secondItem="RB1-c5-DpH" secondAttribute="top" id="mYM-eV-JPD"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="RB1-c5-DpH"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="hKs-pR-bvS"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tcN-uH-c62" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ho0-2u-hYP"/>
+                            <constraint firstAttribute="bottom" secondItem="tcN-uH-c62" secondAttribute="bottom" id="lZj-Cw-OWY"/>
+                            <constraint firstItem="tcN-uH-c62" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="m2Y-pE-eHn"/>
+                            <constraint firstItem="tcN-uH-c62" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="rtY-6v-rjv"/>
+                        </constraints>
                     </view>
+                    <size key="freeformSize" width="390" height="1500"/>
+                    <connections>
+                        <outlet property="ClothesImgView" destination="vAr-1p-3Z4" id="S3Z-EY-BQo"/>
+                        <outlet property="clothesTableView" destination="vAw-AL-60E" id="MK6-VW-7qY"/>
+                        <outlet property="segmentedControl" destination="YJZ-XY-n3p" id="kuO-fG-gDs"/>
+                        <outlet property="segmentedControlfirstView" destination="1ta-zU-6gt" id="6DL-aF-Z1C"/>
+                        <outlet property="segmentedControlsecondView" destination="fUB-4Q-Vjb" id="DiV-hv-e1w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="83.07692307692308" y="-2.1327014218009479"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

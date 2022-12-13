@@ -369,13 +369,13 @@ class AddClosetViewController: UIViewController {
 //MARK: - init
 extension AddClosetViewController {
     /// init Navigation bar
-    func initNavigationBar() {
+    private func initNavigationBar() {
         self.navigationItem.title = "옷 등록"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.pretendard(size: 18, family: .SemiBold)]
     }
     
     /// init text font
-    func initTitleLabel() {
+    private func initTitleLabel() {
         // title label
         titleLabelDesign(label: titleLabel, text: "제목*")
         
@@ -410,12 +410,12 @@ extension AddClosetViewController {
     }
     
     /// imgView
-    func initClothesImageView() {
+    private func initClothesImageView() {
         clothesImageView.image = UIImage(named: "addImageViewImg")
     }
     
     /// initTextField
-    func initTextField() {
+    private func initTextField() {
         // title text field
         textFieldDesign(textfieldBorderView: titleTextFieldBorderView, textField: titleTextField, placeholder: "제목을 입력해주세요!")
         
@@ -439,7 +439,7 @@ extension AddClosetViewController {
     }
     
     /// init keyboard
-    func initKeyboard() {
+    private func initKeyboard() {
         titleTextField.delegate = self
         categoryTextField.delegate = self
         sizeTextField.delegate = self
@@ -447,7 +447,7 @@ extension AddClosetViewController {
     }
     
     /// init  season button
-    func initseasonBtn() {
+    private func initseasonBtn() {
         let seasonBtnTitleText = ["봄", "여름", "가을", "겨울"]
         var seasonBtnIndex = 0
         for i in seasonBtn {
@@ -463,7 +463,7 @@ extension AddClosetViewController {
     }
     
     /// color button
-    func initColorBtn() {
+    private func initColorBtn() {
         for i in colorBtn {
             if clothesImageView.bounds.size.width > 413 {
                 i.layer.cornerRadius = 0.5 * i.bounds.size.width
@@ -477,7 +477,7 @@ extension AddClosetViewController {
     }
     
     /// TPO button
-    func initTpoBtn() {
+    private func initTpoBtn() {
         let tpoBtnTitleText = ["데이트", "비즈니스", "여행", "운동", "유니폼", "데일리", "경조사", "기타"]
         var tpoBtnIndex = 0
         for i in tpoBtn {
@@ -493,7 +493,7 @@ extension AddClosetViewController {
     }
     
     /// material button
-    func initMaterialBtn() {
+    private func initMaterialBtn() {
         let materialBtnTitleText = ["면", "린넨", "폴리에스테르", "나일론", "벨벳", "가죽", "퍼", "실크", "데님", "트위드", "쉬폰", "코듀로이", "스웨이드", "니트 / 울", "메탈릭", "레이스", "기타"]
         var materialBtnIndex = 0
         for i in materialBtn {
@@ -509,7 +509,7 @@ extension AddClosetViewController {
     }
     
     /// registration button
-    func initRegistrationBtn() {
+    private func initRegistrationBtn() {
         registrationBtn.setTitleColor(.white, for: .normal)
         registrationBtn.backgroundColor = UIColor.black
     }
@@ -613,13 +613,13 @@ extension AddClosetViewController: UITextFieldDelegate {
 
 extension AddClosetViewController {
     /// Indicator 보여주기
-    func showIndicator(_ viewController: AddClosetViewController) {
+    private func showIndicator(_ viewController: AddClosetViewController) {
         viewController.indicatorView.isHidden = false
         viewController.indicatorView.startAnimating()
     }
     
     /// Indicator 숨기기
-    func hideIndicator(_ viewController: AddClosetViewController) {
+    private func hideIndicator(_ viewController: AddClosetViewController) {
         viewController.indicatorView.isHidden = true
         viewController.indicatorView.stopAnimating()
     }

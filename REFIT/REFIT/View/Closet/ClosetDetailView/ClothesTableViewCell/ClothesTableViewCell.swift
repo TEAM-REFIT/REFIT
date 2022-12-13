@@ -6,3 +6,16 @@
 //
 
 import Foundation
+import UIKit
+
+class ClothesTableViewCell: UITableViewCell {
+    
+    @IBOutlet var title: UILabel!
+    @IBOutlet var information: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        
+    }
+}
