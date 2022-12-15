@@ -16,11 +16,14 @@ class ClosetDetailViewController: UIViewController {
     @IBOutlet var segmentedControlfirstView: UIView!
     @IBOutlet var segmentedControlsecondView: UIView!
     
+    @IBOutlet var clothesFirstTableView: UITableView!
+    @IBOutlet var clothesSecondTableView: UITableView!
     
-    @IBOutlet var clothesTableView: UITableView!
+    let firstTableViewTitleArr = ["브랜드", "색상", "소재", "사이즈"]
+    let firstTableViewInformationArr = ["NIKE", "검정", "폴리에스테르", "S"]
     
-    let tableViewTitleArr = ["브랜드", "색상", "소재", "사이즈"]
-    let tableViewInformationArr = ["NIKE", "검정", "폴리에스테르", "S"]
+    let secondTableViewTitleArr = ["계절", "TPO"]
+    let secondTableViewInformationArr = ["봄, 여름, 가을", "데일리", "운동"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,15 +41,22 @@ class ClosetDetailViewController: UIViewController {
         let clothesTableViewCell = UINib(nibName: String(describing: ClothesTableViewCell.self), bundle: nil)
         
         // cell 에 리소스 등록
-        self.clothesTableView.register(clothesTableViewCell, forCellReuseIdentifier: "clothesTableViewCell")
+        self.clothesFirstTableView.register(clothesTableViewCell, forCellReuseIdentifier: "clothesTableViewCell")
     
-        self.clothesTableView.rowHeight = UITableView.automaticDimension
-        self.clothesTableView.estimatedRowHeight = 52
-        self.clothesTableView.separatorInset.left = 0
+        self.clothesFirstTableView.rowHeight = UITableView.automaticDimension
+        self.clothesFirstTableView.estimatedRowHeight = 52
+        self.clothesFirstTableView.separatorInset.left = 0
         
         // 델리게이트 설정
-        self.clothesTableView.delegate = self
-        self.clothesTableView.dataSource = self
+        self.clothesFirstTableView.delegate = self
+        self.clothesFirstTableView.dataSource = self
+        
+        self.clothesSecondTableView.delegate = self
+        self.clothesSecondTableView.dataSource = self
+        
+        clothesSecondTableView.isScrollEnabled = false
+        clothesFirstTableView.isScrollEnabled = false
+
     }
     
     @IBAction func segmentedControlTapped(_ sender: UISegmentedControl) {
@@ -103,15 +113,26 @@ extension ClosetDetailViewController: UITableViewDelegate {
 
 extension ClosetDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.tableViewTitleArr.count
+        if tableView == clothesFirstTableView {
+            return self.firstTableViewTitleArr.count
+        } else {
+            return self.secondTableViewTitleArr.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = clothesTableView.dequeueReusableCell(withIdentifier: "clothesTableViewCell", for: indexPath) as! ClothesTableViewCell
+        let cell = clothesFirstTableView.dequeueReusableCell(withIdentifier: "clothesTableViewCell", for: indexPath) as! ClothesTableViewCell
         
-        cell.title.text = tableViewTitleArr[indexPath.row]
-        cell.information.text = tableViewInformationArr[indexPath.row]
+        if tableView == clothesFirstTableView {
+            cell.title.text = firstTableViewTitleArr[indexPath.row]
+            cell.information.text = firstTableViewInformationArr[indexPath.row]
+        } else {
+            cell.title.text = secondTableViewTitleArr[indexPath.row]
+            cell.information.text = secondTableViewInformationArr[indexPath.row]
+        }
         
+        // 클릭 안 되게 막기
+        cell.selectionStyle = .none
         return cell
     }
 }
