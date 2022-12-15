@@ -43,9 +43,8 @@ class ClosetDetailViewController: UIViewController {
         // cell 에 리소스 등록
         self.clothesFirstTableView.register(clothesTableViewCell, forCellReuseIdentifier: "clothesTableViewCell")
     
-        self.clothesFirstTableView.rowHeight = UITableView.automaticDimension
-        self.clothesFirstTableView.estimatedRowHeight = 52
         self.clothesFirstTableView.separatorInset.left = 0
+        self.clothesSecondTableView.separatorInset.left = 0
         
         // 델리게이트 설정
         self.clothesFirstTableView.delegate = self
