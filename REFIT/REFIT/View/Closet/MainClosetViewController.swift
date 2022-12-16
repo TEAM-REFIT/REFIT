@@ -123,7 +123,10 @@ extension MainClosetViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // 로그인 상태가 아니면
+//        let storyBoardName = UIStoryboard(name: "ClosetDetailViewController", bundle: nil)
+//        let closetDetailViewController = storyBoardName.instantiateViewController(withIdentifier: "ClosetDetailViewController") as! ClosetDetailViewController
+//
+//        self.navigationController?.pushViewController(closetDetailViewController, animated: true)
         let storyBoardName = UIStoryboard(name: "ClosetDetailViewController", bundle: nil)
         let closetDetailViewController = storyBoardName.instantiateViewController(withIdentifier: "ClosetDetailViewController") as! ClosetDetailViewController
         
