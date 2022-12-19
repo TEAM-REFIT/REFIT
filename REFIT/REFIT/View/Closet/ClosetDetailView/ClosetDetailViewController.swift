@@ -18,19 +18,20 @@ class ClosetDetailViewController: UIViewController {
     @IBOutlet var titleViewArrowIcon: UIImageView!
     @IBOutlet var titleViewClothesImgView: UIImageView!
     
+    
     // clothesInformationView
-    @IBOutlet var clothesInformationViewHeaderLabel: UILabel!
-    @IBOutlet var clothesInformationViewTableView: UITableView!
+    @IBOutlet var clothesInfoViewHeaderLabel: UILabel!
+    @IBOutlet var clothesInfoViewTableView: UITableView!
     
     // WearInformationView
-    @IBOutlet var wearInformationViewHeaderLabel: UILabel!
-    @IBOutlet var wearInformationViewTableView: UITableView!
+    @IBOutlet var wearInfoViewHeaderLabel: UILabel!
+    @IBOutlet var wearInfoViewTableView: UITableView!
     
-    let clothesInformationViewTableViewTitleArr = ["브랜드", "색상", "소재", "사이즈"]
-    let clothesInformationViewTableViewInformationArr = ["NIKE", "검정", "폴리에스테르", "S"]
+    let clothesInfoViewTableViewTitleArr = ["브랜드", "색상", "소재", "사이즈"]
+    let clothesInfoViewTableViewInfoArr = ["NIKE", "검정", "폴리에스테르", "S"]
     
-    let wearInformationViewTableViewTitleArr = ["계절", "TPO"]
-    let wearInformationViewTableViewInformationArr = ["봄, 여름, 가을", "데일리", "운동"]
+    let wearInfoViewTableViewTitleArr = ["계절", "TPO"]
+    let wearInfoViewTableViewInfoArr = ["봄, 여름, 가을", "데일리", "운동"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,8 +79,8 @@ extension ClosetDetailViewController {
     /// initclothesInformationView
     func initclothesInformationView() {
         // Label
-        clothesInformationViewHeaderLabel.text = "옷 정보"
-        clothesInformationViewHeaderLabel.font = UIFont.pretendard(size: 20, family: .Bold)
+        clothesInfoViewHeaderLabel.text = "옷 정보"
+        clothesInfoViewHeaderLabel.font = UIFont.pretendard(size: 20, family: .Bold)
         
     }
     
@@ -87,19 +88,19 @@ extension ClosetDetailViewController {
     /// initWearInformationView
     func initWearInformationView() {
         // Label
-        wearInformationViewHeaderLabel.text = "착용 정보"
-        wearInformationViewHeaderLabel.font = UIFont.pretendard(size: 20, family: .Bold)
+        wearInfoViewHeaderLabel.text = "착용 정보"
+        wearInfoViewHeaderLabel.font = UIFont.pretendard(size: 20, family: .Bold)
     }
 }
 
 // MARK: TableView
 extension ClosetDetailViewController {
     func tableViewDelegate() {
-        self.clothesInformationViewTableView.delegate = self
-        self.clothesInformationViewTableView.dataSource = self
+        self.clothesInfoViewTableView.delegate = self
+        self.clothesInfoViewTableView.dataSource = self
         
-        self.wearInformationViewTableView.delegate = self
-        self.wearInformationViewTableView.dataSource = self
+        self.wearInfoViewTableView.delegate = self
+        self.wearInfoViewTableView.dataSource = self
     }
     
     func cellRegister() {
@@ -107,17 +108,17 @@ extension ClosetDetailViewController {
         let clothesTableViewCell = UINib(nibName: String(describing: ClothesTableViewCell.self), bundle: nil)
         
         // cell 에 리소스 등록
-        self.clothesInformationViewTableView.register(clothesTableViewCell, forCellReuseIdentifier: "clothesTableViewCell")
+        self.clothesInfoViewTableView.register(clothesTableViewCell, forCellReuseIdentifier: "clothesTableViewCell")
     }
     
     func initTableView() {
         // 왼쪽 밑줄 마진값 설정
-        self.clothesInformationViewTableView.separatorInset.left = 0
-        self.wearInformationViewTableView.separatorInset.left = 0
+        self.clothesInfoViewTableView.separatorInset.left = 0
+        self.wearInfoViewTableView.separatorInset.left = 0
         
         // 스크롤 막기
-        clothesInformationViewTableView.isScrollEnabled = false
-        wearInformationViewTableView.isScrollEnabled = false
+        clothesInfoViewTableView.isScrollEnabled = false
+        wearInfoViewTableView.isScrollEnabled = false
     }
 }
 
@@ -128,17 +129,17 @@ extension ClosetDetailViewController: UITableViewDelegate {
 extension ClosetDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
-        case clothesInformationViewTableView:
-            return clothesInformationViewTableViewTitleArr.count
-        case wearInformationViewTableView:
-            return wearInformationViewTableViewTitleArr.count
+        case clothesInfoViewTableView:
+            return clothesInfoViewTableViewTitleArr.count
+        case wearInfoViewTableView:
+            return wearInfoViewTableViewTitleArr.count
         default:
             return 0
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = clothesInformationViewTableView.dequeueReusableCell(withIdentifier: "clothesTableViewCell", for: indexPath) as! ClothesTableViewCell
+        let cell = clothesInfoViewTableView.dequeueReusableCell(withIdentifier: "clothesTableViewCell", for: indexPath) as! ClothesTableViewCell
         // 전체 세팅
         // cell setting
         cell.selectionStyle = .none
@@ -148,13 +149,13 @@ extension ClosetDetailViewController: UITableViewDataSource {
         cell.information.textColor = .gray
         
         switch tableView {
-        case clothesInformationViewTableView:
-            cell.title.text = clothesInformationViewTableViewTitleArr[indexPath.row]
-            cell.information.text = clothesInformationViewTableViewInformationArr[indexPath.row]
+        case clothesInfoViewTableView:
+            cell.title.text = clothesInfoViewTableViewTitleArr[indexPath.row]
+            cell.information.text = clothesInfoViewTableViewInfoArr[indexPath.row]
             return cell
-        case wearInformationViewTableView:
-            cell.title.text = wearInformationViewTableViewTitleArr[indexPath.row]
-            cell.information.text = wearInformationViewTableViewInformationArr[indexPath.row]
+        case wearInfoViewTableView:
+            cell.title.text = wearInfoViewTableViewTitleArr[indexPath.row]
+            cell.information.text = wearInfoViewTableViewInfoArr[indexPath.row]
             return cell
         default:
             return cell
