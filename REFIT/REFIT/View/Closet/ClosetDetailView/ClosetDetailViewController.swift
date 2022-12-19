@@ -36,11 +36,11 @@ class ClosetDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initViewRadius()
+        initViewCornerRadius()
         
         initTitleView()
-        initclothesInformationView()
-        initWearInformationView()
+        initclothesInfoView()
+        initWearInfoView()
         
         // table view
         tableViewDelegate()
@@ -54,7 +54,7 @@ class ClosetDetailViewController: UIViewController {
 extension ClosetDetailViewController {
     // all view
     /// view radius
-    func initViewRadius() {
+    func initViewCornerRadius() {
         for i in viewRadius {
             i.layer.cornerRadius = 10
             i.layer.masksToBounds = true
@@ -77,7 +77,7 @@ extension ClosetDetailViewController {
     
     // clothesInformationView
     /// initclothesInformationView
-    func initclothesInformationView() {
+    func initclothesInfoView() {
         // Label
         clothesInfoViewHeaderLabel.text = "옷 정보"
         clothesInfoViewHeaderLabel.font = UIFont.pretendard(size: 20, family: .Bold)
@@ -86,7 +86,7 @@ extension ClosetDetailViewController {
     
     // wearInformationView
     /// initWearInformationView
-    func initWearInformationView() {
+    func initWearInfoView() {
         // Label
         wearInfoViewHeaderLabel.text = "착용 정보"
         wearInfoViewHeaderLabel.font = UIFont.pretendard(size: 20, family: .Bold)
