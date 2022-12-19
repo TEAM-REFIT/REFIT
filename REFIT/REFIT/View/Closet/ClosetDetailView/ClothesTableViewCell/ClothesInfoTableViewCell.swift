@@ -1,5 +1,5 @@
 //
-//  ClothesTableViewCell.swift
+//  ClothesInfoTableViewCell.swift
 //  REFIT
 //
 //  Created by 김동윤 on 2022/12/13.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ClothesTableViewCell: UITableViewCell {
+class ClothesInfoTableViewCell: UITableViewCell {
     
     @IBOutlet var title: UILabel!
     @IBOutlet var information: UILabel!
