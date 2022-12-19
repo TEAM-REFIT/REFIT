@@ -49,8 +49,8 @@
 		83D6244328D3FCC8008DD677 /* MainClosetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D6244228D3FCC8008DD677 /* MainClosetViewController.swift */; };
 		83D6244728D40332008DD677 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D6244628D40332008DD677 /* SettingViewController.swift */; };
 		83D6244928D40371008DD677 /* SettingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83D6244828D40371008DD677 /* SettingViewController.storyboard */; };
-		83E24D3429486965009752CE /* ClothesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83E24D3329486965009752CE /* ClothesTableViewCell.xib */; };
-		83E24D362948696D009752CE /* ClothesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E24D352948696D009752CE /* ClothesTableViewCell.swift */; };
+		83E24D3429486965009752CE /* ClothesInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83E24D3329486965009752CE /* ClothesInfoTableViewCell.xib */; };
+		83E24D362948696D009752CE /* ClothesInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E24D352948696D009752CE /* ClothesInfoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,8 +104,8 @@
 		83D6244228D3FCC8008DD677 /* MainClosetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainClosetViewController.swift; sourceTree = "<group>"; };
 		83D6244628D40332008DD677 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		83D6244828D40371008DD677 /* SettingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingViewController.storyboard; sourceTree = "<group>"; };
-		83E24D3329486965009752CE /* ClothesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClothesTableViewCell.xib; sourceTree = "<group>"; };
-		83E24D352948696D009752CE /* ClothesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesTableViewCell.swift; sourceTree = "<group>"; };
+		83E24D3329486965009752CE /* ClothesInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClothesInfoTableViewCell.xib; sourceTree = "<group>"; };
+		83E24D352948696D009752CE /* ClothesInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesInfoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,8 +330,8 @@
 		83E24D322948693D009752CE /* ClothesTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				83E24D3329486965009752CE /* ClothesTableViewCell.xib */,
-				83E24D352948696D009752CE /* ClothesTableViewCell.swift */,
+				83E24D3329486965009752CE /* ClothesInfoTableViewCell.xib */,
+				83E24D352948696D009752CE /* ClothesInfoTableViewCell.swift */,
 			);
 			path = ClothesTableViewCell;
 			sourceTree = "<group>";
@@ -421,7 +421,7 @@
 				8355A90A28DAE4A700F9534A /* Pretendard-Light.otf in Resources */,
 				8355A90528DAE49A00F9534A /* Pretendard-ExtraBold.otf in Resources */,
 				8355A90728DAE49F00F9534A /* Pretendard-SemiBold.otf in Resources */,
-				83E24D3429486965009752CE /* ClothesTableViewCell.xib in Resources */,
+				83E24D3429486965009752CE /* ClothesInfoTableViewCell.xib in Resources */,
 				83AD333729344435000C0F9D /* ClothesCell.xib in Resources */,
 				83D6244928D40371008DD677 /* SettingViewController.storyboard in Resources */,
 				837A67DE28FFB45D00046632 /* LoginViewController.storyboard in Resources */,
@@ -449,7 +449,7 @@
 				83BEC86F28CF7A56005BB854 /* AppDelegate.swift in Sources */,
 				8308E47D291DE83A00C7C950 /* FirebaseManager.swift in Sources */,
 				83353C6F28D9A66B00EB80A7 /* AddClosetViewController.swift in Sources */,
-				83E24D362948696D009752CE /* ClothesTableViewCell.swift in Sources */,
+				83E24D362948696D009752CE /* ClothesInfoTableViewCell.swift in Sources */,
 				83BEC87128CF7A56005BB854 /* SceneDelegate.swift in Sources */,
 				8352D4B3293EDE5400CC4803 /* UIImageViewExtension.swift in Sources */,
 				83D6244328D3FCC8008DD677 /* MainClosetViewController.swift in Sources */,
