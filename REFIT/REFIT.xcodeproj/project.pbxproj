@@ -24,6 +24,8 @@
 		8355A90F28DAE4C200F9534A /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8355A90E28DAE4C200F9534A /* Font.swift */; };
 		836057ED2948079500571182 /* ClosetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836057EC2948079500571182 /* ClosetDetailViewController.swift */; };
 		836057EF294807A000571182 /* ClosetDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 836057EE294807A000571182 /* ClosetDetailViewController.storyboard */; };
+		8375FC0A2950056200BA107F /* CategoryCareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8375FC092950056200BA107F /* CategoryCareTableViewCell.swift */; };
+		8375FC0C2950057300BA107F /* CategoryCareTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8375FC0B2950057300BA107F /* CategoryCareTableViewCell.xib */; };
 		8378CDFE292B52A60093FC60 /* ClosetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8378CDFD292B52A60093FC60 /* ClosetData.swift */; };
 		837A67B628FEE3D900046632 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 837A67B528FEE3D900046632 /* GoogleSignIn */; };
 		837A67B828FEE3D900046632 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 837A67B728FEE3D900046632 /* GoogleSignInSwift */; };
@@ -71,6 +73,8 @@
 		8355A90E28DAE4C200F9534A /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		836057EC2948079500571182 /* ClosetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetDetailViewController.swift; sourceTree = "<group>"; };
 		836057EE294807A000571182 /* ClosetDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClosetDetailViewController.storyboard; sourceTree = "<group>"; };
+		8375FC092950056200BA107F /* CategoryCareTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCareTableViewCell.swift; sourceTree = "<group>"; };
+		8375FC0B2950057300BA107F /* CategoryCareTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCareTableViewCell.xib; sourceTree = "<group>"; };
 		8378CDFD292B52A60093FC60 /* ClosetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetData.swift; sourceTree = "<group>"; };
 		837A67DD28FFB45D00046632 /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
 		837A67DF28FFB47600046632 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -177,8 +181,18 @@
 				836057EE294807A000571182 /* ClosetDetailViewController.storyboard */,
 				836057EC2948079500571182 /* ClosetDetailViewController.swift */,
 				83E24D322948693D009752CE /* ClothesTableViewCell */,
+				8375FC082950054100BA107F /* CategoryCareTableViewCell */,
 			);
 			path = ClosetDetailView;
+			sourceTree = "<group>";
+		};
+		8375FC082950054100BA107F /* CategoryCareTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8375FC0B2950057300BA107F /* CategoryCareTableViewCell.xib */,
+				8375FC092950056200BA107F /* CategoryCareTableViewCell.swift */,
+			);
+			path = CategoryCareTableViewCell;
 			sourceTree = "<group>";
 		};
 		8378CDFF292B52E00093FC60 /* Data */ = {
@@ -416,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8355A90628DAE49D00F9534A /* Pretendard-Bold.otf in Resources */,
+				8375FC0C2950057300BA107F /* CategoryCareTableViewCell.xib in Resources */,
 				8355A8E528DAA82F00F9534A /* AddClosetViewController.storyboard in Resources */,
 				8355A90428DAE49700F9534A /* Pretendard-Black.otf in Resources */,
 				8355A90A28DAE4A700F9534A /* Pretendard-Light.otf in Resources */,
@@ -459,6 +474,7 @@
 				83B7E5EA28FFB9B700B1B674 /* UIViewControllerExtension.swift in Sources */,
 				832A02BC2900E34900D571E1 /* LoginModel.swift in Sources */,
 				8355A90F28DAE4C200F9534A /* Font.swift in Sources */,
+				8375FC0A2950056200BA107F /* CategoryCareTableViewCell.swift in Sources */,
 				837A67E028FFB47600046632 /* LoginViewController.swift in Sources */,
 				836057ED2948079500571182 /* ClosetDetailViewController.swift in Sources */,
 				83D6244728D40332008DD677 /* SettingViewController.swift in Sources */,
