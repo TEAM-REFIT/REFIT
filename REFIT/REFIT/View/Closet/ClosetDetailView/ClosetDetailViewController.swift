@@ -9,29 +9,45 @@ import Foundation
 import UIKit
 
 class ClosetDetailViewController: UIViewController {
-    // all view
+    // All view
     @IBOutlet var viewRadius: [UIView]!
     
-    // title view
+    // Title view
     @IBOutlet var titleViewCategoryLabel: UILabel!
     @IBOutlet var titleViewTitleLabl: UILabel!
     @IBOutlet var titleViewArrowIcon: UIImageView!
     @IBOutlet var titleViewClothesImgView: UIImageView!
     
     
-    // clothesInformationView
+    // ClothesInfoView
     @IBOutlet var clothesInfoViewHeaderLabel: UILabel!
     @IBOutlet var clothesInfoViewTableView: UITableView!
     
-    // WearInformationView
+    // WearInfoView
     @IBOutlet var wearInfoViewHeaderLabel: UILabel!
     @IBOutlet var wearInfoViewTableView: UITableView!
     
+    // CategoryCareView
+    @IBOutlet var categoryCareViewHeaderLabel: UILabel!
+    @IBOutlet var categoryCareViewTableView: UITableView!
+    
+    // MaterialCareView
+    @IBOutlet var materialCareViewHeaderLabel: UILabel!
+    @IBOutlet var materialCareViewTableView: UITableView!
+    
+    // ClothesInfoView TableView data
     let clothesInfoViewTableViewTitleArr = ["브랜드", "색상", "소재", "사이즈"]
     let clothesInfoViewTableViewInfoArr = ["NIKE", "검정", "폴리에스테르", "S"]
     
+    // WearInfoView TalbeView data
     let wearInfoViewTableViewTitleArr = ["계절", "TPO"]
     let wearInfoViewTableViewInfoArr = ["봄, 여름, 가을", "데일리", "운동"]
+    
+    // CategoryCareView TableView data
+    let categoryCareViewTableViewTitleArr = ["상의 세탁 방법", "상의 관리 방법"]
+    
+    // MaterialCareView TableView data
+    let materialCareViewTableViewTitleArr = ["폴리에스테르 세탁 방법", "면 세탁 방법", "폴리에스테르 세탁 방법", "면 세탁 방법"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,19 +57,22 @@ class ClosetDetailViewController: UIViewController {
         initTitleView()
         initclothesInfoView()
         initWearInfoView()
+        initCategoryCareView()
+        initMaterialCareView()
         
-        // table view
+        // TableView
         tableViewDelegate()
         cellRegister()
         initTableView()
-
+        
+        materialCareViewTableView.heightAnchor.constraint(equalToConstant: CGFloat(materialCareViewTableViewTitleArr.count * 52 - 1)).isActive = true
     }
 }
 
 //MARK: init
 extension ClosetDetailViewController {
-    // all view
-    /// view radius
+    // All view
+    /// View cornerRadius
     func initViewCornerRadius() {
         for i in viewRadius {
             i.layer.cornerRadius = 10
@@ -61,7 +80,7 @@ extension ClosetDetailViewController {
         }
     }
     
-    // title view
+    // Title view
     /// init title view
     func initTitleView() {
         // Label
@@ -75,7 +94,7 @@ extension ClosetDetailViewController {
         titleViewClothesImgView.image = UIImage(named: "dummyClothesImg2")
     }
     
-    // clothesInformationView
+    // ClothesInfoView
     /// initclothesInformationView
     func initclothesInfoView() {
         // Label
@@ -84,12 +103,22 @@ extension ClosetDetailViewController {
         
     }
     
-    // wearInformationView
+    // WearInfoView
     /// initWearInformationView
     func initWearInfoView() {
         // Label
         wearInfoViewHeaderLabel.text = "착용 정보"
         wearInfoViewHeaderLabel.font = UIFont.pretendard(size: 20, family: .Bold)
+    }
+    
+    func initCategoryCareView() {
+        categoryCareViewHeaderLabel.text = "카테고리별 관리"
+        categoryCareViewHeaderLabel.font = UIFont.pretendard(size: 20, family: .Bold)
+    }
+    
+    func initMaterialCareView() {
+        materialCareViewHeaderLabel.text = "소재별 관리"
+        materialCareViewHeaderLabel.font = UIFont.pretendard(size: 20, family: .Bold)
     }
 }
 
@@ -101,29 +130,44 @@ extension ClosetDetailViewController {
         
         self.wearInfoViewTableView.delegate = self
         self.wearInfoViewTableView.dataSource = self
+        
+        self.categoryCareViewTableView.delegate = self
+        self.categoryCareViewTableView.dataSource = self
+        
+        self.materialCareViewTableView.delegate = self
+        self.materialCareViewTableView.dataSource = self
     }
     
     func cellRegister() {
         // cell 리소스 파일 가져오기
-        let clothesTableViewCell = UINib(nibName: String(describing: ClothesTableViewCell.self), bundle: nil)
+        let clothesInfoTableViewCell = UINib(nibName: String(describing: ClothesInfoTableViewCell.self), bundle: nil)
+        let clothesCareTableViewCell = UINib(nibName: String(describing: ClothesCareTableViewCell.self), bundle: nil)
         
         // cell 에 리소스 등록
-        self.clothesInfoViewTableView.register(clothesTableViewCell, forCellReuseIdentifier: "clothesTableViewCell")
+        self.clothesInfoViewTableView.register(clothesInfoTableViewCell, forCellReuseIdentifier: "ClothesInfoTableViewCell")
+        self.categoryCareViewTableView.register(clothesCareTableViewCell, forCellReuseIdentifier: "ClothesCareTableViewCell")
+        self.materialCareViewTableView.register(clothesCareTableViewCell, forCellReuseIdentifier: "ClothesCareTableViewCell")
     }
     
     func initTableView() {
         // 왼쪽 밑줄 마진값 설정
         self.clothesInfoViewTableView.separatorInset.left = 0
         self.wearInfoViewTableView.separatorInset.left = 0
+        self.categoryCareViewTableView.separatorInset.left = 0
+        self.materialCareViewTableView.separatorInset.left = 0
         
         // 스크롤 막기
         clothesInfoViewTableView.isScrollEnabled = false
         wearInfoViewTableView.isScrollEnabled = false
+        categoryCareViewTableView.isScrollEnabled = false
+        materialCareViewTableView.isScrollEnabled = false
     }
 }
 
 extension ClosetDetailViewController: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 52
+    }
 }
 
 extension ClosetDetailViewController: UITableViewDataSource {
@@ -133,32 +177,54 @@ extension ClosetDetailViewController: UITableViewDataSource {
             return clothesInfoViewTableViewTitleArr.count
         case wearInfoViewTableView:
             return wearInfoViewTableViewTitleArr.count
+        case categoryCareViewTableView:
+            return 2
+        case materialCareViewTableView:
+            return materialCareViewTableViewTitleArr.count
         default:
             return 0
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = clothesInfoViewTableView.dequeueReusableCell(withIdentifier: "clothesTableViewCell", for: indexPath) as! ClothesTableViewCell
-        // 전체 세팅
-        // cell setting
-        cell.selectionStyle = .none
-        // label setting
-        cell.title.font = UIFont.pretendard(size: 20, family: .Medium)
-        cell.information.font = UIFont.pretendard(size: 18, family: .Regular)
-        cell.information.textColor = .gray
         
         switch tableView {
         case clothesInfoViewTableView:
-            cell.title.text = clothesInfoViewTableViewTitleArr[indexPath.row]
-            cell.information.text = clothesInfoViewTableViewInfoArr[indexPath.row]
-            return cell
+            return initClothesInfoCell(titleArr: clothesInfoViewTableViewTitleArr, infoArr: clothesInfoViewTableViewInfoArr)
         case wearInfoViewTableView:
-            cell.title.text = wearInfoViewTableViewTitleArr[indexPath.row]
-            cell.information.text = wearInfoViewTableViewInfoArr[indexPath.row]
-            return cell
+            return initClothesInfoCell(titleArr: wearInfoViewTableViewTitleArr, infoArr: wearInfoViewTableViewInfoArr)
+        case categoryCareViewTableView:
+            return initCategoryCareCell(titleArr: categoryCareViewTableViewTitleArr, view: categoryCareViewTableView)
+        case materialCareViewTableView:
+            return initCategoryCareCell(titleArr: materialCareViewTableViewTitleArr, view: materialCareViewTableView)
         default:
-            return cell
+            let clothesInfoCell = clothesInfoViewTableView.dequeueReusableCell(withIdentifier: "ClothesInfoTableViewCell", for: indexPath) as! ClothesInfoTableViewCell
+            return clothesInfoCell
+        }
+        
+        func initClothesInfoCell(titleArr: [String], infoArr: [String]) -> UITableViewCell {
+            let clothesInfoCell = clothesInfoViewTableView.dequeueReusableCell(withIdentifier: "ClothesInfoTableViewCell", for: indexPath) as! ClothesInfoTableViewCell
+            
+            clothesInfoCell.selectionStyle = .none
+            
+            clothesInfoCell.title.font = UIFont.pretendard(size: 20, family: .Medium)
+            clothesInfoCell.information.font = UIFont.pretendard(size: 18, family: .Medium)
+            clothesInfoCell.information.textColor = .gray
+            
+            // text
+            clothesInfoCell.title.text = titleArr[indexPath.row]
+            clothesInfoCell.information.text = infoArr[indexPath.row]
+            
+            return clothesInfoCell
+        }
+        
+        func initCategoryCareCell(titleArr: [String], view: UITableView) -> UITableViewCell {
+            let categoryCareCell = view.dequeueReusableCell(withIdentifier: "ClothesCareTableViewCell", for: indexPath) as! ClothesCareTableViewCell
+            // CategoryCareCell
+            categoryCareCell.title.font = UIFont.pretendard(size: 20, family: .Medium)
+            categoryCareCell.Icon.image = UIImage(named: "chevronRightIcon")
+            categoryCareCell.title.text = titleArr[indexPath.row]
+            return categoryCareCell
         }
     }
 }
