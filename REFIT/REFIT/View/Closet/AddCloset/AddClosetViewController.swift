@@ -411,6 +411,7 @@ extension AddClosetViewController {
     
     /// imgView
     private func initClothesImageView() {
+        clothesImageView.layer.cornerRadius = 25
         clothesImageView.image = UIImage(named: "addImageViewImg")
     }
     
@@ -510,6 +511,7 @@ extension AddClosetViewController {
     
     /// registration button
     private func initRegistrationBtn() {
+        registrationBtn.layer.cornerRadius = 25
         registrationBtn.setTitleColor(.white, for: .normal)
         registrationBtn.backgroundColor = UIColor.black
     }
