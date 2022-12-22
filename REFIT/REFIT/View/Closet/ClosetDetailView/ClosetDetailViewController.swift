@@ -51,9 +51,13 @@ class ClosetDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // NavigationBar
+        initNavigationBar(title: "옷 정보")
         
+        // AllViewCornerRadius
         initViewCornerRadius()
         
+        // init View
         initTitleView()
         initclothesInfoView()
         initWearInfoView()
@@ -64,8 +68,7 @@ class ClosetDetailViewController: UIViewController {
         tableViewDelegate()
         cellRegister()
         initTableView()
-        
-        materialCareViewTableView.heightAnchor.constraint(equalToConstant: CGFloat(materialCareViewTableViewTitleArr.count * 52 - 1)).isActive = true
+
     }
 }
 
@@ -119,21 +122,28 @@ extension ClosetDetailViewController {
     func initMaterialCareView() {
         materialCareViewHeaderLabel.text = "소재별 관리"
         materialCareViewHeaderLabel.font = UIFont.pretendard(size: 20, family: .Bold)
+        
+        materialCareViewTableView.translatesAutoresizingMaskIntoConstraints = false
+        materialCareViewTableView.heightAnchor.constraint(equalToConstant: CGFloat(materialCareViewTableViewTitleArr.count * 52 - 1)).isActive = true
     }
 }
 
 // MARK: TableView
 extension ClosetDetailViewController {
     func tableViewDelegate() {
+        // clothesInfoViewTableView
         self.clothesInfoViewTableView.delegate = self
         self.clothesInfoViewTableView.dataSource = self
         
+        // wearInfoViewTableView
         self.wearInfoViewTableView.delegate = self
         self.wearInfoViewTableView.dataSource = self
         
+        // categoryCareViewTableView
         self.categoryCareViewTableView.delegate = self
         self.categoryCareViewTableView.dataSource = self
         
+        // materialCareViewTableView
         self.materialCareViewTableView.delegate = self
         self.materialCareViewTableView.dataSource = self
     }
@@ -165,13 +175,16 @@ extension ClosetDetailViewController {
 }
 
 extension ClosetDetailViewController: UITableViewDelegate {
+    // cell 의 height 값 설정
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 52
     }
 }
 
 extension ClosetDetailViewController: UITableViewDataSource {
+    // cell 의 개수 설정
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // tableView 종류대로 개수 설정
         switch tableView {
         case clothesInfoViewTableView:
             return clothesInfoViewTableViewTitleArr.count
@@ -186,8 +199,9 @@ extension ClosetDetailViewController: UITableViewDataSource {
         }
     }
     
+    // cell 데이터, 스타일 설정
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        // tableView 종류대로 데이터, 스타일 설정
         switch tableView {
         case clothesInfoViewTableView:
             return initClothesInfoCell(titleArr: clothesInfoViewTableViewTitleArr, infoArr: clothesInfoViewTableViewInfoArr)
@@ -202,6 +216,7 @@ extension ClosetDetailViewController: UITableViewDataSource {
             return clothesInfoCell
         }
         
+        // ClothesInfoCell 을 init 하는 함수
         func initClothesInfoCell(titleArr: [String], infoArr: [String]) -> UITableViewCell {
             let clothesInfoCell = clothesInfoViewTableView.dequeueReusableCell(withIdentifier: "ClothesInfoTableViewCell", for: indexPath) as! ClothesInfoTableViewCell
             
@@ -218,6 +233,7 @@ extension ClosetDetailViewController: UITableViewDataSource {
             return clothesInfoCell
         }
         
+        // CategoryCareCell 을 init 하는 함수
         func initCategoryCareCell(titleArr: [String], view: UITableView) -> UITableViewCell {
             let categoryCareCell = view.dequeueReusableCell(withIdentifier: "ClothesCareTableViewCell", for: indexPath) as! ClothesCareTableViewCell
             // CategoryCareCell
@@ -225,6 +241,20 @@ extension ClosetDetailViewController: UITableViewDataSource {
             categoryCareCell.Icon.image = UIImage(named: "chevronRightIcon")
             categoryCareCell.title.text = titleArr[indexPath.row]
             return categoryCareCell
+        }
+    }
+    
+    // tableViewCell 클릭 이벤트 설정
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch tableView {
+        case categoryCareViewTableView:
+            print(categoryCareViewTableViewTitleArr[indexPath.row])
+            let storyBoardName = UIStoryboard(name: "ClothesCareInfoModalViewController", bundle: nil)
+            let closetDetailViewController = storyBoardName.instantiateViewController(withIdentifier: "ClothesCareInfoModalViewController") as! ClothesCareInfoModalViewController
+            self.present(closetDetailViewController, animated: true)
+        case materialCareViewTableView:
+            print(materialCareViewTableViewTitleArr[indexPath.row])
+        default: break
         }
     }
 }

@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="47" width="390" height="1453"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vna-57-JJe">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="1274.3333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="1271.3333333333333"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJ1-Hg-bug">
                                                 <rect key="frame" x="30" y="20" width="330" height="386"/>
@@ -164,7 +164,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YZk-9L-df3">
-                                                <rect key="frame" x="30" y="1014" width="330" height="250.33333333333348"/>
+                                                <rect key="frame" x="30" y="1011" width="330" height="250.33333333333348"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJg-do-Zfb">
                                                         <rect key="frame" x="20.000000000000004" y="14.999999999999998" width="41.333333333333343" height="20.333333333333329"/>
