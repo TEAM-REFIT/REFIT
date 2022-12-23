@@ -26,6 +26,8 @@
 		836057EF294807A000571182 /* ClosetDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 836057EE294807A000571182 /* ClosetDetailViewController.storyboard */; };
 		8375FC0A2950056200BA107F /* ClothesCareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8375FC092950056200BA107F /* ClothesCareTableViewCell.swift */; };
 		8375FC0C2950057300BA107F /* ClothesCareTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8375FC0B2950057300BA107F /* ClothesCareTableViewCell.xib */; };
+		8375FC2F2951501400BA107F /* ClothesCareInfoModalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8375FC2E2951501400BA107F /* ClothesCareInfoModalViewController.storyboard */; };
+		8375FC312951501900BA107F /* ClothesCareInfoModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8375FC302951501900BA107F /* ClothesCareInfoModalViewController.swift */; };
 		8378CDFE292B52A60093FC60 /* ClosetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8378CDFD292B52A60093FC60 /* ClosetData.swift */; };
 		837A67B628FEE3D900046632 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 837A67B528FEE3D900046632 /* GoogleSignIn */; };
 		837A67B828FEE3D900046632 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 837A67B728FEE3D900046632 /* GoogleSignInSwift */; };
@@ -75,6 +77,8 @@
 		836057EE294807A000571182 /* ClosetDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClosetDetailViewController.storyboard; sourceTree = "<group>"; };
 		8375FC092950056200BA107F /* ClothesCareTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesCareTableViewCell.swift; sourceTree = "<group>"; };
 		8375FC0B2950057300BA107F /* ClothesCareTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClothesCareTableViewCell.xib; sourceTree = "<group>"; };
+		8375FC2E2951501400BA107F /* ClothesCareInfoModalViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClothesCareInfoModalViewController.storyboard; sourceTree = "<group>"; };
+		8375FC302951501900BA107F /* ClothesCareInfoModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesCareInfoModalViewController.swift; sourceTree = "<group>"; };
 		8378CDFD292B52A60093FC60 /* ClosetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetData.swift; sourceTree = "<group>"; };
 		837A67DD28FFB45D00046632 /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
 		837A67DF28FFB47600046632 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 			children = (
 				836057EE294807A000571182 /* ClosetDetailViewController.storyboard */,
 				836057EC2948079500571182 /* ClosetDetailViewController.swift */,
+				8375FC2D29514FD800BA107F /* ClothesCareInfoModalView */,
 				83E24D322948693D009752CE /* ClothesTableViewCell */,
 				8375FC082950054100BA107F /* ClothesCareTableViewCell */,
 			);
@@ -193,6 +198,15 @@
 				8375FC092950056200BA107F /* ClothesCareTableViewCell.swift */,
 			);
 			path = ClothesCareTableViewCell;
+			sourceTree = "<group>";
+		};
+		8375FC2D29514FD800BA107F /* ClothesCareInfoModalView */ = {
+			isa = PBXGroup;
+			children = (
+				8375FC2E2951501400BA107F /* ClothesCareInfoModalViewController.storyboard */,
+				8375FC302951501900BA107F /* ClothesCareInfoModalViewController.swift */,
+			);
+			path = ClothesCareInfoModalView;
 			sourceTree = "<group>";
 		};
 		8378CDFF292B52E00093FC60 /* Data */ = {
@@ -448,6 +462,7 @@
 				8355A90828DAE4A200F9534A /* Pretendard-Medium.otf in Resources */,
 				836057EF294807A000571182 /* ClosetDetailViewController.storyboard in Resources */,
 				8355A90C28DAE4AB00F9534A /* Pretendard-Thin.otf in Resources */,
+				8375FC2F2951501400BA107F /* ClothesCareInfoModalViewController.storyboard in Resources */,
 				8355A90B28DAE4A900F9534A /* Pretendard-ExtraLight.otf in Resources */,
 				8355A90928DAE4A400F9534A /* Pretendard-Regular.otf in Resources */,
 			);
@@ -471,6 +486,7 @@
 				837A67E228FFB51400046632 /* StartViewController.swift in Sources */,
 				83AD3331293441AB000C0F9D /* ClothesCell.swift in Sources */,
 				8378CDFE292B52A60093FC60 /* ClosetData.swift in Sources */,
+				8375FC312951501900BA107F /* ClothesCareInfoModalViewController.swift in Sources */,
 				83B7E5EA28FFB9B700B1B674 /* UIViewControllerExtension.swift in Sources */,
 				832A02BC2900E34900D571E1 /* LoginModel.swift in Sources */,
 				8355A90F28DAE4C200F9534A /* Font.swift in Sources */,
