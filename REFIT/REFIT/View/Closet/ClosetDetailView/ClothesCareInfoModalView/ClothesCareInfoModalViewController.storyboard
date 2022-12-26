@@ -23,11 +23,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jsJ-OJ-j8u">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nQm-Jb-9nI">
+                                <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                                 <items>
-                                    <navigationItem title="title" leftItemsSupplementBackButton="YES" id="wo3-F9-I3W">
-                                        <barButtonItem key="backBarButtonItem" title="Item" image="addClothesIcon" style="plain" id="L3V-g2-UIv"/>
+                                    <navigationItem title="ClothesDetailModal" id="bFi-eu-oHZ">
+                                        <barButtonItem key="leftBarButtonItem" title="dismiss" id="4wZ-MG-zbo">
+                                            <connections>
+                                                <action selector="dismissBtnTapped:" destination="Y6W-OH-hqX" id="NFp-Gr-Jf9"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -36,10 +40,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="YhT-an-cfZ" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="DKA-ee-3bH"/>
-                            <constraint firstItem="jsJ-OJ-j8u" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="GdN-oA-WTH"/>
-                            <constraint firstItem="jsJ-OJ-j8u" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="QgG-Bd-GwB"/>
+                            <constraint firstItem="nQm-Jb-9nI" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="DaG-Va-t8d"/>
+                            <constraint firstItem="nQm-Jb-9nI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="SxO-es-Wsm"/>
                             <constraint firstItem="YhT-an-cfZ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="eL8-9x-WVo"/>
-                            <constraint firstItem="jsJ-OJ-j8u" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="m1Z-a1-aYf"/>
+                            <constraint firstItem="nQm-Jb-9nI" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="v4g-eb-c3W"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -49,7 +53,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="addClothesIcon" width="60" height="60"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

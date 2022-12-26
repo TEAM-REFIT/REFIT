@@ -11,8 +11,9 @@ import UIKit
 class ClothesCareInfoModalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.setNeedsLayout() 
-        
-        initNavigationBar(title: "디테일")
+
+    }
+    @IBAction func dismissBtnTapped(_ sender: Any) {
+        dismiss(animated: true)
     }
 }
