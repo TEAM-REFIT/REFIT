@@ -70,6 +70,11 @@ class AddClosetViewController: UIViewController {
         indicatorView.isHidden = true
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        animateRegistrationBtn()
+    }
+    
     // Indicator
     @IBOutlet var indicatorView: UIActivityIndicatorView!
     
@@ -611,6 +616,16 @@ extension AddClosetViewController: UITextFieldDelegate {
         }
         return true
     }
+}
+
+// MARK: - animation
+extension AddClosetViewController {
+    private func animateRegistrationBtn() {
+        UIView.animate(withDuration: 1.0, delay: 0,options: [.repeat, .autoreverse], animations: {
+            self.registrationBtn.frame.origin.y += 10
+        })
+    }
+    
 }
 
 extension AddClosetViewController {

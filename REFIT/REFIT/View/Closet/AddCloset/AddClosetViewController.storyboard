@@ -871,11 +871,6 @@
                             <constraint firstItem="fWV-3O-MNw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="qBs-5Y-Rel"/>
                             <constraint firstItem="y0V-F5-hX5" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="sC8-GL-DhO"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="y0V-F5-hX5"/>
-                            </mask>
-                        </variation>
                     </view>
                     <size key="freeformSize" width="414" height="2000"/>
                     <connections>
