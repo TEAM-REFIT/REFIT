@@ -237,6 +237,7 @@ extension ClosetDetailViewController: UITableViewDataSource {
         func initCategoryCareCell(titleArr: [String], view: UITableView) -> UITableViewCell {
             let categoryCareCell = view.dequeueReusableCell(withIdentifier: "ClothesCareTableViewCell", for: indexPath) as! ClothesCareTableViewCell
             // CategoryCareCell
+            categoryCareCell.selectionStyle = .none
             categoryCareCell.title.font = UIFont.pretendard(size: 20, family: .Medium)
             categoryCareCell.Icon.image = UIImage(named: "chevronRightIcon")
             categoryCareCell.title.text = titleArr[indexPath.row]
