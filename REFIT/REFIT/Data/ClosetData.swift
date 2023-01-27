@@ -10,8 +10,8 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 import Firebase
 
-class ClosetData {
-    static let shared = ClosetData()
+struct ClosetData {
+    static var shared = ClosetData()
     
     //allCloset
     var allClosetData = [[String: Any]]()
