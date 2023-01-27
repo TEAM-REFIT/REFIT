@@ -277,19 +277,14 @@ class AddClosetViewController: UIViewController {
             let category = clothes["category"] as! String
             switch category {
             case "상의":
-                print("ClosetData.shared.topClosetData.append(clothes)")
                 ClosetData.shared.topClosetData.append(clothes)
             case "하의":
-                print("ClosetData.shared.pantsClosetData.append(clothes)")
                 ClosetData.shared.pantsClosetData.append(clothes)
             case "아우터":
-                print("ClosetData.shared.outerClosetData.append(clothes)")
                 ClosetData.shared.outerClosetData.append(clothes)
             case "신발":
-                print("ClosetData.shared.shoesClosetData.append(clothes)")
                 ClosetData.shared.shoesClosetData.append(clothes)
             case "기타":
-                print("ClosetData.shared.etcClosetData.append(clothes)")
                 ClosetData.shared.etcClosetData.append(clothes)
             default:
                 break
