@@ -72,7 +72,7 @@ class AddClosetViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        animateRegistrationBtn()
+//        animateRegistrationBtn()
     }
     
     // Indicator
@@ -619,14 +619,14 @@ extension AddClosetViewController: UITextFieldDelegate {
 }
 
 // MARK: - animation
-extension AddClosetViewController {
-    private func animateRegistrationBtn() {
-        UIView.animate(withDuration: 1.0, delay: 0,options: [.repeat, .autoreverse], animations: {
-            self.registrationBtn.frame.origin.y += 10
-        })
-    }
-    
-}
+//extension AddClosetViewController {
+//    private func animateRegistrationBtn() {
+//        UIView.animate(withDuration: 1.0, delay: 0,options: [.repeat, .autoreverse], animations: {
+//            self.registrationBtn.frame.origin.y += 10
+//        })
+//    }
+//
+//}
 
 extension AddClosetViewController {
     /// Indicator 보여주기
