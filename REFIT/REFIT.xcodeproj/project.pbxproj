@@ -24,6 +24,7 @@
 		8355A90F28DAE4C200F9534A /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8355A90E28DAE4C200F9534A /* Font.swift */; };
 		836057ED2948079500571182 /* ClosetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836057EC2948079500571182 /* ClosetDetailViewController.swift */; };
 		836057EF294807A000571182 /* ClosetDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 836057EE294807A000571182 /* ClosetDetailViewController.storyboard */; };
+		836A909A298FE91100815F7B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 836A9099298FE91100815F7B /* Kingfisher */; };
 		8375FC0A2950056200BA107F /* ClothesCareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8375FC092950056200BA107F /* ClothesCareTableViewCell.swift */; };
 		8375FC0C2950057300BA107F /* ClothesCareTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8375FC0B2950057300BA107F /* ClothesCareTableViewCell.xib */; };
 		8375FC2F2951501400BA107F /* ClothesCareInfoModalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8375FC2E2951501400BA107F /* ClothesCareInfoModalViewController.storyboard */; };
@@ -125,6 +126,7 @@
 				837A67B828FEE3D900046632 /* GoogleSignInSwift in Frameworks */,
 				83AD334E2935BDC9000C0F9D /* FirebaseAnalytics in Frameworks */,
 				83AD33522935BDC9000C0F9D /* FirebaseFirestore in Frameworks */,
+				836A909A298FE91100815F7B /* Kingfisher in Frameworks */,
 				83AD33562935BDC9000C0F9D /* FirebaseStorage in Frameworks */,
 				83AD33502935BDC9000C0F9D /* FirebaseAuth in Frameworks */,
 				83AD33542935BDC9000C0F9D /* FirebaseFirestoreSwift in Frameworks */,
@@ -396,6 +398,7 @@
 				83AD33512935BDC9000C0F9D /* FirebaseFirestore */,
 				83AD33532935BDC9000C0F9D /* FirebaseFirestoreSwift */,
 				83AD33552935BDC9000C0F9D /* FirebaseStorage */,
+				836A9099298FE91100815F7B /* Kingfisher */,
 			);
 			productName = REFIT;
 			productReference = 83BEC86B28CF7A56005BB854 /* REFIT.app */;
@@ -428,6 +431,7 @@
 			packageReferences = (
 				837A67B428FEE3D900046632 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				83AD334C2935BDC9000C0F9D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				836A9098298FE91100815F7B /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 83BEC86C28CF7A56005BB854 /* Products */;
 			projectDirPath = "";
@@ -723,6 +727,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		836A9098298FE91100815F7B /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		837A67B428FEE3D900046632 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
@@ -742,6 +754,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		836A9099298FE91100815F7B /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 836A9098298FE91100815F7B /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		837A67B528FEE3D900046632 /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 837A67B428FEE3D900046632 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
