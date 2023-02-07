@@ -27,13 +27,17 @@ class FirebaseFirestoreManger {
 
 // image storage
 class FirebaseStorageManager {
-    static func uploadImage(name: String,image: UIImage) {
+    static func uploadImage(name: String,image: UIImage, completion: @escaping (URL?) -> Void) {
         guard let imageData = image.jpegData(compressionQuality: 0.4) else { return }
         let metaData = StorageMetadata()
         metaData.contentType = "image/jpeg"
         
         let firebaseReference = Storage.storage().reference().child("\(name)")
-        firebaseReference.putData(imageData, metadata: metaData)
+        firebaseReference.putData(imageData, metadata: metaData) { metaData, error in
+            firebaseReference.downloadURL { url, _ in
+                completion(url)
+            }
+        }
     }
     
     static func downloadImage(urlString: String, completion: @escaping (UIImage?) -> Void) {
