@@ -196,27 +196,65 @@ class AddClosetViewController: UIViewController {
     
     // registration
     @IBAction func registrationBtnTapped(_ sender: UIButton) {
+        let imgName = FirebaseAuthManager.userID + "_" + UUID().uuidString
+        
         showIndicator(self)
         // 이미지가 선택되었을 때만 다음 단계로 이동
         if clothesImageView.image != UIImage(imageLiteralResourceName: "addImageViewImg") {
             // 타이틀이 선택되었을 때만 다음 단계로 이동
             if titleTextField.text?.isEmpty == false {
                 // Firesbase Storeage
-                FirebaseStorageManager.uploadImage(name: titleTextField.text! + "_" + FirebaseAuthManager.userID + "_" + UUID().uuidString, image: clothesImageView.image!)
-                // Firestore
-                addClothesData(userID: FirebaseAuthManager.userID,
-                               imageName: titleTextField.text! + "_" + FirebaseAuthManager.userID + "_" + UUID().uuidString,
-                               title: titleTextField.text!,
-                               category: categoryTextField.text!,
-                               slider: sliderValue,
-                               season: BtnValue(button: seasonBtn),
-                               color: colorBtnValue(button: colorBtn),
-                               tpo: BtnValue(button: tpoBtn),
-                               size: sizeTextField.text!,
-                               brand: brandTextField.text!,
-                               material: BtnValue(button: materialBtn))
-                addLocalData {
-                    self.navigationController?.popViewController(animated: true)
+                FirebaseStorageManager.uploadImage(name: imgName, image: clothesImageView.image!) { url in
+                    if let imageurl = url {
+                        // Firestore
+                        addClothesData(userID: FirebaseAuthManager.userID,
+                                       imageName: imageurl.absoluteString,
+                                       imageQuery: imageurl.query!,
+                                       title: self.titleTextField.text!,
+                                       category: self.categoryTextField.text!,
+                                       slider: self.sliderValue,
+                                       season: BtnValue(button: self.seasonBtn),
+                                       color: colorBtnValue(button: self.colorBtn),
+                                       tpo: BtnValue(button: self.tpoBtn),
+                                       size: self.sizeTextField.text!,
+                                       brand: self.brandTextField.text!,
+                                       material: BtnValue(button: self.materialBtn))
+                        addLocalData {
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                        func addLocalData(completion: @escaping () -> Void) {
+                            let clothes: [String : Any] = ["userID": FirebaseAuthManager.userID,
+                                                           "imageName" : imageurl.absoluteString,
+                                                           "imageQuery": imageurl.query!,
+                                                           "title" : self.titleTextField.text ?? "무제",
+                                                           "category" : self.categoryTextField.text ?? "선택 없음",
+                                                           "slider" : self.sliderValue,
+                                                           "season" : BtnValue(button: self.seasonBtn),
+                                                           "color" : colorBtnValue(button: self.colorBtn),
+                                                           "tpo" : BtnValue(button: self.tpoBtn),
+                                                           "size" : self.sizeTextField.text ?? "선택 없음",
+                                                           "brand" : self.brandTextField.text ?? "선택없음",
+                                                           "material" : BtnValue(button: self.materialBtn)]
+                            
+                            let category = clothes["category"] as! String
+                            switch category {
+                            case "상의":
+                                ClosetData.shared.topClosetData.append(clothes)
+                            case "하의":
+                                ClosetData.shared.pantsClosetData.append(clothes)
+                            case "아우터":
+                                ClosetData.shared.outerClosetData.append(clothes)
+                            case "신발":
+                                ClosetData.shared.shoesClosetData.append(clothes)
+                            case "기타":
+                                ClosetData.shared.etcClosetData.append(clothes)
+                            default:
+                                break
+                            }
+                            ClosetData.shared.allClosetData.append(clothes)
+                            completion()
+                        }
+                    }
                 }
             } else {
                 hideIndicator(self)
@@ -259,38 +297,6 @@ class AddClosetViewController: UIViewController {
                 }
             }
             return arr
-        }
-        
-        func addLocalData(completion: @escaping () -> Void) {
-            let clothes: [String : Any] = ["userID": FirebaseAuthManager.userID,
-                                           "imageName" : titleTextField.text! + "_" + FirebaseAuthManager.userID + "_" + UUID().uuidString,
-                                           "title" : titleTextField.text ?? "무제",
-                                           "category" : categoryTextField.text ?? "선택 없음",
-                                           "slider" : sliderValue,
-                                           "season" : BtnValue(button: seasonBtn),
-                                           "color" : colorBtnValue(button: colorBtn),
-                                           "tpo" : BtnValue(button: tpoBtn),
-                                           "size" : sizeTextField.text ?? "선택 없음",
-                                           "brand" : brandTextField.text ?? "선택없음",
-                                           "material" : BtnValue(button: materialBtn)]
-            
-            let category = clothes["category"] as! String
-            switch category {
-            case "상의":
-                ClosetData.shared.topClosetData.append(clothes)
-            case "하의":
-                ClosetData.shared.pantsClosetData.append(clothes)
-            case "아우터":
-                ClosetData.shared.outerClosetData.append(clothes)
-            case "신발":
-                ClosetData.shared.shoesClosetData.append(clothes)
-            case "기타":
-                ClosetData.shared.etcClosetData.append(clothes)
-            default:
-                break
-            }
-            ClosetData.shared.allClosetData.append(clothes)
-            completion()
         }
     }
     
