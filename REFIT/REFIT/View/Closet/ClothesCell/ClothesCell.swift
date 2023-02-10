@@ -6,11 +6,18 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ClothesCell: UICollectionViewCell {
     @IBOutlet var clothesImg: UIImageView!
     @IBOutlet var clothesBrandLabel: UILabel!
     @IBOutlet var clothesTitleLabel: UILabel!
+    
+    var settingClothesCellImg: String = "" {
+        didSet {
+            self.clothesImg.kf.setImage(with: URL(string: settingClothesCellImg))
+        }
+    }
     
     var settingClothesCellBrand: String = "" {
         didSet {
