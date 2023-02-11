@@ -108,7 +108,7 @@ func addClothesData(userID: String, imageName: String, title: String, category: 
                           timeStamp: Timestamp(date: Date()))
     
     do {
-        try FirebaseFirestoreManger.db.collection("Closet").document(imageName).setData(from: clothes)
+        try FirebaseFirestoreManger.db.collection("Closet").document("\(imageName)").setData(from: clothes)
     } catch let error {
         print("Error writing city to Firestore: \(error)")
     }
