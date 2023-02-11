@@ -116,8 +116,9 @@ extension MainClosetViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ClothesCell.self), for: indexPath) as! ClothesCell
         
-        cell.settingClothesCellBrand = collectionViewCellData[indexPath.row]["brand"] as? String ?? "없음"
-        cell.settingClothesCellTitle = collectionViewCellData[indexPath.row]["title"] as? String ?? "없음"
+        cell.settingClothesCellImg = collectionViewCellData[indexPath.row]["imageName"] as! String
+        cell.settingClothesCellBrand = collectionViewCellData[indexPath.row]["brand"] as! String
+        cell.settingClothesCellTitle = collectionViewCellData[indexPath.row]["title"] as! String
         
         return cell
     }
