@@ -28,7 +28,6 @@ public struct Clothes: Codable {
     
     let userID: String
     let imageName: String
-    let imageQuery: String
     
     let title: String
     let category: String
@@ -44,7 +43,6 @@ public struct Clothes: Codable {
     enum CodingKeys: String, CodingKey {
         case userID
         case imageName
-        case imageQuery
         
         case title
         case category
@@ -94,11 +92,10 @@ func getAllClosetData(completion: @escaping () -> Void) {
     }
 }
 
-func addClothesData(userID: String, imageName: String, imageQuery: String, title: String, category: String, slider: Int, season: [String], color: [String], tpo: [String], size: String, brand: String, material: [String]) {
+func addClothesData(userID: String, imageName: String, title: String, category: String, slider: Int, season: [String], color: [String], tpo: [String], size: String, brand: String, material: [String]) {
     // Firestore 데이터 구성
     let clothes = Clothes(userID: userID,
                           imageName: imageName,
-                          imageQuery: imageQuery,
                           title: title,
                           category: category,
                           slider: slider,

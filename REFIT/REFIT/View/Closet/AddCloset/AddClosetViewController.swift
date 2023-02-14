@@ -209,7 +209,6 @@ class AddClosetViewController: UIViewController {
                         // Firestore
                         addClothesData(userID: FirebaseAuthManager.userID,
                                        imageName: imageurl.absoluteString,
-                                       imageQuery: imageurl.query!,
                                        title: self.titleTextField.text!,
                                        category: self.categoryTextField.text!,
                                        slider: self.sliderValue,
@@ -225,7 +224,6 @@ class AddClosetViewController: UIViewController {
                         func addLocalData(completion: @escaping () -> Void) {
                             let clothes: [String : Any] = ["userID": FirebaseAuthManager.userID,
                                                            "imageName" : imageurl.absoluteString,
-                                                           "imageQuery": imageurl.query!,
                                                            "title" : self.titleTextField.text ?? "무제",
                                                            "category" : self.categoryTextField.text ?? "선택 없음",
                                                            "slider" : self.sliderValue,
