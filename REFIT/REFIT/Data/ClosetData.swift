@@ -92,10 +92,10 @@ func getAllClosetData(completion: @escaping () -> Void) {
     }
 }
 
-func addClothesData(userID: String, imageName: String, title: String, category: String, slider: Int, season: [String], color: [String], tpo: [String], size: String, brand: String, material: [String]) {
+func addClothesData(clothesName: String, userID: String, imageUrl: String, title: String, category: String, slider: Int, season: [String], color: [String], tpo: [String], size: String, brand: String, material: [String]) {
     // Firestore 데이터 구성
     let clothes = Clothes(userID: userID,
-                          imageName: imageName,
+                          imageUrl: imageUrl,
                           title: title,
                           category: category,
                           slider: slider,
@@ -108,7 +108,7 @@ func addClothesData(userID: String, imageName: String, title: String, category: 
                           timeStamp: Timestamp(date: Date()))
     
     do {
-        try FirebaseFirestoreManger.db.collection("Closet").document("\(imageName)").setData(from: clothes)
+        try FirebaseFirestoreManger.db.collection("Closet").document("\(clothesName)").setData(from: clothes)
     } catch let error {
         print("Error writing city to Firestore: \(error)")
     }
