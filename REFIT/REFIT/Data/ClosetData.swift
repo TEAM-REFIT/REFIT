@@ -27,7 +27,7 @@ struct ClosetData {
 public struct Clothes: Codable {
     
     let userID: String
-    let imageName: String
+    let imageUrl: String
     
     let title: String
     let category: String
@@ -42,7 +42,7 @@ public struct Clothes: Codable {
 
     enum CodingKeys: String, CodingKey {
         case userID
-        case imageName
+        case imageUrl
         
         case title
         case category
