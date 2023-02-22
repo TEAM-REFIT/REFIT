@@ -13,27 +13,17 @@ class ClothesCell: UICollectionViewCell {
     @IBOutlet var clothesBrandLabel: UILabel!
     @IBOutlet var clothesTitleLabel: UILabel!
     
-    var settingClothesCellImg: String = "" {
+    var clothesData: [String : Any] = [:] {
         didSet {
-            self.clothesImg.kf.setImage(with: URL(string: settingClothesCellImg))
-        }
-    }
-    
-    var settingClothesCellBrand: String = "" {
-        didSet {
-            // self.clothesImg.image = UIImage(systemName: settingClothesCell)
-            self.clothesBrandLabel.text = settingClothesCellBrand
+            self.clothesImg.kf.setImage(with: URL(string: clothesData["imageUrl"] as! String))
+            self.clothesImg.layer.cornerRadius = 10
             
+            self.clothesBrandLabel.text = clothesData["brand"] as? String
             self.clothesBrandLabel.font = UIFont.pretendard(size: 14, family: .Regular)
-        }
-    }
-    
-    var settingClothesCellTitle: String = "" {
-        didSet {
-            // self.clothesImg.image = UIImage(systemName: settingClothesCell)
-            self.clothesTitleLabel.text = settingClothesCellTitle
             
+            self.clothesTitleLabel.text = clothesData["title"] as? String
             self.clothesTitleLabel.font = UIFont.pretendard(size: 18, family: .Bold)
         }
     }
+    
 }
