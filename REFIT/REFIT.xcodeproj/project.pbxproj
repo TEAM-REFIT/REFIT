@@ -22,6 +22,8 @@
 		8355A90B28DAE4A900F9534A /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8355A90228DAE48300F9534A /* Pretendard-ExtraLight.otf */; };
 		8355A90C28DAE4AB00F9534A /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8355A90328DAE48300F9534A /* Pretendard-Thin.otf */; };
 		8355A90F28DAE4C200F9534A /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8355A90E28DAE4C200F9534A /* Font.swift */; };
+		835D33AA29A846D000DAECDC /* ClothesCareInfoModalViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 835D33A929A846D000DAECDC /* ClothesCareInfoModalViewCell.xib */; };
+		835D33AC29A846DC00DAECDC /* ClothesCareInfoModalViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835D33AB29A846DC00DAECDC /* ClothesCareInfoModalViewCell.swift */; };
 		836057ED2948079500571182 /* ClosetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836057EC2948079500571182 /* ClosetDetailViewController.swift */; };
 		836057EF294807A000571182 /* ClosetDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 836057EE294807A000571182 /* ClosetDetailViewController.storyboard */; };
 		836A909A298FE91100815F7B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 836A9099298FE91100815F7B /* Kingfisher */; };
@@ -74,6 +76,8 @@
 		8355A90228DAE48300F9534A /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
 		8355A90328DAE48300F9534A /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 		8355A90E28DAE4C200F9534A /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		835D33A929A846D000DAECDC /* ClothesCareInfoModalViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClothesCareInfoModalViewCell.xib; sourceTree = "<group>"; };
+		835D33AB29A846DC00DAECDC /* ClothesCareInfoModalViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesCareInfoModalViewCell.swift; sourceTree = "<group>"; };
 		836057EC2948079500571182 /* ClosetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetDetailViewController.swift; sourceTree = "<group>"; };
 		836057EE294807A000571182 /* ClosetDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClosetDetailViewController.storyboard; sourceTree = "<group>"; };
 		8375FC092950056200BA107F /* ClothesCareTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesCareTableViewCell.swift; sourceTree = "<group>"; };
@@ -181,6 +185,15 @@
 			path = Pretendard;
 			sourceTree = "<group>";
 		};
+		835D33A829A8469500DAECDC /* ClothesCareInfoModalViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				835D33A929A846D000DAECDC /* ClothesCareInfoModalViewCell.xib */,
+				835D33AB29A846DC00DAECDC /* ClothesCareInfoModalViewCell.swift */,
+			);
+			path = ClothesCareInfoModalViewCell;
+			sourceTree = "<group>";
+		};
 		836057F0294807BB00571182 /* ClosetDetailView */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +220,7 @@
 			children = (
 				8375FC2E2951501400BA107F /* ClothesCareInfoModalViewController.storyboard */,
 				8375FC302951501900BA107F /* ClothesCareInfoModalViewController.swift */,
+				835D33A829A8469500DAECDC /* ClothesCareInfoModalViewCell */,
 			);
 			path = ClothesCareInfoModalView;
 			sourceTree = "<group>";
@@ -449,6 +463,7 @@
 			files = (
 				8355A90628DAE49D00F9534A /* Pretendard-Bold.otf in Resources */,
 				8375FC0C2950057300BA107F /* ClothesCareTableViewCell.xib in Resources */,
+				835D33AA29A846D000DAECDC /* ClothesCareInfoModalViewCell.xib in Resources */,
 				8355A8E528DAA82F00F9534A /* AddClosetViewController.storyboard in Resources */,
 				8355A90428DAE49700F9534A /* Pretendard-Black.otf in Resources */,
 				8355A90A28DAE4A700F9534A /* Pretendard-Light.otf in Resources */,
@@ -493,6 +508,7 @@
 				8375FC312951501900BA107F /* ClothesCareInfoModalViewController.swift in Sources */,
 				83B7E5EA28FFB9B700B1B674 /* UIViewControllerExtension.swift in Sources */,
 				832A02BC2900E34900D571E1 /* LoginModel.swift in Sources */,
+				835D33AC29A846DC00DAECDC /* ClothesCareInfoModalViewCell.swift in Sources */,
 				8355A90F28DAE4C200F9534A /* Font.swift in Sources */,
 				8375FC0A2950056200BA107F /* ClothesCareTableViewCell.swift in Sources */,
 				837A67E028FFB47600046632 /* LoginViewController.swift in Sources */,
