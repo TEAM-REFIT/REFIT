@@ -286,7 +286,7 @@ class AddClosetViewController: UIViewController {
         
         // colorBtn
         func colorBtnValue(button: [UIButton]) -> [String] {
-            let colorArr = ["white", "yellow", "orange", "red", "pink", "purple", "blue", "green", "beige", "brown", "black", "gray"]
+            let colorArr = ["화이트", "옐로우", "오렌지", "레드", "핑크", "퍼플", "블루", "그린", "베이지", "브라운", "블랙", "그레이"]
             var arr = [""]
             arr = []
             for i in 0...11 {
