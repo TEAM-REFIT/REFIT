@@ -199,9 +199,9 @@
 			children = (
 				836057EE294807A000571182 /* ClosetDetailViewController.storyboard */,
 				836057EC2948079500571182 /* ClosetDetailViewController.swift */,
-				8375FC2D29514FD800BA107F /* ClothesCareInfoModalView */,
 				83E24D322948693D009752CE /* ClothesTableViewCell */,
 				8375FC082950054100BA107F /* ClothesCareTableViewCell */,
+				8375FC2D29514FD800BA107F /* ClothesCareInfoModalView */,
 			);
 			path = ClosetDetailView;
 			sourceTree = "<group>";

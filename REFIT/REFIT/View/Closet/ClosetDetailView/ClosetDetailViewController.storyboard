@@ -73,7 +73,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQX-hg-C0K">
-                                                <rect key="frame" x="30" y="416" width="330" height="258.33333333333326"/>
+                                                <rect key="frame" x="30" y="416" width="330" height="310.33333333333326"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZw-9i-TPy">
                                                         <rect key="frame" x="20.000000000000004" y="14.999999999999998" width="41.333333333333343" height="20.333333333333329"/>
@@ -82,10 +82,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VT4-rn-kBW">
-                                                        <rect key="frame" x="0.0" y="51.333333333333371" width="330" height="207"/>
+                                                        <rect key="frame" x="0.0" y="51.333333333333371" width="330" height="259"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="207" id="8Sn-FI-PNK"/>
+                                                            <constraint firstAttribute="height" constant="259" id="8Sn-FI-PNK"/>
                                                         </constraints>
                                                     </tableView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dtd-DO-98f">
@@ -110,7 +110,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUL-gg-4Zy">
-                                                <rect key="frame" x="30" y="684.33333333333337" width="330" height="153.33333333333337"/>
+                                                <rect key="frame" x="30" y="736.33333333333337" width="330" height="153.33333333333337"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeO-i7-NAR">
                                                         <rect key="frame" x="20.000000000000004" y="14.999999999999998" width="41.333333333333343" height="20.333333333333329"/>
@@ -137,7 +137,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lk8-e5-O0b">
-                                                <rect key="frame" x="30" y="847.66666666666663" width="330" height="153.33333333333337"/>
+                                                <rect key="frame" x="30" y="899.66666666666663" width="330" height="153.33333333333337"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9TY-qx-5Ji">
                                                         <rect key="frame" x="20.000000000000004" y="14.999999999999998" width="41.333333333333343" height="20.333333333333329"/>
