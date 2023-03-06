@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 class ClosetDetailViewController: UIViewController {
     // All view
@@ -35,13 +36,16 @@ class ClosetDetailViewController: UIViewController {
     @IBOutlet var materialCareViewHeaderLabel: UILabel!
     @IBOutlet var materialCareViewTableView: UITableView!
     
+    // ClothesData
+    var clothesData: [String : Any] = [ : ]
+    
     // ClothesInfoView TableView data
-    let clothesInfoViewTableViewTitleArr = ["브랜드", "색상", "소재", "사이즈"]
-    let clothesInfoViewTableViewInfoArr = ["NIKE", "검정", "폴리에스테르", "S"]
+    let clothesInfoViewTableViewTitleArr = ["친밀도", "브랜드", "색상", "소재", "사이즈"]
+    var clothesInfoViewTableViewInfoArr: [String] = []
     
     // WearInfoView TalbeView data
     let wearInfoViewTableViewTitleArr = ["계절", "TPO"]
-    let wearInfoViewTableViewInfoArr = ["봄, 여름, 가을", "데일리", "운동"]
+    var wearInfoViewTableViewInfoArr: [String] = []
     
     // CategoryCareView TableView data
     let categoryCareViewTableViewTitleArr = ["상의 세탁 방법", "상의 관리 방법"]
@@ -51,6 +55,8 @@ class ClosetDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        inSertData()
+        
         // NavigationBar
         initNavigationBar(title: "옷 정보")
         
@@ -68,12 +74,67 @@ class ClosetDetailViewController: UIViewController {
         tableViewDelegate()
         cellRegister()
         initTableView()
-
     }
 }
 
 //MARK: init
 extension ClosetDetailViewController {
+    // insert Data
+    func inSertData() {
+        // 옷 정보
+        guard let slider = clothesData["slider"] as? Int else { return }
+        guard let brand = clothesData["brand"] else { return }
+        guard let colorArr = clothesData["color"] as? Array<String> else { return }
+        guard let materialArr = clothesData["material"] as? Array<String> else { return }
+        guard let size = clothesData["size"] else { return }
+        
+        var intimacy: String
+        
+        // 착용 정보
+        guard let seasonArr = clothesData["season"] as? Array<String> else { return }
+        guard let tpoArr = clothesData["tpo"] as? Array<String> else { return }
+        
+        switch slider {
+        case 0...2:
+            intimacy = "거의 안 입어요"
+        case 3...4:
+            intimacy = "잘 안 입어요"
+        case 5...6:
+            intimacy = "그냥 그래요"
+        case 6...7:
+            intimacy = "자주 입어요"
+        case 8...10:
+            intimacy = "아주 많이 입어요"
+        default:
+            intimacy = "입력된 정보가 없어요"
+        }
+        
+        clothesInfoViewTableViewInfoArr = [intimacy, "\(brand)", arrToString(array: colorArr), arrToString(array: materialArr), "\(size)"]
+        wearInfoViewTableViewInfoArr = [arrToString(array: seasonArr), arrToString(array: tpoArr)]
+        func arrToString(array: Array<Any>) -> String {
+            var str = ""
+            var count = 0
+            
+            for i in array {
+                if array.count != 1 {
+                    str += " \(i),"
+                } else {
+                    str += " \(i) "
+                }
+                
+                count += 1
+                
+                if count >= 3 {
+                    break
+                }
+            }
+            
+            str.removeLast()
+            
+            return str
+        }
+    }
+    
     // All view
     /// View cornerRadius
     func initViewCornerRadius() {
@@ -87,14 +148,14 @@ extension ClosetDetailViewController {
     /// init title view
     func initTitleView() {
         // Label
-        titleViewCategoryLabel.text = "상의"
-        titleViewTitleLabl.text = "나이키 스우시 반팔티"
+        titleViewCategoryLabel.text = clothesData["category"] as? String
+        titleViewTitleLabl.text = clothesData["title"] as? String
         titleViewCategoryLabel.font = UIFont.pretendard(size: 20, family: .Bold)
         titleViewTitleLabl.font = UIFont.pretendard(size: 20, family: .Bold)
         
         // Image
         titleViewArrowIcon.image = UIImage(named: "chevronRightIcon")
-        titleViewClothesImgView.image = UIImage(named: "dummyClothesImg2")
+        titleViewClothesImgView.kf.setImage(with: URL(string: clothesData["imageUrl"] as! String))
     }
     
     // ClothesInfoView
