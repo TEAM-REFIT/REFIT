@@ -310,10 +310,11 @@ extension ClosetDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch tableView {
         case categoryCareViewTableView:
-            print(categoryCareViewTableViewTitleArr[indexPath.row])
             let storyBoardName = UIStoryboard(name: "ClothesCareInfoModalViewController", bundle: nil)
-            let closetDetailViewController = storyBoardName.instantiateViewController(withIdentifier: "ClothesCareInfoModalViewController") as! ClothesCareInfoModalViewController
-            self.present(closetDetailViewController, animated: true)
+            let ClothesCareInfoModalViewController = storyBoardName.instantiateViewController(withIdentifier: "ClothesCareInfoModalViewController") as! ClothesCareInfoModalViewController
+            
+            ClothesCareInfoModalViewController.modalTitle = categoryCareViewTableViewTitleArr[indexPath.row]
+            self.present(ClothesCareInfoModalViewController, animated: true)
         case materialCareViewTableView:
             print(materialCareViewTableViewTitleArr[indexPath.row])
         default: break
