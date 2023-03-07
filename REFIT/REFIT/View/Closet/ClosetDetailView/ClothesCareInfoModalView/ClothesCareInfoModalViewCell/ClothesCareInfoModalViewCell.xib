@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -52,7 +51,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tjj-Eh-C2C" firstAttribute="leading" secondItem="zkh-zq-avR" secondAttribute="leading" constant="20" id="0ex-t9-wrb"/>
                             <constraint firstItem="KI4-jh-Zup" firstAttribute="leading" secondItem="zkh-zq-avR" secondAttribute="leading" id="88p-al-7fo"/>
@@ -77,6 +76,7 @@
             </collectionViewCellContentView>
             <size key="customSize" width="370" height="718"/>
             <connections>
+                <outlet property="backGroundView" destination="zkh-zq-avR" id="cLb-bp-KUf"/>
                 <outlet property="contentsLabel" destination="ifI-lL-9KQ" id="vT9-rX-lME"/>
                 <outlet property="imageView" destination="KI4-jh-Zup" id="ct0-bm-kwB"/>
                 <outlet property="tipLabel" destination="tjj-Eh-C2C" id="2Xn-iT-ndg"/>
@@ -85,9 +85,4 @@
             <point key="canvasLocation" x="564.8854961832061" y="386.61971830985919"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
