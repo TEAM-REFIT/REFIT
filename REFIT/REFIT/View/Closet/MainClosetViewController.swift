@@ -121,12 +121,10 @@ extension MainClosetViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let storyBoardName = UIStoryboard(name: "ClosetDetailViewController", bundle: nil)
-//        let closetDetailViewController = storyBoardName.instantiateViewController(withIdentifier: "ClosetDetailViewController") as! ClosetDetailViewController
-//
-//        self.navigationController?.pushViewController(closetDetailViewController, animated: true)
         let storyBoardName = UIStoryboard(name: "ClosetDetailViewController", bundle: nil)
         let closetDetailViewController = storyBoardName.instantiateViewController(withIdentifier: "ClosetDetailViewController") as! ClosetDetailViewController
+        
+        closetDetailViewController.clothesData = collectionViewCellData[indexPath.row]
         
         self.navigationController?.pushViewController(closetDetailViewController, animated: true)
     }
