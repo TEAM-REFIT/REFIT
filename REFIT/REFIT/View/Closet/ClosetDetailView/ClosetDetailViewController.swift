@@ -48,10 +48,10 @@ class ClosetDetailViewController: UIViewController {
     var wearInfoViewTableViewInfoArr: [String] = []
     
     // CategoryCareView TableView data
-    let categoryCareViewTableViewTitleArr = ["상의 세탁 방법", "상의 관리 방법"]
+    var categoryCareViewTableViewTitleArr: [String] = []
     
     // MaterialCareView TableView data
-    let materialCareViewTableViewTitleArr = ["폴리에스테르 세탁 방법", "면 세탁 방법", "폴리에스테르 세탁 방법", "면 세탁 방법"]
+    var materialCareViewTableViewTitleArr: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
