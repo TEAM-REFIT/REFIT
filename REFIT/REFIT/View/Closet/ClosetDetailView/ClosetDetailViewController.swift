@@ -315,8 +315,14 @@ extension ClosetDetailViewController: UITableViewDataSource {
             
             ClothesCareInfoModalViewController.modalTitle = categoryCareViewTableViewTitleArr[indexPath.row]
             self.present(ClothesCareInfoModalViewController, animated: true)
+            
         case materialCareViewTableView:
-            print(materialCareViewTableViewTitleArr[indexPath.row])
+                let storyBoardName = UIStoryboard(name: "ClothesCareInfoModalViewController", bundle: nil)
+                let ClothesCareInfoModalViewController = storyBoardName.instantiateViewController(withIdentifier: "ClothesCareInfoModalViewController") as! ClothesCareInfoModalViewController
+                
+                ClothesCareInfoModalViewController.modalTitle = materialCareViewTableViewTitleArr[indexPath.row]
+                self.present(ClothesCareInfoModalViewController, animated: true)
+            
         default: break
         }
     }
