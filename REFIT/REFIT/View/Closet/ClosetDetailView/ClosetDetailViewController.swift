@@ -55,7 +55,7 @@ class ClosetDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        inSertData()
+        insertData()
         
         // NavigationBar
         initNavigationBar(title: "옷 정보")
@@ -80,7 +80,7 @@ class ClosetDetailViewController: UIViewController {
 //MARK: init
 extension ClosetDetailViewController {
     // insert Data
-    func inSertData() {
+    func insertData() {
         // 옷 정보
         guard let category = clothesData["category"] as? String else { return }
         guard let slider = clothesData["slider"] as? Int else { return }
