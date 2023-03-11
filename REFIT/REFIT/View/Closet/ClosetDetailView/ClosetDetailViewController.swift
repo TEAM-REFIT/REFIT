@@ -257,7 +257,7 @@ extension ClosetDetailViewController: UITableViewDataSource {
         case wearInfoViewTableView:
             return wearInfoViewTableViewTitleArr.count
         case categoryCareViewTableView:
-            return 2
+            return categoryCareViewTableViewTitleArr.count
         case materialCareViewTableView:
             return materialCareViewTableViewTitleArr.count
         default:
