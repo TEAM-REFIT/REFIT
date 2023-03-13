@@ -39,6 +39,7 @@
 		837A67E228FFB51400046632 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837A67E128FFB51400046632 /* StartViewController.swift */; };
 		837E0810292CC16E004DCCB4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 837E080F292CC16E004DCCB4 /* GoogleService-Info.plist */; };
 		83A5A58129B6C7F80035AE85 /* UIBezierPathExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A5A58029B6C7F80035AE85 /* UIBezierPathExtenstion.swift */; };
+		83A5A59D29B983F90035AE85 /* MaterialCareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A5A59C29B983F90035AE85 /* MaterialCareData.swift */; };
 		83AD3331293441AB000C0F9D /* ClothesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AD3330293441AB000C0F9D /* ClothesCell.swift */; };
 		83AD333729344435000C0F9D /* ClothesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83AD333629344435000C0F9D /* ClothesCell.xib */; };
 		83AD334E2935BDC9000C0F9D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 83AD334D2935BDC9000C0F9D /* FirebaseAnalytics */; };
@@ -104,6 +105,7 @@
 		837E080F292CC16E004DCCB4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		837E0811292DB693004DCCB4 /* REFIT.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = REFIT.entitlements; sourceTree = "<group>"; };
 		83A5A58029B6C7F80035AE85 /* UIBezierPathExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBezierPathExtenstion.swift; sourceTree = "<group>"; };
+		83A5A59C29B983F90035AE85 /* MaterialCareData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialCareData.swift; sourceTree = "<group>"; };
 		83AD3330293441AB000C0F9D /* ClothesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesCell.swift; sourceTree = "<group>"; };
 		83AD333629344435000C0F9D /* ClothesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClothesCell.xib; sourceTree = "<group>"; };
 		83B7E5E928FFB9B700B1B674 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				8378CDFD292B52A60093FC60 /* ClosetData.swift */,
+				83A5A59C29B983F90035AE85 /* MaterialCareData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				8352D4B3293EDE5400CC4803 /* UIImageViewExtension.swift in Sources */,
 				83D6244328D3FCC8008DD677 /* MainClosetViewController.swift in Sources */,
 				837A67E228FFB51400046632 /* StartViewController.swift in Sources */,
+				83A5A59D29B983F90035AE85 /* MaterialCareData.swift in Sources */,
 				83AD3331293441AB000C0F9D /* ClothesCell.swift in Sources */,
 				8378CDFE292B52A60093FC60 /* ClosetData.swift in Sources */,
 				8375FC312951501900BA107F /* ClothesCareInfoModalViewController.swift in Sources */,
