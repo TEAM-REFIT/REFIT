@@ -82,7 +82,7 @@ extension ClosetDetailViewController {
     // insert Data
     func insertData() {
         // 옷 정보
-        guard let category = clothesData["category"] as? String else { return }
+        guard let detailCategory = clothesData["detailCategory"] as? String else { return }
         guard let slider = clothesData["slider"] as? Int else { return }
         guard let brand = clothesData["brand"] else { return }
         guard let colorArr = clothesData["color"] as? Array<String> else { return }
@@ -91,7 +91,7 @@ extension ClosetDetailViewController {
         
         var intimacy: String
         
-        categoryCareViewTableViewTitleArr = ["\(category) 세탁 방법", "\(category) 관리 방법"]
+        categoryCareViewTableViewTitleArr = ["\(detailCategory) 세탁 방법", "\(detailCategory) 관리 방법"]
         materialCareViewTableViewTitleArr = (clothesData["material"] as? Array<String>)!
         
         // 착용 정보
