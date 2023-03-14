@@ -41,7 +41,6 @@ final class LoginModel {
             )
             
             Auth.auth().signIn(with: credential) { _, _ in
-                self.hideIndicator(viewController)
                 completion()
             }
         }
