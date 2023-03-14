@@ -15,8 +15,12 @@ class AddClosetViewController: UIViewController {
     
     // category
     @IBOutlet weak var categoryLabel: UILabel!
+    
     @IBOutlet weak var categoryTextFieldBorderView: UIView!
     @IBOutlet weak var categoryTextField: UITextField!
+    
+    @IBOutlet var detailCategoryTextFieldBorderView: UIView!
+    @IBOutlet var detailCategoryTextField: UITextField!
     
     // slider
     @IBOutlet weak var sliderLabel: UILabel!
