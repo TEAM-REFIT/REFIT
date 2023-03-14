@@ -315,6 +315,8 @@ class AddClosetViewController: UIViewController {
     // category PickerView
     let categoryArr = ["상의", "하의", "아우터", "신발", "기타"]
     
+    let notSelectArr = ["카테고리를 먼저 선택해주세요!"]
+    
     let topCategoryArr = ["티셔츠", "맨투맨", "후드", "셔츠", "니트"]
     let pantsCategoryArr = ["슬랙스(정장바지)", "청바지", "치마", "면바지"]
     let outerCategoryArr = ["패딩", "코트", "자켓"]
@@ -582,7 +584,7 @@ extension AddClosetViewController: UIPickerViewDelegate, UIPickerViewDataSource 
             case "기타":
                 return etcCategoryArr.count
             default:
-                return 0
+                return notSelectArr.count
             }
             
         default:
@@ -608,11 +610,11 @@ extension AddClosetViewController: UIPickerViewDelegate, UIPickerViewDataSource 
             case "기타":
                 return etcCategoryArr[row]
             default:
-                return ""
+                return notSelectArr[row]
             }
             
         default:
-            return ""
+            return notSelectArr[row]
         }
     }
     
@@ -634,7 +636,7 @@ extension AddClosetViewController: UIPickerViewDelegate, UIPickerViewDataSource 
             case "기타":
                 detailCategoryTextField.text = etcCategoryArr[row]
             default:
-                detailCategoryTextField.text = ""
+                detailCategoryTextField.text = nil
             }
             
         default:
