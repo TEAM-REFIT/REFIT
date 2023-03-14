@@ -18,9 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="2000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="y0V-F5-hX5">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="2000"/>
-                            </activityIndicatorView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWV-3O-MNw">
                                 <rect key="frame" x="0.0" y="48" width="414" height="1952"/>
                                 <subviews>
@@ -880,6 +877,9 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="TaS-Sc-P6d"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="be2-L7-57t"/>
                             </scrollView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="y0V-F5-hX5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="2000"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
