@@ -141,6 +141,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             }
         }
     }
+    
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
             // Handle error.
             viewModel.hideIndicator(self)
