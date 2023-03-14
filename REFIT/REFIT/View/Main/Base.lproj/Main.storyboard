@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FRY-Cx-Z8e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FRY-Cx-Z8e">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -37,18 +36,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cse-Yu-F2x">
-                                <rect key="frame" x="188" y="437.5" width="38" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="2zp-0S-4s9">
+                                <rect key="frame" x="132" y="378" width="150" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="WuC-BB-pRj"/>
+                                    <constraint firstAttribute="height" constant="140" id="iXx-Rq-vjH"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jlD-5P-gwF"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.38431376220000002" green="0.8392156959" blue="0.47843140360000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="cse-Yu-F2x" firstAttribute="centerY" secondItem="ncf-Ew-1lk" secondAttribute="centerY" id="Qf9-tT-Y47"/>
-                            <constraint firstItem="cse-Yu-F2x" firstAttribute="centerX" secondItem="ncf-Ew-1lk" secondAttribute="centerX" id="t9b-EW-IyN"/>
+                            <constraint firstItem="2zp-0S-4s9" firstAttribute="centerX" secondItem="ncf-Ew-1lk" secondAttribute="centerX" id="1f4-27-KTv"/>
+                            <constraint firstItem="2zp-0S-4s9" firstAttribute="centerY" secondItem="ncf-Ew-1lk" secondAttribute="centerY" id="RfV-7Z-oDi"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -79,8 +79,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="logo" width="208" height="194"/>
     </resources>
 </document>
