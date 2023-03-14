@@ -31,6 +31,7 @@ public struct Clothes: Codable {
     
     let title: String
     let category: String
+    let detailCategory: String
     let slider: Int
     let season: [String]
     let color: [String]
@@ -46,6 +47,7 @@ public struct Clothes: Codable {
         
         case title
         case category
+        case detailCategory
         case slider
         case season
         case color
@@ -92,12 +94,13 @@ func getAllClosetData(completion: @escaping () -> Void) {
     }
 }
 
-func addClothesData(clothesName: String, userID: String, imageUrl: String, title: String, category: String, slider: Int, season: [String], color: [String], tpo: [String], size: String, brand: String, material: [String]) {
+func addClothesData(clothesName: String, userID: String, imageUrl: String, title: String, category: String, detailCategory: String, slider: Int, season: [String], color: [String], tpo: [String], size: String, brand: String, material: [String]) {
     // Firestore 데이터 구성
     let clothes = Clothes(userID: userID,
                           imageUrl: imageUrl,
                           title: title,
                           category: category,
+                          detailCategory: detailCategory,
                           slider: slider,
                           season: season,
                           color: color,
