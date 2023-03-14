@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,6 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="QWz-T8-LsH">
+                                <rect key="frame" x="120" y="352" width="150" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="OaF-DT-prN"/>
+                                    <constraint firstAttribute="width" constant="150" id="xpz-IT-9Pa"/>
+                                </constraints>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="DBf-qc-vGf">
                                 <rect key="frame" x="50" y="641" width="290" height="119"/>
                                 <subviews>
@@ -56,10 +63,12 @@
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" red="0.0" green="0.85098039215686272" blue="0.43529411764705883" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.38431376220000002" green="0.8392156959" blue="0.47843140360000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="DBf-qc-vGf" secondAttribute="bottom" constant="50" id="2Ny-we-NQ6"/>
+                            <constraint firstItem="QWz-T8-LsH" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="3ML-CN-jyc"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="DBf-qc-vGf" secondAttribute="trailing" constant="50" id="3wr-iN-JpE"/>
+                            <constraint firstItem="QWz-T8-LsH" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="9Kh-CQ-GtS"/>
                             <constraint firstItem="uBo-nv-oCC" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" id="W6o-CW-dYD"/>
                             <constraint firstItem="uBo-nv-oCC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="h4x-Ot-W7B"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uBo-nv-oCC" secondAttribute="trailing" id="k65-Ld-SaG"/>
@@ -81,5 +90,6 @@
     <resources>
         <image name="appleLogoIcon" width="17" height="21"/>
         <image name="googleLogoIcon" width="20" height="20"/>
+        <image name="logo" width="208" height="194"/>
     </resources>
 </document>
