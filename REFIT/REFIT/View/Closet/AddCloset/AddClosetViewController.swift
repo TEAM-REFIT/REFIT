@@ -18,9 +18,11 @@ class AddClosetViewController: UIViewController {
     
     @IBOutlet weak var categoryTextFieldBorderView: UIView!
     @IBOutlet weak var categoryTextField: UITextField!
+    let categoryPickerView = UIPickerView()
     
     @IBOutlet var detailCategoryTextFieldBorderView: UIView!
     @IBOutlet var detailCategoryTextField: UITextField!
+    let detailCategoryPickerView = UIPickerView()
     
     // slider
     @IBOutlet weak var sliderLabel: UILabel!
@@ -70,6 +72,7 @@ class AddClosetViewController: UIViewController {
         initRegistrationBtn()
         
         initCategoryPickerView()
+        initDetailCategoryPickerView()
         
         indicatorView.isHidden = true
     }
@@ -308,12 +311,20 @@ class AddClosetViewController: UIViewController {
     
     // MARK: - UI setting
     // category PickerView
-    let categoryArr: [String] = ["상의", "하의", "아우터", "신발", "기타"]
+    let categoryArr = ["상의", "하의", "아우터", "신발", "기타"]
     
+    let topCategoryArr = ["티셔츠", "맨투맨", "후드", "셔츠", "니트"]
+    let pantsCategoryArr = ["슬랙스(정장바지)", "청바지", "치마", "면바지"]
+    let outerCategoryArr = ["패딩", "코트", "자켓"]
+    let shoesCategoryArr = ["천소재", "가죽소재", "스웨이드소재"]
+    let etcCategoryArr = ["원피스", "천모자", "비니(털모자)", "목도리"]
+    
+    
+    // PickerView setting
     func initCategoryPickerView() {
-        let pickerView = UIPickerView()
-        pickerView.delegate = self
-        pickerView.dataSource = self
+        categoryPickerView.delegate = self
+        categoryPickerView.dataSource = self
+        
         categoryTextField.tintColor = .clear
         
         // tool bar setting
@@ -326,7 +337,7 @@ class AddClosetViewController: UIViewController {
         toolBar.setItems([btnCancel , space , btnDone], animated: true)
         toolBar.isUserInteractionEnabled = true
         
-        categoryTextField.inputView = pickerView
+        categoryTextField.inputView = categoryPickerView
         categoryTextField.inputAccessoryView = toolBar
     }
     
@@ -341,40 +352,35 @@ class AddClosetViewController: UIViewController {
         categoryTextField.resignFirstResponder()
     }
     
-    // category PickerView
-    let sizeArr: [String] = ["상의", "하의", "아우터", "신발", "기타"]
-    
-    func initsizePickerView() {
-        let pickerView = UIPickerView()
-        pickerView.delegate = self
-        pickerView.dataSource = self
-        categoryTextField.tintColor = .clear
+    func initDetailCategoryPickerView() {
+        detailCategoryPickerView.delegate = self
+        detailCategoryPickerView.dataSource = self
+        
+        detailCategoryTextField.tintColor = .clear
         
         // tool bar setting
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
         
-        let btnDone = UIBarButtonItem(title: "확인", style: .done, target: self, action: #selector(onPickDone))
+        let btnDone = UIBarButtonItem(title: "확인", style: .done, target: self, action: #selector(detailCategoryOnPickDone))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        let btnCancel = UIBarButtonItem(title: "취소", style: .done, target: self, action: #selector(onPickCancel))
+        let btnCancel = UIBarButtonItem(title: "취소", style: .done, target: self, action: #selector(detailCategoryOnPickCancel))
         toolBar.setItems([btnCancel , space , btnDone], animated: true)
         toolBar.isUserInteractionEnabled = true
         
-        categoryTextField.inputView = pickerView
-        categoryTextField.inputAccessoryView = toolBar
+        detailCategoryTextField.inputView = detailCategoryPickerView
+        detailCategoryTextField.inputAccessoryView = toolBar
     }
     
-    // 피커뷰 > 확인 클릭
-    @objc func onPickDone() {
+    @objc func detailCategoryOnPickDone() {
         // Hide PickerView
-        categoryTextField.resignFirstResponder()
+        detailCategoryTextField.resignFirstResponder()
     }
     
-    // 피커뷰 > 취소 클릭
-    @objc func onPickCancel() {
+    @objc func detailCategoryOnPickCancel() {
         // Hide PickerView
-        categoryTextField.text = nil
-        categoryTextField.resignFirstResponder()
+        detailCategoryTextField.text = nil
+        detailCategoryTextField.resignFirstResponder()
     }
 }
 
@@ -434,6 +440,7 @@ extension AddClosetViewController {
         
         // category text field
         textFieldDesign(textfieldBorderView: categoryTextFieldBorderView, textField: categoryTextField, placeholder: "카테고리를 선택해주세요!")
+        textFieldDesign(textfieldBorderView: detailCategoryTextFieldBorderView, textField: detailCategoryTextField, placeholder: "상세 카테고리를 선택해주세요!")
         
         // size text field
         textFieldDesign(textfieldBorderView: sizeTextFieldBorderView, textField: sizeTextField, placeholder: "ex) S, M, L")
@@ -455,6 +462,7 @@ extension AddClosetViewController {
     private func initKeyboard() {
         titleTextField.delegate = self
         categoryTextField.delegate = self
+        detailCategoryTextField.delegate = self
         sizeTextField.delegate = self
         brandTextField.delegate = self
     }
@@ -548,22 +556,89 @@ extension AddClosetViewController: UIImagePickerControllerDelegate, UINavigation
     }
 }
 
-// size pickerView
+// category pickerView
 extension AddClosetViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return categoryArr.count
+        switch pickerView {
+        case categoryPickerView:
+            return categoryArr.count
+        case detailCategoryPickerView:
+            
+            switch categoryTextField.text {
+            case "상의":
+                return topCategoryArr.count
+            case "하의":
+                return pantsCategoryArr.count
+            case "아우터":
+                return outerCategoryArr.count
+            case "신발":
+                return shoesCategoryArr.count
+            case "기타":
+                return etcCategoryArr.count
+            default:
+                return 0
+            }
+            
+        default:
+            return 0
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return categoryArr[row]
+        switch pickerView {
+        case categoryPickerView:
+            return categoryArr[row]
+        case detailCategoryPickerView:
+            
+            switch categoryTextField.text {
+            case "상의":
+                return topCategoryArr[row]
+            case "하의":
+                return pantsCategoryArr[row]
+            case "아우터":
+                return outerCategoryArr[row]
+            case "신발":
+                return shoesCategoryArr[row]
+            case "기타":
+                return etcCategoryArr[row]
+            default:
+                return ""
+            }
+            
+        default:
+            return ""
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        categoryTextField.text = categoryArr[row]
+        switch pickerView {
+        case categoryPickerView:
+            categoryTextField.text = categoryArr[row]
+        case detailCategoryPickerView:
+            
+            switch categoryTextField.text {
+            case "상의":
+                detailCategoryTextField.text = topCategoryArr[row]
+            case "하의":
+                detailCategoryTextField.text = pantsCategoryArr[row]
+            case "아우터":
+                detailCategoryTextField.text = outerCategoryArr[row]
+            case "신발":
+                detailCategoryTextField.text = shoesCategoryArr[row]
+            case "기타":
+                detailCategoryTextField.text = etcCategoryArr[row]
+            default:
+                detailCategoryTextField.text = ""
+            }
+            
+        default:
+            categoryTextField.text = nil
+            detailCategoryTextField.text = nil
+        }
     }
 }
 
