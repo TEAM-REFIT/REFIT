@@ -399,10 +399,10 @@ extension AddClosetViewController {
     /// init text font
     private func initTitleLabel() {
         // title label
-        titleLabelDesign(label: titleLabel, text: "제목*")
+        titleLabelDesign(label: titleLabel, text: "제목")
         
         //category label
-        titleLabelDesign(label: categoryLabel, text: "카테고리*")
+        titleLabelDesign(label: categoryLabel, text: "카테고리")
         
         // slider label
         titleLabelDesign(label: sliderLabel, text: "옷과의 친밀도")
