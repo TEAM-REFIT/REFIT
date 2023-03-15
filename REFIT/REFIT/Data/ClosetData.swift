@@ -29,6 +29,7 @@ public struct Clothes: Codable {
     let userID: String
     let imageUrl: String
     
+    let documentName: String
     let title: String
     let category: String
     let detailCategory: String
@@ -45,6 +46,7 @@ public struct Clothes: Codable {
         case userID
         case imageUrl
         
+        case documentName
         case title
         case category
         case detailCategory
@@ -98,6 +100,7 @@ func addClothesData(clothesName: String, userID: String, imageUrl: String, title
     // Firestore 데이터 구성
     let clothes = Clothes(userID: userID,
                           imageUrl: imageUrl,
+                          documentName: clothesName,
                           title: title,
                           category: category,
                           detailCategory: detailCategory,

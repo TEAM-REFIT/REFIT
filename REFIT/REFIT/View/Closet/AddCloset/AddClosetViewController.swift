@@ -238,6 +238,7 @@ class AddClosetViewController: UIViewController {
                         let clothes: [String : Any] = ["userID": FirebaseAuthManager.userID,
                                                        "imageUrl" : imageUrl,
                                                        "title" : self.titleTextField.text ?? "무제",
+                                                       "documentName" : clothesName,
                                                        "category" : self.categoryTextField.text ?? "선택 없음",
                                                        "detailCategory" : self.detailCategoryTextField.text!,
                                                        "slider" : self.sliderValue,
