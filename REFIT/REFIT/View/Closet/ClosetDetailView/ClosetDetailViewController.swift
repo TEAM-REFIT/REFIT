@@ -10,6 +10,12 @@ import UIKit
 import Kingfisher
 
 class ClosetDetailViewController: UIViewController {
+    
+    lazy var rightButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(image: UIImage(systemName: "ellipsis"), style: .plain, target: self, action: #selector(buttonPressed(_:)))
+        return button
+    }()
+    
     // All view
     @IBOutlet var viewRadius: [UIView]!
     
@@ -60,6 +66,7 @@ class ClosetDetailViewController: UIViewController {
         // NavigationBar
         initNavigationBar(title: "옷 정보")
         
+        self.navigationItem.rightBarButtonItem = self.rightButton
         // AllViewCornerRadius
         initViewCornerRadius()
         
