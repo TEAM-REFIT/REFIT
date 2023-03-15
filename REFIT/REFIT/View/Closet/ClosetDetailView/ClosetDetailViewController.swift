@@ -82,6 +82,147 @@ class ClosetDetailViewController: UIViewController {
         cellRegister()
         initTableView()
     }
+    
+    @objc private func buttonPressed(_ sender: Any) {
+        let actionSheet = UIAlertController(title: "더보기", message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "의류 삭제", style: .destructive, handler: { _ in
+            
+            let alert = UIAlertController(title: "정말 삭제하시겠습니까?", message: "이 동작은 되돌릴 수 없습니다.", preferredStyle: UIAlertController.Style.alert)
+            let cancel = UIAlertAction(title: "아뇨, 삭제 안 할래요.", style: .cancel, handler: nil)
+            let remove = UIAlertAction(title: "네, 삭제할래요.", style: .destructive, handler: { _ in
+                FirebaseFirestoreManger.db.collection("Closet").document(self.clothesData["documentName"] as! String).delete() { err in
+                    if let err = err {
+                        print("Error removing document: \(err)")
+                    } else {
+                        print("Document successfully removed!")
+                        
+                        getClosetData {
+                            print(ClosetData.shared.allClosetData)
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                        
+                        func getClosetData(completion: @escaping () -> Void) {
+                            switch self.clothesData["category"] as! String {
+                            case "상의":
+                                ClosetData.shared.allClosetData.removeAll()
+                                ClosetData.shared.topClosetData.removeAll()
+                                
+                                FirebaseFirestoreManger.db
+                                    .collection("Closet")
+                                    .whereField("userID", isEqualTo: FirebaseAuthManager.userID)
+                                    .getDocuments() { (querySnapshot, err) in
+                                        if let err = err {
+                                            print("Error getting documents: \(err)")
+                                        } else {
+                                            for document in querySnapshot!.documents {
+                                                let category = document.data()["category"] as! String
+                                                if category == "상의" {
+                                                    ClosetData.shared.topClosetData.append(document.data())
+                                                }
+                                                ClosetData.shared.allClosetData.append(document.data())
+                                            }
+                                        }
+                                    }
+                            case "하의":
+                                ClosetData.shared.allClosetData.removeAll()
+                                ClosetData.shared.pantsClosetData.removeAll()
+                                
+                                FirebaseFirestoreManger.db
+                                    .collection("Closet")
+                                    .whereField("userID", isEqualTo: FirebaseAuthManager.userID)
+                                    .getDocuments() { (querySnapshot, err) in
+                                        if let err = err {
+                                            print("Error getting documents: \(err)")
+                                        } else {
+                                            for document in querySnapshot!.documents {
+                                                let category = document.data()["category"] as! String
+                                                if category == "하의" {
+                                                    ClosetData.shared.topClosetData.append(document.data())
+                                                }
+                                                ClosetData.shared.allClosetData.append(document.data())
+                                            }
+                                        }
+                                    }
+                            case "아우터":
+                                ClosetData.shared.allClosetData.removeAll()
+                                ClosetData.shared.outerClosetData.removeAll()
+                                
+                                FirebaseFirestoreManger.db
+                                    .collection("Closet")
+                                    .whereField("userID", isEqualTo: FirebaseAuthManager.userID)
+                                    .getDocuments() { (querySnapshot, err) in
+                                        if let err = err {
+                                            print("Error getting documents: \(err)")
+                                        } else {
+                                            for document in querySnapshot!.documents {
+                                                let category = document.data()["category"] as! String
+                                                if category == "아우터" {
+                                                    ClosetData.shared.topClosetData.append(document.data())
+                                                }
+                                                ClosetData.shared.allClosetData.append(document.data())
+                                            }
+                                        }
+                                    }
+                            case "신발":
+                                ClosetData.shared.allClosetData.removeAll()
+                                ClosetData.shared.shoesClosetData.removeAll()
+                                
+                                FirebaseFirestoreManger.db
+                                    .collection("Closet")
+                                    .whereField("userID", isEqualTo: FirebaseAuthManager.userID)
+                                    .getDocuments() { (querySnapshot, err) in
+                                        if let err = err {
+                                            print("Error getting documents: \(err)")
+                                        } else {
+                                            for document in querySnapshot!.documents {
+                                                let category = document.data()["category"] as! String
+                                                if category == "신발" {
+                                                    ClosetData.shared.topClosetData.append(document.data())
+                                                }
+                                                ClosetData.shared.allClosetData.append(document.data())
+                                            }
+                                        }
+                                    }
+                            case "기타":
+                                ClosetData.shared.allClosetData.removeAll()
+                                ClosetData.shared.etcClosetData.removeAll()
+                                
+                                FirebaseFirestoreManger.db
+                                    .collection("Closet")
+                                    .whereField("userID", isEqualTo: FirebaseAuthManager.userID)
+                                    .getDocuments() { (querySnapshot, err) in
+                                        if let err = err {
+                                            print("Error getting documents: \(err)")
+                                        } else {
+                                            for document in querySnapshot!.documents {
+                                                let category = document.data()["category"] as! String
+                                                if category == "기타" {
+                                                    ClosetData.shared.topClosetData.append(document.data())
+                                                }
+                                                ClosetData.shared.allClosetData.append(document.data())
+                                            }
+                                        }
+                                    }
+                            default:
+                                return
+                            }
+                            completion()
+                        }
+                    }
+                }
+            })
+            
+            alert.addAction(remove)
+            alert.addAction(cancel)
+            
+            self.present(alert, animated: false, completion: nil)
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        self.present(actionSheet, animated: true)
+    }
+    
 }
 
 //MARK: init
