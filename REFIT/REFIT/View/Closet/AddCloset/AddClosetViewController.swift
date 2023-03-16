@@ -451,7 +451,7 @@ extension AddClosetViewController {
         textFieldDesign(textfieldBorderView: sizeTextFieldBorderView, textField: sizeTextField, placeholder: "ex) S, M, L")
         
         // brand text field
-        textFieldDesign(textfieldBorderView: brandTextFieldBorderView, textField: brandTextField, placeholder: "ex) 나아키")
+        textFieldDesign(textfieldBorderView: brandTextFieldBorderView, textField: brandTextField, placeholder: "ex) 나이키")
         
         func textFieldDesign(textfieldBorderView: UIView, textField: UITextField, placeholder: String) {
             textfieldBorderView.layer.cornerRadius = 25
