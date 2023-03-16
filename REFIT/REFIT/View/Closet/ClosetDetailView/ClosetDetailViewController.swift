@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Kingfisher
+import FirebaseStorage
 
 class ClosetDetailViewController: UIViewController {
     
@@ -98,7 +99,19 @@ class ClosetDetailViewController: UIViewController {
                         
                         getClosetData {
                             print(ClosetData.shared.allClosetData)
-                            self.navigationController?.popViewController(animated: true)
+                            
+                            
+                            let image = Storage.storage().reference().child("\(self.clothesData["documentName"] as! String)")
+                            
+                            image.delete { error in
+                                if error != nil {
+                                    // Uh-oh, an error occurred!
+                                    print("delete error")
+                                } else {
+                                    // File deleted successfully
+                                    self.navigationController?.popViewController(animated: true)
+                                }
+                            }
                         }
                         
                         func getClosetData(completion: @escaping () -> Void) {
