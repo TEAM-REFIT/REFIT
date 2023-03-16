@@ -62,6 +62,7 @@ public struct Clothes: Codable {
 }
 
 func getAllClosetData(completion: @escaping () -> Void) {
+    FirebaseAuthManager.userID = Auth.auth().currentUser!.uid
     
     FirebaseFirestoreManger.db
         .collection("Closet")
