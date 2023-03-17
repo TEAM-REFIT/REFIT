@@ -109,14 +109,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="UOE-dN-kUb" secondAttribute="trailing" constant="20" id="yfK-Cl-8iN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="내 옷장" id="SUL-BN-Rnd">
-                        <barButtonItem key="rightBarButtonItem" image="searchIcon" id="mBs-ym-80H">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="searchBtnTapped:" destination="Y6W-OH-hqX" id="avX-N6-xc2"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="내 옷장" id="SUL-BN-Rnd"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="allClosetCollectionView" destination="GCf-Ix-hFM" id="Gt8-60-FwB"/>
@@ -132,7 +125,6 @@
     <resources>
         <image name="addClothesIcon" width="60" height="60"/>
         <image name="closetIcon" width="26" height="26"/>
-        <image name="searchIcon" width="20" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

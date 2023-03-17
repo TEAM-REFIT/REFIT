@@ -62,28 +62,6 @@ class MainClosetViewController:UIViewController {
         self.navigationController?.pushViewController(addClosetViewController, animated: true)
     }
     
-    @IBAction func searchBtnTapped(_ sender: Any) {
-        do {
-            try FirebaseAuthManager.auth.signOut()
-            let loginVC = getVC("LoginViewController")
-            loginVC.modalPresentationStyle = .fullScreen
-            loginVC.modalTransitionStyle = .crossDissolve
-            
-            // ClosetData 데이터 삭제
-            ClosetData.shared.allClosetData.removeAll()
-            ClosetData.shared.topClosetData.removeAll()
-            ClosetData.shared.pantsClosetData.removeAll()
-            ClosetData.shared.outerClosetData.removeAll()
-            ClosetData.shared.shoesClosetData.removeAll()
-            ClosetData.shared.etcClosetData.removeAll()
-        
-            UserDefaults.standard.set("logout", forKey: "loginInfo")
-            present(loginVC, animated: true)
-        } catch let signOutError as NSError {
-            print("Error signing out: %@", signOutError)
-        }
-    }
-    
     //MARK: init
     
     /// init to cartegoryBar
