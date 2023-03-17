@@ -2,39 +2,84 @@ import UIKit
 
 class SettingViewController: UIViewController {
     
-    @IBOutlet var profileImgView: UIImageView!
-    @IBOutlet var profileNameLabel: UILabel!
-    @IBOutlet var profileClothesCountLabel: UILabel!
+    
+    @IBOutlet var viewCornerRadius: [UIView]!
+    
+    @IBOutlet var lineView: UIView!
+    
+    @IBOutlet var logoImgView: UIImageView!
+    
+    @IBOutlet var idLabel: UILabel!
+    @IBOutlet var loginLabel: UILabel!
+    
+    @IBOutlet var idInfoLabel: UILabel!
+    @IBOutlet var loginInfoLabel: UILabel!
+    
+    @IBOutlet var accountManagementLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.backgroundColor = .white
         initNavigationBar(title: "MY")
-
-        // init profile
-        initProfileImgView()
-        initProfileNameLabel()
-        initProfileClothesCountLabel()
+        
+        viewCornerRadiusSetting()
+        initLineView()
+        
+        initLabel()
+        
+        initLogoImgView()
+    }
+    
+    @IBAction func accountManagementBtnTapped(_ sender: Any) {
+        let storyBoardName = UIStoryboard(name: "AccountManagementViewController", bundle: nil)
+        let accountManagementViewController = storyBoardName.instantiateViewController(withIdentifier: "AccountManagementViewController") as! AccountManagementViewController
+        
+        self.navigationController?.pushViewController(accountManagementViewController, animated: true)
     }
 }
 
 extension SettingViewController {
-    /// init profile image view
-    func initProfileImgView() {
-        profileImgView.layer.cornerRadius = profileImgView.bounds.size.width * 0.5
-        profileImgView.backgroundColor = .gray
-        guard let url = FirebaseAuthManager.userProfileImg else { return }
-        profileImgView.load(url: url)
+    /// view conrner radius setting
+    func viewCornerRadiusSetting() {
+        for i in viewCornerRadius {
+            i.layer.cornerRadius = 10
+        }
     }
     
-    ///init profile name label
-    func initProfileNameLabel() {
-        profileNameLabel.text = FirebaseAuthManager.userName
-        profileNameLabel.font = UIFont.pretendard(size: 20, family: .Bold)
+    /// line setting
+    func initLineView() {
+        lineView.backgroundColor = UIColor.lightGray
     }
     
-    /// init profile clothes count label
-    func initProfileClothesCountLabel() {
-        profileClothesCountLabel.text = "등록된 옷 \(ClosetData.shared.allClosetData.count)벌"
-        profileClothesCountLabel.font = UIFont.pretendard(size: 18, family: .Medium)
+    /// label setting
+    func initLabel() {
+        let userId = (FirebaseAuthManager.userID).substring(from: 0, to: 5)
+        guard let loginInfo = UserDefaults.standard.string(forKey: "loginInfo") else { return }
+        
+        LabelSetting(label: idLabel, text: "ID", color: .black)
+        LabelSetting(label: idInfoLabel, text: userId, color: .gray)
+        
+        LabelSetting(label: loginLabel, text: "로그인 정보", color: .black)
+        LabelSetting(label: loginInfoLabel, text: loginInfo, color: .gray)
+        
+        
+        LabelSetting(label: accountManagementLabel, text: "계정 관리", color: .black)
+        
+        func LabelSetting(label: UILabel, text: String, color: UIColor) {
+            label.text = text
+            label.font = UIFont.pretendard(size: 18, family: .Regular)
+            label.textColor = color
+        }
+    }
+    
+    func initLogoImgView() {
+        if UserDefaults.standard.string(forKey: "loginInfo") == "Google" {
+            logoImgView.image = UIImage(named: "googleLogoIcon")
+        } else if UserDefaults.standard.string(forKey: "loginInfo") == "Apple"  {
+            logoImgView.image = UIImage(named: "appleLogoIcon")
+        } else {
+            logoImgView.image = UIImage(named: "")
+        }
     }
 }
