@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8308E47D291DE83A00C7C950 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8308E47C291DE83A00C7C950 /* FirebaseManager.swift */; };
 		832A02BC2900E34900D571E1 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832A02BB2900E34900D571E1 /* LoginModel.swift */; };
+		8334ED7F29C4130700C62B62 /* AccountManagementViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8334ED7E29C4130700C62B62 /* AccountManagementViewController.storyboard */; };
+		8334ED8129C4131000C62B62 /* AccountManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8334ED8029C4131000C62B62 /* AccountManagementViewController.swift */; };
 		83353C6F28D9A66B00EB80A7 /* AddClosetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83353C6E28D9A66B00EB80A7 /* AddClosetViewController.swift */; };
 		8352D4B3293EDE5400CC4803 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8352D4B2293EDE5400CC4803 /* UIImageViewExtension.swift */; };
 		8355A8E528DAA82F00F9534A /* AddClosetViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8355A8E428DAA82F00F9534A /* AddClosetViewController.storyboard */; };
@@ -65,6 +67,8 @@
 /* Begin PBXFileReference section */
 		8308E47C291DE83A00C7C950 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		832A02BB2900E34900D571E1 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		8334ED7E29C4130700C62B62 /* AccountManagementViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountManagementViewController.storyboard; sourceTree = "<group>"; };
+		8334ED8029C4131000C62B62 /* AccountManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManagementViewController.swift; sourceTree = "<group>"; };
 		83353C6E28D9A66B00EB80A7 /* AddClosetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClosetViewController.swift; sourceTree = "<group>"; };
 		8352D4B2293EDE5400CC4803 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		8355A8E428DAA82F00F9534A /* AddClosetViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddClosetViewController.storyboard; sourceTree = "<group>"; };
@@ -163,6 +167,15 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		8334ED7D29C412D400C62B62 /* AccountManagement */ = {
+			isa = PBXGroup;
+			children = (
+				8334ED7E29C4130700C62B62 /* AccountManagementViewController.storyboard */,
+				8334ED8029C4131000C62B62 /* AccountManagementViewController.swift */,
+			);
+			path = AccountManagement;
+			sourceTree = "<group>";
+		};
 		8355A8E628DAA99C00F9534A /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +266,7 @@
 			children = (
 				83D6244828D40371008DD677 /* SettingViewController.storyboard */,
 				83D6244628D40332008DD677 /* SettingViewController.swift */,
+				8334ED7D29C412D400C62B62 /* AccountManagement */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -485,6 +499,7 @@
 				83C2793528D63D510071F392 /* MainClosetViewController.storyboard in Resources */,
 				837E0810292CC16E004DCCB4 /* GoogleService-Info.plist in Resources */,
 				8355A90828DAE4A200F9534A /* Pretendard-Medium.otf in Resources */,
+				8334ED7F29C4130700C62B62 /* AccountManagementViewController.storyboard in Resources */,
 				836057EF294807A000571182 /* ClosetDetailViewController.storyboard in Resources */,
 				8355A90C28DAE4AB00F9534A /* Pretendard-Thin.otf in Resources */,
 				8375FC2F2951501400BA107F /* ClothesCareInfoModalViewController.storyboard in Resources */,
@@ -501,6 +516,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83BEC87328CF7A56005BB854 /* MainViewController.swift in Sources */,
+				8334ED8129C4131000C62B62 /* AccountManagementViewController.swift in Sources */,
 				83BEC86F28CF7A56005BB854 /* AppDelegate.swift in Sources */,
 				8308E47D291DE83A00C7C950 /* FirebaseManager.swift in Sources */,
 				83353C6F28D9A66B00EB80A7 /* AddClosetViewController.swift in Sources */,
