@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8308E47D291DE83A00C7C950 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8308E47C291DE83A00C7C950 /* FirebaseManager.swift */; };
 		832A02BC2900E34900D571E1 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832A02BB2900E34900D571E1 /* LoginModel.swift */; };
+		8334ED7C29C400DC00C62B62 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8334ED7B29C400DC00C62B62 /* StringExtension.swift */; };
 		8334ED7F29C4130700C62B62 /* AccountManagementViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8334ED7E29C4130700C62B62 /* AccountManagementViewController.storyboard */; };
 		8334ED8129C4131000C62B62 /* AccountManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8334ED8029C4131000C62B62 /* AccountManagementViewController.swift */; };
 		83353C6F28D9A66B00EB80A7 /* AddClosetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83353C6E28D9A66B00EB80A7 /* AddClosetViewController.swift */; };
@@ -67,6 +68,7 @@
 /* Begin PBXFileReference section */
 		8308E47C291DE83A00C7C950 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		832A02BB2900E34900D571E1 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		8334ED7B29C400DC00C62B62 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		8334ED7E29C4130700C62B62 /* AccountManagementViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountManagementViewController.storyboard; sourceTree = "<group>"; };
 		8334ED8029C4131000C62B62 /* AccountManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManagementViewController.swift; sourceTree = "<group>"; };
 		83353C6E28D9A66B00EB80A7 /* AddClosetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClosetViewController.swift; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 				83B7E5E928FFB9B700B1B674 /* UIViewControllerExtension.swift */,
 				8352D4B2293EDE5400CC4803 /* UIImageViewExtension.swift */,
 				83A5A58029B6C7F80035AE85 /* UIBezierPathExtenstion.swift */,
+				8334ED7B29C400DC00C62B62 /* StringExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				8355A90F28DAE4C200F9534A /* Font.swift in Sources */,
 				83A5A58129B6C7F80035AE85 /* UIBezierPathExtenstion.swift in Sources */,
 				8375FC0A2950056200BA107F /* ClothesCareTableViewCell.swift in Sources */,
+				8334ED7C29C400DC00C62B62 /* StringExtension.swift in Sources */,
 				837A67E028FFB47600046632 /* LoginViewController.swift in Sources */,
 				836057ED2948079500571182 /* ClosetDetailViewController.swift in Sources */,
 				83D6244728D40332008DD677 /* SettingViewController.swift in Sources */,
