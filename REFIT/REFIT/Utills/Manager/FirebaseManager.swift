@@ -16,8 +16,6 @@ import UIKit
 class FirebaseAuthManager {
     static let auth = Auth.auth()
     static var userID = auth.currentUser!.uid
-    static let userName = auth.currentUser!.displayName
-    static let userProfileImg = auth.currentUser!.photoURL
 }
 
 // Data base
