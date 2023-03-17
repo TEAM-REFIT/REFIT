@@ -29,6 +29,7 @@ class LoginViewController: UIViewController {
         viewModel.googleLogin(self) {
             getAllClosetData {
                 self.showMainViewController()
+                UserDefaults.standard.set("Google", forKey: "loginInfo")
             }
         }
     }
@@ -131,6 +132,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                     print("애플 로그인 성공", user.uid, user.email ?? "-")
                     getAllClosetData {
                         self.showMainViewController()
+                        UserDefaults.standard.set("Apple", forKey: "loginInfo")
                     }
                 }
                 

@@ -76,6 +76,8 @@ class MainClosetViewController:UIViewController {
             ClosetData.shared.outerClosetData.removeAll()
             ClosetData.shared.shoesClosetData.removeAll()
             ClosetData.shared.etcClosetData.removeAll()
+        
+            UserDefaults.standard.set("logout", forKey: "loginInfo")
             present(loginVC, animated: true)
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)
