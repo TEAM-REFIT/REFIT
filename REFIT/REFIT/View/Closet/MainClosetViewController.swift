@@ -50,7 +50,7 @@ class MainClosetViewController:UIViewController {
         case 5:
             collectionViewCellData = ClosetData.shared.etcClosetData
         default:
-            print("showAllClosetView()")
+            collectionViewCellData = ClosetData.shared.allClosetData
         }
         allClosetCollectionView.reloadData()
     }

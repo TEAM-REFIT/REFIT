@@ -203,7 +203,6 @@ class AddClosetViewController: UIViewController {
     
     // registration
     @IBAction func registrationBtnTapped(_ sender: UIButton) {
-        print("등록")
         let clothesName = FirebaseAuthManager.userID + "_" + UUID().uuidString
         
         showIndicator(self)
