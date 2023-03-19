@@ -15,21 +15,21 @@ class ClothesCareInfoModalViewCell: UICollectionViewCell {
     @IBOutlet var contentsLabel: UILabel!
     @IBOutlet var tipLabel: UILabel!
     
-    let cotton = ""
-    let linen = ""
-    let polyester = ""
-    let nylon = ""
-    let velvet = ""
-    let Denim = ""
-    let leather = ""
-    let fur = ""
-    let silk = ""
-    let tweed = ""
-    let chiffon = ""
-    let corduroy = ""
-    let metallic = ""
-    let lace = ""
-    let etc = ""
+//    let cotton = ""
+//    let linen = ""
+//    let polyester = ""
+//    let nylon = ""
+//    let velvet = ""
+//    let Denim = ""
+//    let leather = ""
+//    let fur = ""
+//    let silk = ""
+//    let tweed = ""
+//    let chiffon = ""
+//    let corduroy = ""
+//    let metallic = ""
+//    let lace = ""
+//    let etc = ""
     
     var topic = "" {
         didSet {
