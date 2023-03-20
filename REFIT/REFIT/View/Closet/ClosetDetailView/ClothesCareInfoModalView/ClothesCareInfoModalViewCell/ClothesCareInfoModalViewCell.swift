@@ -34,8 +34,8 @@ class ClothesCareInfoModalViewCell: UICollectionViewCell {
     var topic = "" {
         didSet {
             // 기본 view 세팅
+            backGroundView.clipsToBounds = true
             backGroundView.layer.cornerRadius = 10
-            imageView.roundCorners(leftTop: 10, rightTop: 10, leftBottom: 0, rightBottom: 0)
             
             // Font 세팅
             titleLabel.font = UIFont.pretendard(size: 20, family: .Bold)
@@ -54,4 +54,3 @@ class ClothesCareInfoModalViewCell: UICollectionViewCell {
         }
     }
 }
-
