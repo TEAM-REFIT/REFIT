@@ -43,24 +43,15 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjj-Eh-C2C">
-                                <rect key="frame" x="20.000000000000004" y="677.66666666666663" width="41.333333333333343" height="20.333333333333371"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="tjj-Eh-C2C" firstAttribute="leading" secondItem="zkh-zq-avR" secondAttribute="leading" constant="20" id="0ex-t9-wrb"/>
                             <constraint firstItem="KI4-jh-Zup" firstAttribute="leading" secondItem="zkh-zq-avR" secondAttribute="leading" id="88p-al-7fo"/>
                             <constraint firstItem="ScY-N7-s5j" firstAttribute="leading" secondItem="zkh-zq-avR" secondAttribute="leading" constant="20" id="8w6-ql-oJo"/>
                             <constraint firstItem="KI4-jh-Zup" firstAttribute="top" secondItem="zkh-zq-avR" secondAttribute="top" id="EHI-Ep-4yc"/>
-                            <constraint firstAttribute="bottom" secondItem="tjj-Eh-C2C" secondAttribute="bottom" constant="20" id="Uyt-KZ-y6S"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ScY-N7-s5j" secondAttribute="trailing" constant="20" id="aqw-vW-CGM"/>
                             <constraint firstAttribute="trailing" secondItem="KI4-jh-Zup" secondAttribute="trailing" id="h6d-qn-138"/>
                             <constraint firstItem="ScY-N7-s5j" firstAttribute="top" secondItem="KI4-jh-Zup" secondAttribute="bottom" constant="20" id="myD-cg-gEx"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tjj-Eh-C2C" secondAttribute="trailing" constant="20" id="ofB-sZ-TY4"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -76,7 +67,6 @@
                 <outlet property="backGroundView" destination="zkh-zq-avR" id="cLb-bp-KUf"/>
                 <outlet property="contentsLabel" destination="ifI-lL-9KQ" id="vT9-rX-lME"/>
                 <outlet property="imageView" destination="KI4-jh-Zup" id="ct0-bm-kwB"/>
-                <outlet property="tipLabel" destination="tjj-Eh-C2C" id="2Xn-iT-ndg"/>
                 <outlet property="titleLabel" destination="Yn3-dv-Abu" id="2vn-OT-o3X"/>
             </connections>
             <point key="canvasLocation" x="564.8854961832061" y="386.61971830985919"/>
