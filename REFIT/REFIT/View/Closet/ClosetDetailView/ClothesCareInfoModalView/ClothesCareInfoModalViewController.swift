@@ -264,14 +264,189 @@ extension ClothesCareInfoModalViewController: UICollectionViewDelegate {
 extension ClothesCareInfoModalViewController: UICollectionViewDataSource {
     // cell 갯수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        switch modalTitle {
+        case "면":
+            return cotton.count
+        case "린넨":
+            return linen.count
+        case "폴리에스테르":
+            return polyester.count
+        case "나일론":
+            return nylon.count
+        case "벨벳":
+            return velvet.count
+        case "데님":
+            return Denim.count
+        case "가죽":
+            return leather.count
+        case "퍼":
+            return fur.count
+        case "실크":
+            return silk.count
+        case "트위드":
+            return tweed.count
+        case "쉬폰":
+            return chiffon.count
+        case "코듀로이":
+            return corduroy.count
+        case "메탈릭":
+            return metallic.count
+        case "레이스":
+            return lace.count
+        case "기타":
+            return etc.count
+        // category
+        // top
+        case "티셔츠":
+            return tShirtAndHood.count
+        case "맨투맨":
+            return tShirtAndHood.count
+        case "후드":
+            return tShirtAndHood.count
+        case "셔츠":
+            return shirt.count
+        case "니트":
+            return neat.count
+        // pants
+        case "슬랙스(정장바지)":
+            return dressPants.count
+        case "청바지":
+            return jeans.count
+        case "치마":
+            return skirt.count
+        case "면바지":
+            return cottonPant.count
+        // outer
+        case "패딩":
+            return padding.count
+        case "코트":
+            return cottonPant.count
+        case "자켓":
+            return jacket.count
+        // shoes
+            
+        // etc
+        case "원피스":
+            return onePiece.count
+        case "천모자":
+            return clothHat.count
+        case "비니(털모자)":
+            return beanie.count
+        case "목도리":
+            return muffler.count
+        default:
+            return 0
+        }
     }
     
     // cell data
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ClothesCareInfoModalViewCell.self), for: indexPath) as! ClothesCareInfoModalViewCell
         
-        cell.topic = "test"
+        switch modalTitle {
+        case "면":
+            cell.careInfo = cotton[indexPath.row]
+            cell.stepLabel = materialStep[indexPath.row]
+        case "린넨":
+            cell.careInfo = linen[indexPath.row]
+            cell.stepLabel = materialStep[indexPath.row]
+        case "폴리에스테르":
+            cell.careInfo = polyester[indexPath.row]
+            cell.stepLabel = materialStep[indexPath.row]
+        case "나일론":
+            cell.careInfo = nylon[indexPath.row]
+            cell.stepLabel = materialStep[indexPath.row]
+        case "벨벳":
+            cell.careInfo = velvet[indexPath.row]
+            cell.stepLabel = materialStep[indexPath.row]
+        case "데님":
+            cell.careInfo = Denim[indexPath.row]
+            cell.stepLabel = materialStep[indexPath.row]
+        case "가죽":
+            cell.careInfo = leather[indexPath.row]
+            cell.stepLabel = materialStep[indexPath.row]
+        case "퍼":
+            cell.careInfo = fur[indexPath.row]
+            cell.stepLabel = furStep[indexPath.row]
+        case "실크":
+            cell.careInfo = silk[indexPath.row]
+            cell.stepLabel = materialStep[indexPath.row]
+        case "트위드":
+            cell.careInfo = tweed[indexPath.row]
+            cell.stepLabel = materialStep[indexPath.row]
+        case "쉬폰":
+            cell.careInfo = chiffon[indexPath.row]
+            cell.stepLabel = materialStep[indexPath.row]
+        case "코듀로이":
+            cell.careInfo = corduroy[indexPath.row]
+            cell.stepLabel = materialStep[indexPath.row]
+        case "메탈릭":
+            cell.careInfo = metallic[indexPath.row]
+            cell.stepLabel = materialStep[indexPath.row]
+        case "레이스":
+            cell.careInfo = lace[indexPath.row]
+            cell.stepLabel = materialStep[indexPath.row]
+        case "기타":
+            cell.careInfo = etc[indexPath.row]
+            cell.stepLabel = materialStep[indexPath.row]
+        // category
+        // top
+        case "티셔츠":
+            cell.careInfo = tShirtAndHood[indexPath.row]
+            cell.stepLabel = categoryStep[indexPath.row]
+        case "맨투맨":
+            cell.careInfo = tShirtAndHood[indexPath.row]
+            cell.stepLabel = categoryStep[indexPath.row]
+        case "후드":
+            cell.careInfo = tShirtAndHood[indexPath.row]
+            cell.stepLabel = categoryStep[indexPath.row]
+        case "셔츠":
+            cell.careInfo = shirt[indexPath.row]
+            cell.stepLabel = categoryStep[indexPath.row]
+        case "니트":
+            cell.careInfo = neat[indexPath.row]
+            cell.stepLabel = categoryStep[indexPath.row]
+        // pants
+        case "슬랙스(정장바지)":
+            cell.careInfo = dressPants[indexPath.row]
+            cell.stepLabel = categoryStep[indexPath.row]
+        case "청바지":
+            cell.careInfo = jeans[indexPath.row]
+            cell.stepLabel = categoryStep[indexPath.row]
+        case "치마":
+            cell.careInfo = skirt[indexPath.row]
+            cell.stepLabel = categoryStep[indexPath.row]
+        case "면바지":
+            cell.careInfo = cottonPant[indexPath.row]
+            cell.stepLabel = categoryStep[indexPath.row]
+        // outer
+        case "패딩":
+            cell.careInfo = padding[indexPath.row]
+            cell.stepLabel = categoryStep[indexPath.row]
+        case "코트":
+            cell.careInfo = coat[indexPath.row]
+            cell.stepLabel = categoryStep[indexPath.row]
+        case "자켓":
+            cell.careInfo = jacket[indexPath.row]
+            cell.stepLabel = categoryStep[indexPath.row]
+        // shoes
+            
+        // etc
+        case "원피스":
+            cell.careInfo = onePiece[indexPath.row]
+            cell.stepLabel = categoryStep[indexPath.row]
+        case "천모자":
+            cell.careInfo = clothHat[indexPath.row]
+            cell.stepLabel = categoryStep[indexPath.row]
+        case "비니(털모자)":
+            cell.careInfo = beanie[indexPath.row]
+            cell.stepLabel = categoryStep[indexPath.row]
+        case "목도리":
+            cell.careInfo = muffler[indexPath.row]
+            cell.stepLabel = categoryStep[indexPath.row]
+        default:
+            cell.careInfo = ""
+        }
         
         return cell
     }
