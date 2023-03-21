@@ -137,7 +137,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lk8-e5-O0b">
-                                                <rect key="frame" x="30" y="899.66666666666663" width="330" height="153.33333333333337"/>
+                                                <rect key="frame" x="30" y="899.66666666666663" width="330" height="101.33333333333337"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9TY-qx-5Ji">
                                                         <rect key="frame" x="20.000000000000004" y="14.999999999999998" width="41.333333333333343" height="20.333333333333329"/>
@@ -146,10 +146,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZPw-Q0-IR1">
-                                                        <rect key="frame" x="0.0" y="50.333333333333371" width="330" height="103"/>
+                                                        <rect key="frame" x="0.0" y="50.333333333333371" width="330" height="51"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="103" id="P6I-t0-Ts7"/>
+                                                            <constraint firstAttribute="height" constant="51" id="P6I-t0-Ts7"/>
                                                         </constraints>
                                                     </tableView>
                                                 </subviews>
