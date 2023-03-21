@@ -41,7 +41,6 @@
 		837A67E028FFB47600046632 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837A67DF28FFB47600046632 /* LoginViewController.swift */; };
 		837A67E228FFB51400046632 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837A67E128FFB51400046632 /* StartViewController.swift */; };
 		837E0810292CC16E004DCCB4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 837E080F292CC16E004DCCB4 /* GoogleService-Info.plist */; };
-		83A5A58129B6C7F80035AE85 /* UIBezierPathExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A5A58029B6C7F80035AE85 /* UIBezierPathExtenstion.swift */; };
 		83A5A59D29B983F90035AE85 /* MaterialCareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A5A59C29B983F90035AE85 /* MaterialCareData.swift */; };
 		83AD3331293441AB000C0F9D /* ClothesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AD3330293441AB000C0F9D /* ClothesCell.swift */; };
 		83AD333729344435000C0F9D /* ClothesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83AD333629344435000C0F9D /* ClothesCell.xib */; };
@@ -110,7 +109,6 @@
 		837E080E292CA638004DCCB4 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		837E080F292CC16E004DCCB4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		837E0811292DB693004DCCB4 /* REFIT.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = REFIT.entitlements; sourceTree = "<group>"; };
-		83A5A58029B6C7F80035AE85 /* UIBezierPathExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBezierPathExtenstion.swift; sourceTree = "<group>"; };
 		83A5A59C29B983F90035AE85 /* MaterialCareData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialCareData.swift; sourceTree = "<group>"; };
 		83AD3330293441AB000C0F9D /* ClothesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesCell.swift; sourceTree = "<group>"; };
 		83AD333629344435000C0F9D /* ClothesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClothesCell.xib; sourceTree = "<group>"; };
@@ -336,7 +334,6 @@
 			children = (
 				83B7E5E928FFB9B700B1B674 /* UIViewControllerExtension.swift */,
 				8352D4B2293EDE5400CC4803 /* UIImageViewExtension.swift */,
-				83A5A58029B6C7F80035AE85 /* UIBezierPathExtenstion.swift */,
 				8334ED7B29C400DC00C62B62 /* StringExtension.swift */,
 			);
 			path = Extension;
@@ -536,7 +533,6 @@
 				832A02BC2900E34900D571E1 /* LoginModel.swift in Sources */,
 				835D33AC29A846DC00DAECDC /* ClothesCareInfoModalViewCell.swift in Sources */,
 				8355A90F28DAE4C200F9534A /* Font.swift in Sources */,
-				83A5A58129B6C7F80035AE85 /* UIBezierPathExtenstion.swift in Sources */,
 				8375FC0A2950056200BA107F /* ClothesCareTableViewCell.swift in Sources */,
 				8334ED7C29C400DC00C62B62 /* StringExtension.swift in Sources */,
 				837A67E028FFB47600046632 /* LoginViewController.swift in Sources */,
