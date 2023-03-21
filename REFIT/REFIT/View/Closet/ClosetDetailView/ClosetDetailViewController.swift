@@ -252,7 +252,7 @@ extension ClosetDetailViewController {
         
         var intimacy: String
         
-        categoryCareViewTableViewTitleArr = ["\(detailCategory) 세탁 방법", "\(detailCategory) 관리 방법"]
+        categoryCareViewTableViewTitleArr = [detailCategory]
         materialCareViewTableViewTitleArr = (clothesData["material"] as? Array<String>)!
         
         // 착용 정보
