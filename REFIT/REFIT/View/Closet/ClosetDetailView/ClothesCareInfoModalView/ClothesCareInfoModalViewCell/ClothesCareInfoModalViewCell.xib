@@ -21,13 +21,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="370" height="718"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KI4-jh-Zup">
-                                <rect key="frame" x="0.0" y="0.0" width="370" height="360"/>
+                                <rect key="frame" x="0.0" y="0.0" width="370" height="460"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="360" id="yTk-pq-VUZ"/>
+                                    <constraint firstAttribute="height" constant="460" id="yTk-pq-VUZ"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ScY-N7-s5j">
-                                <rect key="frame" x="20.000000000000004" y="380" width="41.333333333333343" height="50.666666666666686"/>
+                                <rect key="frame" x="20.000000000000004" y="480" width="41.333333333333343" height="50.666666666666629"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yn3-dv-Abu">
                                         <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20.333333333333332"/>
