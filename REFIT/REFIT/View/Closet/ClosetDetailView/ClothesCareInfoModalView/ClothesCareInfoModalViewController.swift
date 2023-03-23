@@ -154,7 +154,7 @@ class ClothesCareInfoModalViewController: UIViewController {
         "탈수는 최대한 약하게 한 후 옷걸이에 걸어 자연건조 하세요.",
         "옷걸이에 걸어 보관하세요."
     ]
-    let neat = [
+    let knit = [
         "",
         "손세탁 하는 것이 가장 좋습니다.\n세탁기를 이용할 때는 세탁망에 넣어 세탁해야 합니다. 냉수를 이용하고, 울 코스/탈수 섬세 모드를 이용하세요.\n헹군 단계에서 식초나 레몬즙을 넣으면 보풀을 방지 할 수 있어요.",
         "건조대 두 칸에 걸쳐 늘어나지 않게 건조하세요.",
@@ -306,7 +306,7 @@ extension ClothesCareInfoModalViewController: UICollectionViewDataSource {
         case "셔츠":
             return shirt.count
         case "니트":
-            return neat.count
+            return knit.count
         // pants
         case "슬랙스(정장바지)":
             return dressPants.count
@@ -404,7 +404,7 @@ extension ClothesCareInfoModalViewController: UICollectionViewDataSource {
             cell.careInfo = shirt[indexPath.row]
             cell.stepLabel = categoryStep[indexPath.row]
         case "니트":
-            cell.careInfo = neat[indexPath.row]
+            cell.careInfo = knit[indexPath.row]
             cell.stepLabel = categoryStep[indexPath.row]
         // pants
         case "슬랙스(정장바지)":
