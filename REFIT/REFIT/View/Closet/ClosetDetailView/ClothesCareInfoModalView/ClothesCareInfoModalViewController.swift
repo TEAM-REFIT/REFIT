@@ -23,7 +23,7 @@ class ClothesCareInfoModalViewController: UIViewController {
         "STEP.3 다림질하기",
         "STEP.4 보관하기"
     ]
-    let furStep = [
+    let twoStep = [
         "Intro",
         "STEP.1 세탁하기",
         "STEP.2 보관하기"
@@ -208,7 +208,33 @@ class ClothesCareInfoModalViewController: UIViewController {
         "두꺼운 정장용 옷걸이에 걸어 보관하세요."
     ]
     // shoes
+    let canvas = [
+        "",
+        "",
+        "",
+        ""
+    ]
     
+    let leatherShoes = [
+        "",
+        "",
+        "",
+        ""
+    ]
+    
+    let sportsShoes = [
+        "",
+        "",
+        "",
+        ""
+    ]
+    
+    let suedeShoes = [
+        "",
+        "",
+        "",
+        ""
+    ]
     // etc
     let onePiece = [
         "",
@@ -324,7 +350,14 @@ extension ClothesCareInfoModalViewController: UICollectionViewDataSource {
         case "자켓":
             return jacket.count
         // shoes
-            
+        case "캔버스화":
+            return canvas.count
+        case "운동화":
+            return sportsShoes.count
+        case "스웨이드 슈즈":
+            return suedeShoes.count
+        case "가죽 신발":
+            return leatherShoes.count
         // etc
         case "원피스":
             return onePiece.count
@@ -367,7 +400,7 @@ extension ClothesCareInfoModalViewController: UICollectionViewDataSource {
             cell.stepLabel = materialStep[indexPath.row]
         case "퍼":
             cell.careInfo = fur[indexPath.row]
-            cell.stepLabel = furStep[indexPath.row]
+            cell.stepLabel = twoStep[indexPath.row]
         case "실크":
             cell.careInfo = silk[indexPath.row]
             cell.stepLabel = materialStep[indexPath.row]
@@ -430,6 +463,18 @@ extension ClothesCareInfoModalViewController: UICollectionViewDataSource {
             cell.careInfo = jacket[indexPath.row]
             cell.stepLabel = categoryStep[indexPath.row]
         // shoes
+        case "캔버스화":
+            cell.careInfo = canvas[indexPath.row]
+            cell.stepLabel = categoryStep[indexPath.row]
+        case "운동화":
+            cell.careInfo = sportsShoes[indexPath.row]
+            cell.stepLabel = twoStep[indexPath.row]
+        case "스웨이드 슈즈":
+            cell.careInfo = suedeShoes[indexPath.row]
+            cell.stepLabel = categoryStep[indexPath.row]
+        case "가죽 신발":
+            cell.careInfo = leatherShoes[indexPath.row]
+            cell.stepLabel = twoStep[indexPath.row]
             
         // etc
         case "원피스":

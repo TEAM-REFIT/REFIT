@@ -331,7 +331,7 @@ class AddClosetViewController: UIViewController {
     let topCategoryArr = ["티셔츠", "맨투맨", "후드", "셔츠", "니트"]
     let pantsCategoryArr = ["슬랙스(정장바지)", "청바지", "치마", "면바지"]
     let outerCategoryArr = ["패딩", "코트", "자켓"]
-    let shoesCategoryArr = ["천소재", "가죽소재", "스웨이드소재"]
+    let shoesCategoryArr = ["캔버스화", "운동화", "가죽 신발", "스웨이드 슈즈"]
     let etcCategoryArr = ["원피스", "천모자", "비니(털모자)", "목도리", "가방"]
     
     
