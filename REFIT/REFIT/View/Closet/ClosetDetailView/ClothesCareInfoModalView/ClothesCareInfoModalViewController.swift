@@ -444,6 +444,9 @@ extension ClothesCareInfoModalViewController: UICollectionViewDataSource {
         case "목도리":
             cell.careInfo = muffler[indexPath.row]
             cell.stepLabel = categoryStep[indexPath.row]
+        case "가방":
+            cell.careInfo = bag[indexPath.row]
+            cell.stepLabel = categoryStep[indexPath.row]
         default:
             cell.careInfo = ""
         }
