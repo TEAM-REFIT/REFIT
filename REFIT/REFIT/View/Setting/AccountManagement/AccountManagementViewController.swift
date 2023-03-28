@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 import FirebaseAuth
+import FirebaseStorage
 
 class AccountManagementViewController: UIViewController {
     
@@ -58,12 +59,14 @@ class AccountManagementViewController: UIViewController {
         let cancel = UIAlertAction(title: "취소", style: .default)
         let delete = UIAlertAction(title: "삭제하기", style: .destructive) { action in
             let user = Auth.auth().currentUser
+            
             user?.delete { error in
                 if error != nil {
                     // An error happened.
                     print(error)
                 } else {
                     // Account deleted.
+                    removeAllData()
                     print("delete")
                     let loginVC = self.getVC("LoginViewController")
                     loginVC.modalPresentationStyle = .fullScreen
@@ -78,6 +81,35 @@ class AccountManagementViewController: UIViewController {
         alert.addAction(cancel)
         
         self.present(alert, animated: true, completion: nil)
+        
+        func removeAllData() {
+            for i in ClosetData.shared.allClosetData {
+                FirebaseFirestoreManger.db.collection("Closet").document(i["documentName"] as! String).delete() { err in
+                    if let err = err {
+                        print("Error removing document: \(err)")
+                    } else {
+                        print("Document successfully removed!")
+                        let image = Storage.storage().reference().child(i["documentName"] as! String)
+                        
+                        image.delete { error in
+                            if error != nil {
+                                // Uh-oh, an error occurred!
+                                print("delete error")
+                            } else {
+                                // File deleted successfully
+                                self.navigationController?.popViewController(animated: true)
+                            }
+                        }
+                    }
+                }
+            }
+            ClosetData.shared.allClosetData.removeAll()
+            ClosetData.shared.topClosetData.removeAll()
+            ClosetData.shared.pantsClosetData.removeAll()
+            ClosetData.shared.outerClosetData.removeAll()
+            ClosetData.shared.shoesClosetData.removeAll()
+            ClosetData.shared.etcClosetData.removeAll()
+        }
     }
 }
 
