@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ClothesCareInfoModalViewCell: UICollectionViewCell {
     @IBOutlet var backGroundView: UIView!
@@ -13,6 +14,12 @@ class ClothesCareInfoModalViewCell: UICollectionViewCell {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var contentsLabel: UILabel!
+    
+    var imageUrl = "" {
+        didSet {
+            imageView.kf.setImage(with: URL(string: imageUrl))
+        }
+    }
     
     var careInfo = "" {
         didSet {
@@ -27,7 +34,6 @@ class ClothesCareInfoModalViewCell: UICollectionViewCell {
             contentsLabel.font = UIFont.pretendard(size: 18, family: .Regular)
             contentsLabel.textColor = UIColor.black
             
-            imageView.image = UIImage(named: "testImg")
             contentsLabel.text = careInfo
         }
     }

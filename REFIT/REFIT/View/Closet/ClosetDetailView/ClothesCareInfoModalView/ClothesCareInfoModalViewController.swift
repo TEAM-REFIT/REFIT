@@ -14,6 +14,8 @@ class ClothesCareInfoModalViewController: UIViewController {
     @IBOutlet var titleItem: UINavigationItem!
     
     var modalTitle: String = "title"
+    var materialCareData: [String : Any] = [ : ]
+    var categoryCareData: [String : Any] = [ : ]
     
     // material
     let materialStep = [
@@ -367,6 +369,8 @@ extension ClothesCareInfoModalViewController: UICollectionViewDataSource {
             return beanie.count
         case "목도리":
             return muffler.count
+        case "가방":
+            return bag.count
         default:
             return 0
         }
@@ -378,39 +382,75 @@ extension ClothesCareInfoModalViewController: UICollectionViewDataSource {
         
         switch modalTitle {
         case "면":
+            if let imgArr = materialCareData["면"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = cotton[indexPath.row]
             cell.stepLabel = materialStep[indexPath.row]
         case "린넨":
+            if let imgArr = materialCareData["린넨"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = linen[indexPath.row]
             cell.stepLabel = materialStep[indexPath.row]
         case "폴리에스테르":
+            if let imgArr = materialCareData["폴리에스테르"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = polyester[indexPath.row]
             cell.stepLabel = materialStep[indexPath.row]
         case "나일론":
+            if let imgArr = materialCareData["나일론"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = nylon[indexPath.row]
             cell.stepLabel = materialStep[indexPath.row]
         case "벨벳":
+            if let imgArr = materialCareData["벨벳"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = velvet[indexPath.row]
             cell.stepLabel = materialStep[indexPath.row]
         case "데님":
+            if let imgArr = materialCareData["데님"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = Denim[indexPath.row]
             cell.stepLabel = materialStep[indexPath.row]
         case "가죽":
+            if let imgArr = materialCareData["가죽"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = leather[indexPath.row]
             cell.stepLabel = materialStep[indexPath.row]
         case "퍼":
+            if let imgArr = materialCareData["퍼"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = fur[indexPath.row]
             cell.stepLabel = twoStep[indexPath.row]
         case "실크":
+            if let imgArr = materialCareData["실크"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = silk[indexPath.row]
             cell.stepLabel = materialStep[indexPath.row]
         case "트위드":
+            if let imgArr = materialCareData["트위드"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = tweed[indexPath.row]
             cell.stepLabel = materialStep[indexPath.row]
         case "쉬폰":
+            if let imgArr = materialCareData["쉬폰"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = chiffon[indexPath.row]
             cell.stepLabel = materialStep[indexPath.row]
         case "코듀로이":
+            if let imgArr = materialCareData["코듀로이"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = corduroy[indexPath.row]
             cell.stepLabel = materialStep[indexPath.row]
         case "메탈릭":
@@ -428,68 +468,125 @@ extension ClothesCareInfoModalViewController: UICollectionViewDataSource {
             cell.careInfo = tShirtAndHood[indexPath.row]
             cell.stepLabel = categoryStep[indexPath.row]
         case "맨투맨":
+            if let imgArr = categoryCareData["멘투맨"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = tShirtAndHood[indexPath.row]
             cell.stepLabel = categoryStep[indexPath.row]
         case "후드":
             cell.careInfo = tShirtAndHood[indexPath.row]
             cell.stepLabel = categoryStep[indexPath.row]
         case "셔츠":
+            if let imgArr = categoryCareData["셔츠"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = shirt[indexPath.row]
             cell.stepLabel = categoryStep[indexPath.row]
         case "니트":
+            if let imgArr = categoryCareData["니트"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = knit[indexPath.row]
             cell.stepLabel = categoryStep[indexPath.row]
         // pants
         case "슬랙스(정장바지)":
+            if let imgArr = categoryCareData["슬랙스(정장바지)"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = dressPants[indexPath.row]
             cell.stepLabel = categoryStep[indexPath.row]
         case "청바지":
+            if let imgArr = categoryCareData["청바지"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = jeans[indexPath.row]
             cell.stepLabel = categoryStep[indexPath.row]
         case "치마":
+            if let imgArr = categoryCareData["치마"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = skirt[indexPath.row]
             cell.stepLabel = categoryStep[indexPath.row]
         case "면바지":
+            if let imgArr = categoryCareData["면바지"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = cottonPant[indexPath.row]
             cell.stepLabel = categoryStep[indexPath.row]
         // outer
         case "패딩":
+            if let imgArr = categoryCareData["패딩"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = padding[indexPath.row]
             cell.stepLabel = categoryStep[indexPath.row]
         case "코트":
+            if let imgArr = categoryCareData["코트"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = coat[indexPath.row]
             cell.stepLabel = categoryStep[indexPath.row]
         case "자켓":
+            if let imgArr = categoryCareData["자켓"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = jacket[indexPath.row]
             cell.stepLabel = categoryStep[indexPath.row]
         // shoes
         case "캔버스화":
+            if let imgArr = categoryCareData["캔버스화"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = canvas[indexPath.row]
             cell.stepLabel = categoryStep[indexPath.row]
         case "운동화":
+            if let imgArr = categoryCareData["운동화"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = sportsShoes[indexPath.row]
             cell.stepLabel = twoStep[indexPath.row]
         case "스웨이드 슈즈":
+            if let imgArr = categoryCareData["스웨이드 슈즈"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = suedeShoes[indexPath.row]
             cell.stepLabel = categoryStep[indexPath.row]
         case "가죽 신발":
+            if let imgArr = categoryCareData["가죽 신발"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = leatherShoes[indexPath.row]
             cell.stepLabel = twoStep[indexPath.row]
             
         // etc
         case "원피스":
+            if let imgArr = categoryCareData["원피스"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = onePiece[indexPath.row]
             cell.stepLabel = categoryStep[indexPath.row]
         case "천모자":
+            if let imgArr = categoryCareData["천모자"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = clothHat[indexPath.row]
             cell.stepLabel = categoryStep[indexPath.row]
         case "비니(털모자)":
+            if let imgArr = categoryCareData["비니(털모자)"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = beanie[indexPath.row]
             cell.stepLabel = categoryStep[indexPath.row]
         case "목도리":
+            if let imgArr = categoryCareData["목도리"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = muffler[indexPath.row]
             cell.stepLabel = categoryStep[indexPath.row]
         case "가방":
+            if let imgArr = categoryCareData["가방"] as? [String] {
+                cell.imageUrl = imgArr[indexPath.row]
+            }
             cell.careInfo = bag[indexPath.row]
             cell.stepLabel = categoryStep[indexPath.row]
         default:

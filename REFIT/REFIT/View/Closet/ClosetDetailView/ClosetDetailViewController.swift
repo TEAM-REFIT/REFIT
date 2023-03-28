@@ -45,6 +45,8 @@ class ClosetDetailViewController: UIViewController {
     
     // ClothesData
     var clothesData: [String : Any] = [ : ]
+    var materialCareData: [String : Any] = [ : ]
+    var categoryCareData: [String : Any] = [ : ]
     
     // ClothesInfoView TableView data
     let clothesInfoViewTableViewTitleArr = ["친밀도", "브랜드", "색상", "소재", "사이즈"]
@@ -82,6 +84,32 @@ class ClosetDetailViewController: UIViewController {
         tableViewDelegate()
         cellRegister()
         initTableView()
+        
+        FirebaseFirestoreManger.db
+            .collection("clothesManagement")
+            .document("material")
+            .getDocument { (document, error) in
+                if let document = document, document.exists {
+                    if let documentData = document.data() {
+                        self.materialCareData = documentData
+                    }
+                } else {
+                    print("Document does not exist")
+                }
+            }
+        
+        FirebaseFirestoreManger.db
+            .collection("clothesManagement")
+            .document("category")
+            .getDocument { (document, error) in
+                if let document = document, document.exists {
+                    if let documentData = document.data() {
+                        self.categoryCareData = documentData
+                    }
+                } else {
+                    print("Document does not exist")
+                }
+            }
     }
     
     @objc private func buttonPressed(_ sender: Any) {
@@ -474,18 +502,17 @@ extension ClosetDetailViewController: UITableViewDataSource {
     
     // tableViewCell 클릭 이벤트 설정
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoardName = UIStoryboard(name: "ClothesCareInfoModalViewController", bundle: nil)
+        let ClothesCareInfoModalViewController = storyBoardName.instantiateViewController(withIdentifier: "ClothesCareInfoModalViewController") as! ClothesCareInfoModalViewController
+        
         switch tableView {
         case categoryCareViewTableView:
-            let storyBoardName = UIStoryboard(name: "ClothesCareInfoModalViewController", bundle: nil)
-            let ClothesCareInfoModalViewController = storyBoardName.instantiateViewController(withIdentifier: "ClothesCareInfoModalViewController") as! ClothesCareInfoModalViewController
-            
+            ClothesCareInfoModalViewController.categoryCareData = self.categoryCareData
             ClothesCareInfoModalViewController.modalTitle = categoryCareViewTableViewTitleArr[indexPath.row]
             self.present(ClothesCareInfoModalViewController, animated: true)
             
         case materialCareViewTableView:
-            let storyBoardName = UIStoryboard(name: "ClothesCareInfoModalViewController", bundle: nil)
-            let ClothesCareInfoModalViewController = storyBoardName.instantiateViewController(withIdentifier: "ClothesCareInfoModalViewController") as! ClothesCareInfoModalViewController
-            
+            ClothesCareInfoModalViewController.materialCareData = self.materialCareData
             ClothesCareInfoModalViewController.modalTitle = materialCareViewTableViewTitleArr[indexPath.row]
             self.present(ClothesCareInfoModalViewController, animated: true)
             
