@@ -21,25 +21,35 @@ class AccountManagementViewController: UIViewController {
     }
     
     @IBAction func logoutBtnTapped(_ sender: Any) {
-        do {
-            try FirebaseAuthManager.auth.signOut()
-            let loginVC = getVC("LoginViewController")
-            loginVC.modalPresentationStyle = .fullScreen
-            loginVC.modalTransitionStyle = .crossDissolve
-            
-            // ClosetData 데이터 삭제
-            ClosetData.shared.allClosetData.removeAll()
-            ClosetData.shared.topClosetData.removeAll()
-            ClosetData.shared.pantsClosetData.removeAll()
-            ClosetData.shared.outerClosetData.removeAll()
-            ClosetData.shared.shoesClosetData.removeAll()
-            ClosetData.shared.etcClosetData.removeAll()
-            
-            UserDefaults.standard.set("logout", forKey: "loginInfo")
-            present(loginVC, animated: true)
-        } catch let signOutError as NSError {
-            print("Error signing out: %@", signOutError)
+        let alert = UIAlertController(title: "로그아웃하시겠습니까?", message: "", preferredStyle: .alert)
+        
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        let delete = UIAlertAction(title: "로그아웃", style: .destructive) {_ in
+            do {
+                try FirebaseAuthManager.auth.signOut()
+                let loginVC = self.getVC("LoginViewController")
+                loginVC.modalPresentationStyle = .fullScreen
+                loginVC.modalTransitionStyle = .crossDissolve
+                
+                // ClosetData 데이터 삭제
+                ClosetData.shared.allClosetData.removeAll()
+                ClosetData.shared.topClosetData.removeAll()
+                ClosetData.shared.pantsClosetData.removeAll()
+                ClosetData.shared.outerClosetData.removeAll()
+                ClosetData.shared.shoesClosetData.removeAll()
+                ClosetData.shared.etcClosetData.removeAll()
+                
+                UserDefaults.standard.set("logout", forKey: "loginInfo")
+                self.present(loginVC, animated: true)
+            } catch let signOutError as NSError {
+                print("Error signing out: %@", signOutError)
+            }
         }
+        
+        alert.addAction(delete)
+        alert.addAction(cancel)
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func removeAccountBtnTapped(_ sender: Any) {
