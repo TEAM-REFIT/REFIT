@@ -56,10 +56,18 @@ class MainClosetViewController:UIViewController {
     }
     
     @IBAction func addClothesBtnTapped(_ sender: Any) {
-        let storyBoardName = UIStoryboard(name: "AddClosetViewController", bundle: nil)
-        let addClosetViewController = storyBoardName.instantiateViewController(withIdentifier: "AddClosetViewController") as! AddClosetViewController
-        
-        self.navigationController?.pushViewController(addClosetViewController, animated: true)
+        if ClosetData.shared.allClosetData.count <= 99 {
+            let storyBoardName = UIStoryboard(name: "AddClosetViewController", bundle: nil)
+            let addClosetViewController = storyBoardName.instantiateViewController(withIdentifier: "AddClosetViewController") as! AddClosetViewController
+            
+            self.navigationController?.pushViewController(addClosetViewController, animated: true)
+        } else {
+            let alert = UIAlertController(title: "의류를 등록할 수 없습니다.", message: "의류는 100벌까지만 등록할 수 있습니다.", preferredStyle: .alert)
+            let okey = UIAlertAction(title: "확인", style: .default)
+            
+            alert.addAction(okey)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     //MARK: init
