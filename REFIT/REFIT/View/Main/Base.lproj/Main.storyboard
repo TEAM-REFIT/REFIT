@@ -37,11 +37,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="2zp-0S-4s9">
-                                <rect key="frame" x="132" y="378" width="150" height="140"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="WuC-BB-pRj"/>
-                                    <constraint firstAttribute="height" constant="140" id="iXx-Rq-vjH"/>
-                                </constraints>
+                                <rect key="frame" x="92" y="422.5" width="230" height="51"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jlD-5P-gwF"/>
@@ -79,6 +75,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="208" height="194"/>
+        <image name="logo" width="230" height="51"/>
     </resources>
 </document>
