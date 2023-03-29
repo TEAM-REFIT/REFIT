@@ -13,7 +13,7 @@ class ClothesCareInfoModalViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var titleItem: UINavigationItem!
     
-    var modalTitle: String = "title"
+    var modalTitle: String = ""
     var materialCareData: [String : Any] = [ : ]
     var categoryCareData: [String : Any] = [ : ]
     
@@ -468,7 +468,7 @@ extension ClothesCareInfoModalViewController: UICollectionViewDataSource {
             cell.careInfo = tShirtAndHood[indexPath.row]
             cell.stepLabel = categoryStep[indexPath.row]
         case "맨투맨":
-            if let imgArr = categoryCareData["멘투맨"] as? [String] {
+            if let imgArr = categoryCareData["맨투맨"] as? [String] {
                 cell.imageUrl = imgArr[indexPath.row]
             }
             cell.careInfo = tShirtAndHood[indexPath.row]
