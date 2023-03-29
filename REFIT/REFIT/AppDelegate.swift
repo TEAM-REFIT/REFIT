@@ -29,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 UITabBar.appearance().standardAppearance = tapBarAppearance
                 UITabBar.appearance().scrollEdgeAppearance = tapBarAppearance
         
+        // 네트워크 확인
+        NetworkCheck.shared.startMonitoring()
         return true
     }
     

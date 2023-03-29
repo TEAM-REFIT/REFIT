@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8308E47D291DE83A00C7C950 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8308E47C291DE83A00C7C950 /* FirebaseManager.swift */; };
+		830F857F29D4BAF000FF399A /* NetworkCheckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830F857E29D4BAF000FF399A /* NetworkCheckManager.swift */; };
+		830F858829D4C5B200FF399A /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830F858729D4C5B200FF399A /* UIWindowExtension.swift */; };
 		832A02BC2900E34900D571E1 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832A02BB2900E34900D571E1 /* LoginModel.swift */; };
 		8334ED7C29C400DC00C62B62 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8334ED7B29C400DC00C62B62 /* StringExtension.swift */; };
 		8334ED7F29C4130700C62B62 /* AccountManagementViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8334ED7E29C4130700C62B62 /* AccountManagementViewController.storyboard */; };
@@ -66,6 +68,8 @@
 
 /* Begin PBXFileReference section */
 		8308E47C291DE83A00C7C950 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		830F857E29D4BAF000FF399A /* NetworkCheckManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCheckManager.swift; sourceTree = "<group>"; };
+		830F858729D4C5B200FF399A /* UIWindowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtension.swift; sourceTree = "<group>"; };
 		832A02BB2900E34900D571E1 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		8334ED7B29C400DC00C62B62 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		8334ED7E29C4130700C62B62 /* AccountManagementViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountManagementViewController.storyboard; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				8308E47C291DE83A00C7C950 /* FirebaseManager.swift */,
+				830F857E29D4BAF000FF399A /* NetworkCheckManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -335,6 +340,7 @@
 				83B7E5E928FFB9B700B1B674 /* UIViewControllerExtension.swift */,
 				8352D4B2293EDE5400CC4803 /* UIImageViewExtension.swift */,
 				8334ED7B29C400DC00C62B62 /* StringExtension.swift */,
+				830F858729D4C5B200FF399A /* UIWindowExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -518,12 +524,14 @@
 				83BEC87328CF7A56005BB854 /* MainViewController.swift in Sources */,
 				8334ED8129C4131000C62B62 /* AccountManagementViewController.swift in Sources */,
 				83BEC86F28CF7A56005BB854 /* AppDelegate.swift in Sources */,
+				830F857F29D4BAF000FF399A /* NetworkCheckManager.swift in Sources */,
 				8308E47D291DE83A00C7C950 /* FirebaseManager.swift in Sources */,
 				83353C6F28D9A66B00EB80A7 /* AddClosetViewController.swift in Sources */,
 				83E24D362948696D009752CE /* ClothesInfoTableViewCell.swift in Sources */,
 				83BEC87128CF7A56005BB854 /* SceneDelegate.swift in Sources */,
 				8352D4B3293EDE5400CC4803 /* UIImageViewExtension.swift in Sources */,
 				83D6244328D3FCC8008DD677 /* MainClosetViewController.swift in Sources */,
+				830F858829D4C5B200FF399A /* UIWindowExtension.swift in Sources */,
 				837A67E228FFB51400046632 /* StartViewController.swift in Sources */,
 				83A5A59D29B983F90035AE85 /* MaterialCareData.swift in Sources */,
 				83AD3331293441AB000C0F9D /* ClothesCell.swift in Sources */,
