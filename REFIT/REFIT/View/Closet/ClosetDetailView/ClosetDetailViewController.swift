@@ -117,8 +117,8 @@ class ClosetDetailViewController: UIViewController {
         actionSheet.addAction(UIAlertAction(title: "의류 삭제", style: .destructive, handler: { _ in
             
             let alert = UIAlertController(title: "정말 삭제하시겠습니까?", message: "이 동작은 되돌릴 수 없습니다.", preferredStyle: .alert)
-            let cancel = UIAlertAction(title: "아뇨, 삭제 안 할래요.", style: .cancel, handler: nil)
-            let remove = UIAlertAction(title: "네, 삭제할래요.", style: .destructive, handler: { _ in
+            let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+            let remove = UIAlertAction(title: "삭제", style: .destructive, handler: { _ in
                 FirebaseFirestoreManger.db.collection("Closet").document(self.clothesData["documentName"] as! String).delete() { err in
                     if let err = err {
                         print("Error removing document: \(err)")
