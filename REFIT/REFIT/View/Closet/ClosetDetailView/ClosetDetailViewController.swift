@@ -45,8 +45,10 @@ class ClosetDetailViewController: UIViewController {
     
     // ClothesData
     var clothesData: [String : Any] = [ : ]
-    var materialCareData: [String : Any] = [ : ]
-    var categoryCareData: [String : Any] = [ : ]
+    var materialCareImgData: [String : Any] = [ : ]
+    var categoryCareImgData: [String : Any] = [ : ]
+    var materialCareStringData: [String : Any] = [ : ]
+    var categoryCareStringData: [String : Any] = [ : ]
     
     // ClothesInfoView TableView data
     let clothesInfoViewTableViewTitleArr = ["친밀도", "브랜드", "색상", "소재", "사이즈"]
@@ -85,26 +87,57 @@ class ClosetDetailViewController: UIViewController {
         cellRegister()
         initTableView()
         
+        print(categoryCareViewTableViewTitleArr)
+        // 재질 관리 정보 요청
+        // 이미지
         FirebaseFirestoreManger.db
             .collection("clothesManagement")
             .document("material")
             .getDocument { (document, error) in
                 if let document = document, document.exists {
                     if let documentData = document.data() {
-                        self.materialCareData = documentData
+                        self.materialCareImgData = documentData
+                    }
+                } else {
+                    print("Document does not exist")
+                }
+            }
+        // 텍스트
+        FirebaseFirestoreManger.db
+            .collection("clothesManagement")
+            .document("materialString")
+            .getDocument { (document, error) in
+                if let document = document, document.exists {
+                    if let documentData = document.data() {
+                        self.materialCareStringData = documentData
                     }
                 } else {
                     print("Document does not exist")
                 }
             }
         
+        // 카테고리 관리 정보 요청
+        // 이미지
         FirebaseFirestoreManger.db
             .collection("clothesManagement")
             .document("category")
             .getDocument { (document, error) in
                 if let document = document, document.exists {
                     if let documentData = document.data() {
-                        self.categoryCareData = documentData
+                        self.categoryCareImgData = documentData
+                    }
+                } else {
+                    print("Document does not exist")
+                }
+            }
+        // 텍스트
+        FirebaseFirestoreManger.db
+            .collection("clothesManagement")
+            .document("categoryString")
+            .getDocument { (document, error) in
+                if let document = document, document.exists {
+                    if let documentData = document.data() {
+                        self.categoryCareStringData = documentData
                     }
                 } else {
                     print("Document does not exist")
@@ -281,7 +314,7 @@ extension ClosetDetailViewController {
         var intimacy: String
         
         categoryCareViewTableViewTitleArr = [detailCategory]
-        materialCareViewTableViewTitleArr = (clothesData["material"] as? Array<String>)!
+        materialCareViewTableViewTitleArr = (clothesData["material"] as? [String])!
         
         // 착용 정보
         guard let seasonArr = clothesData["season"] as? Array<String> else { return }
@@ -507,12 +540,14 @@ extension ClosetDetailViewController: UITableViewDataSource {
         
         switch tableView {
         case categoryCareViewTableView:
-            ClothesCareInfoModalViewController.categoryCareData = self.categoryCareData
+            ClothesCareInfoModalViewController.careStringData = self.categoryCareStringData
+            ClothesCareInfoModalViewController.careImgData = self.categoryCareImgData
             ClothesCareInfoModalViewController.modalTitle = categoryCareViewTableViewTitleArr[indexPath.row]
             self.present(ClothesCareInfoModalViewController, animated: true)
             
         case materialCareViewTableView:
-            ClothesCareInfoModalViewController.materialCareData = self.materialCareData
+            ClothesCareInfoModalViewController.careStringData = self.materialCareStringData
+            ClothesCareInfoModalViewController.careImgData = self.materialCareImgData
             ClothesCareInfoModalViewController.modalTitle = materialCareViewTableViewTitleArr[indexPath.row]
             self.present(ClothesCareInfoModalViewController, animated: true)
             
