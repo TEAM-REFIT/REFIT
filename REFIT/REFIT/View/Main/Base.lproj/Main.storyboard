@@ -37,14 +37,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="2zp-0S-4s9">
-                                <rect key="frame" x="92" y="422.5" width="230" height="51"/>
+                                <rect key="frame" x="92" y="377.5" width="230" height="51"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jlD-5P-gwF"/>
                         <color key="backgroundColor" red="0.38431376220000002" green="0.8392156959" blue="0.47843140360000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="2zp-0S-4s9" firstAttribute="centerX" secondItem="ncf-Ew-1lk" secondAttribute="centerX" id="1f4-27-KTv"/>
-                            <constraint firstItem="2zp-0S-4s9" firstAttribute="centerY" secondItem="ncf-Ew-1lk" secondAttribute="centerY" id="RfV-7Z-oDi"/>
+                            <constraint firstItem="2zp-0S-4s9" firstAttribute="centerY" secondItem="ncf-Ew-1lk" secondAttribute="centerY" multiplier="0.9" id="RfV-7Z-oDi"/>
                         </constraints>
                     </view>
                 </viewController>
