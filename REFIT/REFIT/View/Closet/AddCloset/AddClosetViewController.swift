@@ -501,11 +501,27 @@ extension AddClosetViewController {
     /// color button
     private func initColorBtn() {
         for i in colorBtn {
-            if UIScreen.main.bounds.size.width > 375 {
-                i.layer.cornerRadius = 0.5 * i.frame.width
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                var half: CGFloat = 1.15
+                
+                // 아이패드 12.9인치
+                if UIScreen.main.bounds.width > 1023 {
+                    half = 1.5
+                } else {
+                    if UIScreen.main.bounds.width < 770 {
+                        half = 1
+                    }
+                }
+                
+                i.layer.cornerRadius = half * i.frame.width
             } else {
-                i.layer.cornerRadius = 0.45 * i.frame.width
+                if UIScreen.main.bounds.size.width > 375 {
+                    i.layer.cornerRadius = 0.5 * i.frame.width
+                } else {
+                    i.layer.cornerRadius = 0.45 * i.frame.width
+                }
             }
+
             i.layer.borderWidth = 1
             i.layer.borderColor = UIColor.gray.cgColor
             i.tintColor = UIColor.clear
