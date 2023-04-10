@@ -292,6 +292,12 @@ class ClosetDetailViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }))
         
+        if let popoverController = actionSheet.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            popoverController.permittedArrowDirections = []
+        }
+        
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
         self.present(actionSheet, animated: true)

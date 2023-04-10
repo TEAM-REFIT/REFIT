@@ -134,11 +134,28 @@ extension MainClosetViewController {
             // 아이템 간의 간격 설정
             item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
             
+            var count = 3 // 기본값은 아이폰에서 3개
+            var height: CGFloat = 187
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                count = 4
+                height = 265
+                
+                // 아이패드 12.9인치
+                if UIScreen.main.bounds.width > 1023 {
+                    count = 5
+                    height = 300
+                }
+                
+                if UIScreen.main.bounds.width < 770 {
+                    height = 250
+                }
+            }
+            
             // 그룹사이즈
-            let grouSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(187))
+            let grouSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(height))
             
             // 변경할 부분
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: grouSize, subitem: item, count: 3)
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: grouSize, subitem: item, count: count)
             
             // 그룹으로 섹션 만들기
             let section = NSCollectionLayoutSection(group: group)
