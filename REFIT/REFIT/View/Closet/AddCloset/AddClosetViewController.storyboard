@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="48" width="414" height="1952"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1Y-6c-yc5">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1771.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1791.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lKw-ZN-Uon">
                                                 <rect key="frame" x="30" y="30" width="354" height="354"/>
@@ -827,7 +827,7 @@
                                             <constraint firstItem="Efj-1p-s3k" firstAttribute="top" secondItem="BdB-Ta-32Q" secondAttribute="bottom" constant="20" id="NRd-2G-NaQ"/>
                                             <constraint firstAttribute="trailing" secondItem="csC-fC-swS" secondAttribute="trailing" constant="30" id="UMJ-ZM-RO1"/>
                                             <constraint firstItem="csC-fC-swS" firstAttribute="top" secondItem="60w-Oi-2DU" secondAttribute="bottom" constant="20" id="We0-tZ-6eD"/>
-                                            <constraint firstAttribute="bottom" secondItem="Kao-cz-grV" secondAttribute="bottom" constant="100" id="XwV-V7-5w5"/>
+                                            <constraint firstAttribute="bottom" secondItem="Kao-cz-grV" secondAttribute="bottom" constant="120" id="XwV-V7-5w5"/>
                                             <constraint firstItem="AHP-jl-7ol" firstAttribute="leading" secondItem="n1Y-6c-yc5" secondAttribute="leading" constant="30" id="Yys-kn-wy2"/>
                                             <constraint firstItem="lKw-ZN-Uon" firstAttribute="leading" secondItem="n1Y-6c-yc5" secondAttribute="leading" constant="30" id="ZGz-Vf-zVe"/>
                                             <constraint firstItem="Efj-1p-s3k" firstAttribute="leading" secondItem="n1Y-6c-yc5" secondAttribute="leading" constant="30" id="cc3-5O-kqq"/>
