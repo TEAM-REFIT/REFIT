@@ -18,25 +18,25 @@
                 <rect key="frame" x="0.0" y="0.0" width="121" height="183"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummyClothesImg" translatesAutoresizingMaskIntoConstraints="NO" id="KpY-X7-zvx">
-                        <rect key="frame" x="0.0" y="0.0" width="121.33333333333333" height="130"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KpY-X7-zvx">
+                        <rect key="frame" x="0.0" y="0.0" width="121" height="130"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="130" id="AVZ-EQ-dfJ"/>
-                            <constraint firstAttribute="width" constant="121.33" id="h0m-ho-5uW"/>
+                            <constraint firstAttribute="width" secondItem="KpY-X7-zvx" secondAttribute="height" multiplier="121:130" id="ct1-Ah-ypF"/>
+                            <constraint firstAttribute="width" constant="121" id="h0m-ho-5uW"/>
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="HlS-oP-6tB">
-                        <rect key="frame" x="5" y="135" width="43.666666666666664" height="43"/>
+                        <rect key="frame" x="5" y="135" width="111" height="42.666666666666657"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="50" horizontalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKn-nZ-9sU">
-                                <rect key="frame" x="0.0" y="0.0" width="35.333333333333336" height="17.333333333333332"/>
+                                <rect key="frame" x="0.0" y="0.0" width="35.333333333333336" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLl-QU-TWt">
-                                <rect key="frame" x="0.0" y="21.333333333333343" width="43.666666666666664" height="21.666666666666671"/>
+                                <rect key="frame" x="0.0" y="21" width="43.666666666666664" height="21.666666666666671"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -51,7 +51,6 @@
                     <constraint firstItem="HlS-oP-6tB" firstAttribute="centerX" secondItem="fxp-er-XwF" secondAttribute="centerX" id="LRw-2i-tw8"/>
                     <constraint firstItem="HlS-oP-6tB" firstAttribute="top" secondItem="KpY-X7-zvx" secondAttribute="bottom" constant="5" id="Qid-fp-uJf"/>
                     <constraint firstItem="HlS-oP-6tB" firstAttribute="leading" secondItem="fxp-er-XwF" secondAttribute="leading" constant="5" id="fqN-I0-Lc9"/>
-                    <constraint firstAttribute="bottom" secondItem="HlS-oP-6tB" secondAttribute="bottom" constant="5" id="yXD-OW-3xQ"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="119.66666666666667" height="208"/>
@@ -64,7 +63,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="dummyClothesImg" width="122" height="130"/>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

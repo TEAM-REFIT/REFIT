@@ -21,11 +21,10 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gb8-VM-ObD">
-                                        <rect key="frame" x="34.666666666666657" y="20" width="324" height="52"/>
+                                        <rect key="frame" x="40" y="20" width="313" height="52"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="pMW-CZ-h9V"/>
-                                            <constraint firstAttribute="width" constant="324" id="t0z-Vs-WPk"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="로그아웃">
@@ -36,7 +35,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnh-E1-7iB">
-                                        <rect key="frame" x="34.666666666666657" y="82" width="324" height="52"/>
+                                        <rect key="frame" x="40" y="82" width="313" height="52"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="회원탈퇴">
@@ -51,10 +50,12 @@
                                 <constraints>
                                     <constraint firstItem="nnh-E1-7iB" firstAttribute="height" secondItem="gb8-VM-ObD" secondAttribute="height" id="4cp-j6-rJM"/>
                                     <constraint firstItem="nnh-E1-7iB" firstAttribute="centerX" secondItem="0Sk-td-vIj" secondAttribute="centerX" id="BrL-MD-N3b"/>
+                                    <constraint firstItem="gb8-VM-ObD" firstAttribute="leading" secondItem="0Sk-td-vIj" secondAttribute="leading" constant="40" id="EmQ-4O-5yj"/>
                                     <constraint firstItem="nnh-E1-7iB" firstAttribute="width" secondItem="gb8-VM-ObD" secondAttribute="width" id="R1s-Bd-imj"/>
                                     <constraint firstItem="gb8-VM-ObD" firstAttribute="centerX" secondItem="0Sk-td-vIj" secondAttribute="centerX" id="cGo-aO-mVn"/>
                                     <constraint firstItem="nnh-E1-7iB" firstAttribute="top" secondItem="gb8-VM-ObD" secondAttribute="bottom" constant="10" id="lK2-nB-dHW"/>
                                     <constraint firstItem="gb8-VM-ObD" firstAttribute="top" secondItem="0Sk-td-vIj" secondAttribute="top" constant="20" id="lPh-sW-oWB"/>
+                                    <constraint firstAttribute="trailing" secondItem="gb8-VM-ObD" secondAttribute="trailing" constant="40" id="wq0-au-1Hj"/>
                                 </constraints>
                             </view>
                         </subviews>

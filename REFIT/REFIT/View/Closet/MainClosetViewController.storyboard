@@ -83,7 +83,7 @@
                                 <cells/>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOE-dN-kUb">
-                                <rect key="frame" x="334" y="743" width="60" height="60"/>
+                                <rect key="frame" x="334" y="733" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="GLQ-IV-elL"/>
                                     <constraint firstAttribute="height" constant="60" id="GyH-Kl-CH3"/>
@@ -102,7 +102,7 @@
                             <constraint firstItem="ENB-P9-rxz" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Pt5-Me-Kym"/>
                             <constraint firstItem="GCf-Ix-hFM" firstAttribute="top" secondItem="ENB-P9-rxz" secondAttribute="bottom" id="YDj-uV-JeF"/>
                             <constraint firstItem="ENB-P9-rxz" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="aI8-yp-4Zq"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="UOE-dN-kUb" secondAttribute="bottom" constant="10" id="fut-Qa-HDJ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="UOE-dN-kUb" secondAttribute="bottom" constant="20" id="fut-Qa-HDJ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="GCf-Ix-hFM" secondAttribute="bottom" id="iFl-DL-heZ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="GCf-Ix-hFM" secondAttribute="trailing" id="mlh-0w-f84"/>
                             <constraint firstItem="GCf-Ix-hFM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="nv7-5l-Ems"/>
